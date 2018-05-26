@@ -9,6 +9,7 @@
     "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
+    "postcss-assets": "^5.0.0",
     "webpack-dev-server": "2.11.2"
   }
 }

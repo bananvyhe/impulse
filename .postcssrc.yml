@@ -2,4 +2,8 @@ plugins:
   postcss-import: {}
   postcss-cssnext: {}
   lost: {}
- 
+  postcss-assets: {
+    loadPaths: ['images/'],
+    basePath: 'public',
+    cachebuster: true,
+  }

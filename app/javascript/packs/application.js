@@ -8,3 +8,4 @@
 // layout file, like app/views/layouts/application.html.erb
 
 require.context('../stylesheets/', true, /^\.\/[^_].*\.(css|scss|sass)$/i)
+require.context('../images/', true, /\.(gif|jpg|png|svg)$/i)

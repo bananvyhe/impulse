@@ -3,3 +3,10 @@
 	background-color: #dad;
 	color: blue;
 }
+.testimage {
+	background: resolve('sal.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+}
