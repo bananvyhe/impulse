@@ -7,3 +7,29 @@ plugins:
     basePath: 'public',
     cachebuster: true,
   }
+  postcss-font-magician: {
+    custom: {
+      'RobotoCon': {
+        variants: {
+          normal: {
+            300: {
+              url: {
+                woff2: 'fonts/robotocondensed-light-webfont.woff2'
+              }
+            },
+            400: {
+              url: {
+                woff2: 'fonts/robotocondensed-regular-webfont.woff2'
+              }
+            },
+            700: {
+              url: {
+                woff2: 'fonts/robotocondensed-bold-webfont.woff2'
+              }
+            }
+          }
+        }
+      }
+    },
+    protocol: 'https:'
+  }

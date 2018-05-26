@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <div class="testfont">
+       <h4>{{ message }}</h4>
+    </div>
   </div>
 </template>
 
@@ -15,9 +17,11 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 1em;
+#app {
+  lost-center: 600px;
+}
+
+h4 {
   text-align: center;
-  color: gray;
 }
 </style>

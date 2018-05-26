@@ -1,7 +1,16 @@
 .webpacker-test {
-	lost-center: 600px;
-	background-color: #dad;
-	color: blue;
+	 
+	lost-center: 400px;
+	background-color: #ada;
+	color: #444;
+}
+.testfont {
+  font-family: "RobotoCon";
+  font-weight: 400;
+ 	font-style: normal;
+  lost-center: 400px;
+  background-color: #dad;
+  color: #444;
 }
 .testimage {
 	background: resolve('sal.jpg');
@@ -9,4 +18,11 @@
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 100px;
+}
+h4 {
+	 
+ 
+}
+p {
+	
 }
