@@ -1,3 +1,5 @@
 .webpacker-test {
+	lost-center: 600px;
+	background-color: #dad;
 	color: blue;
 }
