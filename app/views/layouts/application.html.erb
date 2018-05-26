@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
   <head>
     <title>Impulse</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag    'application', media: 'all' %>
-    <%= javascript_pack_tag    'application', media: 'all' %>
+    <%= javascript_pack_tag    'application', media: 'all' %>   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
+  	<div id="head" class="head" ></div> 
     <%= yield %>
   </body>
+  <%= javascript_pack_tag 'hello_vue' %>
+  <%= stylesheet_pack_tag 'hello_vue' %>
 </html>
