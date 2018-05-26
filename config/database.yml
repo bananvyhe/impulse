@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: impulse_production
-  username: impulse
+  username: deploy
   password: <%= ENV['IMPULSE_DATABASE_PASSWORD'] %>
