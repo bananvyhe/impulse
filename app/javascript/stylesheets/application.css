@@ -1,15 +1,23 @@
 .webpacker-test {
-	 
+	margin: 0.2em;
 	lost-center: 400px;
+	padding: 0.2em;
+	font-family: "RobotoA"; 
+	font-weight: 300;
+ 	font-style: italic;
+	
 	background-color: #ada;
 	color: #444;
 }
 .testfont {
+	text-indent: 0em;
+	text-align: center;
+	padding: 0.4em 0.2em 0 0.2em;
   font-family: "RobotoCon";
   font-weight: 400;
  	font-style: normal;
   lost-center: 400px;
-  background-color: #dad;
+  background-color: #E7E1BC;
   color: #444;
 }
 .testimage {
@@ -19,10 +27,4 @@
 	width: 100px;
 	height: 100px;
 }
-h4 {
-	 
  
-}
-p {
-	
-}

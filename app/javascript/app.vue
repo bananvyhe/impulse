@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="testfont">
-       <h4>{{ message }}</h4>
+       <p>{{ message }}</p>
     </div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 export default {
   data: function () {
     return {
-      message: "Сайт на обновлении..."
+      message: "Сайт в процессе обновления"
     }
   }
 }
@@ -20,8 +20,9 @@ export default {
 #app {
   lost-center: 600px;
 }
-
-h4 {
+p {
+  margin: 0 0 0.6em 0;
+  text-indent: 0em;
   text-align: center;
 }
 </style>

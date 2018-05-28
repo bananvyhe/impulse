@@ -29,6 +29,59 @@ plugins:
             }
           }
         }
+      },
+      'RobotoA': {
+        variants: {
+          normal: {
+            100: {
+              url: {
+                woff2: 'fonts/roboto-thin-webfont.woff2'
+              }
+            },
+            300: {
+              url: {
+                woff2: 'fonts/roboto-light-webfont.woff2'
+              }
+            },
+            400: {
+              url: {
+                woff2: 'fonts/roboto-regular-webfont.woff2'
+              }
+            },
+            500: {
+              url: {
+                woff2: 'fonts/roboto-medium-webfont.woff2'
+              }
+            },
+            700: {
+              url: {
+                woff2: 'fonts/roboto-bold-webfont.woff2'
+              }
+            },
+            900: {
+              url: {
+                woff2: 'fonts/roboto-black-webfont.woff2'
+              }
+            }
+          },
+          italic: {
+            300: {
+              url: {
+                woff2: 'fonts/roboto-lightitalic-webfont.woff2'
+              }
+            },
+            400: {
+              url: {
+                woff2: 'fonts/roboto-mediumitalic-webfont.woff2'
+              }
+            },
+            700: {
+              url: {
+                woff2: 'fonts/roboto-bolditalic-webfont.woff2'
+              }
+            },
+          }
+        }
       }
     },
     protocol: 'https:'
