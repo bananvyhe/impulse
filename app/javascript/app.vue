@@ -21,7 +21,6 @@ export default {
   lost-center: 600px;
 }
 p {
-  margin: 0 0 0.6em 0;
   text-indent: 0em;
   text-align: center;
 }

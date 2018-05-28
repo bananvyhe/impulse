@@ -1,0 +1,131 @@
+%strong {
+  font-weight: 600;
+}
+ 
+h1, h2, h3, h4, h5 {
+  color: #555;
+  font-family: "RobotoA";
+  font-style: bold;
+  font-weight: 400;
+}
+h1 {
+  @extend %strong;
+ 	adjust-font-size: fs xxxlarge;
+ 
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.4);
+  line-height: 1.0em;
+}
+h2 {
+  @extend %strong;
+  adjust-font-size: fs xxlarge;
+  margin-top: spacing(0.4);
+  margin-bottom: spacing(0.3);
+ 
+  line-height: 1.12em;
+}
+h3 {
+  adjust-font-size: fs xlarge;
+  margin-top: spacing(0.8);
+  margin-bottom: spacing(0.6);
+ 
+  line-height: 1.1em;
+}
+h4 {
+  adjust-font-size: fs xlarge;
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.2);
+ 
+  line-height: 1.1em;
+}
+h5 {
+  adjust-font-size: fs medium;
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.5);
+ 
+}
+
+strong {
+  @extend %strong;
+}
+
+p { 
+  adjust-font-size: fs b;
+  display: block;
+  text-indent: 1.8em;
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.5);
+}
+img {
+   margin-right: 4vw;
+   margin-left: 4vw;
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+}
+a {
+ 
+}
+ul,
+ol { 
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  adjust-font-size: fs b;
+  list-style-position: inside; 
+}
+ul { 
+  list-style: disc inside;
+}
+ol {
+  list-style: decimal inside;
+}
+ul a, ol a {
+  text-decoration: none;
+}
+li {
+  display: list-item;
+	padding-left: 2em;
+	padding-right: 0.5em;
+	margin-bottom: 0em;
+}
+ 
+td {
+  padding: 0.2em;
+  &:after {
+    
+  }
+}
+td:first-of-type {
+  padding-right: 1em;
+}
+.table {
+  padding-bottom: 1em;
+}
+.is-grouped {
+  height: 2.7em;
+}
+
+ 
+.inputShort {
+  max-width: 500px;
+}
+ 
+.delMessage {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  justify-content: center;
+}
+code,
+pre { 
+   
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  tab-size: 4;
+  hyphens: none;
+  @forcewrap;
+}
+ 

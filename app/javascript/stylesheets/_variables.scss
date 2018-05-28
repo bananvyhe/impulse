@@ -1,0 +1,146 @@
+ $color-1: #888;
+$color-2: #f57c00;
+$color-3: #ef6c00;
+$color-4: #d64933;
+$color-6: #b9d6f2;
+$HeadBackColor: #2a303a;
+$onyx: #313638;
+$gainsboro: #E0DFD5;
+$spacecadet: #1D3557;
+$earthyellow: #E4B363;
+$bittersweetshimmer: #C14953;
+$sunsetorange: #EF5D60;
+$darksalmon: #E09F7D;
+$palegoldenrod: #DBDFAC;
+$platinum: #EEE5E9;
+$cambridgeblue: #A3BBAD;
+$paleaqua: #BFDBF7;
+$ghostwhite: #FBFBFF;
+$almond: #EFD9CE;
+$majorelleblue: #454ADE;
+$columbiablue: #C0E0DE;
+$teagreen: #C9E4CA;
+$floralwhite: #F9FBF2;
+$bone: #E5DCC5;
+$isabelline: #F4F3EE;
+$palespringbud: #F0F3BD;
+$deeppuce: #B75D69;
+$deeptaupe: #774C60;
+$pearl: #EAE0D5;
+$shadowblue: #748CAB;
+$mellowapricot: #F8BD7F;
+$eggshell: #EDEBD7;
+$tuscan: #EDD9A3;
+$x11gray: #C1BDB3;
+$antiflashwhite: #F3EFF5;
+$navajowhite: #FFE19C;
+$sunglow: #FCCA46;
+$redorange1: #F15152;
+$languidlavender: #DBCBD8;
+$diamond: #BCEDF6;
+$whitesmoke: #F3F7F0;
+$desire: #E63946;
+$honeydew: #F1FAEE;
+$rustyred: #D7263D;
+$sandstorm: #EAD94C;
+$stildegrainyellow: #F5CB5C;
+$campaginepink: #EDDDD4;
+$orangeyellow: #F3C969;
+
+$greenbg: #b3ddad;
+$blueTitle: #3c8bce;
+$siteBG: #1f1e24;
+$titleColor: #393e41;
+
+$advantageBg: #393e41;
+$lightgreen: #d5f591;
+$greenInd: #159f0b;
+$green1: #E7E1BC;
+$greyInd: #b0b9b8;
+$advantageFontColor: #f1f9ee; 
+
+$advBottomBorder: #ebf0f3;
+$advGreyBorder: #ebf0f3;
+/*$color-5: #1d3557;*/
+$redorange: #C14953;
+$color-5: #EDEBD7;
+
+
+$advantageLight: #E3D26F;
+$almond: #E7DECD;
+
+$advColor: #393e41;
+$silverPink: #D0ADA7;
+$bones: #E8D6CB;
+$copperPenny: #AD6A6C;
+$warningLine1: #F2AF29;
+$warningLine: #f07d1f;
+$lcenter: 1366px;
+
+@custom-media --telpanel-small-screen (width <= 720px);
+@custom-media --only-956less-screen (width <= 956px);
+@custom-media --only-small-screen (width >= 0px) and (width <= 799px);
+@custom-media --only-medium-screen (width >= 800px) and (width <= 1919px);
+@custom-media --only-1600more-screen (width >= 1560px);
+
+@custom-media --only-big-screen (width >= 1920px);
+
+$str1: #09b207;
+$str2: #1c860a;
+$str3: #d4f88e;
+$str4: #279c1d;
+$str5: #35701e;
+$str6: #23a5e6;
+
+
+@define-mixin roundbgstr {
+  background-color: #fff;
+	background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.2em;
+  padding: 0.1em 0.6em 0.1em 0.8em;
+}
+@define-mixin bgstring {
+  background-color: $str3;
+	margin: 0.1em 0 0.1em 0;
+  line-height: 1.2; 
+  border-radius: 0.4em;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  color: $str5;
+
+}
+@define-mixin hrline {
+  height: 2px;
+  border-radius: 0.2em;
+}
+
+.scale-in-hor-right {
+  animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-hor-right {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+
+.scale-in-hor-left {
+	animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-hor-left {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}

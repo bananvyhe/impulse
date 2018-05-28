@@ -1,12 +1,13 @@
 plugins:
-  postcss-import: {}
+  # postcss-import: {}
+  precss: {}
   postcss-cssnext: {}
   lost: {}
-  # postcss-assets: {
-  #   loadPaths: ['images/'],
-  #   basePath: 'public',
-  #   cachebuster: true,
-  # }
+  postcss-assets: {
+    loadPaths: ['images/'],
+    basePath: 'public',
+    cachebuster: true,
+  }
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
@@ -86,3 +87,4 @@ plugins:
     },
     protocol: 'https:'
   }
+  postcss-hamster: {}
