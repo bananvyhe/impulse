@@ -27,7 +27,7 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
-/*@import "../../cssvars/variables"; */
+@import "../../cssvars/variables"; 
 @import "../../cssvars/typography";  
 body {
 	font-family: "RobotoCon";
@@ -40,7 +40,7 @@ body {
   font-weight: 400;
  	font-style: normal;
   lost-center: 400px;
-  background-color: #b9d6f2;
+  background-color: $color5;
  
 }
 .cont {
