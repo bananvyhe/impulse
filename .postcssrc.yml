@@ -1,7 +1,8 @@
 plugins:
   # postcss-import: {}
-  precss: {'lookup': false}
-  # postcss-cssnext: {features: {'rem': false}}
+  # precss: {'lookup': false}
+  postcss-advanced-variables: {}
+  postcss-cssnext: {features: {'rem': false}}
   lost: {}
   
   postcss-assets: {

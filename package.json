@@ -13,6 +13,7 @@
     "postcss-hamster": "^1.3.0"
   },
   "devDependencies": {
+    "postcss-advanced-variables": "^2.3.3",
     "webpack-dev-server": "2.11.2"
   }
 }
