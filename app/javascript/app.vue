@@ -1,11 +1,10 @@
 <template>
   <div id="app">
     <div class="testfont">
-       <p>{{ message }}</p>
+      <p>{{ message }}</p>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data: function () {
@@ -15,9 +14,7 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-@import "stylesheets/vuesass";
 #app {
   lost-center: 600px;
 }
