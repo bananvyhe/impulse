@@ -10,16 +10,15 @@ import Vue from 'vue'
 import App from '../app.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
-Vue.component(Carousel.name, Carousel);
-Vue.component(CarouselItem.name, CarouselItem);
-Vue.component(Input.name, Input);
-Vue.component(Button.name, Button);
-Vue.component(Table.name, Table);
-Vue.component(TableColumn.name, TableColumn);
-Vue.component(Col.name, Col);
-Vue.component(Form.name, Form);
-Vue.component(FormItem.name, FormItem);
-Vue.component(Pagination.name, Pagination);
+Vue.use(CarouselItem) 
+Vue.use(Button) 
+Vue.use(Pagination)
+// Vue.use(Input) 
+// Vue.use(Table)
+// Vue.use(TableColumn)
+// Vue.use(Col) 
+// Vue.use(Form)
+// Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('hello'))
