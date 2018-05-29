@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style scoped>
+/*@import "vuesass";*/
 #app {
   lost-center: 600px;
 }

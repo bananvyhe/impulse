@@ -1,6 +1,6 @@
 plugins:
   # postcss-import: {}
-  # precss: {"lookup": false}
+  precss: {"lookup": false}
   postcss-cssnext: {features: {"rem": false}}
   lost: {}
   
@@ -9,7 +9,7 @@ plugins:
     basePath: 'public',
     cachebuster: true,
   }
-  postcss-hamster: {}
+  # postcss-hamster: {}
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
