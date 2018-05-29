@@ -12,10 +12,10 @@
     "precss": "^1.4.0",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.16",
+    "babel-plugin-component": "^1.1.1"
   },
   "devDependencies": {
-    "babel-plugin-component": "^1.1.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "2.11.2"
   }
