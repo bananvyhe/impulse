@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
-    "precss": "^3.1.2",
+    "precss": "^2.0.0",
     "lost": "^8.2.1",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
