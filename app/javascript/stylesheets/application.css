@@ -28,11 +28,7 @@ End Hamster setup*/
 @reset;
 @box-sizing-reset;
 @import "variables"; 
-  
- 
- 
 @copy full {
-  
   @import "typography";
 }
 @paste full;
