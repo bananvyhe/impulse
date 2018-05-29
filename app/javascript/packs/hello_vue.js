@@ -4,21 +4,22 @@
 // to the head of your layout file,
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
-import axios from 'axios'
+
+// import axios from 'axios'
 import Vue from 'vue'
 import App from '../app.vue'
-import 'element-ui/lib/theme-chalk/index.css';
-import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
-Vue.use(Carousel)
-Vue.use(CarouselItem) 
-Vue.use(Input) 
-Vue.use(Button) 
-Vue.use(Pagination)
-Vue.use(Table)
-Vue.use(TableColumn)
-Vue.use(Col) 
-Vue.use(Form)
-Vue.use(FormItem)
+// import 'element-ui/lib/theme-chalk/index.css';
+// import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
+// Vue.use(Carousel)
+// Vue.use(CarouselItem) 
+// Vue.use(Input) 
+// Vue.use(Button) 
+// Vue.use(Pagination)
+// Vue.use(Table)
+// Vue.use(TableColumn)
+// Vue.use(Col) 
+// Vue.use(Form)
+// Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('hello'))
