@@ -27,12 +27,16 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
-@import "variables";
+@import "variables"; 
+  
+ 
+ 
 @copy full {
-  @import "typography.css";
+  
+  @import "typography";
 }
 @paste full;
-
+/* css-next media queries */
 @media (--only-small-screen) {
   @ihamster {
     --font-size: 16px;

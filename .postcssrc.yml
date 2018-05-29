@@ -1,14 +1,15 @@
 plugins:
   # postcss-import: {}
   precss: {"lookup": false}
-  postcss-cssnext: {}
+  postcss-cssnext: {features: {"rem": false}}
   lost: {}
-  postcss-hamster: {}
+  
   postcss-assets: {
     loadPaths: ['images/'],
     basePath: 'public',
     cachebuster: true,
   }
+  postcss-hamster: {}
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
