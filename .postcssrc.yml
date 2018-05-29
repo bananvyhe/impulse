@@ -1,8 +1,9 @@
 plugins:
   # postcss-import: {}
-  precss: {}
+  precss: {"lookup": false}
   postcss-cssnext: {}
   lost: {}
+  postcss-hamster: {}
   postcss-assets: {
     loadPaths: ['images/'],
     basePath: 'public',
@@ -87,4 +88,3 @@ plugins:
     },
     protocol: 'https:'
   }
-  postcss-hamster: {}

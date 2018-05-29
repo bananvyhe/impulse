@@ -80,14 +80,14 @@ body {
   font-weight: 400;
  	font-style: normal;
   lost-center: 400px;
-  background-color: $warningLine1;
+  background-color: $color-5;
   color: $advColor;
 }
 .cont {
 	adjust-font-size: fs small;
 	font-weight: 300;
 	font-style: italic;
-	lost-center: 300px;
+	lost-center: 350px;
 }
 /*.testimage {
 	background: resolve('sal.jpg');
