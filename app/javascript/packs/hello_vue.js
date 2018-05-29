@@ -8,8 +8,8 @@
 import axios from 'axios'
 import Vue from 'vue'
 import App from '../app.vue'
-import 'element-ui/lib/theme-chalk/index.css';
-// import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css';
+import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
 // Vue.use(Carousel)
 // Vue.use(CarouselItem) 
 // Vue.use(Input) 
