@@ -5,7 +5,7 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-// import axios from 'axios'
+import axios from 'axios'
 import Vue from 'vue'
 import App from '../app.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
