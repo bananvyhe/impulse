@@ -21,9 +21,8 @@ Vue.use(Pagination)
 // Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
-  const app = new Vue({
-    el,
+  new Vue({
+    el: '#app',
     render: h => h(App)
   })
 })
