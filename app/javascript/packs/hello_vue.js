@@ -8,6 +8,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import App from '../app.vue'
+import Head from '../head.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
 Vue.use(CarouselItem) 
@@ -24,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     render: h => h(App)
+  })
+  new Vue({
+    el: '#head',
+    render: h => h(Head)
   })
 })
 

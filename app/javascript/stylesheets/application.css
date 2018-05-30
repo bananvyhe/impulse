@@ -66,6 +66,9 @@ End Hamster setup*/
   @hamster end;
 } 
 body {
+  background: resolve('ui_02.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
 	font-family: "RobotoCon";
 	color: #444;
 }
