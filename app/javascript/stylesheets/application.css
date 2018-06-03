@@ -80,7 +80,7 @@ body {
   font-weight: 400;
  	font-style: normal;
   lost-center: $test;
-  background-color: $color-blue;
+  background-color: #b9d6f2;
 }
 .cont {
 	adjust-font-size: fs small;
