@@ -24,7 +24,7 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
-@import "variables"; 
+/*@import "variables"; 
 @copy full {
   @import "typography";
 }
@@ -64,7 +64,7 @@ End Hamster setup*/
   }
   @paste full;
   @hamster end;
-} 
+} */
 body {
   background: resolve('ui_02.jpg');
   background-repeat: no-repeat;

@@ -39,7 +39,7 @@ export default {
 }
 </script>
 <style scoped>
-@import "stylesheets/variables";
+/*@import "stylesheets/variables";*/
 .head { 
   display: flex;
 	background-position: center left;

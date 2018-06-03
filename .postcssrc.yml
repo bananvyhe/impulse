@@ -1,6 +1,6 @@
 plugins:
   # postcss-import: {}
-  precss: {'lookup': false}
+  #precss: {'lookup': false}
   postcss-cssnext: {features: {'rem': false}}
   lost: {}
   
