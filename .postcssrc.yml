@@ -10,6 +10,7 @@ plugins:
     cachebuster: true,
   }
   postcss-hamster: {}
+  postcss-simple-vars: {}
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
