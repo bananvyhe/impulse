@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="testfont">
-      <p>{{ message }}</p>
+      <span>{{ message }}</span>
     </div>
   </div>
 </template>
