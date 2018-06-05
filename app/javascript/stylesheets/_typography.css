@@ -1,7 +1,7 @@
-%strong {
+/*%strong {
   font-weight: 600;
 }
- 
+ */
 h1, h2, h3, h4, h5 {
   color: #555;
   font-family: "RobotoA";
@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 400;
 }
 h1 {
-  @extend %strong;
+ /* @extend %strong;*/
  	adjust-font-size: fs xxxlarge;
  
   margin-top: spacing(0.5);
@@ -17,7 +17,7 @@ h1 {
   line-height: 1.0em;
 }
 h2 {
-  @extend %strong;
+ /* @extend %strong;*/
   adjust-font-size: fs xxlarge;
   margin-top: spacing(0.4);
   margin-bottom: spacing(0.3);
@@ -45,9 +45,9 @@ h5 {
  
 }
 
-strong {
+/*strong {
   @extend %strong;
-}
+}*/
 
 p { 
   adjust-font-size: fs b;
@@ -65,7 +65,7 @@ img {
 a {
  
 }
-ul,
+/*ul,
 ol { 
   padding-left: 1em;
   padding-right: 1em;
@@ -128,4 +128,4 @@ pre {
   hyphens: none;
   @forcewrap;
 }
- 
+ */
