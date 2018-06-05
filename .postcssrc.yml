@@ -1,6 +1,8 @@
 plugins:
   postcss-import: {}
   postcss-nested: {}
+  postcss-simple-vars: {}
+  postcss-custom-media: {}
   #precss: {'lookup': false}
   postcss-cssnext: {features: {'rem': false}}
   lost: {}
@@ -11,7 +13,7 @@ plugins:
     cachebuster: true,
   }
   postcss-hamster: {}
-  postcss-simple-vars: {}
+  
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
