@@ -1,8 +1,10 @@
 plugins:
   postcss-import: {}
+  postcss-extend: {}
   postcss-nested: {}
   postcss-simple-vars: {}
   postcss-custom-media: {}
+
   #precss: {'lookup': false}
   postcss-cssnext: {features: {'rem': false}}
   lost: {}
@@ -32,6 +34,23 @@ plugins:
             700: {
               url: {
                 woff2: 'fonts/robotocondensed-bold-webfont.woff2'
+              }
+            }
+          },
+          italic: {
+            300: {
+              url: {
+                woff2: 'fonts/robotocondensed-lightitalic-webfont.woff2'
+              }
+            },
+            400: {
+              url: {
+                woff2: 'fonts/robotocondensed-italic-webfont.woff2'
+              }
+            },
+            700: {
+              url: {
+                woff2: 'fonts/robotocondensed-bolditalic-webfont.woff2'
               }
             }
           }

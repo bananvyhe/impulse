@@ -1,19 +1,21 @@
-/*%strong {
-  font-weight: 600;
-}
- */
 h1, h2, h3, h4, h5 {
   color: #555;
   font-family: "RobotoA";
   font-style: bold;
   font-weight: 400;
 }
+%strong {
+  font-weight: 300;
+  font-style: italic;
+   
+}
+
 h1 {
- /* @extend %strong;*/
+  @extend %strong;
  	adjust-font-size: fs xxxlarge;
  
-  margin-top: spacing(0.5);
-  margin-bottom: spacing(0.4);
+  margin-top: spacing(1);
+  margin-bottom: spacing(0.5);
   line-height: 1.0em;
 }
 h2 {
@@ -44,18 +46,13 @@ h5 {
   margin-bottom: spacing(0.5);
  
 }
-
-/*strong {
-  @extend %strong;
-}*/
-
 p { 
 
   adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
   margin-top: spacing(0.5);
-  margin-bottom: spacing(0.5);
+  margin-bottom: spacing(1);
 }
 img {
    margin-right: 4vw;
