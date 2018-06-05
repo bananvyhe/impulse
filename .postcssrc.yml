@@ -1,5 +1,5 @@
 plugins:
-  autoprefixer: {browsers:['ie >= 8', 'last 4 version']}
+  
   postcss-import: {}
   postcss-extend: {}
   postcss-nested: {}
@@ -16,7 +16,7 @@ plugins:
     cachebuster: true,
   }
   postcss-hamster: {}
-  
+  autoprefixer: {}
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
