@@ -24,47 +24,7 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
-/*@import "variables"; 
-@copy full {
-  @import "typography";
-}
-@paste full;
-@media (--only-small-screen) {
-  @ihamster {
-    --font-size: 16px;
-    --line-height: 1.3;
-    --to-font-size: 14px;
-    --to-line-height: 1.2;
-    --viewport: 320px 800px;
-    --unit: vw;
-  }
-  @paste full;
-  @hamster end;
-}
-@media (--only-medium-screen) {
-  @ihamster {
-    --font-size: 14px;
-    --line-height: 1.2;
-    --to-font-size: 16px;
-    --to-line-height: 1.3;
-    --viewport: 800px 1919px;
-    --unit: vw;
-  }
-  @paste full;
-  @hamster end;
-}
-@media (--only-big-screen){
-  @ihamster {
-    --font-size: 16px;
-    --line-height: 1.3; 
-    --to-font-size: 18px;
-    --to-line-height: 1.45;
-    --viewport: 1920px 3840px;
-    --unit: vw;
-  }
-  @paste full;
-  @hamster end;
-} */
+@import "_variables"; 
 $test: 400px;
 body {
   background: resolve('ui_02.jpg');
@@ -80,7 +40,7 @@ body {
   font-weight: 400;
  	font-style: normal;
   lost-center: $test;
-  background-color: #b9d6f2;
+  background-color: $color-blue;
 }
 .cont {
 	adjust-font-size: fs small;

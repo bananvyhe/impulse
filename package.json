@@ -4,17 +4,18 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
+    "babel-plugin-component": "^1.1.1",
     "element-ui": "^2.4.0",
     "lost": "^8.2.1",
     "postcss-assets": "^5.0.0",
     "postcss-font-magician": "^2.1.1",
     "postcss-hamster": "^1.3.0",
+    "postcss-import": "^7.1.3",
     "postcss-simple-vars": "^4.1.0",
     "precss": "^1.4.0",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.5.16",
-    "babel-plugin-component": "^1.1.1"
+    "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
     "webpack-bundle-analyzer": "^2.13.1",
