@@ -50,6 +50,7 @@ h5 {
 }*/
 
 p { 
+
   adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
@@ -65,7 +66,7 @@ img {
 a {
  
 }
-/*ul,
+ul,
 ol { 
   padding-left: 1em;
   padding-right: 1em;
@@ -89,7 +90,7 @@ li {
 	padding-right: 0.5em;
 	margin-bottom: 0em;
 }
- 
+/* 
 td {
   padding: 0.2em;
   &:after {
@@ -128,4 +129,4 @@ pre {
   hyphens: none;
   @forcewrap;
 }
- */
+*/
