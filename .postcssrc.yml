@@ -1,4 +1,5 @@
 plugins:
+  autoprefixer: {}
   postcss-import: {}
   postcss-extend: {}
   postcss-nested: {}

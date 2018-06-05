@@ -13,7 +13,6 @@ h1, h2, h3, h4, h5 {
 h1 {
   @extend %strong;
  	adjust-font-size: fs xxxlarge;
- 
   margin-top: spacing(1);
   margin-bottom: spacing(0.5);
   line-height: 1.0em;
@@ -46,12 +45,14 @@ h5 {
   margin-bottom: spacing(0.5);
  
 }
+p:first-of-type {
+  margin-top: spacing(0.5);
+} 
 p { 
-
   adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
-  margin-top: spacing(0.5);
+  margin-top: spacing(1);
   margin-bottom: spacing(1);
 }
 img {
