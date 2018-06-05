@@ -74,7 +74,7 @@ body {
 	color: #444;
 }
 .testfont {
-
+  border-radius: 0.2em;
 	padding: 0.2em;
 	text-indent: 0em;
 	text-align: center;
