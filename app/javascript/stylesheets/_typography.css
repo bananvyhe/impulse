@@ -61,8 +61,7 @@ img {
    margin-top: 0.5em;
    margin-bottom: 0.5em;
 }
-a {background: linear-gradient(to bottom, white, black);
- transform: scale(0.5); border-radius: 5px;
+a {
 }
 ul,
 ol { 

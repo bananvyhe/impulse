@@ -22,10 +22,13 @@ Vue.use(Pagination)
 // Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    el: '#app',
-    render: h => h(App)
-  })
+	var app = document.getElementById("app") 
+	if (app != null) {
+	  new Vue({
+	    el: '#app',
+	    render: h => h(App)
+	  })
+	}
   new Vue({
     el: '#head',
     render: h => h(Head)
