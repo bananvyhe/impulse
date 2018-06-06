@@ -4,13 +4,18 @@
     <title>Impulse</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_include_tag    'jquery-3.3.1.slim.min' %> 
     <%= stylesheet_pack_tag    'application', media: 'all' %>
-    <%= javascript_include_tag    'application'  %>  
+    <% if user_signed_in? %>
+      <%= javascript_include_tag    'application'  %>  
+    <% end %>
     <%= javascript_pack_tag    'application', media: 'all' %>   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <% if user_signed_in? %>
+      <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
+      <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+    <% end %>
   	<div id="head" class="head"></div> 
     <%= yield %>
   </body>
