@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @programm.name %>
-</p>
+	Название:
+	<%= @programm.name %>
+</p> 
+ 
+Описание:
+<%= @programm.desc.html_safe %>
+<hr />
 
-<p>
-  <strong>Desc:</strong>
-  <%= @programm.desc %>
-</p>
+<%= link_to 'Редактировать', edit_programm_path(@programm) %> |
+<%= link_to 'Назад', programms_path %>
 
-<%= link_to 'Edit', edit_programm_path(@programm) %> |
-<%= link_to 'Back', programms_path %>
+ 
+
+ 
