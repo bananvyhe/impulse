@@ -16,7 +16,6 @@ plugins:
     cachebuster: true,
   }
   postcss-hamster: {}
-  autoprefixer: true
   postcss-font-magician: {
     custom: {
       'RobotoCon': {
