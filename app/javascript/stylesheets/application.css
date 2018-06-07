@@ -65,10 +65,15 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
-body {
+html {
+
+}
+.maincontent {
   background: resolve('ui_02.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
+}
+body {
 	font-family: "RobotoCon";
 	color: #444;
 }

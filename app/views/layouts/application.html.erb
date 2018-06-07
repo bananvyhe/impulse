@@ -14,12 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <% if user_signed_in? %>
-      <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
-      <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-    <% end %>
-  	<div id="head" class="head"></div> 
-    <%= yield %>
+    <div class="maincontent">
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
+        <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+      <% end %>
+      <div id="head" class="head"></div> 
+      <%= yield %>
+      <div class="ckestyle" hidden>
+        <%= asset_pack_path 'application.css' %>
+      </div>      
+    </div>
+
   </body>
   <%= javascript_pack_tag 'hello_vue' %>
   <%= stylesheet_pack_tag 'hello_vue' %>
