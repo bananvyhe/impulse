@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'uglifier'
 gem 'devise'
 gem 'ckeditor'
 gem 'carrierwave'
