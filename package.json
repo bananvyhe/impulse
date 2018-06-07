@@ -20,6 +20,7 @@
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
     "precss": "^1.4.0",
+    "rails-erb-loader": "^5.4.2",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16"
