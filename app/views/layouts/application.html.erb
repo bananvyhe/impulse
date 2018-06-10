@@ -5,9 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag    'application', media: 'all' %>
- 
+    <% if user_signed_in? %>
       <%= javascript_include_tag    'forsignedusersapp'  %>  
-    
+    <% end %>
     <%= javascript_include_tag    'application'  %>  
     <%= javascript_pack_tag    'application', media: 'all' %>   
     <%= javascript_pack_tag 'hello_erb' %>
