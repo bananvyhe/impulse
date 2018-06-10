@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = true
 
   config.assets.precompile += Ckeditor.assets
-  config.assets.js_compressor = Uglifier.new(mangle: false)
+  #config.assets.js_compressor = :uglifier
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
