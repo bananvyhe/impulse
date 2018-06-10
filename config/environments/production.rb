@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.precompile += Ckeditor.assets
   config.assets.precompile += %w( ckeditor/* )
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-  #config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = :uglifier
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
