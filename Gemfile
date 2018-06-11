@@ -21,6 +21,8 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails' 
+gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
+gem 'simple_form'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

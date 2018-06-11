@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="topSectAv">
+	<div class="avatarSect1"  style="background-image: url('<%= @employee.avatar.tiny.url %>')">
+	</div>
+	<div class="avatarSect2">
+		<div class="fioSpec  effect4">
+			<h2><%= @employee.name.mb_chars.titleize %></h2>
+				<%= @employee.spec.html_safe %>
+		</div>
+	</div>
+</div>	
+<div class="empDesc">
+	<% if @employee.desc %> 
+		<%= @employee.desc.html_safe %>
+	<% end %><br/>
+	<%= link_to 'Редактировать', edit_employee_path(@employee) %> |
+	<%= link_to 'Назад', employees_path %>
+</div>
+ 
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
-
-<p>
-  <strong>Spec:</strong>
-  <%= @employee.spec %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @employee.desc %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+ 

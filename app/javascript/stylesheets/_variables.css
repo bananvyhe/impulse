@@ -7,3 +7,4 @@ $color-blue: #b9d6f2;
 @custom-media --only-1600more-screen (width >= 1560px);
 
 @custom-media --only-big-screen (width >= 1920px);
+

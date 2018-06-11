@@ -1,32 +1,52 @@
-<%= form_with(model: employee, local: true) do |form| %>
-  <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-      <ul>
-      <% employee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<% if @employee.avatar.url == nil %>
+  
+<% end %>
+ 
+<%= form_for @employee do |f| %> 
+  <div style="float: left; padding-top: 1em;">
+    <h5>Как зовут сотрудника:</h5>
+    <p style= "text-indent: 0em;">
+      <%= f.text_field :name  %> 
+    </p>
+
+
+    <% if @employee.avatar? %>
+      <div  style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px"></div>
+    <% end %>
+    <div>
+      <% unless @employee.avatar? %>
+        Загрузите фото сотрудника
+        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache %> 
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+ 
+    </div>    
   </div>
 
-  <div class="field">
-    <%= form.label :spec %>
-    <%= form.text_field :spec %>
+  <div style="padding:7em 0 0 250px;">
+    <h5>Специализация:</h5>
+    <%= f.cktext_area :spec, ckeditor: {toolbar: 'micro', height: 100  } %> 
   </div>
-
-  <div class="field">
-    <%= form.label :desc %>
-    <%= form.text_field :desc %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div style="clear: both; padding-top: 0.1em;">
+    <h5>Основная информация:</h5>
+    <%= f.cktext_area :desc   %> 
+    <%= f.submit "Сохранить", :class => "button" %> 
   </div>
 <% end %>
+
+
+<!--  
+  <% if @employee.avatar? %>
+    <%= content_tag :div,
+      id: "employee-form",
+      data: {
+        id: employee.id,
+     
+        employee: employee.to_json(except: [:created_at, :updated_at])
+      } do %>
+    <% end %>
+  <% end %> -->
+
+ 
+
