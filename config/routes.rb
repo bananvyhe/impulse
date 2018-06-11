@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :employees
   get 'errors/not_found'
   get 'errors/internal_server_error'
   mount Ckeditor::Engine => '/ckeditor'
