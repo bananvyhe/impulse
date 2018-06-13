@@ -9,7 +9,7 @@
           </div>
         </div>  
       </div>
-      <div class="empDesc">{{item.desc}}
+      <div class="empDesc"><span v-html="item.desc"></span>
       </div>      
     </div>
   </div>
