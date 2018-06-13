@@ -68,6 +68,9 @@ End Hamster setup*/
 .maincontent {
   lost-center: 1760px;
 }
+body {
+  font-family: "RobotoCon";
+}
 .body {
 	font-family: "RobotoCon";
 	color: #444;
