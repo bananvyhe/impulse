@@ -9,6 +9,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import App from '../app.vue'
 import Head from '../head.vue'
+import Employees from '../employees.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
 Vue.use(CarouselItem) 
@@ -22,6 +23,9 @@ Vue.use(Pagination)
 // Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
+	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+  axios.defaults.headers.common['X-CSRF-Token'] = token
+  axios.defaults.headers.common['Accept'] = 'application/json'  
 	var app = document.getElementById("app") 
 	if (app != null) {
 	  new Vue({
@@ -32,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#head',
     render: h => h(Head)
+  })
+  new Vue({
+    el: '#employees',
+    render: h => h(Employees)
   })
 })
 
