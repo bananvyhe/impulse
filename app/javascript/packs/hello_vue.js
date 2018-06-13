@@ -37,10 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#head',
     render: h => h(Head)
   })
-  new Vue({
-    el: '#employees',
-    render: h => h(Employees)
-  })
+  var element = document.getElementById("employees")
+  if (element != null) {
+	  new Vue({
+	    el: '#employees',
+	    render: h => h(Employees)
+	  })
+	}
 })
 
 
