@@ -1,17 +1,19 @@
 <template>
   <div>
-    <ul v if="employee && employee.length">
-      <li v-for="item of employee" >
-        <p><strong>{{item.name}}</strong></p>
-        <p>
-          {{item.desc}}
-        </p>
-      </li>
-    </ul>
-  {{employee}}
+    <div  v-for="item of employee">
+      <div class="topSectAv">
+        <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+        </div>
+        <div class="avatarSect2">
+          <div class="fioSpec  effect4">{{item.name}}
+          </div>
+        </div>  
+      </div>
+      <div class="empDesc">{{item.desc}}
+      </div>      
+    </div>
   </div>
 </template>
-
 <script>
 import axios from 'axios'
 export default {
@@ -24,7 +26,6 @@ export default {
     axios.get('/employees')
     .then((response) => {
       this.employee = response.data;
-      console.log(this.employee);
     })
     .catch(function (error) {
       console.log(error);
@@ -34,6 +35,5 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 </style>
