@@ -1,5 +1,13 @@
 <template>
   <div>
+    <ul v if="employee && employee.length">
+      <li v-for="item of employee" >
+        <p><strong>{{item.name}}</strong></p>
+        <p>
+          {{item.desc}}
+        </p>
+      </li>
+    </ul>
   {{employee}}
   </div>
 </template>
@@ -16,7 +24,7 @@ export default {
     axios.get('/employees')
     .then((response) => {
       this.employee = response.data;
-      console.log(response);
+      console.log(this.employee);
     })
     .catch(function (error) {
       console.log(error);
