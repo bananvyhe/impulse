@@ -8,12 +8,13 @@
 		</div>
 	</div>
 </div>	
-<div style="background-image: url('<%= @employee.avatar.thumb.url %>')"><br><br><br><br><br><br></div>
 <div class="empDesc">
 	<% if @employee.desc %> 
 		<%= @employee.desc.html_safe %>
 	<% end %><br/>
-	<%= link_to 'Редактировать', edit_employee_path(@employee) %> |
+	<% if user_signed_in? %>
+		<%= link_to 'Редактировать', edit_employee_path(@employee) %> |
+	<% end %>
 	<%= link_to 'Назад', employees_path %>
 </div>
  
