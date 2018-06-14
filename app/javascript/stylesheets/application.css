@@ -66,7 +66,14 @@ End Hamster setup*/
   @hamster end;
 }
 .maincontent {
-  lost-center: 1760px;
+  lost-center: 1560px;
+  padding: 2em;
+  @media (--only-small-screen) {
+    padding: 1em;
+  }
+  @media (--only-big-screen) {
+    padding: 1em;
+  }
 }
 body {
   font-family: "RobotoCon";

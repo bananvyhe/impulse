@@ -1,22 +1,28 @@
 <template>
-  <div>
-    <div  class="avapreview" v-for="item of employee">
-      <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
-        <div></div>
-      </div> 
-<!--         <div class="topSectAv">
-          <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-          </div>
-          <div class="avatarSect2">
-            <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
-              <span v-html="item.spec"></span>
-            </div>
-          </div>  
-        </div>
-        <div class="empDesc"><span v-html="item.desc"></span>
-        </div>   -->
+  <div class="emp">
+    <div class="heading">
+      <h3>Сотрудники</h3>
+    </div> 
 
+    <div>
+      <div  class="avapreview" v-for="item of employee">
+        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
+          <div></div>
+        </div> 
+          <!-- <div class="topSectAv">
+            <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+            </div>
+            <div class="avatarSect2">
+              <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
+                <span v-html="item.spec"></span>
+              </div>
+            </div>  
+          </div>
+          <div class="empDesc"><span v-html="item.desc"></span>
+          </div>   -->
+      </div>
     </div>
+    
     <div class="cfx"></div>
   </div>
 </template>
@@ -46,7 +52,7 @@ export default {
 
 .avapreview {
   display: flex;
-  lost-waffle: 1/3 3 0.8em;
+  lost-waffle: 1/3 3 2em;
 
   box-shadow: 0px 2px 10px 0px #5c5c5c;
   border: 1px  solid $isabelline;
@@ -58,12 +64,15 @@ export default {
     height: 35vw;
   }
   @media (--only-1600more-screen) {
-    lost-waffle: 1/4 4 1em;
+    lost-waffle: 1/4 4 2em;
     height: 450px;
   }
 }
+.heading { 
+text-align: center;
+}
 .cardpic {
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
   width: 100%;
