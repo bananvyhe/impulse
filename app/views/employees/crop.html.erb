@@ -10,7 +10,7 @@
         <br>
         <%= simple_form_for(@employee) do |f| %>
           <% %w[x y w h].each do |attribute| %>
-            <%= f.text_field  "crop_#{attribute}"  %>
+            <%= f.text_field  "crop_#{attribute}", type: :hidden %>
           <% end %>
 
           <div>

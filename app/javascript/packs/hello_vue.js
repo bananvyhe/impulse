@@ -11,10 +11,11 @@ import App from '../app.vue'
 import Head from '../head.vue'
 import Employees from '../employees.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
-import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
+import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Card } from 'element-ui'
 Vue.use(CarouselItem) 
 Vue.use(Button) 
 Vue.use(Pagination)
+Vue.use(Card)
 // Vue.use(Input) 
 // Vue.use(Table)
 // Vue.use(TableColumn)

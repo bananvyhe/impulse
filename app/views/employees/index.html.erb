@@ -1,19 +1,20 @@
 <h1>Сотрудники</h1>
 <div id="employees"></div>
 <!-- редактор -->
-<% if user_signed_in? %>
-  <table>
-    <tbody>
-      <% @employees.each do |employee| %>
-        <tr data-item_id="<%= employee.id %>">
-          <td><%= employee.name %></td>
-          <td><%= link_to 'Посмотреть', employee %></td>
-          <td><%= link_to 'Редактировать', edit_employee_path(employee) %></td>
-          <td><span class="deleteAction">Удалить</span></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-  <%= link_to 'Новый сотрудник', new_employee_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <table>
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr data-item_id="<%= employee.id %>">
+            <td><%= employee.name %></td>
+            <td><%= link_to 'Посмотреть', employee %></td>
+            <td><%= link_to 'Редактировать', edit_employee_path(employee) %></td>
+            <td><span class="deleteAction">Удалить</span></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'Новый сотрудник', new_employee_path %>
+  <% end %>
+</div>

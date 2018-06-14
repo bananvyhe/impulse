@@ -78,8 +78,21 @@ body {
   background-repeat: no-repeat;
   background-position: center 0;
 }
+.editPicWindow {
+  label {
+    padding: 0em 0.4em 0em 0em;
+    border-radius: $borderRad;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+}
+.chekboxUpload {
+ display: flex;
+  border-radius: $borderRad;
+  
+}
 .testfont {
-  border-radius: 0.2em;
+  border-radius: $borderRad;
 	padding: 1em;
   text-indent: 0em;
 	text-align: center;

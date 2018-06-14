@@ -12,7 +12,8 @@
 
 
     <% if @employee.avatar? %>
-      <div  style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px"></div>
+      <div style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px">
+      </div>
     <% end %>
     <div>
       <% unless @employee.avatar? %>

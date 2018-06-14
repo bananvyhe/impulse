@@ -1,18 +1,23 @@
 <template>
   <div>
-    <div  v-for="item of employee">
-      <div class="topSectAv">
-        <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-        </div>
-        <div class="avatarSect2">
-          <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
-            <span v-html="item.spec"></span>
+    <div  class="avapreview" v-for="item of employee">
+      <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
+        <div></div>
+      </div> 
+<!--         <div class="topSectAv">
+          <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           </div>
-        </div>  
-      </div>
-      <div class="empDesc"><span v-html="item.desc"></span>
-      </div>      
+          <div class="avatarSect2">
+            <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
+              <span v-html="item.spec"></span>
+            </div>
+          </div>  
+        </div>
+        <div class="empDesc"><span v-html="item.desc"></span>
+        </div>   -->
+
     </div>
+    <div class="cfx"></div>
   </div>
 </template>
 <script>
@@ -38,7 +43,32 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-#employees {
+
+.avapreview {
+  display: flex;
+  lost-waffle: 1/3 3 0.8em;
+
+  box-shadow: 0px 2px 10px 0px #5c5c5c;
+  border: 1px  solid $isabelline;
+  @media (--only-small-screen) {
+    lost-waffle: 1/2 2 1em ;
+    height:  50vw;
+  }
+  @media (--only-medium-screen) {
+    height: 35vw;
+  }
+  @media (--only-1600more-screen) {
+    lost-waffle: 1/4 4 1em;
+    height: 450px;
+  }
+}
+.cardpic {
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  width: 100%;
+}
+.cfx {
   clear: both;
 }
 .topSectAv {
