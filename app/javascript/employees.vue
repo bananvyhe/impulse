@@ -3,11 +3,12 @@
     <div class="heading">
       <h3>Сотрудники</h3>
     </div> 
-
     <div>
       <div  class="avapreview" v-for="item of employee">
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
-          <div></div>
+          <div class="descslide">
+            <h5>{{item.name}}</h5>
+          </div>
         </div> 
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
@@ -52,30 +53,68 @@ export default {
 
 .avapreview {
   display: flex;
-  lost-waffle: 1/3 3 2em;
+  
+  lost-waffle: 1/4 4 2em;
 
-  box-shadow: 0px 2px 10px 0px #5c5c5c;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   border: 1px  solid $isabelline;
-  @media (--only-small-screen) {
-    lost-waffle: 1/2 2 1em ;
-    height:  50vw;
+  &:hover {
+    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
   }
+  @media (--only-small-screen) {
+    lost-waffle: 1/3 3 1em ;
+    height:  38vw;
+   }
   @media (--only-medium-screen) {
-    height: 35vw;
+    height: 30vw;
   }
   @media (--only-1600more-screen) {
-    lost-waffle: 1/4 4 2em;
-    height: 450px;
+    lost-waffle: 1/5 5 2em;
+    height: 350px;
+  }
+  &:hover {
+    transform: scale(1.02);
+    transition: 1.2s cubic-bezier(0,.27,.07,1);
+    .descslide {
+        height: 12vw;
+        transition: 1.2s cubic-bezier(0,.27,.07,1);
+    }
+  }
+  &:not(:hover) {
+    transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
-.heading { 
-text-align: center;
-}
-.cardpic {
+.cardpic { 
+  display: flex;
+  align-items: flex-end;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
   width: 100%;
+}
+.descslide {
+  width: 100%;
+  height: 7vw;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  &:not(:hover) {
+    transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+@keyframes descslide {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(2);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+.heading { 
+text-align: center;
 }
 .cfx {
   clear: both;
