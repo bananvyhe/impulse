@@ -5,11 +5,11 @@
     </div> 
     <div>
       <div  class="avapreview" v-for="item of employee">
-        <figure class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
+        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
           <div class="descslide">
             <div class="desco"><h5>{{item.name}}</h5><div class="desc" v-html="item.spec"></div></div>
           </div>
-        </figure> 
+        </div> 
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
             </div>
@@ -61,19 +61,24 @@ export default {
       y:0, 
       scale:1, 
       ease:Back.easeOut.config(4)
-    }, '-=0.5');
+    }, '-=1.5');
 
-  // $('.cardpic').each(function(index, element){
-  //     projectHover = new TimelineMax({paused:true});
-  //     projectHover
-  //       .to(($(this).find('figure')), 0.5, {scale:1.1, ease:Back.easeOut.config(3)}, 0)
-  //       .to(($(this).find('p')), 0.5, {y:20, scale:1.1, ease:Back.easeOut.config(3)}, '-=0.5');
-  //     element.animation = projectHover;
-  //   });
+  $('.avapreview').each(function(index, element){
+      var projectHover = new TimelineMax({paused:true});
+      projectHover
+        .to(($(this).find('.cardpic')), 0.5, {
+          scale:1.05, 
+          boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+          ease:Back.easeOut.config(3)}, 0)
+        .to(($(this).find('.desc')), 0.5, {  
+           
+          ease:Back.easeOut.config(3)}, '-=0.5');
+      element.animation = projectHover;
+    });
     
-  // $('.cardpic').hover(over, out);
-  // function over(){ this.animation.play() };
-  // function out(){ this.animation.reverse() };
+  $('.avapreview').hover(over, out);
+  function over(){ this.animation.play() };
+  function out(){ this.animation.reverse() };
   },
   methods: {
 
