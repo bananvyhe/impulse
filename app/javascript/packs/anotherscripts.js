@@ -3,6 +3,10 @@ var title = $(".testfont");
 TweenMax.from(title,0.5, {
 	scale: 2
 })
+
+
+
+
 //crop carrierware plugin functional
 var AvatarCrop,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
