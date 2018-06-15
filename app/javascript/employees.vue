@@ -44,44 +44,45 @@ export default {
     }); 
   },
   updated() {
-  var selectedWork = new TimelineMax();
-  
-  selectedWork
-    .staggerFromTo('.cardpic', 1, {
-      y:-40, 
-      autoAlpha:0
-    }, {
-      y:0, 
-      autoAlpha:1, 
-      ease:Elastic.easeOut.config(2, 0.75)}, 0.3)
-    .staggerFromTo('.descslide', 0.2, {
-      y:-10, 
-      scale:1.1
-    }, {
-      y:0, 
-      scale:1, 
-      ease:Back.easeOut.config(4)
-    }, '-=1.5');
-
-  $('.avapreview').each(function(index, element){
-      var projectHover = new TimelineMax({paused:true});
-      projectHover
-        .to(($(this).find('.cardpic')), 0.5, {
-          scale:1.05, 
-          boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
-          ease:Back.easeOut.config(3)}, 0)
-        .to(($(this).find('.desc')), 0.5, {  
-           
-          ease:Back.easeOut.config(3)}, '-=0.5');
-      element.animation = projectHover;
-    });
-    
-  $('.avapreview').hover(over, out);
-  function over(){ this.animation.play() };
-  function out(){ this.animation.reverse() };
+    this.cardTween();
   },
   methods: {
+    cardTween(){
+      var selectedWork = new TimelineMax();
+      selectedWork
+        .staggerFromTo('.cardpic', 1, {
+          y:-40, 
+          autoAlpha:0
+        }, {
+          y:0, 
+          autoAlpha:1, 
+          ease:Elastic.easeOut.config(2, 0.75)}, 0.3)
+        .staggerFromTo('.descslide', 0.2, {
+          y:-10, 
+          scale:1.1
+        }, {
+          y:0, 
+          scale:1, 
+          ease:Back.easeOut.config(4)
+        }, '-=1.5');
 
+      $('.avapreview').each(function(index, element){
+          var projectHover = new TimelineMax({paused:true});
+          projectHover
+            .to(($(this).find('.cardpic')), 0.5, {
+              scale:1.05, 
+              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+              ease:Back.easeOut.config(3)}, 0)
+            .to(($(this).find('.desc')), 0.5, {  
+               
+              ease:Back.easeOut.config(3)}, '-=0.5');
+          element.animation = projectHover;
+        });
+        
+      $('.avapreview').hover(over, out);
+      function over(){ this.animation.play() };
+      function out(){ this.animation.reverse() };
+    }
   }
 }
 </script>
