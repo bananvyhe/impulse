@@ -5,11 +5,11 @@
     </div> 
     <div>
       <div  class="avapreview" v-for="item of employee">
-        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
+        <figure class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
           <div class="descslide">
-            <h5>{{item.name}}</h5>
+            <div class="desco"><h5>{{item.name}}</h5><div class="desc" v-html="item.spec"></div></div>
           </div>
-        </div> 
+        </figure> 
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
             </div>
@@ -23,7 +23,6 @@
           </div>   -->
       </div>
     </div>
-    
     <div class="cfx"></div>
   </div>
 </template>
@@ -43,24 +42,53 @@ export default {
     .catch(function (error) {
       console.log(error);
     }); 
-    },
+  },
+  updated() {
+  var selectedWork = new TimelineMax();
+  // Stagger tl
+  selectedWork
+    .staggerFromTo('.cardpic', 1, {
+      y:-40, 
+      autoAlpha:0
+    }, {
+      y:0, 
+      autoAlpha:1, 
+      ease:Elastic.easeOut.config(2, 0.75)}, 0.3)
+    .staggerFromTo('.descslide', 0.2, {
+      y:-10, 
+      scale:1.1
+    }, {
+      y:0, 
+      scale:1, 
+      ease:Back.easeOut.config(4)
+    }, '-=0.5');
+
+  // $('.cardpic').each(function(index, element){
+  //     projectHover = new TimelineMax({paused:true});
+  //     projectHover
+  //       .to(($(this).find('figure')), 0.5, {scale:1.1, ease:Back.easeOut.config(3)}, 0)
+  //       .to(($(this).find('p')), 0.5, {y:20, scale:1.1, ease:Back.easeOut.config(3)}, '-=0.5');
+  //     element.animation = projectHover;
+  //   });
+    
+  // $('.cardpic').hover(over, out);
+  // function over(){ this.animation.play() };
+  // function out(){ this.animation.reverse() };
+  },
   methods: {
+
   }
 }
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-
 .avapreview {
   display: flex;
-  
   lost-waffle: 1/4 4 2em;
-
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   border: 1px  solid $isabelline;
-  &:hover {
+/*  &:hover {
     box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
-  }
+  }*/
   @media (--only-small-screen) {
     lost-waffle: 1/3 3 1em ;
     height:  38vw;
@@ -72,18 +100,21 @@ export default {
     lost-waffle: 1/5 5 2em;
     height: 350px;
   }
-  &:hover {
+  /*&:hover {
     transform: scale(1.02);
-    transition: 1.2s cubic-bezier(0,.27,.07,1);
+    transition: 1.2s cubic-bezier(0,.27,.07,1); 
     .descslide {
-        height: 12vw;
-        transition: 1.2s cubic-bezier(0,.27,.07,1);
+      .desc {
+        transition: 1.2s cubic-bezier(0,.27,.07,1); 
+        opacity: 1;
+      }
     }
   }
-  &:not(:hover) {
+    &:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+  }*/
 }
+
 .cardpic { 
   display: flex;
   align-items: flex-end;
@@ -94,12 +125,19 @@ export default {
 }
 .descslide {
   width: 100%;
-  height: 7vw;
+  display: flex;
+  flex-direction: column;
   display: flex;
   background-color: rgba(255, 255, 255, 0.8);
-  &:not(:hover) {
+  /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
+  h5 {
+    text-align: right;
+  }
+  .desc {
+      opacity: 0;
+  }*/
 }
 @keyframes descslide {
   0% {
