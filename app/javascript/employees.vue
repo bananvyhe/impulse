@@ -5,11 +5,13 @@
     </div> 
     <div>
       <div  class="avapreview" v-for="item of employee">
-        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
-          <div class="descslide">
-             <h5>{{item.name}}</h5><div class="desc" v-html="item.spec"></div>
-             
-          </div>
+        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
+          <div class="bg">
+            <div class="itemTitle">
+              <h5>{{item.name}}</h5>
+            </div>
+            <div class="desc" v-html="item.spec"></div>
+          </div>  
         </div> 
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
@@ -69,18 +71,22 @@ export default {
         }, '-=1.5');
 
       $('.avapreview').each(function(index, element){
+        TweenMax.set('.desc', {
+          height:0 
+          
+        });
         var projectHover = new TimelineMax({paused:true});
-         
+        
         projectHover
-          .to(($(this).find('.cardpic')), 0.5, {
+          .to(($(this).find('.cardpic')), 0.3, {
             scale:1.05,
             ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
             boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
           }, 0)
           .to(($(this).find('.desc')), 0.5, {
-            display: 'block', 
-            yPercent:0,
-            ease:Back.easeOut.config(3)}, 0)
+              
+            height: 100,
+            ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
           element.animation = projectHover;
         });
         
@@ -94,7 +100,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.avapreview {
+.avapreview {border-radius: $borderRad;
   display: flex;
   lost-waffle: 1/4 4 2em;
   border: 1px  solid $isabelline;
@@ -126,23 +132,30 @@ export default {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }*/
 }
-
+.bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: auto;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+}
 
 .cardpic { 
   display: flex;
+  border-radius: $borderRad; 
   align-items: flex-end;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
-  width: 100%;
 }
-.descslide {
-  overflow: hidden;
+.itemTitle {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.desc {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.8);
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -153,11 +166,7 @@ export default {
       opacity: 0;
   }*/
 }
-.desc {
-  display:none;
-  position:relative; 
-   
-}
+
 @keyframes descslide {
   0% {
     transform: scaleY(1);
