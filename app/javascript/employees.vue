@@ -70,20 +70,18 @@ export default {
 
       $('.avapreview').each(function(index, element){
         var projectHover = new TimelineMax({paused:true});
-
+         
         projectHover
-          
           .to(($(this).find('.cardpic')), 0.5, {
-            scale:1.05, 
+            scale:1.05,
+            ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
             boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
-            ease:Back.easeOut.config(3)}, 0)
-           
+          }, 0)
           .to(($(this).find('.desc')), 0.5, {
             display: 'block', 
             yPercent:0,
             ease:Back.easeOut.config(3)}, 0)
           element.animation = projectHover;
-
         });
         
       $('.avapreview').hover(over, out);
