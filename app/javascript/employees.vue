@@ -7,7 +7,8 @@
       <div  class="avapreview" v-for="item of employee">
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  
           <div class="descslide">
-            <div class="desco"><h5>{{item.name}}</h5><div class="desc" v-html="item.spec"></div></div>
+             <h5>{{item.name}}</h5><div class="desc" v-html="item.spec"></div>
+             
           </div>
         </div> 
           <!-- <div class="topSectAv">
@@ -45,10 +46,11 @@ export default {
   },
   updated() {
     this.cardTween();
+     
   },
   methods: {
     cardTween(){
-      var selectedWork = new TimelineMax();
+      var selectedWork = new TimelineMax() ;
       selectedWork
         .staggerFromTo('.cardpic', 1, {
           y:-40, 
@@ -57,32 +59,38 @@ export default {
           y:0, 
           autoAlpha:1, 
           ease:Elastic.easeOut.config(2, 0.75)}, 0.3)
-        .staggerFromTo('.descslide', 0.2, {
-          y:-10, 
-          scale:1.1
+        .staggerFromTo('.descslide h5', 0.2, {
+          y: -30,
+          autoAlpha:0
         }, {
-          y:0, 
-          scale:1, 
+          y: 0,
+          autoAlpha:1,
           ease:Back.easeOut.config(4)
         }, '-=1.5');
 
       $('.avapreview').each(function(index, element){
-          var projectHover = new TimelineMax({paused:true});
-          projectHover
-            .to(($(this).find('.cardpic')), 0.5, {
-              scale:1.05, 
-              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
-              ease:Back.easeOut.config(3)}, 0)
-            .to(($(this).find('.desc')), 0.5, {  
-               
-              ease:Back.easeOut.config(3)}, '-=0.5');
+        var projectHover = new TimelineMax({paused:true});
+
+        projectHover
+          
+          .to(($(this).find('.cardpic')), 0.5, {
+            scale:1.05, 
+            boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+            ease:Back.easeOut.config(3)}, 0)
+           
+          .to(($(this).find('.desc')), 0.5, {
+            display: 'block', 
+            yPercent:0,
+            ease:Back.easeOut.config(3)}, 0)
           element.animation = projectHover;
+
         });
         
       $('.avapreview').hover(over, out);
       function over(){ this.animation.play() };
       function out(){ this.animation.reverse() };
-    }
+    },
+     
   }
 }
 </script>
@@ -121,6 +129,7 @@ export default {
   }*/
 }
 
+
 .cardpic { 
   display: flex;
   align-items: flex-end;
@@ -130,6 +139,7 @@ export default {
   width: 100%;
 }
 .descslide {
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -144,6 +154,11 @@ export default {
   .desc {
       opacity: 0;
   }*/
+}
+.desc {
+  display:none;
+  position:relative; 
+   
 }
 @keyframes descslide {
   0% {

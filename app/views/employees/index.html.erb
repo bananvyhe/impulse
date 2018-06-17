@@ -1,6 +1,8 @@
 <div id="employees"></div>
 <!-- редактор -->
+
   <% if user_signed_in? %>
+  <br>
     <table>
       <tbody>
         <% @employees.each do |employee| %>
