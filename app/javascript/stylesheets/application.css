@@ -65,6 +65,7 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
+
 .maincontent {
   lost-center: 1560px;
   padding: 2em;
@@ -76,6 +77,7 @@ End Hamster setup*/
   }
 }
 body {
+  @hyphens;
   font-family: "RobotoCon";
   -webkit-font-smoothing: antialiased;
 }

@@ -55,20 +55,26 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
         .staggerFromTo('.cardpic', 1, {
-          y:-40, 
-          autoAlpha:0
+           
+          autoAlpha:0,
+          scale: 0,
+          rotationX: 30,
+           
         }, {
-          y:0, 
-          autoAlpha:1, 
-          ease:Elastic.easeOut.config(2, 0.75)}, 0.3)
-        .staggerFromTo('.descslide h5', 0.2, {
+           
+          autoAlpha:1,
+          scale: 1, 
+          rotationX: 0,
+           
+          ease:CustomEase.create("custom", "0.250, 0.460, 0.450, 0.940")}, 0.2)
+        .staggerFromTo('.itemTitle', 0.2, {
           y: -30,
           autoAlpha:0
         }, {
           y: 0,
           autoAlpha:1,
           ease:Back.easeOut.config(4)
-        }, '-=1.5');
+        }, 0.1, "-=1");
 
       $('.avapreview').each(function(index, element){
         TweenMax.set('.desc', {
@@ -103,7 +109,7 @@ export default {
 .avapreview {border-radius: $borderRad;
   display: flex;
   lost-waffle: 1/4 4 2em;
-  border: 1px  solid $isabelline;
+  
 /*  &:hover {
     box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
   }*/
@@ -141,7 +147,9 @@ export default {
   display: flex;
 }
 
-.cardpic { 
+.cardpic {
+  border: 1px  solid $isabelline;
+  cursor: pointer; 
   display: flex;
   border-radius: $borderRad; 
   align-items: flex-end;
@@ -155,7 +163,10 @@ export default {
   justify-content: flex-end;
 }
 .desc {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   width: 100%;
+  adjust-font-size: fs tiny;
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
