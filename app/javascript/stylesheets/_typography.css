@@ -41,16 +41,16 @@ h4 {
   line-height: 1.1em;
 }
 h5 {
+  adjust-font-size: fs medium;
   margin-top: spacing(0.5);
   margin-bottom: spacing(0.5);
  
 }
 p:first-of-type {
   margin-top: spacing(0.5);
-
 } 
 p { 
-   
+  adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
   margin-top: spacing(1);
