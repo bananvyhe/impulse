@@ -11,7 +11,9 @@
             <div class="itemTitle">
               <h4>{{item.name}}</h4>
             </div>
+            <div class="descM">
             <div class="desc smalltext" v-html="item.spec"></div>
+            </div>
           </div>
            
         </div> 
@@ -79,14 +81,13 @@ export default {
         });
 
         TweenMax.set('.desc', {
-          height:0,
-            // yPercent: 300,
+          display: 'none'
         });
 
       function endAnima() {
 
         $('.avapreview').each(function(index, element){
-          
+          var thisHeight = $(element).find(".desc").outerHeight();
           var projectHover = new TimelineMax({paused:true});
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
@@ -95,9 +96,9 @@ export default {
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
-               
-            height: '100%',
-            ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
+              display: 'block',
+              height: thisHeight,
+              ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
             element.animation = projectHover;
           });
           
@@ -136,30 +137,27 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
-  overflow: hidden;
+   
 }
  
 .bg {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
-  flex-direction: column;
-  display: flex;
   position: relative;
 }
 .itemTitle {
   text-align: right;
   display: flex;
   justify-content: flex-end;
-  padding: 0.5em;
 }
-.desc { 
+.descM {  
+  overflow: hidden;
   padding-left: 0.5em;
   padding-right: 0.5em;
   width: 100%;
-  position: relative; 
-  display: block;
-   
-
+}
+.desc {  
+ width: 100%;
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
