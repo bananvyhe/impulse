@@ -106,13 +106,9 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.avapreview {border-radius: $borderRad;
+.avapreview {
   display: flex;
   lost-waffle: 1/4 4 2em;
-  
-/*  &:hover {
-    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
-  }*/
   @media (--only-small-screen) {
     lost-waffle: 1/3 3 1em ;
     height:  38vw;
@@ -124,19 +120,6 @@ export default {
     lost-waffle: 1/5 5 2em;
     height: 350px;
   }
-  /*&:hover {
-    transform: scale(1.02);
-    transition: 1.2s cubic-bezier(0,.27,.07,1); 
-    .descslide {
-      .desc {
-        transition: 1.2s cubic-bezier(0,.27,.07,1); 
-        opacity: 1;
-      }
-    }
-  }
-    &:not(:hover) {
-    transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
-  }*/
 }
 .bg {
   width: 100%;
@@ -146,7 +129,6 @@ export default {
   overflow: hidden;
   display: flex;
 }
-
 .cardpic {
   border: 1px  solid $isabelline;
   cursor: pointer; 
@@ -166,7 +148,8 @@ export default {
   padding-left: 0.5em;
   padding-right: 0.5em;
   width: 100%;
-  adjust-font-size: fs tiny;
+
+
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
