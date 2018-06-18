@@ -6,11 +6,13 @@
     <div>
       <div  class="avapreview" v-for="item of employee">
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
+          <div class="overflow">
           <div class="bg">
             <div class="itemTitle">
-              <h5>{{item.name}}</h5>
+              <h4>{{item.name}}</h4>
             </div>
-            <div class="desc" v-html="item.spec"></div>
+            <div class="desc smalltext" v-html="item.spec"></div>
+          </div>
           </div>  
         </div> 
           <!-- <div class="topSectAv">
@@ -55,17 +57,13 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
         .staggerFromTo('.cardpic', 1, {
-           
           autoAlpha:0,
           scale: 0,
           rotationX: 30,
-           
         }, {
-           
           autoAlpha:1,
           scale: 1, 
           rotationX: 0,
-           
           ease:CustomEase.create("custom", "0.250, 0.460, 0.450, 0.940")}, 0.2)
         .staggerFromTo('.itemTitle', 0.2, {
           y: -30,
@@ -73,32 +71,37 @@ export default {
         }, {
           y: 0,
           autoAlpha:1,
-          ease:Back.easeOut.config(4)
-        }, 0.1, "-=1");
+          ease:Back.easeOut.config(4),
+          onComplete: endAnima
+        }, 0.1, "-=0.6");
+      function endAnima() {
+        $('.avapreview').each(function(index, element){
+          TweenMax.set('.bg', {
+   
+            // yPercent: 300,
 
-      $('.avapreview').each(function(index, element){
-        TweenMax.set('.desc', {
-          height:0 
+             
+          });
+          var projectHover = new TimelineMax({paused:true});
           
-        });
-        var projectHover = new TimelineMax({paused:true});
-        
-        projectHover
-          .to(($(this).find('.cardpic')), 0.3, {
-            scale:1.05,
-            ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
-            boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
-          }, 0)
-          .to(($(this).find('.desc')), 0.5, {
+          projectHover
+            .to(($(this).find('.cardpic')), 0.3, {
+              scale:1.05,
+              ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
+              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+            }, 0)
+            .to(($(this).find('.bg')), 0.5, {
+               
               
-            height: 100,
             ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
-          element.animation = projectHover;
-        });
-        
-      $('.avapreview').hover(over, out);
-      function over(){ this.animation.play() };
-      function out(){ this.animation.reverse() };
+            element.animation = projectHover;
+          });
+          
+        $('.avapreview').hover(over, out);
+        function over(){ this.animation.play() };
+        function out(){ this.animation.reverse() };  
+      }
+      
     },
      
   }
@@ -131,24 +134,29 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
+  
+}
+.overflow {
+  overflow: hidden;
 }
 .bg {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
   flex-direction: column;
-  overflow: hidden;
   display: flex;
 }
 .itemTitle {
   text-align: right;
   display: flex;
   justify-content: flex-end;
+  padding: 0.5em;
 }
-.desc {
+.desc { 
   padding-left: 0.5em;
   padding-right: 0.5em;
   width: 100%;
-
+  
+   
 
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);

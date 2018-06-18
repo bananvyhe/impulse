@@ -1,59 +1,56 @@
+
 h1, h2, h3, h4, h5 {
   color: #555;
   font-family: "RobotoA";
-  font-style: bold;
-  font-weight: 400;
   padding-right: 0.5em;
 }
-%strong {
-  font-weight: 300;
-  font-style: italic;
-   
-}
-
 h1 {
-  @extend %strong;
  	adjust-font-size: fs xxxlarge;
   margin-top: spacing(1);
-  margin-bottom: spacing(0.5);
+  margin-bottom: spacing(0.8);
   line-height: 1.0em;
 }
 h2 {
  /* @extend %strong;*/
   adjust-font-size: fs xxlarge;
   margin-top: spacing(0.4);
-  margin-bottom: spacing(0.3);
+  margin-bottom: spacing(0.4);
  
   line-height: 1.12em;
 }
 h3 {
   adjust-font-size: fs xlarge;
   margin-top: spacing(0.8);
-  margin-bottom: spacing(0.6);
+  margin-bottom: spacing(0.4);
  
   line-height: 1.1em;
 }
 h4 {
-  adjust-font-size: fs xlarge;
+  adjust-font-size: fs medium;
   margin-top: spacing(0.5);
-  margin-bottom: spacing(0.2);
+  margin-bottom: spacing(0.3);
  
   line-height: 1.1em;
 }
 h5 {
-  adjust-font-size: fs medium;
+  adjust-font-size: fs base;
   margin-top: spacing(0.5);
-  margin-bottom: spacing(0.5);
+  margin-bottom: spacing(0.2);
  
 }
 p:first-of-type {
-  margin-top: spacing(0.5);
+  /*margin-top: spacing(0.5);*/
 } 
+.smalltext {
+  adjust-font-size: fs small;
+}
+.basetext {
+   adjust-font-size: fs b;
+}
 p { 
-  adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
-  margin-top: spacing(1);
+  /*margin-top: spacing(1);*/
   margin-bottom: spacing(1);
   padding-left: 0.5em;
   padding-right: 0.5em;

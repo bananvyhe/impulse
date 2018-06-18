@@ -3,3 +3,4 @@
 //= require jquery.Jcrop
 //= require CustomEase.min
  
+ 
