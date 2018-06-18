@@ -6,14 +6,14 @@
     <div>
       <div  class="avapreview" v-for="item of employee">
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
-          <div class="overflow">
+           
           <div class="bg">
             <div class="itemTitle">
               <h4>{{item.name}}</h4>
             </div>
             <div class="desc smalltext" v-html="item.spec"></div>
           </div>
-          </div>  
+           
         </div> 
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
@@ -96,7 +96,7 @@ export default {
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
                
-            height: 300,
+            height: '100%',
             ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
             element.animation = projectHover;
           });
@@ -136,11 +136,9 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
-  
-}
-.overflow {
   overflow: hidden;
 }
+ 
 .bg {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
