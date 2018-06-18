@@ -121,15 +121,8 @@ export default {
     height: 350px;
   }
 }
-.bg {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  height: auto;
-  flex-direction: column;
-  overflow: hidden;
-  display: flex;
-}
 .cardpic {
+  width: 100%;
   border: 1px  solid $isabelline;
   cursor: pointer; 
   display: flex;
@@ -138,6 +131,13 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
+}
+.bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
 }
 .itemTitle {
   text-align: right;
