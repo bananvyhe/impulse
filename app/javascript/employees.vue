@@ -56,7 +56,7 @@ export default {
     cardTween(){
       var selectedWork = new TimelineMax() ;
       selectedWork
-        .staggerFromTo('.cardpic', 1, {
+        .staggerFromTo('.cardpic', 0.1, {
           autoAlpha:0,
           scale: 0,
           rotationX: 30,
@@ -65,34 +65,38 @@ export default {
           scale: 1, 
           rotationX: 0,
           ease:CustomEase.create("custom", "0.250, 0.460, 0.450, 0.940")}, 0.2)
-        .staggerFromTo('.itemTitle', 0.2, {
+        .staggerFromTo('.itemTitle', 0.1, {
           y: -30,
           autoAlpha:0
         }, {
           y: 0,
           autoAlpha:1,
           ease:Back.easeOut.config(4),
+        }, 0.1, "-=0.2")
+        .staggerTo('.itemTitle', 0.1, {
+          autoAlpha:1,
           onComplete: endAnima
-        }, 0.1, "-=0.6");
-      function endAnima() {
-        $('.avapreview').each(function(index, element){
-          TweenMax.set('.bg', {
-   
-            // yPercent: 300,
+        });
 
-             
-          });
-          var projectHover = new TimelineMax({paused:true});
+        TweenMax.set('.desc', {
+          height:0,
+            // yPercent: 300,
+        });
+
+      function endAnima() {
+
+        $('.avapreview').each(function(index, element){
           
+          var projectHover = new TimelineMax({paused:true});
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
               scale:1.05,
               ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
             }, 0)
-            .to(($(this).find('.bg')), 0.5, {
+            .to(($(this).find('.desc')), 0.5, {
                
-              
+            height: 300,
             ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
             element.animation = projectHover;
           });
@@ -101,9 +105,7 @@ export default {
         function over(){ this.animation.play() };
         function out(){ this.animation.reverse() };  
       }
-      
     },
-     
   }
 }
 </script>
@@ -144,6 +146,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   flex-direction: column;
   display: flex;
+  position: relative;
 }
 .itemTitle {
   text-align: right;
@@ -155,7 +158,8 @@ export default {
   padding-left: 0.5em;
   padding-right: 0.5em;
   width: 100%;
-  
+  position: relative; 
+  display: block;
    
 
   /*&:not(:hover) {
