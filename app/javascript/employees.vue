@@ -1,10 +1,14 @@
 <template>
   <div class="emp">
+    <el-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</el-button>
+    <el-dialog title="Shipping address" :visible.sync="dialogTableVisible">
+      123
+    </el-dialog>
     <div class="heading">
       <h3>Сотрудники</h3>
     </div> 
-    <div class="group">
-      <div  class="avapreview" v-for="item of employee">
+    <div class="group" v-show = "vis == true">
+      <div  class="avapreview" v-for="item of employee" >
 
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
           <div class="bgsh"> 
@@ -40,7 +44,10 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      employee: ''
+      employee: '',
+      vis: false,
+      dialogTableVisible: false,
+      dialogFormVisible: false
     }
   },
   created() {
@@ -52,9 +59,12 @@ export default {
       console.log(error);
     }); 
   },
-  updated() {
-    this.cardTween();
-     
+  mounted() {
+    var self = this;
+    setTimeout(function(){
+      self.vis = true;
+      self.cardTween();       
+    },30 );
   },
   methods: {
     cardTween(){
