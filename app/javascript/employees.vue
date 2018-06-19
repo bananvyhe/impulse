@@ -144,7 +144,7 @@ export default {
 .bgsh {
   display: flex;
   align-items: flex-end;
-    
+  width: 100%; 
   box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
 }
 .avapreview {
