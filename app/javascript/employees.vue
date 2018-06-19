@@ -107,7 +107,7 @@ export default {
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
-              boxShadow: 'inset 0px 0px 50px 60px rgba(0,0,0,0.4)',
+              boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
                
             }, 0)
             element.animation = projectHover;
@@ -141,7 +141,9 @@ export default {
   }
   
 }
-.bgsh {
+.bgsh {border: 1px  solid $isabelline;
+  border-radius: $borderRad; 
+  cursor: pointer; 
   display: flex;
   align-items: flex-end;
   width: 100%; 
@@ -167,8 +169,7 @@ export default {
 }
 .cardpic {box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
   width: 100%;
-  border: 1px  solid $isabelline;
-  cursor: pointer; 
+  
   display: flex;
   border-radius: $borderRad; 
   
