@@ -5,18 +5,20 @@
     </div> 
     <div class="group">
       <div  class="avapreview" v-for="item of employee">
+
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
-           
-          <div class="bg">
-            <div class="itemTitle">
-              <h4>{{item.name}}</h4>
+          <div class="bgsh"> 
+            <div class="bg">
+              <div class="itemTitle">
+                <h4>{{item.name}}</h4>
+              </div>
+              <div class="descM">
+                <div class="desc smalltext" v-html="item.spec"></div>
+              </div>
             </div>
-            <div class="descM">
-            <div class="desc smalltext" v-html="item.spec"></div>
-            </div>
-          </div>
            
-        </div> 
+          </div> 
+        </div>  
           <!-- <div class="topSectAv">
             <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
             </div>
@@ -99,8 +101,14 @@ export default {
               display: 'block',
               height: thisHeight,
               ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
-            .to(($(this).find('.cardpic')), 0.5, {
-              className: '+=tada'
+            .to(($(this).find('.itemTitle')), 0.5, {
+              borderBottom: '1px solid #444',
+              marginBottom: '0px',
+              // className: '+=tada'
+            }, 0)
+            .to(($(this).find('.bgsh')), 0.5, {
+              boxShadow: 'inset 0px 0px 50px 60px rgba(0,0,0,0.4)',
+               
             }, 0)
             element.animation = projectHover;
           });
@@ -133,6 +141,12 @@ export default {
   }
   
 }
+.bgsh {
+  display: flex;
+  align-items: flex-end;
+    
+  box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
+}
 .avapreview {
   display: flex;
   lost-waffle: 1/3 3 2em;
@@ -151,13 +165,13 @@ export default {
     height: 250px;
   }
 }
-.cardpic {
+.cardpic {box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
   width: 100%;
   border: 1px  solid $isabelline;
   cursor: pointer; 
   display: flex;
   border-radius: $borderRad; 
-  align-items: flex-end;
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
@@ -166,15 +180,20 @@ export default {
  
 .bg {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: relative;
+   
+   
 }
 .itemTitle {
+  
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: right;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1em;
+ 
+
 }
-.descM {  
+.descM { background-color: rgba(255, 255, 255, 0.8); 
   overflow: hidden;
   padding-left: 0.5em;
   padding-right: 0.5em;
