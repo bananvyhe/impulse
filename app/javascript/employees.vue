@@ -3,7 +3,7 @@
     <div class="heading">
       <h3>Сотрудники</h3>
     </div> 
-    <div>
+    <div class="group">
       <div  class="avapreview" v-for="item of employee">
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
            
@@ -99,6 +99,9 @@ export default {
               display: 'block',
               height: thisHeight,
               ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
+            .to(($(this).find('.cardpic')), 0.5, {
+              className: '+=tada'
+            }, 0)
             element.animation = projectHover;
           });
           
@@ -112,19 +115,40 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.heading { 
+  text-align: center;
+  padding: 2em;
+}
+.group {
+    
+   
+  @media (--only-small-screen) {
+    lost-center: 570px;
+  }
+  @media (--only-medium-screen) {
+    lost-center: 900px;
+  }
+  @media (--only-1600more-screen) {
+    lost-center: 1070px;
+  }
+  
+}
 .avapreview {
   display: flex;
-  lost-waffle: 1/4 4 2em;
+  lost-waffle: 1/3 3 2em;
   @media (--only-small-screen) {
+
     lost-waffle: 1/3 3 1em ;
-    height:  38vw;
-   }
+    height:  13em;
+  }
   @media (--only-medium-screen) {
-    height: 30vw;
+    
+    lost-waffle: 1/4 4 2em;
+    height: 14em;
   }
   @media (--only-1600more-screen) {
     lost-waffle: 1/5 5 2em;
-    height: 350px;
+    height: 250px;
   }
 }
 .cardpic {
@@ -181,9 +205,7 @@ export default {
     opacity: 1;
   }
 }
-.heading { 
-text-align: center;
-}
+
 .cfx {
   clear: both;
 }
@@ -197,7 +219,7 @@ text-align: center;
     height:  20vw;
   }
   @media (--only-1600more-screen) {
-    height:  280px;
+    height:  180px;
   }
   .avatarSect1 {
     z-index: 10;
