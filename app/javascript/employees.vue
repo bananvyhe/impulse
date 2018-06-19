@@ -64,7 +64,7 @@ export default {
     setTimeout(function(){
       self.vis = true;
       self.cardTween();       
-    },30 );
+    },100 );
   },
   methods: {
     cardTween(){
