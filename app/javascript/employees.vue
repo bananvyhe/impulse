@@ -1,9 +1,13 @@
 <template>
   <div class="emp">
-    <el-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</el-button>
-    <el-dialog title="Shipping address" :visible.sync="dialogTableVisible">
-      123
-    </el-dialog>
+    <div class="popup">
+      <el-dialog 
+      title="Анкета сотрудника" 
+      :visible.sync="dialogTableVisible"
+      :lock-scroll = 'false'>
+       <br><br>
+      </el-dialog>
+    </div>
     <div class="heading">
       <h3>Сотрудники</h3>
     </div> 
@@ -11,7 +15,7 @@
       <div  class="avapreview" v-for="item of employee" >
 
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
-          <div class="bgsh"> 
+          <div class="bgsh" @click="dialogTableVisible = true"> 
             <div class="bg">
               <div class="itemTitle">
                 <h4>{{item.name}}</h4>
@@ -64,7 +68,7 @@ export default {
     setTimeout(function(){
       self.vis = true;
       self.cardTween();       
-    },100 );
+    },300 );
   },
   methods: {
     cardTween(){
@@ -133,12 +137,15 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.popup {
+
+}
 .heading { 
   text-align: center;
   padding: 2em;
 }
 .group {
-    
+   
    
   @media (--only-small-screen) {
     lost-center: 570px;

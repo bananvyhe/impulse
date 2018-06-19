@@ -1,6 +1,6 @@
 $color-blue: #b9d6f2;
 $isabelline: #F4F3EE;
-$borderRad: 0.3em;
+$borderRad: 0.4em;
 @custom-media --telpanel-small-screen (width <= 720px);
 @custom-media --only-956less-screen (width <= 956px);
 
