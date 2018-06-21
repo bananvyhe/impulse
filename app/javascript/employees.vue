@@ -10,6 +10,7 @@
     </div>
     <div class="heading">
       <h3>Сотрудники</h3>
+      {{dialogTableVisible}}
     </div> 
     <div class="group" v-show = "vis == true">
       <div  class="avapreview" v-for="item of employee" >
@@ -70,6 +71,7 @@ export default {
       self.cardTween();       
     },300 );
   },
+
   methods: {
     cardTween(){
       var selectedWork = new TimelineMax() ;
@@ -99,9 +101,8 @@ export default {
         TweenMax.set('.desc', {
           display: 'none'
         });
-
+      var self = this;
       function endAnima() {
-
         $('.avapreview').each(function(index, element){
           var thisHeight = $(element).find(".desc").outerHeight();
           var projectHover = new TimelineMax({paused:true});
@@ -126,10 +127,20 @@ export default {
             }, 0)
             element.animation = projectHover;
           });
-          
         $('.avapreview').hover(over, out);
         function over(){ this.animation.play() };
-        function out(){ this.animation.reverse() };  
+        
+        function out(){ 
+          console.log(self.dialogTableVisible)
+          if (self.dialogTableVisible == false) {
+              console.log('true1');
+            this.animation.reverse() 
+          }
+        }; 
+        $('.avapreview').click(function() {
+          console.log('true');
+          this.animation.pause();
+        });
       }
     },
   }
