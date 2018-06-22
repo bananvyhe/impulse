@@ -6,17 +6,17 @@
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'>
        <br><br>
+       
       </el-dialog>
     </div>
     <div class="heading">
       <h3>Сотрудники</h3>
-      {{dialogTableVisible}}
     </div> 
     <div class="group" v-show = "vis == true">
       <div  class="avapreview" v-for="item of employee" >
-
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
-          <div class="bgsh" @click="dialogTableVisible = true"> 
+          <div class="bgsh" 
+          @click="clickhandler"> 
             <div class="bg">
               <div class="itemTitle">
                 <h4>{{item.name}}</h4>
@@ -73,6 +73,13 @@ export default {
   },
 
   methods: {
+    clickhandler() {
+      this.dialogTableVisible = true;
+      console.log('поставить определение id сотрудника')
+    },
+    select() {
+      console.log('321')
+    },
     cardTween(){
       var selectedWork = new TimelineMax() ;
       selectedWork
