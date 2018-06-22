@@ -4,9 +4,12 @@
       <el-dialog 
       title="Анкета сотрудника" 
       :visible.sync="dialogTableVisible"
-      :lock-scroll = 'false'>
+      :lock-scroll = 'false'
+      width="90%">
       <div v-for="item in popemploy(employee)">
-        <br>{{item.name}}<br>
+        <br>{{item.name}}
+        <br>{{item.spec}}
+        <br>{{item.desc}}
       </div>
       </el-dialog>
     </div>
@@ -20,7 +23,6 @@
           @click="clickhandler(item.id, $event) "> 
             <div class="bg">
               <div class="itemTitle">
-                {{item.id}}
                 <h4>{{item.name}}</h4>
               </div>
               <div class="descM">
