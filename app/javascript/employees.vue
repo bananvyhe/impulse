@@ -11,14 +11,14 @@
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           </div>
           <div class="avatarSect2">
-            <div class="fioSpec  effect4">
+            <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
-                {{item.spec }}
+              <span v-html="item.spec"></span>  
             </div>
           </div>
         </div>  
         <div class="empDesc">
-          {{item.desc}}
+          <span v-html="item.desc"></span>
         </div>
       </div>
       </el-dialog>
@@ -291,13 +291,13 @@ export default {
     margin-top: 0em;
   }
   @media (--only-medium-screen) {
-    height:  20vw;
+    height:  24vw;
   }
   @media (--only-1600more-screen) {
-    height:  180px;
+    height:  20vw;
   }
   .avatarSect1 {
-    z-index: 10;
+    z-index: 12;
     background-color: #fff;
     box-shadow: 0px 2px 10px 0px #5c5c5c;
     border: 0.3em solid $isabelline;
@@ -320,21 +320,22 @@ export default {
       display:none;
     }
     @media (--only-medium-screen) {
-      lost-column: 1/6 2 0 ; 
+      lost-column: 1/4 2 0 ; 
     }
     @media (--only-1600more-screen) {
-      lost-column: 1/7 2 0 ; 
+      lost-column: 1/5 2 0 ; 
     }
   }
-  .avatarSect2 {
+  .avatarSect2 {z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     padding: 1em;
     margin-bottom: 2.5em;
     margin-top: 2.5em;
-     .fioSpec { 
+    .fioSpec { 
       margin-left: -3em;
+
       background-color: $isabelline;
       border-radius: 0.2em;
       @media (--only-small-screen) {
@@ -343,7 +344,7 @@ export default {
       h2 {
         background-color: #fff;
         padding: 0.2em  ;
-        margin: 0.2em 0em 0.2em 1em;
+        margin: 0.2em 0em 0.2em 0em;
         text-indent: 0.2em;
         @media (--only-small-screen) {
           margin-left: 0em;
@@ -354,7 +355,7 @@ export default {
         margin-top: spacing(0.5);
         margin-bottom: spacing(0);
       }
-      padding: 0.5em 1em 1em;
+      padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
         p {
           text-indent: 0em;
@@ -383,10 +384,10 @@ export default {
       margin-top: 0em;
     }
     @media (--only-medium-screen) {
-      lost-column: 5/6 2 0; 
+      lost-column: 3/4 2 0; 
     }
     @media (--only-1600more-screen) {
-      lost-column: 6/7 2 0;
+      lost-column: 4/5 2 0;
     }
     div {
       background-color: #faf;
