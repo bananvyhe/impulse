@@ -7,9 +7,19 @@
       :lock-scroll = 'false'
       width="90%">
       <div v-for="item in popemploy(employee)">
-        <br>{{item.name}}
-        <br>{{item.spec}}
-        <br>{{item.desc}}
+         <div class="topSectAv">
+          <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+          </div>
+          <div class="avatarSect2">
+            <div class="fioSpec  effect4">
+              <h2>{{item.name}}</h2>
+                {{item.spec }}
+            </div>
+          </div>
+        </div>  
+        <div class="empDesc">
+          {{item.desc}}
+        </div>
       </div>
       </el-dialog>
     </div>
