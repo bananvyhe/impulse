@@ -5,27 +5,28 @@
       title="Анкета сотрудника" 
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'>
-       <br><br>
-       
+      <div v-for="item in popemploy(employee)">
+        <br>{{item.name}}<br>
+      </div>
       </el-dialog>
     </div>
     <div class="heading">
       <h3>Сотрудники</h3>
     </div> 
     <div class="group" v-show = "vis == true">
-      <div  class="avapreview" v-for="item of employee" >
+      <div  class="avapreview" v-for="item in employee"  >
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
           <div class="bgsh" 
-          @click="clickhandler"> 
+          @click="clickhandler(item.id, $event) "> 
             <div class="bg">
               <div class="itemTitle">
+                {{item.id}}
                 <h4>{{item.name}}</h4>
               </div>
               <div class="descM">
                 <div class="desc smalltext" v-html="item.spec"></div>
               </div>
             </div>
-           
           </div> 
         </div>  
           <!-- <div class="topSectAv">
@@ -52,7 +53,8 @@ export default {
       employee: '',
       vis: false,
       dialogTableVisible: false,
-      dialogFormVisible: false
+      dialogFormVisible: false,
+      empid: ''
     }
   },
   created() {
@@ -71,11 +73,21 @@ export default {
       self.cardTween();       
     },300 );
   },
-
   methods: {
-    clickhandler() {
+     popemploy: function(employee) {
+      if (this.empid != ''){
+      var self = this;  
+      return employee.filter(function (elem) {
+        console.log('432');
+        console.log(self.empid);
+        return elem.id == self.empid;
+        })
+      }
+    },
+    clickhandler( event) {
       this.dialogTableVisible = true;
-      console.log('поставить определение id сотрудника')
+      this.empid = event;
+      console.log(event)
     },
     select() {
       console.log('321')
@@ -136,11 +148,10 @@ export default {
           });
         $('.avapreview').hover(over, out);
         function over(){ this.animation.play() };
-        
         function out(){ 
           console.log(self.dialogTableVisible)
           if (self.dialogTableVisible == false) {
-              console.log('true1');
+            console.log('true1');
             this.animation.reverse() 
           }
         }; 
@@ -163,8 +174,6 @@ export default {
   padding: 2em;
 }
 .group {
-   
-   
   @media (--only-small-screen) {
     lost-center: 570px;
   }
@@ -174,7 +183,6 @@ export default {
   @media (--only-1600more-screen) {
     lost-center: 1070px;
   }
-  
 }
 .bgsh {border: 1px  solid $isabelline;
   border-radius: $borderRad; 
