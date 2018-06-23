@@ -124,13 +124,13 @@ export default {
     cardTween(){
       var selectedWork = new TimelineMax() ;
       selectedWork
-        .staggerFromTo('.cardpic', 0.1, {
+        .staggerFromTo('.cardpic', 0.2, {
           autoAlpha:0,
           yPercent: 50,
         }, {
           autoAlpha:1,
           yPercent: 0,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.2)
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.2")
         .staggerFromTo('.itemTitle', 0.1, {
           y: -30,
           autoAlpha:0
@@ -179,19 +179,15 @@ export default {
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
-               
             }, 0)
             .to(($(this).find('.prof p')), 0.4, {
-
               transformOrigin: '100% 100%',
               opacity: 0, 
-               xPercent: 100,
-               
+              xPercent: 100,
               ease: Expo.easeOut, 
             }, 0)
             .to(($(this).find('.prof')), 0.5, {
               transformOrigin: '100% 100%',
-               
               scaleY: 0,
               borderRadius: 0, 
               ease: Expo.easeInOut, 
@@ -217,7 +213,6 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-
 .prof {
   padding:0.3em 0.5em 0.5em 0.5em; 
   background-color: #BFDBF7;
@@ -225,7 +220,6 @@ export default {
   border-top-left-radius: 2em; 
   height: 3em; adjust-font-size: fs t;
   line-height: 1.2;
-   
 }
 .popup {
 
@@ -277,18 +271,13 @@ export default {
   width: 100%;
   overflow: hidden;
   display: flex;
-  
   border-radius: $borderRad; 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
-   
 }
- 
 .bg {
   width: 100%;
-   
-   
 }
 .itemTitle {
   border-bottom-right-radius: 2em; 
@@ -304,8 +293,10 @@ export default {
   width: 100%;
 }
 .desc {
+  padding-right: 0.5em;
   margin:0.5em;
   width: 100%;
+
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
