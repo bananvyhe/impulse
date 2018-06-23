@@ -139,6 +139,13 @@ export default {
           autoAlpha:1,
           ease:Back.easeOut.config(4),
         }, 0.1, "-=0.2")
+        .staggerFromTo('.prof', 0.1, {
+          autoAlpha:0,
+          yPercent: 50,
+        }, {
+          autoAlpha:1,
+          yPercent: 0,
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
           onComplete: endAnima
@@ -167,10 +174,17 @@ export default {
             .to(($(this).find('.itemTitle')), 0.5, {
               borderBottom: '1px solid #444',
               marginBottom: '0px',
+              borderRadius: 0
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
+               
+            }, 0)
+            .to(($(this).find('.prof')), 0.5, {
+              transformOrigin: '50% 100%',
+              xPercent: 200,
+              opacity: 0, 
                
             }, 0)
             element.animation = projectHover;
@@ -196,9 +210,10 @@ export default {
 @import "stylesheets/_variables";
 
 .prof {
-  padding:0.3em 0.5em 0.5em 0.5em; background-color: #ada;
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em; 
+  padding:0.3em 0.5em 0.5em 0.5em; 
+  background-color: #BFDBF7;
+  /*border-top-right-radius: 0.5em;*/
+  border-top-left-radius: 2em; 
   height: 3em; adjust-font-size: fs t;
   line-height: 1.2;
    
@@ -221,7 +236,8 @@ export default {
     lost-center: 1070px;
   }
 }
-.bgsh {border: 1px  solid $isabelline;  
+.bgsh { overflow: hidden;
+  border: 1px  solid $isabelline;  
   border-radius: $borderRad; 
   cursor: pointer; 
   display: flex;
@@ -247,12 +263,13 @@ export default {
     height: 250px;
   }
 }
-.cardpic {box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
+.cardpic {
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
   width: 100%;
-  
+  overflow: hidden;
   display: flex;
-  border-radius: $borderRad; 
   
+  border-radius: $borderRad; 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
@@ -265,7 +282,7 @@ export default {
    
 }
 .itemTitle {
-  
+  border-bottom-right-radius: 2em; 
   background-color: rgba(255, 255, 255, 0.8);
   text-align: right;
   display: flex;
