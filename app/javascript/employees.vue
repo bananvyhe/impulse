@@ -7,19 +7,19 @@
       :lock-scroll = 'false'
       width="90%">
       <div v-for="item in popemploy(employee)">
-         <div class="topSectAv">
+        <div class="topSectAv">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-          </div>
-          <div class="avatarSect2">
+          </div><span v-html="item.desc"></span>
+<!--           <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
               <span v-html="item.spec"></span>  
             </div>
-          </div>
+          </div> -->
         </div>  
-        <div class="empDesc">
+<!--         <div class="empDesc">
           <span v-html="item.desc"></span>
-        </div>
+        </div> -->
       </div>
       </el-dialog>
     </div>
@@ -99,7 +99,7 @@ export default {
     clickhandler( event) {
       this.dialogTableVisible = true;
       this.empid = event;
-      console.log(event)
+       
     },
     select() {
       console.log('321')
@@ -161,14 +161,13 @@ export default {
         $('.avapreview').hover(over, out);
         function over(){ this.animation.play() };
         function out(){ 
-          console.log(self.dialogTableVisible)
+          // console.log(self.dialogTableVisible)
           if (self.dialogTableVisible == false) {
-            console.log('true1');
+            // console.log('true1');
             this.animation.reverse() 
           }
         }; 
         $('.avapreview').click(function() {
-          console.log('true');
           this.animation.pause();
         });
       }
@@ -285,31 +284,31 @@ export default {
   clear: both;
 }
 .topSectAv {
-  display: flex;
+  overflow: hidden;
   margin-top: 1em;
   @media (--only-small-screen) {
     margin-top: 0em;
   }
   @media (--only-medium-screen) {
-    height:  24vw;
+   /* height:  24vw;*/
   }
   @media (--only-1600more-screen) {
-    height:  20vw;
+    /*height:  20vw;*/
   }
-  .avatarSect1 {
+  .avatarSect1 {float: left;
     z-index: 12;
     background-color: #fff;
     box-shadow: 0px 2px 10px 0px #5c5c5c;
     border: 0.3em solid $isabelline;
     border-radius: 0em;
-    margin: 0em 0 0 1em;
-    display: flex; 
-    align-items: flex-end;  
-    justify-content: center;
+    margin: 0em 1.8em 1em 1em;
+ 
      
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;
+    width: 17em;
+    height: 20em;
     .fotoEdit {
       font-size: fs t;
       margin: 0.5em;
@@ -320,10 +319,12 @@ export default {
       display:none;
     }
     @media (--only-medium-screen) {
-      lost-column: 1/4 2 0 ; 
+     /* lost-column: 1/4 0 ; */
     }
     @media (--only-1600more-screen) {
-      lost-column: 1/5 2 0 ; 
+
+
+      /*lost-column: 1/5 2 0 ; */
     }
   }
   .avatarSect2 {z-index: 10;
