@@ -121,6 +121,20 @@ body {
   }
 	lost-center: 350px;
 }
+  .prof { 
+     @ellipsis;
+  }
+.cardpic {
+
+  p {
+    margin-bottom: spacing(0);
+  }
+}
+.topSectAv {
+  p {
+    margin-bottom: spacing(0);
+  }
+}
  
 /*.testimage {
 	background: resolve('sal.jpg');

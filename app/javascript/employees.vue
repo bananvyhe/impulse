@@ -10,14 +10,13 @@
         <div class="topSectAv">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           </div>
-                    <div class="avatarSect2">
+          <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
-              <span v-html="item.spec"></span>  
+              <div v-html="item.spec"></div>  
             </div>
           </div>
           <span v-html="item.desc"></span>
-
         </div>  
 <!--         <div class="empDesc">
           <span v-html="item.desc"></span>
@@ -33,7 +32,9 @@
         <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
           <div class="bgsh" 
           @click="clickhandler(item.id, $event) "> 
-            <div class="bg">
+            <div class="bg"> 
+              <div v-if="item.desc.length > croptextvalue" class="prof" v-html="item.desc.slice(0, croptextvalue) + ' ...'"> <!-- <span v-html="item.desc"></span> --></div>
+               <div v-else class="prof" v-html="item.desc"> <!-- <span v-html="item.desc"></span> --></div>
               <div class="itemTitle">
                 <h4>{{item.name}}</h4>
               </div>
@@ -61,9 +62,11 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
   data: function () {
     return {
+      croptextvalue: 45,
       employee: '',
       vis: false,
       dialogTableVisible: false,
@@ -84,10 +87,22 @@ export default {
     var self = this;
     setTimeout(function(){
       self.vis = true;
-      self.cardTween();       
+      // self.cropText();
+      self.cardTween();  
+
     },300 );
+
   },
   methods: {
+    // cropText() {
+    //   var size = 10,
+    //   newsContent= $('.prof'),
+    //   newsText = newsContent.text();
+        
+    //   if(newsText.length > size){
+    //     newsContent.text(newsText.slice(0, size) + ' ...');
+    //   }
+    // },
      popemploy: function(employee) {
       if (this.empid != ''){
       var self = this;  
@@ -111,13 +126,11 @@ export default {
       selectedWork
         .staggerFromTo('.cardpic', 0.1, {
           autoAlpha:0,
-          scale: 0,
-          rotationX: 30,
+          yPercent: 50,
         }, {
           autoAlpha:1,
-          scale: 1, 
-          rotationX: 0,
-          ease:CustomEase.create("custom", "0.250, 0.460, 0.450, 0.940")}, 0.2)
+          yPercent: 0,
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.2)
         .staggerFromTo('.itemTitle', 0.1, {
           y: -30,
           autoAlpha:0
@@ -132,7 +145,8 @@ export default {
         });
 
         TweenMax.set('.desc', {
-          display: 'none'
+          display: 'none',
+          xPercent: -100
         });
       var self = this;
       function endAnima() {
@@ -147,6 +161,7 @@ export default {
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
               display: 'block',
+              xPercent: 0,
               height: thisHeight,
               ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
             .to(($(this).find('.itemTitle')), 0.5, {
@@ -179,6 +194,15 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+
+.prof {
+  padding:0.3em 0.5em 0.5em 0.5em; background-color: #ada;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em; 
+  height: 3em; adjust-font-size: fs t;
+  line-height: 1.2;
+   
+}
 .popup {
 
 }
@@ -197,7 +221,7 @@ export default {
     lost-center: 1070px;
   }
 }
-.bgsh {border: 1px  solid $isabelline;
+.bgsh {border: 1px  solid $isabelline;  
   border-radius: $borderRad; 
   cursor: pointer; 
   display: flex;
@@ -247,17 +271,14 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
- 
-
 }
 .descM { background-color: rgba(255, 255, 255, 0.8); 
   overflow: hidden;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
   width: 100%;
 }
-.desc {  
- width: 100%;
+.desc {
+  margin:0.5em;
+  width: 100%;
   /*&:not(:hover) {
     transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -331,13 +352,13 @@ export default {
     flex-direction: column;*/
     position: relative;
     padding: 1em;
-    margin-bottom: 2.5em;
-    margin-top: 2.5em;
+    margin-bottom: 0.3em;
+    margin-top: 1.5em;
     .fioSpec { 
       margin-left: -3em;
-
       background-color: $isabelline;
       border-radius: 0.2em;
+      padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
         margin-left: 0em;
       }
@@ -350,35 +371,16 @@ export default {
           margin-left: 0em;
         }
       }
-      p {
-        margin-left: 0em;
-        margin-top: spacing(0.5);
-        margin-bottom: spacing(0);
-      }
-      padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
-        p {
-          text-indent: 0em;
-          padding: 0;
-        }
+ 
       }
     }
-    p {
-      text-align: center;
-      margin-bottom: 0em;
-      margin-top: 0em;
-    }
-    
     @media (--only-small-screen) {
       padding: 1em;
       h2 {
         adjust-font-size: fs xlarge;
         margin-bottom: spacing(0.1);
       }  
-      p {
-        adjust-font-size: fs s;
-        line-height: 1.2em;
-      }
       /*lost-column: 1/1 1 0;  */
       margin-bottom: 0em;
       margin-top: 0em;
@@ -389,30 +391,19 @@ export default {
     @media (--only-1600more-screen) {
       /*lost-column: 4/5 2 0;*/
     }
-    div {
-      background-color: #faf;
-    }
   }
 }
 .empDesc {
   padding-left: 1em;
   margin-bottom: 1em;
-  p {
-    margin-bottom: spacing(0);
-    text-indent: 0em;
-  }
   ul, ol {
     padding: 0em;
     margin-top: 0.2em;
   }
   @media (--only-small-screen) {
-    p {
-      margin-bottom: 0em;
-    }
+ 
   }
-
 }
-
 /*--------*/
 /* стиль эффекта тени блока с 2х сторон */
 .effect2 {
