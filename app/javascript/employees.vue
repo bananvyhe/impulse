@@ -9,13 +9,15 @@
       <div v-for="item in popemploy(employee)">
         <div class="topSectAv">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-          </div><span v-html="item.desc"></span>
-<!--           <div class="avatarSect2">
+          </div>
+                    <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
               <span v-html="item.spec"></span>  
             </div>
-          </div> -->
+          </div>
+          <span v-html="item.desc"></span>
+
         </div>  
 <!--         <div class="empDesc">
           <span v-html="item.desc"></span>
@@ -285,7 +287,6 @@ export default {
 }
 .topSectAv {
   overflow: hidden;
-  margin-top: 1em;
   @media (--only-small-screen) {
     margin-top: 0em;
   }
@@ -295,15 +296,15 @@ export default {
   @media (--only-1600more-screen) {
     /*height:  20vw;*/
   }
-  .avatarSect1 {float: left;
+  .avatarSect1 {
+    float: left;
+    position: relative;
     z-index: 12;
     background-color: #fff;
     box-shadow: 0px 2px 10px 0px #5c5c5c;
     border: 0.3em solid $isabelline;
     border-radius: 0em;
     margin: 0em 1.8em 1em 1em;
- 
-     
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;
@@ -319,17 +320,15 @@ export default {
       display:none;
     }
     @media (--only-medium-screen) {
-     /* lost-column: 1/4 0 ; */
+      /* lost-column: 1/4 0 ; */
     }
     @media (--only-1600more-screen) {
-
-
       /*lost-column: 1/5 2 0 ; */
     }
   }
   .avatarSect2 {z-index: 10;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     
     padding: 1em;
     margin-bottom: 2.5em;
@@ -380,15 +379,15 @@ export default {
         adjust-font-size: fs s;
         line-height: 1.2em;
       }
-      lost-column: 1/1 1 0;  
+      /*lost-column: 1/1 1 0;  */
       margin-bottom: 0em;
       margin-top: 0em;
     }
     @media (--only-medium-screen) {
-      lost-column: 3/4 2 0; 
+      /*lost-column: 3/4 2 0; */
     }
     @media (--only-1600more-screen) {
-      lost-column: 4/5 2 0;
+      /*lost-column: 4/5 2 0;*/
     }
     div {
       background-color: #faf;
