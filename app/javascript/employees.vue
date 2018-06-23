@@ -181,11 +181,20 @@ export default {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
                
             }, 0)
-            .to(($(this).find('.prof')), 0.5, {
-              transformOrigin: '50% 100%',
-              xPercent: 200,
+            .to(($(this).find('.prof p')), 0.4, {
+
+              transformOrigin: '100% 100%',
               opacity: 0, 
+               xPercent: 100,
                
+              ease: Expo.easeOut, 
+            }, 0)
+            .to(($(this).find('.prof')), 0.5, {
+              transformOrigin: '100% 100%',
+               
+              scaleY: 0,
+              borderRadius: 0, 
+              ease: Expo.easeInOut, 
             }, 0)
             element.animation = projectHover;
           });
@@ -237,7 +246,7 @@ export default {
   }
 }
 .bgsh { overflow: hidden;
-  border: 1px  solid $isabelline;  
+   
   border-radius: $borderRad; 
   cursor: pointer; 
   display: flex;
@@ -288,6 +297,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
+  padding: 0 0.8em 0.5em 1em;
 }
 .descM { background-color: rgba(255, 255, 255, 0.8); 
   overflow: hidden;
