@@ -329,7 +329,7 @@ export default {
   .avatarSect2 {z-index: 10;
     /*display: flex;
     flex-direction: column;*/
-    
+    position: relative;
     padding: 1em;
     margin-bottom: 2.5em;
     margin-top: 2.5em;
