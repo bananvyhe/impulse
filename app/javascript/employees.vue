@@ -33,8 +33,8 @@
           <div class="bgsh" 
           @click="clickhandler(item.id, $event) "> 
             <div class="bg"> 
-              <div v-if="item.desc.length > croptextvalue" class="prof" v-html="item.desc.slice(0, croptextvalue) + ' ...'"> <!-- <span v-html="item.desc"></span> --></div>
-               <div v-else class="prof" v-html="item.desc"> <!-- <span v-html="item.desc"></span> --></div>
+              <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ' ...'}}<!-- <span v-html="item.desc"></span> --></div>
+               <div v-else class="prof"  > {{item.prof}}<!-- <span v-html="item.desc"></span> --></div>
               <div class="itemTitle">
                 <h4>{{item.name}}</h4>
               </div>
@@ -162,6 +162,7 @@ export default {
           var projectHover = new TimelineMax({paused:true});
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
+              borderRadius: '1em',
               scale:1.05,
               ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
@@ -213,14 +214,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.prof {
-  padding:0.3em 0.5em 0.5em 0.5em; 
-  background-color: #BFDBF7;
-  /*border-top-right-radius: 0.5em;*/
-  border-top-left-radius: 2em; 
-  height: 3em; adjust-font-size: fs t;
-  line-height: 1.2;
-}
+
 .popup {
 
 }
@@ -241,7 +235,7 @@ export default {
 }
 .bgsh { overflow: hidden;
    
-  border-radius: $borderRad; 
+ /* border-radius: $borderRad; */
   cursor: pointer; 
   display: flex;
   align-items: flex-end;
@@ -271,7 +265,7 @@ export default {
   width: 100%;
   overflow: hidden;
   display: flex;
-  border-radius: $borderRad; 
+  /*border-radius: $borderRad; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
@@ -279,8 +273,16 @@ export default {
 .bg {
   width: 100%;
 }
+.prof {
+  padding:0.3em 0.5em 0.5em 0.5em; 
+  background-color: #BFDBF7;
+  /*border-top-right-radius: 0.5em;*/
+  /*border-top-left-radius: 2em; */
+  height: 3em; adjust-font-size: fs t;
+  line-height: 1.2;
+}
 .itemTitle {
-  border-bottom-right-radius: 2em; 
+ /* border-bottom-right-radius: 2em; */
   background-color: rgba(255, 255, 255, 0.8);
   text-align: right;
   display: flex;

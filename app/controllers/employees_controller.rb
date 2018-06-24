@@ -64,7 +64,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :desc, :spec, :avatar, :avatar_cache, :remove_avatar, :crop_x, :crop_y, :crop_w, :crop_h
+    params.require(:employee).permit(:name, :desc, :spec, :prof, :avatar, :avatar_cache, :remove_avatar, :crop_x, :crop_y, :crop_w, :crop_h
  )
   end
 end
