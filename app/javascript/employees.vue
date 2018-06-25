@@ -226,14 +226,17 @@ export default {
   padding: 2em;
 }
 .group {
+  @media (--only-xsmall-screen) {
+    lost-center: 280px;
+  }
   @media (--only-small-screen) {
-    lost-center: 570px;
+    lost-center: 500px;
   }
   @media (--only-medium-screen) {
     lost-center: 900px;
   }
   @media (--only-1600more-screen) {
-    lost-center: 1070px;
+    lost-center: 1170px;
   }
 }
 .bgsh { overflow: hidden;
@@ -247,11 +250,14 @@ export default {
 }
 .avapreview {
   display: flex;
-  lost-waffle: 1/3 3 2em;
+  @media (--only-xsmall-screen) {
+    lost-waffle: 1/1 1 1em ;
+    height:  22em;
+  }
   @media (--only-small-screen) {
 
-    lost-waffle: 1/3 3 1em ;
-    height:  13em;
+    lost-waffle: 1/2 2 1em ;
+    height:  18em;
   }
   @media (--only-medium-screen) {
     
