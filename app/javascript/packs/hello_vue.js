@@ -6,7 +6,7 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import axios from 'axios'
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.esm.js'
 import App from '../app.vue'
 import Head from '../head.vue'
 import Employees from '../employees.vue'
@@ -17,25 +17,25 @@ Vue.use(CarouselItem)
 Vue.use(Button) 
 Vue.use(Pagination)
 Vue.use(Dialog)
-// Vue.use(Input) 
-// Vue.use(Table)
-// Vue.use(TableColumn)
-// Vue.use(Col) 
-// Vue.use(Form)
-// Vue.use(FormItem)
+ Vue.use(Input) 
+ Vue.use(Table)
+ Vue.use(TableColumn)
+ Vue.use(Col) 
+ Vue.use(Form)
+ Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json'  
-  // var price = document.getElementById("team-form")
-  // if (price != null) {
-  //   var app = new Vue({
-  //     el: price,
-  //     template: '<Price/>',
-  //     components: {Price}
-  //   }) 
-  // }
+  var price = document.getElementById("team-form")
+  if (price != null) {
+    var app = new Vue({
+      el: price,
+      template: '<Price/>',
+      components: {Price}
+    }) 
+  }
 	var app = document.getElementById("app") 
 	if (app != null) {
 	  new Vue({

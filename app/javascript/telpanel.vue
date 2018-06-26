@@ -2,7 +2,7 @@
   <div id="telpanel">
     <h5>{{team.name}}</h5>
 
-    <el-table 
+    <el-table v-if="team.players_attributes.length"
       :data = "team.players_attributes" style="width: 100%"
       >
       <el-table-column prop="name" label="Наименование услуги"></el-table-column>
