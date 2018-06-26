@@ -166,19 +166,20 @@ export default {
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
               // borderRadius: '1em',
-              scale:1.05,
-              ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
+              // scale:1.05,
+              ease: Expo.easeOut,
               // boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
               display: 'block',
               xPercent: 0,
               height: thisHeight,
-              ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0)
+              ease: Expo.easeOut
+            }, 0)
             .to(($(this).find('.itemTitle')), 0.5, {
-              borderBottom: '1px solid #444',
-              marginBottom: '0px',
-              borderRadius: 0
+              // borderBottom: '1px solid #444',
+              // marginBottom: '0px',
+              // borderRadius: 0
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
