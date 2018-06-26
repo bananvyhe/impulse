@@ -168,7 +168,7 @@ export default {
               // borderRadius: '1em',
               scale:1.05,
               ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
-              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+              // boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
               display: 'block',
@@ -182,7 +182,7 @@ export default {
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
-              boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
+              // boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
             }, 0)
             .to(($(this).find('.prof p')), 0.4, {
               transformOrigin: '100% 100%',
