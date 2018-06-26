@@ -4,6 +4,27 @@
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
+<table>
+	<% @team.players.each do |player| %>
+		<tr>
+			<td>
+				<%= player.name %>
+			</td>
+			<td>
+				<%= player.graph %>
+			</td>
+			<td>
+				<%= player.group %>
+			</td>
+			<td>
+				<%= player.ind %>
+			</td>
+		</tr>	
+<% end %>
+</table>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+
+<hr />
+
+<%= link_to 'Редактировать', edit_team_path(@team) %> |
+<%= link_to 'Назад', teams_path %>
