@@ -11,6 +11,7 @@ import App from '../app.vue'
 import Head from '../head.vue'
 import Employees from '../employees.vue'
 import Price from '../telpanel.vue' 
+import Feedback from '../feedback.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(CarouselItem) 
@@ -27,7 +28,14 @@ Vue.use(Dialog)
 document.addEventListener('DOMContentLoaded', () => {
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
-  axios.defaults.headers.common['Accept'] = 'application/json'  
+  axios.defaults.headers.common['Accept'] = 'application/json' 
+  var feedback = document.getElementById("feedback") 
+  if (feedback != null) {
+    new Vue({
+      el: '#feedback',
+      render: h => h(Feedback)
+    }) 
+  } 
   var price = document.getElementById("team-form")
   if (price != null) {
     var app = new Vue({

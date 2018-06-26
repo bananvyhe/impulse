@@ -1,33 +1,45 @@
 <p id="notice"><%= notice %></p>
+<h4>Контакты</h4>
+<% @contacts.each do |contact| %>
+<div class="contacts">
+  <div class="map">
+    <%= contact.map.html_safe %>
+  </div>
 
-<h1>Contacts</h1>
+  <div class="contactInfo">
+    <div>
+      <div>
+        <h5>Психологический центр &laquo;Импульc&raquo; </h5>
+      </div>
+      <div>
+        Психологическая помощь взрослым и детям
+      </div>      
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Mail</th>
-      <th>Adress</th>
-      <th>Tel</th>
-      <th>Map</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="contactInfobd">
+      <div>
+        <%= contact.adress %>
+      </div>
+      <div>
+        Тел.<%= contact.tel %>
+      </div>
+    </div>
 
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.mail %></td>
-        <td><%= contact.adress %></td>
-        <td><%= contact.tel %></td>
-        <td><%= contact.map %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="infoLast">
+      <div>
+        Тел:<%= contact.tel %>
+      </div>
+      <div>
+        Е-майл:<%= contact.tel %>
+      </div>
+    </div>
+  </div>
+  
+</div>
 
-<br>
+<div>
+  <%= link_to 'Редактировать', edit_contact_path(contact), class: "button is-info is-outlined" %>
+</div>
 
-<%= link_to 'New Contact', new_contact_path %>
+<% end %>
+<div id="feedback"></div>
