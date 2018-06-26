@@ -165,7 +165,7 @@ export default {
           var projectHover = new TimelineMax({paused:true});
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
-              borderRadius: '1em',
+              // borderRadius: '1em',
               scale:1.05,
               ease: CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000"),
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
