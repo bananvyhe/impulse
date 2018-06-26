@@ -6,7 +6,7 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import axios from 'axios'
-import Vue from 'vue/dist/vue.esm.js'
+import Vue from 'vue'
 import App from '../app.vue'
 import Head from '../head.vue'
 import Employees from '../employees.vue'
