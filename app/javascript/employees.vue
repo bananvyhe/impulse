@@ -35,7 +35,7 @@
             <div class="bg"> 
               <div v-if="item.prof">
                 <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ' ...'}}<!-- <span v-html="item.desc"></span> --></div>
-                <div v-else class="prof"  > {{item.prof}}<!-- <span v-html="item.desc"></span> --></div>
+                <div v-else class="prof"> <div class="profp">{{item.prof}}</div><!-- <span v-html="item.desc"></span> --></div>
               </div>
               
               <div class="itemTitle">
@@ -164,17 +164,17 @@ export default {
           var thisHeight = $(element).find(".desc").outerHeight();
           var projectHover = new TimelineMax({paused:true});
           projectHover
-            .to(($(this).find('.cardpic')), 0.3, {
+            .to(($(this).find('.cardpic')), 0.5, {
               // borderRadius: '1em',
                scale:1.05,
-              ease: Expo.easeOut,
+              ease: Circ.easeOut,
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
             }, 0)
-            .to(($(this).find('.desc')), 0.5, {
+            .to(($(this).find('.desc')), 0.7, {
               display: 'block',
               xPercent: 0,
               height: thisHeight,
-              ease: Expo.easeOut
+              ease: Circ.easeOut
             }, 0)
             .to(($(this).find('.itemTitle')), 0.5, {
               borderBottom: '1px solid #444',
@@ -185,11 +185,11 @@ export default {
             .to(($(this).find('.bgsh')), 0.5, {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
             }, 0)
-            .to(($(this).find('.prof p')), 0.4, {
+            .to(($(this).find('.profp')), 0.4, {
               transformOrigin: '100% 100%',
               opacity: 0, 
-              xPercent: 100,
-              ease: Expo.easeOut, 
+              yPercent: 70,
+              ease: Power0.easeOut, 
             }, 0)
             .to(($(this).find('.prof')), 0.5, {
               transformOrigin: '100% 100%',
@@ -284,6 +284,9 @@ export default {
   width: 100%;
 }
 .prof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding:0.3em 0.5em 0.5em 0.5em; 
   background-color: #BFDBF7;
   /*border-top-right-radius: 0.5em;*/
