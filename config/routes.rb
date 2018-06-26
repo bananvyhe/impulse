@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :teams
+  # resources :players
   resources :employees
   get 'errors/not_found'
   get 'errors/internal_server_error'
