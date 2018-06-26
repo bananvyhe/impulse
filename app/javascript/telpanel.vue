@@ -44,7 +44,7 @@
         </el-form>
       </div>
     </div>
-    <el-button v-on:click="addPlayer" type="primary" plain>
+    <el-button v-on:click="addPlayer" type="success" plain>
       Добавить позицию
     </el-button> 
     <el-button v-on:click="saveTeam" type="success" plain>
