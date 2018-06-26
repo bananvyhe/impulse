@@ -166,9 +166,9 @@ export default {
           projectHover
             .to(($(this).find('.cardpic')), 0.3, {
               // borderRadius: '1em',
-              // scale:1.05,
+               scale:1.05,
               ease: Expo.easeOut,
-              // boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.3)",
+              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
             }, 0)
             .to(($(this).find('.desc')), 0.5, {
               display: 'block',
@@ -177,13 +177,13 @@ export default {
               ease: Expo.easeOut
             }, 0)
             .to(($(this).find('.itemTitle')), 0.5, {
-              // borderBottom: '1px solid #444',
-              // marginBottom: '0px',
-              // borderRadius: 0
+              borderBottom: '1px solid #444',
+              marginBottom: '0px',
+              borderRadius: 0
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.5, {
-              // boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
+              boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
             }, 0)
             .to(($(this).find('.prof p')), 0.4, {
               transformOrigin: '100% 100%',
@@ -257,7 +257,7 @@ export default {
   }
   @media (--only-small-screen) {
 
-    lost-waffle: 1/2 2 1em ;
+    lost-waffle: 1/2 2 2em ;
     height:  18em;
   }
   @media (--only-medium-screen) {
@@ -386,7 +386,7 @@ export default {
     margin-top: 1.5em;
     .fioSpec { 
       margin-left: -3em;
-      background-color: $isabelline;
+      background-color: $color-blue;
       border-radius: 0.2em;
       padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
