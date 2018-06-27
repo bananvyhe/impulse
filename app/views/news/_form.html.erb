@@ -1,15 +1,21 @@
 
 <%= simple_form_for(@news) do |f| %>
   <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :image %>
-    <%= f.input :desc %>
-    <%= f.input :newspic %>
+  <% if @news.newspic? %>
+    <div  style="background-image: url('<%= @news.newspic.thumb.url %>');" class="newspic"></div>
+  <% end %>
+  <div>
+    <% unless @news.newspic? %>
+      <%= f.file_field :newspic, :class => "button" %>
+    <% end %>
+    <h5>Основная информация:</h5>
+    <div>
+       <%= f.cktext_area :desc %>
+    </div>
+   
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div>
+    <%= f.submit "Сохранить",  :class => "button"%>
   </div>
 <% end %>

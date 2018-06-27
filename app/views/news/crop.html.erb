@@ -1,0 +1,39 @@
+<div>
+  <div>
+
+    <div>
+      <div>
+        <h3>Вырежьте часть при необходимости:</h3>
+      </div>
+      <div>
+        <%= image_tag @news.newspic_url , id: "cropbox" %>
+        <br>
+        <%= simple_form_for(@news) do |f| %>
+          <% %w[x y w h].each do |attribute| %>
+            <%= f.text_field "crop_#{attribute}", type: :hidden  %>
+          <% end %>
+
+          <div>
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+    <div  >
+      <div  >
+        <h3  >Preview</h3>
+      </div>
+      <div  >
+        <div id="previewPic" class="newspic" style="overflow:hidden">
+          <%= image_tag @news.newspic.url , id: "prev" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

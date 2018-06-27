@@ -1,19 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @news.image %>
-</p>
+	<div class="newspic"  style="background-image: url('<%= @news.newspic.thumb.url %>')">
+	</div>
 
 <p>
-  <strong>Desc:</strong>
-  <%= @news.desc %>
+  <strong>Текст новости:</strong>
+  <%= @news.desc.html_safe %>
 </p>
 
-<p>
-  <strong>Newspic:</strong>
-  <%= @news.newspic %>
-</p>
-
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+<%= link_to 'Редактировать', edit_news_path(@news) %> |
+<%= link_to 'Назад', news_index_path %>

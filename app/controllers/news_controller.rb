@@ -1,10 +1,10 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: [:show, :edit, :update, :destroy]
+  before_action :set_news, only: [:show, :edit, :update, :destroy, :crop]
 
   # GET /news
   # GET /news.json
   def index
-    @news = News.all
+    @news = News.all.order(created_at: :desc)
   end
 
   # GET /news/1
@@ -28,8 +28,8 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
-        format.json { render :show, status: :created, location: @news }
+         format.html { render :crop, notice: 'Новость добавлена.' }
+        format.json { render :index, status: :created, location: @news }
       else
         format.html { render :new }
         format.json { render json: @news.errors, status: :unprocessable_entity }
@@ -42,10 +42,10 @@ class NewsController < ApplicationController
   def update
     respond_to do |format|
       if @news.update(news_params)
-        format.html { redirect_to @news, notice: 'News was successfully updated.' }
-        format.json { render :show, status: :ok, location: @news }
+        format.html { redirect_to action: :index, notice: 'Новость обновлена.' }
+        format.json { render :index, status: :ok, location: @news }
       else
-        format.html { render :edit }
+        format.html { render :crop }
         format.json { render json: @news.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class NewsController < ApplicationController
   def destroy
     @news.destroy
     respond_to do |format|
-      format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
+      format.html { redirect_to news_index_url, notice: 'Ноыость удалена.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:image, :desc, :newspic)
+      params.require(:news).permit(:image, :desc, :newspic, :newspic_cache, :remove_newspic, :crop_x, :crop_y, :crop_w, :crop_h, :per_page, :current_page)
     end
 end
