@@ -14,6 +14,7 @@ import Price from '../telpanel.vue'
 import Feedback from '../feedback.vue'
 import Sliderapp from '../sliderapp.vue'
 import Child from '../child.vue'
+import Adult from '../adult.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -33,6 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
 
+  var element = document.getElementById("adult")
+  if (element != null) {
+    new Vue({
+      el: '#adult',
+      render: h => h(Adult)
+    })
+  }
   var element = document.getElementById("child")
   if (element != null) {
     new Vue({
