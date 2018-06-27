@@ -29,13 +29,25 @@ End Hamster setup*/
   @import "_typography";
 }
 @paste full;
+@media (--only-xsmall-screen) {
+  @ihamster {
+    --font-size: 17px;
+    --line-height: 1;
+    --to-font-size: 15px;
+    --to-line-height: 1;
+    --viewport: 320px 450px;
+    --unit: vw;
+  }
+  @paste full;
+  @hamster end;
+}
 @media (--only-small-screen) {
   @ihamster {
-    --font-size: 16px;
+    --font-size: 15px;
     --line-height: 1;
     --to-font-size: 14px;
     --to-line-height: 1.1;
-    --viewport: 320px 800px;
+    --viewport: 451px 800px;
     --unit: vw;
   }
   @paste full;
@@ -45,7 +57,7 @@ End Hamster setup*/
   @ihamster {
     --font-size: 14px;
     --line-height: 1.1;
-    --to-font-size: 16px;
+    --to-font-size: 18px;
     --to-line-height: 1.1;
     --viewport: 800px 1919px;
     --unit: vw;
@@ -53,9 +65,9 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
-@media (--only-big-screen){
+@media (--only-1600more-screen){
   @ihamster {
-    --font-size: 16px;
+    --font-size: 18px;
     --line-height: 1.1; 
     --to-font-size: 26px;
     --to-line-height: 1.25;
@@ -97,6 +109,13 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#leftsheet {
+  margin-top: 1em;
+  lost-column: 2/7 3 1em ;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
+}
 #slider {
   padding-top: 3em;
   lost-column: 3/7 3 1em;
@@ -104,7 +123,14 @@ body {
     lost-column: 1/1;
     padding-top: 1em;
   }
-} 
+}
+#rightsheet {
+  margin-top: 1em;
+  lost-column: 2/7 3 1em; background-color: #dad;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
+}
 .cleared {
   lost-utility: clearfix;
 }

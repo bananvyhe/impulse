@@ -5,6 +5,9 @@
 </div>
 <div id="app"></div>
 <% if user_signed_in? %>
+<div id="leftsheet">
+	<div id="child"></div>
+</div>
 <div id="slider">
 	<% if user_signed_in? %>
 		<a class="button is-success is-outlined" href="/sliders" style="margin: -1.4em 0 0 33%;">
@@ -13,5 +16,10 @@
 	<% end %>
 	<div id="sliderapp"></div>
 </div>
+<div id="rightsheet">
+	<div id="adult"></div>
+</div>
+<div class="cleared"></div>
+<div id="news"></div>
 <% end %>
  
