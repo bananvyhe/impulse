@@ -97,6 +97,26 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#slider {
+  padding-top: 3em;
+  lost-column: 3/7 3 1em;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+    padding-top: 1em;
+  }
+} 
+.cleared {
+  lost-utility: clearfix;
+}
+.slidepic {
+  width:480px; 
+  height:300px; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  p {
+    text-indent: 0em;
+  }
+}
 .editPicWindow {
   label {
     padding: 0em 0.4em 0em 0em;

@@ -1,5 +1,5 @@
 class SlidersController < ApplicationController
-  before_action :set_slider, only: [:show, :edit, :update, :destroy]
+  before_action :set_slider, only: [:show, :edit, :update, :destroy, :crop]
 
   # GET /sliders
   # GET /sliders.json
@@ -28,8 +28,8 @@ class SlidersController < ApplicationController
 
     respond_to do |format|
       if @slider.save
-        format.html { redirect_to @slider, notice: 'Slider was successfully created.' }
-        format.json { render :show, status: :created, location: @slider }
+        format.html { render :crop, notice: 'Создано.' }
+        format.json { render :index, status: :created, location: @slider }
       else
         format.html { render :new }
         format.json { render json: @slider.errors, status: :unprocessable_entity }
@@ -42,10 +42,10 @@ class SlidersController < ApplicationController
   def update
     respond_to do |format|
       if @slider.update(slider_params)
-        format.html { redirect_to @slider, notice: 'Slider was successfully updated.' }
-        format.json { render :show, status: :ok, location: @slider }
+        format.html { redirect_to action: :index, notice: 'Обновлено.' }
+        format.json { render :index, status: :ok, location: @slider }
       else
-        format.html { render :edit }
+        format.html { render :crop }
         format.json { render json: @slider.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class SlidersController < ApplicationController
   def destroy
     @slider.destroy
     respond_to do |format|
-      format.html { redirect_to sliders_url, notice: 'Slider was successfully destroyed.' }
+      format.html { redirect_to sliders_url, notice: 'Удалено.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:slide, :caption1, :caption2)
+      params.require(:slider).permit(:slide, :caption1, :caption2, :slider, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end

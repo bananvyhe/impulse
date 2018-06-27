@@ -1,0 +1,39 @@
+<div>
+  <div>
+
+    <div>
+      <div>
+        <h3>Вырежьте часть при необходимости:</h3>
+      </div>
+      <div>
+        <%= image_tag @slider.slide_url , id: "cropbox" %>
+        <br>
+        <%= simple_form_for(@slider) do |f| %>
+          <% %w[x y w h].each do |attribute| %>
+            <%= f.text_field  "crop_#{attribute}", type: :hidden %>
+          <% end %>
+
+          <div>
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+    <div  >
+      <div  >
+        <h3  >Preview</h3>
+      </div>
+      <div  >
+        <div id="previewPic" class="slidepic" style="overflow:hidden">
+          <%= image_tag @slider.slide.url , id: "prev" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

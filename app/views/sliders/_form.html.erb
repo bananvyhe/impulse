@@ -1,15 +1,26 @@
 
 <%= simple_form_for(@slider) do |f| %>
   <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <% if @slider.slide? %>
+    <div  style="background-image: url('<%= @slider.slide.thumb.url %>');" class="slidepic"></div>
+  <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :slide %>
-    <%= f.input :caption1 %>
-    <%= f.input :caption2 %>
-  </div>
-
+  <div>
+    <% unless @slider.slide? %>
+      <h5>Картинка слайда:</h5>
+      <%= f.file_field :slide, :class => "button" %>
+      <%= f.hidden_field :slide_cache %> 
+    <% end %>
+    <h5>Заголовок слайда:</h5>
+    <div>
+       <%= f.input :caption1 , as: :text, label: false %>
+    </div>
+    <h5>Текст слайда:</h5>
+    <div>
+       <%= f.input :caption2 , as: :text, label: false  %>
+    </div>
+  </div>  
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Сохранить",  :class => "button" %>
   </div>
 <% end %>
