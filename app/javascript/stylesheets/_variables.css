@@ -1,5 +1,7 @@
 $color-blue: #b9d6f2;
 $isabelline: #F4F3EE;
+$str1: #09b207;
+$str2: #1c860a;
 $str3: #d4f88e;
 $str4: #279c1d;
 $str5: #35701e;
@@ -20,4 +22,16 @@ $color-1: #888;
 	background: rgba(255, 255, 255, 0.9);
   border-radius: 0.2em;
   padding: 0.1em 0.6em 0.1em 0.8em;
+}
+%hrline {
+  height: 2px;
+  border-radius: 0.2em;
+}
+%bgstring {
+  background-color: $str3;
+	margin: 0.1em 0 0.1em 0;
+  line-height: 1.2; 
+  border-radius: 0.4em;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+  color: $str5;
 }

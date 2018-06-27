@@ -13,6 +13,7 @@ import Employees from '../employees.vue'
 import Price from '../telpanel.vue' 
 import Feedback from '../feedback.vue'
 import Sliderapp from '../sliderapp.vue'
+import Child from '../child.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -32,6 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
 
+  var element = document.getElementById("child")
+  if (element != null) {
+    new Vue({
+      el: '#child',
+      render: h => h(Child)
+    })
+  }
   var element = document.getElementById("sliderapp")
   if (element != null) {
     new Vue({
