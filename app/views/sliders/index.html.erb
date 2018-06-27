@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sliders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Slide</th>
+      <th>Caption1</th>
+      <th>Caption2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sliders.each do |slider| %>
+      <tr>
+        <td><%= slider.slide %></td>
+        <td><%= slider.caption1 %></td>
+        <td><%= slider.caption2 %></td>
+        <td><%= link_to 'Show', slider %></td>
+        <td><%= link_to 'Edit', edit_slider_path(slider) %></td>
+        <td><%= link_to 'Destroy', slider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slider', new_slider_path %>
