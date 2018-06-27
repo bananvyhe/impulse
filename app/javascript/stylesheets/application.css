@@ -112,6 +112,9 @@ body {
 #leftsheet {
   margin-top: 1em;
   lost-column: 2/7 3 1em ;
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
   @media (--only-small-screen) {
     lost-column: 1/1;
   }
@@ -119,6 +122,10 @@ body {
 #slider {
   padding-top: 3em;
   lost-column: 3/7 3 1em;
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+    padding-top: 1em;
+  }
   @media (--only-small-screen) {
     lost-column: 1/1;
     padding-top: 1em;
@@ -127,6 +134,9 @@ body {
 #rightsheet {
   margin-top: 1em;
   lost-column: 2/7 3 1em; background-color: #dad;
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
   @media (--only-small-screen) {
     lost-column: 1/1;
   }
