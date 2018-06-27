@@ -203,7 +203,7 @@
   
     }
   .titlesecond {
-    @mixin roundbgstr;
+    @extend %roundbgstr;
     
 
 

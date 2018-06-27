@@ -15,12 +15,9 @@ $color-1: #888;
 @custom-media --only-1600more-screen (width >= 1560px);
 @custom-media --only-big-screen (width >= 1920px);
 
- @define-mixin bgstring {
-  background-color: $str3;
-	margin: 0.1em 0 0.1em 0;
-  line-height: 1.2; 
-  border-radius: 0.4em;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  color: $str5;
-
+%roundbgstr {
+  background-color: #fff;
+	background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.2em;
+  padding: 0.1em 0.6em 0.1em 0.8em;
 }
