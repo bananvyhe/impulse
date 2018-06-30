@@ -18,12 +18,11 @@
     </div>
 
     <div v-for="(player, index) in team.players_attributes">
-      <div v-if="player._destroy == '1'" class="delMessage"> Строка "{{ player.name }}" &ndash;  удалена.  <button class="button is-small is-info is-inverted" v-on:click="undoRemove(index)">Восстановить</button>
-       
+      <div v-if="player._destroy == '1'" class="delMessage"> Строка "{{ player.name }}" &ndash;  удалена.  <el-button size="mini" v-on:click="undoRemove(index)">Восстановить</el-button>
       </div>
       <div v-else>
         <el-form>
-          <el-form-item>
+          <el-form-item class="elitem">
             <el-col :span="5">
               <el-input v-model="player.name" placeholder="Наименование услуги"></el-input>
             </el-col>
@@ -37,8 +36,11 @@
               <el-input v-model="player.ind" placeholder="Стоимость индивидуального занятия"></el-input> 
             </el-col>
             <el-col :span="3">
-              <el-button   type="danger" plain v-on:click="removePlayer(index)">Удалить
-              </el-button> 
+         
+               <el-button
+          size="mini"
+          type="danger"
+           plain v-on:click="removePlayer(index)">Delete</el-button>
             </el-col>
           </el-form-item>
         </el-form>
@@ -140,5 +142,16 @@ export default {
 </script>
 
 <style scoped>
-
+.delMessage {
+  padding: 1em;
+}
+.inputShort {
+  padding-bottom: 0.5em;
+}
+.elitem {
+  margin-bottom: 0.5em;
+}
+.el-col {
+  padding-right: 0.5em;
+}
 </style>
