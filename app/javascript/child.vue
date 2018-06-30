@@ -4,7 +4,7 @@
       <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
   	</div>
- 		<div v-for="(item, index) in items">
+ 		<div v-for="(item, index) in items" class="bganim">
       <div class="bgstring">
         {{item.title}}        
       </div>
@@ -37,7 +37,6 @@ export default {
     var menuitems = $('.bgstring').toArray();
     var m2 = (menuitems.length/2).toFixed();
     var m3 = menuitems.splice(m2).reverse();
-
  
     TweenMax.staggerFrom(menuitems, 0.2, {
       opacity: 0,
@@ -81,6 +80,9 @@ export default {
     color: #fff;
     background-color: $str4;
   }
+}
+.bganim {
+   
 }
 
 

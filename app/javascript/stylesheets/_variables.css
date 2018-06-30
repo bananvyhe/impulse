@@ -5,6 +5,7 @@ $str2: #1c860a;
 $str3: #d4f88e;
 $str4: #279c1d;
 $str5: #35701e;
+$str6: #23a5e6;
 $borderRad: 0.6em;
 $color-1: #888;
 @custom-media --telpanel-small-screen (width <= 720px);
