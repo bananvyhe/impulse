@@ -2,7 +2,7 @@
   <div id="telpanel">
     <h5>{{team.name}}</h5>
 
-    <el-table v-if="team.players_attributes.length"
+    <el-table stripe v-if="team.players_attributes.length"
       :data = "team.players_attributes" style="width: 100%"
       >
       <el-table-column prop="name" label="Наименование услуги"></el-table-column>
@@ -10,7 +10,7 @@
       <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
       <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
     </el-table>
-
+<br>
     <h4>Редактор:</h4>
     <div class="inputShort">
       <h5>Название категории:</h5>
@@ -40,7 +40,7 @@
                <el-button
           size="mini"
           type="danger"
-           plain v-on:click="removePlayer(index)">Delete</el-button>
+           plain v-on:click="removePlayer(index)">Удалить</el-button>
             </el-col>
           </el-form-item>
         </el-form>
