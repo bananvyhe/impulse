@@ -22,9 +22,12 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save 
-         
+        if employee_params[:avatar].present?
+          format.html { render :crop, notice: 'Employee was successfully created.' }
+        else
           format.html { render :show, notice: 'Employee was successfully created.' }
-        format.json { render :show, status: :created, location: @employee }
+        end  
+      format.json { render :show, status: :created, location: @employee }
 
       else
         format.html { redirect_to @employee }
