@@ -2,6 +2,8 @@
 <!-- редактор -->
 
   <% if user_signed_in? %>
+   <br>
+    <%= link_to 'Новый сотрудник', new_employee_path %>
   <br>
     <table>
       <tbody>
@@ -15,7 +17,6 @@
         <% end %>
       </tbody>
     </table>
-    <br>
-    <%= link_to 'Новый сотрудник', new_employee_path %>
+   
   <% end %>
 </div>

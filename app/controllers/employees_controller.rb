@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy, :crop]
 
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order(created_at: :desc)
 
   end
 
@@ -21,13 +21,14 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
 
     respond_to do |format|
-      if @employee.save
-        format.html { render :crop, notice: 'Employee was successfully created.' }
+      if @employee.save 
+         
+          format.html { render :show, notice: 'Employee was successfully created.' }
         format.json { render :show, status: :created, location: @employee }
 
       else
-        format.html { render :new }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
+        format.html { redirect_to @employee }
+        # format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -28,7 +28,12 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-         format.html { render :crop, notice: 'Новость добавлена.' }
+          
+            format.html { render :crop, notice: 'Новость добавлена.' }
+             
+              format.html { render :index, notice: 'Новость добавлена.' }
+             
+         
         format.json { render :index, status: :created, location: @news }
       else
         format.html { render :new }
