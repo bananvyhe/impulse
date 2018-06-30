@@ -28,10 +28,13 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-          
-            format.html { render :crop, notice: 'Новость добавлена.' }
-             
-              format.html { render :index, notice: 'Новость добавлена.' }
+        if news_params[:newspic].present?
+          format.html { render :crop, notice: 'Новость добавлена.' }
+        else
+          format.html { redirect_to action: :index, notice: 'Новость добавлена.' }
+        end    
+        
+         
              
          
         format.json { render :index, status: :created, location: @news }

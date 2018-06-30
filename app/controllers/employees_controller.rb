@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
         if employee_params[:avatar].present?
           format.html { render :crop, notice: 'Employee was successfully created.' }
         else
-          format.html { render :show, notice: 'Employee was successfully created.' }
+          format.html { redirect_to action: :index, notice: 'Employee was successfully created.' }
         end  
       format.json { render :show, status: :created, location: @employee }
 
@@ -40,7 +40,7 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.update(employee_params)
         if @employee.update_attributes(employee_params)
-          format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
+          format.html { redirect_to action: :index, notice: 'Employee was successfully updated.' }
           format.json { render :show, status: :ok, location: @employee }
         else
           format.html { render :crop, notice: 'Employee was successfully updated.' }

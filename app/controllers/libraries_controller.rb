@@ -4,7 +4,7 @@ class LibrariesController < ApplicationController
   # GET /libraries
   # GET /libraries.json
   def index
-    @libraries = Library.all
+    @libraries = Library.all.order(created_at: :desc)
   end
 
   # GET /libraries/1
@@ -28,8 +28,8 @@ class LibrariesController < ApplicationController
 
     respond_to do |format|
       if @library.save
-        format.html { redirect_to @library, notice: 'Library was successfully created.' }
-        format.json { render :show, status: :created, location: @library }
+        format.html { redirect_to action: :index, notice: 'Library was successfully created.' }
+        format.json { render :index, status: :created, location: @library }
       else
         format.html { render :new }
         format.json { render json: @library.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class LibrariesController < ApplicationController
   def update
     respond_to do |format|
       if @library.update(library_params)
-        format.html { redirect_to @library, notice: 'Library was successfully updated.' }
-        format.json { render :show, status: :ok, location: @library }
+        format.html { redirect_to action: :index, notice: 'Library was successfully updated.' }
+        format.json { render :index, status: :ok, location: @library }
       else
         format.html { render :edit }
         format.json { render json: @library.errors, status: :unprocessable_entity }
