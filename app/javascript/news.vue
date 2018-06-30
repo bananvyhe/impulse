@@ -149,7 +149,7 @@ export default {
   margin: 0.1em 0 0.3em -0.3em;
   background-color: $str6;
 } 
-.newsh {
+.newsh {  
   lost-column: 1/1;
 } 
 .last{
@@ -161,16 +161,14 @@ export default {
   justify-content: center;
 }
 .newsBlock {
-
   lost-center: 1150px;
 } 
 .newsItem:nth-child(odd) {
   text-align: right;
     img {
-      margin: 0 0 0.5em 1em;
+      margin: 0.5em 0 0.5em 1em;
       float: right;
   }
-   
   left: -40%;
   transform: scale(0,0);
 }
@@ -179,10 +177,12 @@ export default {
   transform: scale(0,0);
 }
 .newsItem {
-  display: block;
+  border: 1px dotted $color-1;
+  border-radius: 0.5em; 
+  padding: 0.8em;
   position: relative;
   opacity: 0;
-  lost-column: 1/2 2 1em;
+  lost-column: 1/2 2 0.5em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
@@ -192,7 +192,7 @@ export default {
   }
   img {
     border-radius: 0.2em;
-    margin: 0 1em 0 0;
+    margin: 0.5em 1em 0 0;
     float: left;
   }
 }
