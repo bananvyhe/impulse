@@ -51,15 +51,15 @@ p {
   display: block;
   text-indent: 1.8em;
   /*margin-top: spacing(1);*/
-  margin-bottom: spacing(1);
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  margin-bottom: spacing(0.5);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 img {
-   margin-right: 4vw;
+/*   margin-right: 4vw;
    margin-left: 4vw;
    margin-top: 0.5em;
-   margin-bottom: 0.5em;
+   margin-bottom: 0.5em;*/
 }
 a {
 }

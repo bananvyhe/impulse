@@ -56,9 +56,9 @@ End Hamster setup*/
 @media (--only-medium-screen) {
   @ihamster {
     --font-size: 14px;
-    --line-height: 1.1;
+    --line-height: 1;
     --to-font-size: 18px;
-    --to-line-height: 1.1;
+    --to-line-height: 1;
     --viewport: 800px 1919px;
     --unit: vw;
   }

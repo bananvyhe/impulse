@@ -1,21 +1,25 @@
 <template>
   <div class="news">
- 	  <div class="newsHead">
-			<h4>Наши новости:</h4>
-     	<div class="hrline scale-in-hor-center"></div>
-		</div>
-		<div class="newsBlock Y" id="Y">
-      <div class="newsh">
-        <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
-          <img :src="item.newspic.thumb.url"> 
-          
-          <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
-          <span v-html="item.desc"></span>  
-        </div>      
-      </div>
-		</div>
+    <div>
+   	  <div class="newsHead">
+  			<h4>Наши новости:</h4>
+       	<div class="hrline scale-in-hor-center"></div>
+  		</div>
+  		<div class="newsBlock Y" id="Y">
+        <div class="newsh">
+          <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
+            <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span><br>
+            <img :src="item.newspic.thumb.url"> 
+            
+            
+            <span v-html="item.desc"></span>  
+          </div>      
+        </div>
+  		</div>
+    </div>
     <div class="pag">
       <el-pagination 
+        background
         @current-change="handleCurrentChange"
         :page-size="perPage" 
         :current-page="currentPage"
@@ -86,16 +90,16 @@ export default {
        TweenLite.to($('.newsBlock'),0.4,{height: $('.newsh').height()});
     },
     newsTween() {
-      var duration = .2;
+      var duration = .4;
       var oddnews = $('.newsItem:odd').toArray();
       var evennews = $('.newsItem:even').toArray();
       var newsh = $('.newsh').height();
       console.log(newsh);
       TweenLite.to($('.newsBlock'),0.4,{height: $('.newsh').height()});
       TweenMax.staggerTo(oddnews, duration, 
-        {scale:1, delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
+        {scale:1, delay: 0.75, left: 0, opacity: 1, ease:Expo.easeOut },.25) 
       TweenMax.staggerTo(evennews, duration, 
-        {scale:1, delay:  0.5, left: 0, opacity: 1, ease:Linear.easeInOut},.25);
+        {scale:1, delay:  0.5, left: 0, opacity: 1, ease:Expo.easeOut},.25);
       function returnToNormal() {
          $('.newsBlock').attr('style', '');
       }
@@ -127,6 +131,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.news {
+  overflow: hidden;
+}
 .newsHead {
   display: flex;
   flex-direction: column;
@@ -149,28 +156,39 @@ export default {
 
 }
 .pag {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 .newsBlock {
+
   lost-center: 1150px;
 } 
 .newsItem:nth-child(odd) {
-  left: -20%;
+  text-align: right;
+    img {
+      margin: 0 0 0.5em 1em;
+      float: right;
+  }
+   
+  left: -40%;
   transform: scale(0,0);
 }
 .newsItem:nth-child(even) {
-  right: -20%;
+  right: -40%;
   transform: scale(0,0);
 }
 .newsItem {
   display: block;
   position: relative;
   opacity: 0;
-  lost-column: 1/2;
+  lost-column: 1/2 2 1em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
+  }
+  p {
+
   }
   img {
     border-radius: 0.2em;
