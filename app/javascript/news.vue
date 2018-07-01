@@ -1,18 +1,20 @@
 <template>
   <div class="news">
-    <div>
+    <div> 
    	  <div class="newsHead">
   			<h4>Наши новости:</h4>
-       	<div class="hrline scale-in-hor-center"></div>
+       	<div class="hrline scale-in-hor-center "></div>
   		</div>
   		<div class="newsBlock Y" id="Y">
-        <div class="newsh">
+        <div class="newsh ">
           <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
+             
             <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span><br>
             <img :src="item.newspic.thumb.url"> 
             
             
-            <span v-html="item.desc"></span>  
+            <div class="newsdesc" v-html="item.desc"></div>  
+             
           </div>      
         </div>
   		</div>
@@ -141,11 +143,11 @@ export default {
   padding: 1em 0 1em 0;
   h4 {
     color: $str6;
-    margin: 0 0 0em 0;
+    margin: 0 0 0.1em 0;
   }
 }
 .hrline { width: 12em; 
-  @mixin hrline;
+  @extend %hrline;
   margin: 0.1em 0 0.3em -0.3em;
   background-color: $str6;
 } 
@@ -176,25 +178,53 @@ export default {
   right: -40%;
   transform: scale(0,0);
 }
-.newsItem {
-  border: 1px dotted $color-1;
-  border-radius: 0.5em; 
+.newsItem { 
+         background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
+ /* border: 1px dotted $color-1;*/
+  border-radius: 2em; 
   padding: 0.8em;
   position: relative;
   opacity: 0;
+ 
   lost-column: 1/2 2 0.5em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
-  }
-  p {
-
   }
   img {
     border-radius: 0.2em;
     margin: 0.5em 1em 0 0;
     float: left;
   }
+}
+.newsdesc {
+   text-shadow: 0 1px 1px rgba(255,255,255,0.25);
+}
+.bgi {
+  background-color: #dad;
+}
+.bgimage {
+  height: 200px;
+/* color: #777;
+         height: 200px;
+        , 100% 1px, auto;
+        background-position: 50% 100%, 50% 100%, 50% 0;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-origin: padding-box, border-box, padding-box;
+        border-bottom: 1px solid transparent;
+        padding: 20px;
+        margin: 0 50px;
+         
+        text-shadow: 0 1px 1px rgba(255,255,255,0.25);
+        text-align: center;*/
+
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0)),
+        linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,0)),
+        radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 50%);
+            /*linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0)), 
+            linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,0)), 
+            radial-gradient(50% 100%, ellipse cover, rgba(0,0,0, 0.05), rgba(0,0,0,0) 50%);
+    */
 }
 .child {
 	display: flex;
@@ -204,7 +234,6 @@ export default {
 .bgstring {
   @mixin bgstring;
 }
-
 .scale-in-hor-center {
 	animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

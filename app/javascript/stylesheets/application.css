@@ -77,6 +77,12 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
+.edit {
+  lost-utility: edit;
+}
+.cleared {
+  lost-utility: clearfix;
+}
 
 .maincontent {
   lost-center: 1560px;
@@ -142,12 +148,7 @@ body {
     lost-column: 1/1;
   }
 }
-.edit {
-  lost-utility: edit;
-}
-.cleared {
-  lost-utility: clearfix;
-}
+
 .slidepic {
   width:480px; 
   height:300px; 
