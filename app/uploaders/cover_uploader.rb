@@ -7,15 +7,15 @@ class CoverUploader < CarrierWave::Uploader::Base
   storage :file
    include CarrierWave::MiniMagick
  
-  process resize_to_limit: [800, 1200]
+  process resize_to_limit: [900, 1200]
 
   version :thumb do
     process :crop
-    resize_to_fill(150, 225)
+    resize_to_fill(225, 300)
   end
   def crop
     if model.crop_x.present?
-      resize_to_limit(800, 1200)
+      resize_to_limit(900, 1200)
       manipulate! do |img|
         x = model.crop_x.to_i
         y = model.crop_y.to_i

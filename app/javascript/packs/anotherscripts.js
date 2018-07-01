@@ -37,6 +37,13 @@ AvatarCrop = (function() {
         onSelect: this.update,
         onChange: this.update
       });
+    }else if(document.location.pathname == '/libraries'){
+      $('#cropbox').Jcrop({
+        aspectRatio: 3/4,
+        setSelect: [0, 0, width, height],
+        onSelect: this.update,
+        onChange: this.update
+      });
     }else if(document.location.pathname == '/sliders'){
       $('#cropbox').Jcrop({
         aspectRatio: 480/300,

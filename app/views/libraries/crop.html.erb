@@ -10,27 +10,23 @@
         <br>
         <%= simple_form_for(@library) do |f| %>
           <% %w[x y w h].each do |attribute| %>
-            <%= f.text_field  "crop_#{attribute}", type: :hidden %>
+            <%= f.text_field  "crop_#{attribute}", type: :hidden%>
           <% end %>
-
           <div>
             <%= f.button :submit %>
           </div>
         <% end %>
-
       </div>
     </div>
   </div>
-
   <div>
-
-    <div  >
-      <div  >
-        <h3  >Preview</h3>
+    <div>
+      <div>
+        <h3>Preview</h3>
       </div>
       <div  >
-        <div id="previewPic" style="width:90px; height:100px; overflow:hidden">
-          <%= image_tag @employee.avatar.url , id: "prev" %>
+        <div id="previewPic" class="librarypic" style="overflow:hidden">
+          <%= image_tag @library.cover.url , id: "prev" %>
         </div>
       </div>
     </div>
