@@ -1,5 +1,5 @@
 class LibrariesController < ApplicationController
-  before_action :set_library, only: [:show, :edit, :update, :destroy]
+  before_action :set_library, only: [:show, :edit, :update, :destroy, :crop]
 
   # GET /libraries
   # GET /libraries.json
@@ -28,11 +28,15 @@ class LibrariesController < ApplicationController
 
     respond_to do |format|
       if @library.save
-        format.html { redirect_to action: :index, notice: 'Library was successfully created.' }
-        format.json { render :index, status: :created, location: @library }
+        if library_params[:cover].present?
+          format.html { render :crop, notice: 'Публикация добавлена.' }
+        else
+          format.html { redirect_to action: :index, notice: 'Публикация добавлена.' }
+        end  
+          format.json { render :index, status: :created, location: @library }  
       else
-        format.html { render :new }
-        format.json { render json: @library.errors, status: :unprocessable_entity }
+        format.html { redirect_to @library }
+        # format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,7 +49,7 @@ class LibrariesController < ApplicationController
         format.html { redirect_to action: :index, notice: 'Library was successfully updated.' }
         format.json { render :index, status: :ok, location: @library }
       else
-        format.html { render :edit }
+        format.html { render :crop }
         format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
