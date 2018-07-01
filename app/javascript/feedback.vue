@@ -37,4 +37,8 @@ h4 {
 	margin: 0.1em 0 0.5em 0em;
 	background-color: $str4;
 }
+.el-button {
+  margin-top: 0.5em;
+}
+ 
 </style>
