@@ -217,15 +217,16 @@ body {
 }
  
 */
+
 .contacts {
-  display: flex;
+   lost-utility: clearfix;
   padding-bottom: 0.3em;
-  lost-utility: clearfix; 
-  div { 
-    lost-column: 1/2 2 1em;
-  }
 }
 .map {
+  lost-column: 1/2 2 1em;
+  @media (--only-xsmall-screen) {
+      lost-column: 1/1;
+    }
   height: 20em;
   iframe {
     height: 100%;
@@ -233,9 +234,17 @@ body {
   }
 }
 .contactInfo { 
+  lost-column: 1/2 2 1em;
   div {
     lost-row: 1/3 0; 
+    div{
+
+      lost-row: 1/2 0;
+    }
   }
+  @media (--only-xsmall-screen) {
+      lost-column: 1/1;
+    }
 }
 .contactInfobd { 
   div {
@@ -244,7 +253,7 @@ body {
 }
 .infoLast {
   div {
-    lost-row: 1/2 0 1em;
+    lost-row: 1/2 2 1em;
   }
 }
 /* jquery.Jcrop.min.css v0.9.12 (build:20130126) */
