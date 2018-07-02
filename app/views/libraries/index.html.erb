@@ -4,15 +4,19 @@
  
     <% @libraries.each do |library| %>
       <div>
-        <div><%= image_tag(library.cover.thumb.url) %></div>
+        <% if library.cover? %>
+          <div style="float:left; padding-bottom: 1em; padding-right: 1em;"><%= image_tag(library.cover.thumb.url) %></div>
+        <% end %>
         <div><%= library.name %></div>
         
         <div><%= library.desc.html_safe %></div>
         <div><%= library.file %></div>
-        <div><%= link_to 'Show', library %></div>
-        <div><%= link_to 'Edit', edit_library_path(library) %></div>
-        <div><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
       </div>
+      <div class="cleared"></div>
+      <div><%= link_to 'Show', library %></div>
+      <div><%= link_to 'Edit', edit_library_path(library) %></div>
+      <div><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
  
 <br>
