@@ -16,6 +16,7 @@ import Sliderapp from '../sliderapp.vue'
 import Child from '../child.vue'
 import Adult from '../adult.vue'
 import News from '../news.vue'
+import Mainmenu from '../mainmenu.vue' 
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -34,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
-
+  new Vue({
+    el: '#mainmenu',
+    render: h => h(Mainmenu)
+  }) 
   var news = document.getElementById("news") 
   if (news != null) {
     new Vue({

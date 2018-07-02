@@ -4,22 +4,24 @@
 	<p class="smalltext"> Семейное консультирование —  это совместная работа психолога и членов семьи, которая нацелена на осознание того, каковы истинные причины  их эмоциональных трудностей, поведения и жизненной ситуации, а также поиск путей решения проблемы. </p>
 </div>
 <div id="app"></div>
+
 <% if user_signed_in? %>
-<div id="leftsheet">
-	<div id="child"></div>
-</div>
-<div id="slider">
-	<% if user_signed_in? %>
-		<a class="button is-success is-outlined" href="/sliders" style="margin: -1.4em 0 0 33%;">
-			 редактор слайдов 
-		</a>
-	<% end %>
-	<div id="sliderapp"></div>
-</div>
-<div id="rightsheet">
-	<div id="adult"></div>
-</div>
-<div class="cleared"></div>
-<div id="news"></div>
+	<div id="mainmenu"></div>
+	<div id="leftsheet">
+		<div id="child"></div>
+	</div>
+	<div id="slider">
+		<% if user_signed_in? %>
+			<a class="button is-success is-outlined" href="/sliders" style="margin: -1.4em 0 0 33%;">
+				 редактор слайдов 
+			</a>
+		<% end %>
+		<div id="sliderapp"></div>
+	</div>
+	<div id="rightsheet">
+		<div id="adult"></div>
+	</div>
+	<div class="cleared"></div>
+	<div id="news"></div>
 <% end %>
  
