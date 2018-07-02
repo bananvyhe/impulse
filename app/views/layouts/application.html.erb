@@ -21,7 +21,7 @@
         <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
       <% end %>
       <div id="head" class="head"></div> 
-      <% if user_signed_in? %>
+      <% if current_user.try(:admin?) %>
       <div id="mainmenu"></div>
       <% end %>
       <div id="main" >
