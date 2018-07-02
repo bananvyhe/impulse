@@ -160,7 +160,7 @@ label.collection_check_boxes {
 
 .maincontent {
   lost-center: 1560px;
-  padding: 2em;
+ 
   @media (--only-small-screen) {
     padding: 1em;
   }
@@ -171,6 +171,13 @@ label.collection_check_boxes {
 body {
   @hyphens;
   font-family: "RobotoCon";
+}
+#main {
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
+  overflow:hidden;  
+   /* footer height bufferdffgdfg */ 
 }
 .body {adjust-font-size: fs b;
 	color: #444;

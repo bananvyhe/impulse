@@ -21,7 +21,12 @@
         <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
       <% end %>
       <div id="head" class="head"></div> 
-      <%= yield %>
+      <% if user_signed_in? %>
+      <div id="mainmenu"></div>
+      <% end %>
+      <div id="main" >
+        <%= yield %>
+      </div>
       <div class="ckestyle" hidden>
         <%= asset_pack_path 'application.css' %>
       </div>      
