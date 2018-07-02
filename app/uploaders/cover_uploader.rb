@@ -4,9 +4,9 @@ class CoverUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-   include CarrierWave::MiniMagick
  
+   include CarrierWave::MiniMagick
+  storage :file
   process resize_to_limit: [900, 1200]
 
   version :thumb do

@@ -16,7 +16,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+ Webpacker::Compiler.watched_paths << 'app/views'
 module Impulse
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -31,5 +31,6 @@ module Impulse
     config.generators.system_tests = nil
     config.generators.stylesheets = false
     config.generators.javascripts = false
+   
   end
 end

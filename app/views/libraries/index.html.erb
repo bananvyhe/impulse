@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Libraries</h1>
-
+<h1>Библиотека</h1>
 <table>
-  <thead>
+<!--   <thead>
     <tr>
       <th>Name</th>
       <th>Cover</th>
@@ -12,12 +11,12 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
+   --><tbody>
     <% @libraries.each do |library| %>
       <tr>
+        <td><%= image_tag(library.cover.thumb.url) %></td>
         <td><%= library.name %></td>
-        <td><%= library.cover %></td>
+        
         <td><%= library.desc %></td>
         <td><%= library.file %></td>
         <td><%= link_to 'Show', library %></td>
@@ -27,7 +26,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Library', new_library_path %>
+<%= link_to 'Новая публикация', new_library_path %>
