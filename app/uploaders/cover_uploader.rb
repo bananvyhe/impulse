@@ -11,8 +11,9 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :crop
-    resize_to_fill(225, 300)
+    resize_to_fill(150, 200)
   end
+ 
   def crop
     if model.crop_x.present?
       resize_to_limit(900, 1200)

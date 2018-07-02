@@ -46,7 +46,7 @@ class LibrariesController < ApplicationController
   def update
     respond_to do |format|
       if @library.update(library_params)
-        format.html { redirect_to action: :index, notice: 'Library was successfully updated.' }
+        format.html { redirect_to action: :index, notice: 'Публикация обновлена.' }
         format.json { render :index, status: :ok, location: @library }
       else
         format.html { render :crop }
@@ -60,7 +60,7 @@ class LibrariesController < ApplicationController
   def destroy
     @library.destroy
     respond_to do |format|
-      format.html { redirect_to libraries_url, notice: 'Library was successfully destroyed.' }
+      format.html { redirect_to libraries_url, notice: 'Публикация удалена.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class LibrariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def library_params
-      params.require(:library).permit(:name, :cover, :desc, :file)
+      params.require(:library).permit(:name, :cover, :cover_cache, :remove_cover, :desc, :file, :file_cache, :remove_file, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
