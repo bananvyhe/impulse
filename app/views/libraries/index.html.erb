@@ -2,22 +2,24 @@
 
 <h1>Библиотека</h1>
  
-    <% @libraries.each do |library| %>
-      <div>
-        <% if library.cover? %>
-          <div style="float:left; padding-bottom: 1em; padding-right: 1em;"><%= image_tag(library.cover.thumb.url) %></div>
-        <% end %>
-        <div><%= library.name %></div>
-        
-        <div><%= library.desc.html_safe %></div>
-        <div><%= library.file %></div>
+  <% @libraries.each do |library| %>
+    <div style="padding-bottom: 2em;">
+      <% if library.cover? %>
+        <div style="float:left; padding-bottom: 1em; padding-right: 1em;"><%= image_tag(library.cover.thumb.url) %></div>
+      <% end %>
+      <div><%= library.name %></div>
+      
+      <div><%= library.desc.html_safe %></div>
+      <div><a href="<%= library.file %>">ссылка на файл</a></div>
 
-      </div>
-      <div class="cleared"></div>
-      <div><%= link_to 'Show', library %></div>
-      <div><%= link_to 'Edit', edit_library_path(library) %></div>
-      <div><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    
+    <div class="cleared"></div>
+    <% if user_signed_in? %>
+      <div><%= link_to 'Редактировать', edit_library_path(library) %></div>
+      <div><%= link_to 'Удалить', library, method: :delete, data: { confirm: 'Are you sure?' } %></div></div>
     <% end %>
+  <% end %>
  
-<br>
-<%= link_to 'Новая публикация', new_library_path %>
+<% if user_signed_in? %> 
+  <%= link_to 'Новая публикация', new_library_path %>
+<% end %>
