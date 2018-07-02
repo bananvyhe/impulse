@@ -17,6 +17,7 @@ import Child from '../child.vue'
 import Adult from '../adult.vue'
 import News from '../news.vue'
 import Mainmenu from '../mainmenu.vue' 
+import Userlist from '../userlist.vue'  
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -32,6 +33,17 @@ Vue.use(Dialog)
  Vue.use(FormItem)
 
 document.addEventListener('DOMContentLoaded', () => {
+	Vue.directive('scroll', {
+    // Когда привязанный элемент вставляется в DOM............ss 
+    inserted: function(el, binding) {
+      let f = function(evt) {
+        if (binding.value(evt, el)) {
+          window.removeEventListener('scroll', _.throttle(f, 300));
+        }
+      };
+      window.addEventListener('scroll', _.throttle(f, 300));
+    },
+  });
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
@@ -46,7 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
       render: h => h(News)
     }) 
   }
+  // var news = document.getElementById("userlist") 
+  // if (news != null) {
+  //   new Vue({
+  //     el: '#userlist',
+  //     render: h => h(Userlist)
+  //   }) 
+  // }
 
+  var element = document.getElementById("userlist")
+  if (element != null) {
+    new Vue({
+      el: '#userlist',
+      render: h => h(Userlist)
+    })
+  }
   var element = document.getElementById("adult")
   if (element != null) {
     new Vue({
