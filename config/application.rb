@@ -31,16 +31,17 @@ module Impulse
     config.generators.system_tests = nil
     config.generators.stylesheets = false
     config.generators.javascripts = false
-    ActionMailer::Base.smtp_settings = {
-        :address        => 'smtp.yandex.ru',
-        :domain         => 'mail.yandex.ru',
-        :port           => 465,
-        :user_name      => 'admin@impuls-psy.ru',
-        :password       => '78803054',
-        :authentication => 'login',
-        :enable_starttls => true
+    # ActionMailer::Base.smtp_settings = {
+    #     tls: true,
+    #     address: 'smtp.yandex.ru',
+    #     domain: 'yandex.ru',
+    #     port: 587,
+    #     authentication: "plain",
+    #     user_name:   'admin@impuls-psy.ru',
+    #     password:    '78803054',
 
-    }
+
+    # }
    
   end
 end
