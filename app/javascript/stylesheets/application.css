@@ -215,7 +215,7 @@ body {
   }
 }
 #slider {
-  padding-top: 3em;
+  padding-top: 1em;
   lost-column: 3/7 3 1em;
   @media (--only-xsmall-screen) {
     lost-column: 1/1;

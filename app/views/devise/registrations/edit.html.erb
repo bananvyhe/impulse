@@ -31,11 +31,13 @@
 <%= link_to "Назад", :back %>
 <div class="cleared"></div>
 
-
+<h3>Зарегистрированные:</h3>
 <% @users = User.all %>
 
 <% @users.each do |user| %>
   <%= user.email %> 
+        
+          <%  user.update_attribute :admin, true  %>
  <%  if  user.admin == true %>
   - Администратор
  <% end %>
