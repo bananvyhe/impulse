@@ -31,6 +31,16 @@ module Impulse
     config.generators.system_tests = nil
     config.generators.stylesheets = false
     config.generators.javascripts = false
+    ActionMailer::Base.smtp_settings = {
+        :address        => 'smtp.yandex.ru',
+        :domain         => 'mail.yandex.ru',
+        :port           => 465,
+        :user_name      => 'admin@impuls-psy.ru',
+        :password       => '78803054',
+        :authentication => 'login',
+        :enable_starttls => true
+
+    }
    
   end
 end
