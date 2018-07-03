@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :programms
   resources :contacts
   devise_for :users
+  resources :users 
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
 	match "/404", :to => "errors#not_found", :via => :all

@@ -62,15 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // if (news != null) {
   //   new Vue({
   //     el: '#userlist',
-  //     render: h => h(Userlist)
+  //     template: '<Price/>',
+  //     components: {Price}
   //   }) 
   // }
 
-  var element = document.getElementById("userlist")
-  if (element != null) {
+  var userlist = document.getElementById("userlist")
+  if (userlist != null) {
     new Vue({
-      el: '#userlist',
-      render: h => h(Userlist)
+      el: userlist,
+      template: '<Userlist/>',
+      components: {Userlist}
     })
   }
   var element = document.getElementById("adult")
