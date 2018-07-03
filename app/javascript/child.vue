@@ -36,8 +36,8 @@ export default {
   mounted() {
     var menuitems = $('.bgstring').toArray();
     var m2 = (menuitems.length/2).toFixed();
-    var m3 = menuitems.splice(m2).reverse();
- 
+    var m3 = menuitems.splice(m2);
+    menuitems.reverse();
     TweenMax.staggerFrom(menuitems, 0.2, {
       opacity: 0,
       delay: 0.35,
