@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true, label: "Емайл" %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "Пароль" %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} знаков минимум" if @minimum_password_length), label: "Пароль" %>
     <%= f.input :password_confirmation, required: true, label: "Пароль", placeholder: "введите еще раз" %>
   </div>
 
