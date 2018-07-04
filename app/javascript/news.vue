@@ -5,6 +5,9 @@
   			<h4>Наши новости:</h4>
        	<div class="hrline scale-in-hor-center "></div>
   		</div>
+          <div style="textAlign: center; paddingBottom: 1em;">
+      <a href="/news/">Редактировать новости</a>
+    </div>
   		<div class="newsBlock Y" id="Y">
         <div class="newsh ">
           <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
@@ -29,9 +32,7 @@
         :total="totalNews">
       </el-pagination>
     </div>
-    <div style="textAlign: center; paddingBottom: 1em;">
-      <a href="/news/">Редактировать новости</a>
-    </div>
+
     
   </div>
 </template>
@@ -143,7 +144,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center; 
-  padding: 1em 0 1em 0;
+  padding: 1em 0 0em 0;
   h4 {
     color: $str6;
     margin: 0 0 0.1em 0;
