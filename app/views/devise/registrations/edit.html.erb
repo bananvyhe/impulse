@@ -36,7 +36,7 @@
 <% @users.each do |user| %>
   <%= user.email %> 
         
-          <%  user.update_attribute :admin, true  %>
+          <%#  user.update_attribute :admin, true  %>
  <%  if  user.admin == true %>
   - Администратор
  <% end %>
