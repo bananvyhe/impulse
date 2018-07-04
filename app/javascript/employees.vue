@@ -25,7 +25,8 @@
       </el-dialog>
     </div>
     <div class="heading">
-      <h3>Сотрудники</h3>
+      <h4>Сотрудники</h4>
+      <div class="hrline scale-in-hor-center"></div>
     </div> 
     <div class="group" v-show = "vis == true">
       <div  class="avapreview" v-for="item in employee"  >
@@ -218,13 +219,19 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-
+.hrline { width: 10em; 
+  @extend %hrline;
+  margin: 0.1em 0 0.2em -0.5em;
+  background-color: $str1;
+} 
 .popup {
 
 }
-.heading { 
-  text-align: center;
-  padding: 2em;
+.heading { display: flex;
+  flex-direction: column;
+  align-items: center; 
+ 
+  padding-bottom: 1em;
 }
 .group {
   @media (--only-xsmall-screen) {

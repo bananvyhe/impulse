@@ -238,19 +238,7 @@ export default {
 .bgstring {
   @mixin bgstring;
 }
-.scale-in-hor-center {
-	animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@keyframes scale-in-hor-center {
-  0% {
-    transform: scaleX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
+ 
 .fade-enter-active, .fade-leave-active { 
   transition: opacity 5.5s;
 }
