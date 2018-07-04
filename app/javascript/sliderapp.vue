@@ -15,7 +15,7 @@
                     :key='index' 
                     class="titlefirst" 
                     v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false"><h3><span v-html="item.caption1"></span></h3>
+                    @click="slideAnimRestart = false"><h2><span v-html="item.caption1"></span></h2>
                   </div> 
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
@@ -173,8 +173,8 @@
   }
   .titlefirst {
     margin-bottom: 0.1em;
-    h3 {
-      font-size: 1.5em;
+    h2 {
+       
       font-weight: bold;
       margin: 0 0.1em 0.2em 0;
       opacity: 0.75;
