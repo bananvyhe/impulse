@@ -15,7 +15,7 @@
     <% @programms.each do |programm| %>
       <tr data-item_id="<%= programm.id %>">
         <td><%= programm.name %></td>
-        <td><%= link_to 'Посмотреть', programm %></td>
+       
         <td><%= link_to 'Редактировать', edit_programm_path(programm) %></td>
         <td><span class="deleteAction">Удалить</span></td>
       </tr>

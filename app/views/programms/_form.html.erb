@@ -1,4 +1,9 @@
 <%= form_for @programm do |f| %>  
+<%= radio_button_tag(:cat, "1") %>
+<%= label_tag(:cat, "I am younger than 21") %>
+<%= radio_button_tag(:cat, "2") %>
+<%= label_tag(:cat, "I'm over 21") %><br>
+	 
 	Название: <%= f.text_field :name %><br><br>
 	Редактор публикации:
   <%= f.cktext_area :desc, cols: 40, rows: 10 %> 

@@ -186,10 +186,9 @@ export default {
             .to(($(this).find('.bgsh')), 0.5, {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
             }, 0)
-            .to(($(this).find('.profp')), 0.4, {
-              transformOrigin: '100% 100%',
+            .to(($(this).find('.profp')), 0.2, {
               opacity: 0, 
-              yPercent: 70,
+              xPercent: 350,
               ease: Power0.easeOut, 
             }, 0)
             .to(($(this).find('.prof')), 0.5, {
@@ -219,7 +218,8 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.hrline { width: 10em; 
+.hrline { 
+  width: 10em; 
   @extend %hrline;
   margin: 0.1em 0 0.2em -0.5em;
   background-color: $str1;
@@ -291,15 +291,18 @@ export default {
   width: 100%;
 }
 .prof {
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
   display: flex;
   justify-content: center;
   align-items: center;
   padding:0.3em 0.5em 0.5em 0.5em; 
-  background-color: #BFDBF7;
+  background-color: #748CAB;
   /*border-top-right-radius: 0.5em;*/
   /*border-top-left-radius: 2em; */
   height: 3em; adjust-font-size: fs t;
   line-height: 1.2;
+  color: $antiflashwhite;
 }
 .itemTitle {
  /* border-bottom-right-radius: 2em; */
