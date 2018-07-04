@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :programms
   resources :contacts
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users
+  # , controllers: { registrations: 'registrations' }
    
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
