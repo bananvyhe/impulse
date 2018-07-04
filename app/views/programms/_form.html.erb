@@ -1,4 +1,6 @@
 <%= form_for @programm do |f| %>  
+	Название: <%= f.text_field :name %><br><br>
+	Редактор публикации:
   <%= f.cktext_area :desc, cols: 40, rows: 10 %> 
   <%= f.submit "Сохранить" %>
 <% end %>
