@@ -29,7 +29,10 @@
         :total="totalNews">
       </el-pagination>
     </div>
-    <el-button type="success" plain onclick="location.href = '/news/'">Редактор новостей</el-button>
+    <div style="textAlign: center; paddingBottom: 1em;">
+      <a href="/news/">Редактировать новости</a>
+    </div>
+    
   </div>
 </template>
 
