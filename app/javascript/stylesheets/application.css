@@ -146,7 +146,13 @@ label.collection_check_boxes {
   vertical-align: -2px;
   margin-left: 2px;
 }
-
+.railsblock {
+  z-index: 9999;
+  margin: 0.5em;
+  position: absolute;
+  right:0;
+  @extend %roundbgstr;
+}
 
 .edit {
   lost-utility: edit;
