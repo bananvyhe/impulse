@@ -2,6 +2,7 @@
   <div class="adult">
   	<div>
   		<h4>Взрослым</h4>
+      <div class="hrline scale-in-hor-left"></div>
   	</div>
  		<div v-for="(item, index) in items" class="bganim">
       <div class="bgstring2">
@@ -59,7 +60,7 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-   
+   align-items: flex-start;
   h4 {
     color: $str4;
     margin: 0 0 0 0;
