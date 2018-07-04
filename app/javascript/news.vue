@@ -185,7 +185,7 @@ export default {
 .newsItem { 
          background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
  /* border: 1px dotted $color-1;*/
-  border-radius: 2em; 
+  border-radius: 0.6em; 
   padding: 0.8em;
   position: relative;
   opacity: 0;
