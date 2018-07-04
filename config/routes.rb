@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
-  devise_for :admins
+  # devise_for :admins
   resources :sliders
   resources :news
   resources :libraries
@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :programms
   resources :contacts
-  devise_for :users
-  resources :users 
+  devise_for :users, controllers: { registrations: 'registrations' }
+   
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
 	match "/404", :to => "errors#not_found", :via => :all
