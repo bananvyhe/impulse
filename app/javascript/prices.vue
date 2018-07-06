@@ -1,6 +1,6 @@
 <template>
   <div>
-  	<h4>{{teamssect[0].name }}</h4>
+  	<!-- <h4>{{teamssect[0].name }}</h4> -->
 	  <el-table  stripe v-if="adult.length"
     :data = "adult"  style="width: 100%" 
     >
@@ -14,7 +14,7 @@
        prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
   	</el-table>
 
-		<h4>{{teamssect[1].name }}</h4>
+		<!-- <h4>{{teamssect[1].name }}</h4> -->
   	<el-table stripe v-if="child.length"
     :data = "child"  style="width: 100%" 
     >
