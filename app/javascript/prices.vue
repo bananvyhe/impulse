@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h4>Для взрослых</h4>
+    <!-- <div class="hrline scale-in-hor-left"></div> -->
   	<!-- <h4>{{teamssect[0].name }}</h4> -->
 	  <el-table  stripe v-if="adult.length"
     :data = "adult"  style="width: 100%" 
@@ -13,11 +15,11 @@
 
        prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
   	</el-table>
-
+    <h4>Для детей</h4>
+    <!-- <div class="hrline scale-in-hor-left"></div> -->
 		<!-- <h4>{{teamssect[1].name }}</h4> -->
   	<el-table stripe v-if="child.length"
-    :data = "child"  style="width: 100%" 
-    >
+    :data = "child"  style="width: 100%">
       <el-table-column sortable
       prop="name" 
       label="Наименование услуги"></el-table-column>
@@ -58,13 +60,13 @@ export default {
     axiosget() {
 			axios.get('/players ')
     	.then((response) => {
-      this.teams = response.data;
-      this.adult = this.teams.filter(function(item) {
-        return item.team_id == 1
-      })
-      this.child = this.teams.filter(function(item) {
-        return item.team_id == 2
-      })
+        this.teams = response.data;
+        this.adult = this.teams.filter(function(item) {
+          return item.team_id == 1
+      });
+        this.child = this.teams.filter(function(item) {
+          return item.team_id == 2
+        });
 	    })
 	    .catch(function (error) {
 	      console.log(error);
@@ -110,7 +112,7 @@ export default {
     margin: 0 0 0.1em 0;
   }
 }
-.hrline { width: 12em; 
+.hrline {  
   @extend %hrline;
   margin: 0.1em 0 0.3em -0.3em;
   background-color: $str6;
