@@ -61,7 +61,7 @@
 import axios from 'axios'
 var element = document.getElementById("team-form")
 if (element != null) {
-  console.log(element);
+  // console.log(element);
   var id = element.dataset.id
   var team = JSON.parse(element.dataset.team)
   var players_attributes = JSON.parse(element.dataset.playersAttributes)
@@ -78,13 +78,7 @@ export default {
     }
   },
   created() {
-  	axios.get('/teams')
-	  .then(function (response) {
-	    console.log(response);
-	  })
-	  .catch(function (error) {
-	    console.log(error);
-	  });	
+  	 
   },
   mounted() {
   },
@@ -101,8 +95,7 @@ export default {
         //position: " ",
         _destroy: null
       })
-      console.log(this.team.players_attributes)
-      console.log(this.team)
+   
     },
     removePlayer: function(index) {
       var player = this.team.players_attributes[index]
@@ -111,8 +104,7 @@ export default {
       } else {
         this.team.players_attributes[index]._destroy = "1"
       }
-      console.log(this.team.players_attributes)
-      console.log(this.team)
+  
     },
     undoRemove: function(index) {
       this.team.players_attributes[index]._destroy = null
@@ -123,14 +115,14 @@ export default {
         axios.post('/teams', { team: this.team }).then(response => {
          window.location.href = '/teams' ; 
         }, response => {
-          console.log(response)
+ 
         })
       // Edit an existing team
       } else {
         axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
            window.location.href = '/teams';  
         }, response => {
-          console.log(response)
+ 
         })
       }
     },

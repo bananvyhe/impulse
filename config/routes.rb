@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :news
   resources :libraries
   resources :teams
+  resources :players
+  
   # resources :players
   resources :employees
   get 'errors/not_found'

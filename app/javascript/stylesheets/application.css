@@ -168,7 +168,7 @@ label.collection_check_boxes {
   lost-center: 1560px;
   position:relative; 
   @media (--only-small-screen) {
-    padding: 1em;
+     
   }
   @media (--only-big-screen) {
     padding: 1em;

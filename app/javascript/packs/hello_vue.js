@@ -10,14 +10,15 @@ import Vue from 'vue/dist/vue.esm.js'
 import App from '../app.vue'
 import Head from '../head.vue'
 import Employees from '../employees.vue'
-import Price from '../telpanel.vue' 
+import Telpanel from '../telpanel.vue' 
 import Feedback from '../feedback.vue'
 import Sliderapp from '../sliderapp.vue'
 import Child from '../child.vue'
 import Adult from '../adult.vue'
 import News from '../news.vue'
 import Mainmenu from '../mainmenu.vue' 
-import Userlist from '../userlist.vue'  
+import Userlist from '../userlist.vue' 
+import Prices from '../prices.vue' 
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -54,6 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	    render: h => h(Mainmenu)
 	  }) 
 	}
+  var prices = document.getElementById("prices") 
+  if (prices != null) {
+    new Vue({
+      el: prices,
+      template: '<Prices/>',
+      components: {Prices}
+    }) 
+  }
+  var price = document.getElementById("team-form")
+  if (price != null) {
+    var app = new Vue({
+      el: price,
+      template: '<Telpanel/>',
+      components: {Telpanel}
+    }) 
+  }
   var news = document.getElementById("news") 
   if (news != null) {
     new Vue({
@@ -106,14 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       render: h => h(Feedback)
     }) 
   } 
-  var price = document.getElementById("team-form")
-  if (price != null) {
-    var app = new Vue({
-      el: price,
-      template: '<Price/>',
-      components: {Price}
-    }) 
-  }
+
 	var app = document.getElementById("app") 
 	if (app != null) {
 	  new Vue({

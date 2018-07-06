@@ -1,9 +1,12 @@
  
+<%= content_tag :div, id: "prices"  do %>
+<% end %>
+
+<!--  <div id="prices"></div> -->
 <h1>Категории</h1>
 <table>
   <thead>
     <tr>
-       
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +22,10 @@
         <td><%= team.name %></td>
         <!-- <td><%= link_to 'Посмотреть', team %></td> -->
         <td><%= link_to 'Редактировать', edit_team_path(team) %></td>
-        <td><span class="deleteAction">Удалить</span></td>
+        <!-- <td><span class="deleteAction">Удалить</span></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'Создать категорию', new_team_path %>
+<%#= link_to 'Создать категорию', new_team_path %>
