@@ -79,7 +79,7 @@ export default {
   },
   created() {
   	this.axiosget();
-    setTimeout(this.child1, 100);
+    setTimeout(this.child1, 150);
     setTimeout(this.adult1, 100); 
   },
   mounted() {
