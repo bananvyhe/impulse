@@ -29,6 +29,7 @@
 
        prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
   	</el-table>
+    <div v-else>empty</div>
   </div>
 </template>
 
