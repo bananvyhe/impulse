@@ -18,7 +18,7 @@
     <h4>Для детей</h4>
     <!-- <div class="hrline scale-in-hor-left"></div> -->
 		<!-- <h4>{{teamssect[1].name }}</h4> -->
-  	<el-table stripe  
+  	<el-table stripe v-if="child.length"
     :data = "child"  style="width: 100%">
       <el-table-column sortable
       prop="name" 
@@ -29,7 +29,7 @@
 
        prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
   	</el-table>
-
+     
   </div>
 </template>
 
