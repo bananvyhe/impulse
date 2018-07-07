@@ -14,7 +14,8 @@
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
     </div>
-      <div  v-if="child.length">
+    {{child}}
+    <div  v-if="child.length">
       <!-- <h4>Для детей</h4> -->
       <h4>{{teamssect[1].name }}</h4> 
       <el-table stripe
