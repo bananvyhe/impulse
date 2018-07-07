@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div  v-if="adult.length">
+   <!--  <div  v-if="adult.length">
      <!--  <h4>Для взрослых</h4> -->
     <!-- <div class="hrline scale-in-hor-left"></div> -->
      <h4>{{teamssect[0].name }}</h4> 
@@ -13,7 +13,7 @@
         <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
-    </div>
+    </div> -->
     {{child}}
     <div  v-if="child.length">
       <!-- <h4>Для детей</h4> -->
@@ -23,7 +23,7 @@
         <el-table-column sortable
         prop="name" 
         label="Наименование услуги"></el-table-column>
-        <el-table-column prop="graph" label="График занятий"></el-table-column>
+        <el-table-column prop="graph   " label="График занятий"></el-table-column>
         <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
@@ -42,7 +42,7 @@ export default {
     	teamssect: '',
  			teams: '',
  			child: child,
- 			adult: adult,
+ 			// adult: adult,
       postBody: '',
       errors: [],
     }
@@ -55,9 +55,9 @@ export default {
       this.child = this.teams.filter(function(item) {
           return item.team_id == 2
         });
-        this.adult = this.teams.filter(function(item) {
-          return item.team_id == 1
-      });
+      //   this.adult = this.teams.filter(function(item) {
+      //     return item.team_id == 1
+      // });
   	},
   	adult1() {
  
