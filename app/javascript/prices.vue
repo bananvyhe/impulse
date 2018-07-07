@@ -16,8 +16,7 @@
        prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
   	</el-table>
     <h4>Для детей</h4>
-    <!-- <div class="hrline scale-in-hor-left"></div> -->
-		<!-- <h4>{{teamssect[1].name }}</h4> -->
+ 
   	<el-table stripe v-if="child.length"
     :data = "child"  style="width: 100%">
       <el-table-column sortable
@@ -35,15 +34,16 @@
 
 <script>
 import axios from 'axios' 
- 
+let child = {value:  ''};
+let adult = {value:  ''};
 export default {
  
   data: function () {
     return {
     	teamssect: '',
  			teams: '',
- 			child: '',
- 			adult: '',
+ 			child: child,
+ 			adult: adult,
       postBody: '',
       errors: [],
     }
