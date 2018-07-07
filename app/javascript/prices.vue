@@ -1,8 +1,7 @@
 <template>
   <div>
-   <!--  <div  v-if="adult.length">
-     <!--  <h4>Для взрослых</h4> -->
-    <!-- <div class="hrline scale-in-hor-left"></div> -->
+  <!--   <div  v-if="adult.length">
+ 
      <h4>{{teamssect[0].name }}</h4> 
       <el-table stripe
         :data = "adult" style="width: 100%">
