@@ -62,8 +62,8 @@ export default {
       axios.get('/players ')
       .then((response) => {
         this.teams = response.data;
-        this.child = this.teams.filter(function(item) {
-          return item.team_id == 2
+        this.child = this.teams.filter(function(item1) {
+          return item1.team_id == 2
         });
         this.adult = this.teams.filter(function(item) {
           return item.team_id == 1
