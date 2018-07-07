@@ -59,7 +59,7 @@
 	 
 </script>
 <style scoped>
-@import "stylesheets/variables";
+@import "stylesheets/_variables";
 .footer { 
 	padding: 0.2em 1.5em ;
 	adjust-font-size: fs tiny;

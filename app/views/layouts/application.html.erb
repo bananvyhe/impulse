@@ -31,6 +31,9 @@
       <% end %>
       <div id="main" >
         <%= yield %>
+        <% if current_user.try(:admin?) %>
+          <div id="footer"></div>
+        <% end %>
       </div>
       <div class="ckestyle" hidden>
         <%= asset_pack_path 'application.css' %>
