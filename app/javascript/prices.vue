@@ -1,6 +1,6 @@
 <template>
   <div>
-  <!--   <div  v-if="adult.length">
+    <div  v-if="adult.length">
  
      <h4>{{teamssect[0].name }}</h4> 
       <el-table stripe
@@ -12,8 +12,9 @@
         <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
-    </div> -->
-    {{teams}}
+       <br>
+    </div>
+    
     <div  v-if="child1.length">
       <!-- <h4>Для детей</h4> -->
       <h4>{{teamssect[1].name }}</h4> 
@@ -26,6 +27,7 @@
         <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
+       <br>
     </div>
   </div>
 </template>
@@ -41,7 +43,7 @@ export default {
     	teamssect: '',
  			teams: '',
  			child1: child1,
- 			// adult: adult,
+ 			adult: adult,
       postBody: '',
       errors: [],
     }
@@ -52,11 +54,11 @@ export default {
   methods: {
   	child2(){
       this.child1 = this.teams.filter(function(item) {
-          return item.team_id == 2
+          return item.team_id == 3
         });
-      //   this.adult = this.teams.filter(function(item) {
-      //     return item.team_id == 1
-      // });
+        this.adult = this.teams.filter(function(item) {
+          return item.team_id == 1
+      });
   	},
   	adult1() {
  
