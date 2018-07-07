@@ -18,11 +18,11 @@
       <!-- <h4>Для детей</h4> -->
       <h4>{{teamssect[1].name }}</h4> 
       <el-table stripe
-      :data = "child1" style="width: 100%">
+        :data = "child1" style="width: 100%">
         <el-table-column sortable
         prop="name" 
         label="Наименование услуги"></el-table-column>
-        <el-table-column prop="graph   " label="График занятий"></el-table-column>
+        <el-table-column prop="graph" label="График занятий"></el-table-column>
         <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
         <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
       </el-table>
