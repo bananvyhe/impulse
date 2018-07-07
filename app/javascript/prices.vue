@@ -58,21 +58,22 @@ export default {
   	adult1() {
  
   	},
-    axiosget() {
-			axios.get('/players ')
-    	.then((response) => {
+    axiosget1() {
+      axios.get('/players ')
+      .then((response) => {
         this.teams = response.data;
-        this.adult = this.teams.filter(function(item) {
-          return item.team_id == 1
-      });
         this.child = this.teams.filter(function(item) {
           return item.team_id == 2
         });
-	    })
-	    .catch(function (error) {
-	      console.log(error);
-	    });  
-
+        this.adult = this.teams.filter(function(item) {
+          return item.team_id == 1
+      });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });  
+    },
+    axiosget2() {
 	    axios.get('/teams ')
     	.then((response) => {
       this.teamssect = response.data ;
@@ -84,8 +85,8 @@ export default {
     }
   },
   created() {
-  	this.axiosget();
-     
+  	this.axiosget1();
+    this.axiosget2(); 
  
   },
   mounted() {
