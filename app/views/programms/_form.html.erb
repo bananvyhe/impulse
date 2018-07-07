@@ -1,8 +1,12 @@
 <%= form_for @programm do |f| %>  
-<%= radio_button_tag(:cat, "1") %>
-<%= label_tag(:cat, "I am younger than 21") %>
-<%= radio_button_tag(:cat, "2") %>
-<%= label_tag(:cat, "I'm over 21") %><br>
+<div>Для взрослых
+	<%= f.radio_button :cat, "1", :checked => true %>
+<%# = f.label :cat,  "Для взрослых" %>&nbsp;&nbsp;&nbsp;&nbsp;
+Для детей
+<%= f.radio_button :cat, "2"  %>
+<%# = f.label :cat,  "Для детей" %><br>
+</div>
+
 	 
 	Название: <%= f.text_field :name %><br><br>
 	Редактор публикации:
