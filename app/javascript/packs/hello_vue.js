@@ -20,6 +20,7 @@ import Mainmenu from '../mainmenu.vue'
 import Userlist from '../userlist.vue' 
 import Prices from '../prices.vue' 
 import Footer from '../footer.vue' 
+import Reviews from '../reviews.vue' 
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog } from 'element-ui'
 Vue.use(Carousel)
@@ -56,6 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	    render: h => h(Mainmenu)
 	  }) 
 	}
+  var reviews = document.getElementById("reviews") 
+  if (reviews != null) {
+    new Vue({
+      el: '#reviews',
+      render: h => h(Reviews)
+    }) 
+  }
   var footer = document.getElementById("footer") 
   if (footer != null) {
     new Vue({
