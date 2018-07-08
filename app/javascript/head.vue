@@ -27,14 +27,14 @@ export default {
     }
   },
   created() {
-    // axios.get('/contacts')
-    // .then(response => {
-    //   this.contacts = response.data
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // }); 
+    axios.get('/contacts')
+    .then(response => {
+      this.contacts = response.data
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    }); 
   },
 }
 </script>
@@ -46,7 +46,7 @@ export default {
 	height: 160px; 
 }
 .first {
-  /*background-image: url(../../app/assets/images/logo.png);*/
+  background-image: url(images/logo.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
