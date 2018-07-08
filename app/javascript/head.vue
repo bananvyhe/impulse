@@ -46,7 +46,9 @@ export default {
 	height: 160px; 
 }
 .first {
+
   background-image: url(images/logo.svg);
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

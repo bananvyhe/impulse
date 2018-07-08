@@ -183,7 +183,7 @@ export default {
   transform: scale(0,0);
 }
 .newsItem { 
-         background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
+  background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
  /* border: 1px dotted $color-1;*/
   border-radius: 0.6em; 
   padding: 0.8em;
