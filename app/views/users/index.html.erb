@@ -1,5 +1,6 @@
 <% @users = User.all %>
 <% @users.each do |user| %>
   <%= user.email %> 
-  <%= user.admin %><br/>
+  <%= user.admin %><%= link_to "+", admination_user_path(user) %>
+  <%= link_to "-", deadmination_user_path(user) %> <br/>
 <% end %>

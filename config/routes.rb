@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   resources :programms
   resources :contacts
   devise_for :users
+  resources :users do
+    get :admination, on: :member
+    get :deadmination, on: :member
+  end
   # , controllers: { registrations: 'registrations' }
    
 	root 'pages#main'

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
   	@users = User.all.order(created_at: :desc)
@@ -9,8 +10,19 @@ class UsersController < ApplicationController
   def update
       
   end
-  def add_admin
-  	current_user.update_attribute :admin, true
+  def admination
+    if current_user.admin?
+      @user = User.find(params[:id])
+    	@user.update_attribute :admin, true
+      redirect_to action: :index
+    end
+  end
+  def deadmination
+    if current_user.admin?
+      @user = User.find(params[:id])
+      @user.update_attribute :admin, false
+      redirect_to action: :index
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.
