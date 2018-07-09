@@ -1,20 +1,20 @@
 <template>
   <div>
-  	<div v-for="programm of programms">
-  		<div class="subj"><p>&laquo;{{programm.name}}&raquo;</p></div>
-  		<div class="name">{{programm.desc}}</div>
-  	</div>
+  	<el-collapse v-model="activeName" accordion>
+		  <el-collapse-item v-for="programm of programms" :title="programm.name"  :name = "programm.id">
+		    <div class="subj"><p>&laquo;{{programm.name}}&raquo;</p></div>{{programm.id}}
+  		<div class="name"><span v-html="programm.desc"></span></div>
+		  </el-collapse-item>
+		</el-collapse>
   </div>
 </template>
-
 <script>
 import axios from 'axios'
- 
 export default {
   data: function () {
     return {
       programms: [],
-       
+      activeName: '1' 
     }
   },
   watch: {
@@ -45,8 +45,7 @@ export default {
   }
 } 
 </script>
-
 <style scoped>
 @import "stylesheets/_variables";
- 
+
 </style>
