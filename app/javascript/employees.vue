@@ -129,12 +129,13 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
         .staggerFromTo('.cardpic', 0.2, {
+           
           autoAlpha:0,
           yPercent: 50,
         }, {
           autoAlpha:1,
           yPercent: 0,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.2")
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.2, "-=0.2")
         .staggerFromTo('.itemTitle', 0.1, {
           y: -30,
           autoAlpha:0
@@ -159,6 +160,7 @@ export default {
           display: 'none',
           xPercent: -100
         });
+       
       var self = this;
       function endAnima() {
         $('.avapreview').each(function(index, element){
@@ -278,14 +280,14 @@ export default {
   }
 }
 .cardpic {
-  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2);
+   
   width: 100%;
   overflow: hidden;
   display: flex;
   /*border-radius: $borderRad; */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; 
+  background-size: cover;  
 }
 .bg {
   width: 100%;
