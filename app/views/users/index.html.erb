@@ -1,6 +1,16 @@
 <% @users = User.all %>
 <% @users.each do |user| %>
   <%= user.email %> 
-  <%= user.admin %><%= link_to "+", admination_user_path(user) %>
-  <%= link_to "-", deadmination_user_path(user) %> <br/>
+   <%  if  user.admin == false %>
+
+  <%= link_to "+", admination_user_path(user) %>&nbsp; дать права
+ <% end %>
+ 
+ 
+  <%  if  user.admin == true %>
+  - права администратора
+   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
+ <% end %>
+ 
+  <br/>
 <% end %>
