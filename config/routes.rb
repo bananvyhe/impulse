@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feedbacks
   resources :reviews
   get 'users/index'
   # devise_for :admins
