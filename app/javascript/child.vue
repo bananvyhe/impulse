@@ -2,22 +2,26 @@
   <div class="child">
   	<div>
       <h4>Детям и подросткам</h4>
+ 
       <div class="hrline scale-in-hor-right"></div>
   	</div>
- 		<div v-for="(item, index) in items" class="bganim">
+ 		<div v-for="(item, index) in child1" class="bganim">
       <div class="bgstring">
-        {{item.title}}        
+        {{item.name}}        
       </div>
  		</div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 
 
 export default {
   data: function () {
     return {
+      data:'',
+      child1:'',
     	items: [
         { title: 'Детский психолог', url: '#'},
         { title: 'Нейропсихологическая диагностика и коррекция', url: '#'},
@@ -32,6 +36,26 @@ export default {
         { title: 'Логопед-дефектолог', url: '#'}     
       ] 
     }
+  },
+  methods: {
+    child2(){
+      this.child1 = this.data.filter(function(item) {
+          return item.cat == 2
+        });
+     },
+    catchchild() {
+       axios.get('/programms')
+      .then((data) => {
+        this.data = data.data
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    }
+  },
+  created() {
+     this.catchchild();
+     setTimeout (this.child2, 400);
   },
   mounted() {
     var menuitems = $('.bgstring').toArray();
