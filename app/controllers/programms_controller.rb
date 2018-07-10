@@ -4,7 +4,7 @@ class ProgrammsController < ApplicationController
   # GET /programms
   # GET /programms.json
   def index
-    @programms = Programm.all
+    @programms = Programm.all.order(created_at: :asc)
   end
 
   # GET /programms/1

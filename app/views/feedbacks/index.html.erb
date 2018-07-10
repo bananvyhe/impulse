@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+ 
+<% if current_user.try(:admin?) %>
 <h2>Письма пользователей:</h2>
 
 <table>
@@ -27,5 +27,6 @@
 </table>
 
 <br>
+<% end %>
 
 <%#= link_to 'New Feedback', new_feedback_path %>
