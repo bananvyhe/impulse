@@ -9,15 +9,24 @@
         ]">
         <el-input placeholder="Введите имя" v-model="dynamicValidateForm.name"></el-input>
       </el-form-item>
-    	<el-input placeholder="Контактная информация (тел, е-майл, ...)" v-model="dynamicValidateForm.contact">
-        
-      </el-input>
-    	<el-input
-  		  type="textarea"
-  		  :rows="4"
-  		  placeholder="Введите сообщение"
-  		  v-model="dynamicValidateForm.message">
-  		</el-input>
+      <el-form-item 
+        prop="contact"
+        :rules="[
+          { required: true, message: 'Пожалуйста, введите контактные данные', trigger: 'blur' },
+        ]">
+      	<el-input placeholder="Контактная информация (тел, е-майл, ...)" v-model="dynamicValidateForm.contact">
+          
+        </el-input>
+      </el-form-item>
+      <el-form-item 
+        prop="message">
+      	<el-input
+    		  type="textarea"
+    		  :rows="4"
+    		  placeholder="Введите сообщение"
+    		  v-model="dynamicValidateForm.message">
+    		</el-input>
+      </el-form-item>
   		<el-button v-on:click="handler" type="success" plain>Отправить</el-button>
     </el-form>
   </div>
@@ -39,7 +48,7 @@ export default {
       this.$refs[formName].resetFields();
     },
     handler(){
-      // this.postfeed();
+      this.postfeed();
       this.open();
       this.resetForm('numberValidateForm');
     },
