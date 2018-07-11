@@ -70,6 +70,7 @@ export default {
   }
 }
 .second {
+  z-index: 10;
   justify-content: flex-end;
   text-align: right;
   margin-top: 5em;
