@@ -1,5 +1,6 @@
 <template>
-  <div><div v-show="false">{{menuwidth.value}}</div>
+  <div>{{pathname}}
+    <div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
     <div v-show="false">numhide:{{numHide}}<br>numvis:{{numVis}}</div>
@@ -24,11 +25,17 @@
       </div>
       <ul class='visible-links'>
         <li v-for="menuitem in menuitems">
-          <a :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
-          </a>
+           <div v-if="pathname == menuitem.url" v-bind:style="activelink" >
+              <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
+              </a>  
+            </div>
+            <div v-else >
+              <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
+              </a>  
+            </div>
         </li>
       </ul>
-       <div v-if="menuitemsHide.length > 0" class="blankdiv1">
+      <div v-if="menuitemsHide.length > 0" class="blankdiv1">
       </div>
       <ul class='hidden-links' 
         v-bind:style="hiddenStyle"  
@@ -53,10 +60,14 @@
   let availableSpace = {value:  ''};
   let vlinks = {value:  ''};
   let headHeight = {value: ''};
-
+  let pathname = document.location.pathname;
   export default {
     data: function () {
       return {
+        activelink: {
+          fontWeight: 'bold' 
+        },
+        pathname: pathname,
         fixedwidth: '',
         hoverbutton: {},
         //выключатель показа индикации служебной информации----
@@ -98,6 +109,7 @@
       document.removeEventListener('click', this.dropdown) 
     },
     methods:{
+ 
       scrollHandler(){
         this.scrollBottom = window.scrollY + window.innerHeight;
         this.scrollTop = window.scrollY;
@@ -299,6 +311,10 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+/*.activelink {
+    font-weight: bold;
+    a { color: $color-1 !important; }
+  }*/
 .grass {
 	height: 48px;
 	background-image: url(images/grass.jpg);
@@ -453,10 +469,7 @@
       font-size: 1em;
     }
   }
-  .visible-links li:first-child {
-    font-weight: bold;
-    a { color: $color-1 !important; }
-  }
+  
   .hidden {
     visibility: hidden;
   }
