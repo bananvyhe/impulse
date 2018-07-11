@@ -42,8 +42,8 @@ Rails.application.configure do
     :port => 25,
     :domain => 'yandex.ru',
     :authentication => :plain,
-    :user_name => 'admin@impuls-psy.ru',
-    :password => '78803054'
+    :user_name => 'deploy@pixeltech.ru',
+    :password => Rails.application.credentials.secret_mail
   }
 
   # Print deprecation notices to the Rails logger.
