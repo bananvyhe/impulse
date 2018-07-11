@@ -74,8 +74,8 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.smtp_settings = {
     :address => "smtp.yandex.ru",
-    :port => 587,
-    :domain => 'impuls-psy.ru',
+    :port => 25,
+    :domain => 'yandex.ru',
     :authentication => :plain,
     :user_name => 'admin@impuls-psy.ru',
     :password => '78803054'
