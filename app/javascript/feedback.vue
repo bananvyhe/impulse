@@ -1,15 +1,25 @@
 <template>
   <div class="feedback">
   	<div><h4>Отправьте нам сообщение:</h4></div>
-  	<el-input placeholder="Как к вам обращаться?" v-model="name"></el-input>
-  	<el-input placeholder="Контактная информация (тел, е-майл, ...)" v-model="contact"></el-input>
-  	<el-input
-		  type="textarea"
-		  :rows="4"
-		  placeholder="Введите сообщение"
-		  v-model="message">
-		</el-input>
-		<el-button v-on:click="postfeed" type="success" plain>Отправить</el-button>
+    <el-form :model="dynamicValidateForm"  ref="numberValidateForm" >
+    	<el-form-item 
+        prop="name"
+        :rules="[
+          { required: true, message: 'Пожалуйста, введите имя', trigger: 'blur' },
+        ]">
+        <el-input placeholder="Введите имя" v-model="dynamicValidateForm.name"></el-input>
+      </el-form-item>
+    	<el-input placeholder="Контактная информация (тел, е-майл, ...)" v-model="dynamicValidateForm.contact">
+        
+      </el-input>
+    	<el-input
+  		  type="textarea"
+  		  :rows="4"
+  		  placeholder="Введите сообщение"
+  		  v-model="dynamicValidateForm.message">
+  		</el-input>
+  		<el-button v-on:click="handler" type="success" plain>Отправить</el-button>
+    </el-form>
   </div>
 </template>
 
@@ -18,17 +28,35 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+     dynamicValidateForm: { 
     	name: '',
     	contact: '',
-    	message: ''
+    	message: ''}
     }
   },
   methods: {
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+    handler(){
+      // this.postfeed();
+      this.open();
+      this.resetForm('numberValidateForm');
+    },
+    open() {
+      const h = this.$createElement;
+
+      this.$notify({
+        type: 'success',
+        title: 'Спасибо',
+        message: h('i', { style: 'color: teal' }, 'Ваше сообщение отправлено.')
+      });
+    },
     postfeed() {
       axios.post('/feedbacks', {
-      name: this.name,
-      contact: this.contact,
-      message: this.message
+      name: this.dynamicValidateForm.name,
+      contact: this.dynamicValidateForm.contact,
+      message: this.dynamicValidateForm.message
       }).then(function (response) {
         console.log(response);
       })
