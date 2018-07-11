@@ -46,8 +46,14 @@
           @mouseup="" 
           @click=""
           :key="index">
-          <a :href="item.url"><nobr>{{item.title.toUpperCase()}}</nobr>
-          </a>
+          <div v-if="pathname == item.url" v-bind:style="activelink">
+            <a :href="item.url"><nobr>{{item.title.toUpperCase()}}</nobr>
+            </a>
+          </div>
+          <div v-else >
+            <a :href="item.url"><nobr>{{item.title.toUpperCase()}}</nobr>
+            </a>
+          </div>
         </li>
       </transition-group>
       </ul>
