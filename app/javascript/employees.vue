@@ -107,12 +107,11 @@ export default {
     //     newsContent.text(newsText.slice(0, size) + ' ...');
     //   }
     // },
-     popemploy: function(employee) {
+    popemploy: function(employee) {
       if (this.empid != ''){
       var self = this;  
       return employee.filter(function (elem) {
-        console.log('432');
-        console.log(self.empid);
+ 
         return elem.id == self.empid;
         })
       }

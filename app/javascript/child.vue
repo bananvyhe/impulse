@@ -2,14 +2,25 @@
   <div class="child"> 
   	<div>
       <h4>Детям и подросткам</h4>
- 
       <div class="hrline scale-in-hor-right"></div>
   	</div>
  		<div v-for="(item, index) in data" class="bganim">
-      <div class="bgstring">
-        {{item.name}}        
+      <div class="bgstring" @click="clickhandler(item.id, $event) ">   
+        {{item.name}}       
       </div>
  		</div>
+    <div v-for="item in popemploy(data)">
+      <el-dialog 
+      class="fizer"
+      :title="item.name" 
+      :visible.sync="dialogTableVisible"
+      :lock-scroll = 'false'
+      width="90%">
+        <div class="container">
+          <span v-html="item.desc"></span>  
+        </div>
+      </el-dialog>
+    </div>
   </div>
 </template>
 
@@ -19,10 +30,25 @@ export default {
   data: function () {
     return {
       data:'',
-      child1:'' 
+      empid: '',
+      dialogTableVisible: false,
     }
   },
   methods: {
+    popemploy: function(data) {
+      if (this.empid != ''){
+      var self = this;  
+      return data.filter(function (elem) {
+ 
+        return elem.id == self.empid;
+        })
+      }
+    },
+    clickhandler( event) {
+      this.dialogTableVisible = true;
+      this.empid = event;
+       
+    },
     catchchild() {
        axios.get('/programms')
       .then((data) => {
@@ -62,6 +88,12 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+ .fizer {
+  lost-center: 1160px;
+ }
+.container {
+  overflow: hidden;
+}
 .hrline {
   @extend %hrline;
   margin: 0.1em 0 0.2em -0.5em;
