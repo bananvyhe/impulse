@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :programms
   resources :contacts
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+  }
   resources :users do
     get :admination, on: :member
     get :deadmination, on: :member
