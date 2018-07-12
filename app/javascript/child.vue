@@ -110,6 +110,7 @@ export default {
   }
 }
 .bgstring {
+  cursor: pointer;
   display: inline-block;
   position: relative;
   @extend %bgstring;
