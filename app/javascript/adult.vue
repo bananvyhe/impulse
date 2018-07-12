@@ -64,7 +64,7 @@ export default {
   created() {
      this.catchchild();
   },
-  mounted() {
+  updated() {
     var menuitems = $('.bgstring2').toArray();
     var m2a = (menuitems.length/2).toFixed();
     var m3a = menuitems.splice(m2a);
