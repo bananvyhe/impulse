@@ -27,21 +27,20 @@
 <br>
 <%= link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %>
 <br>
+
 <%= link_to "Назад", :back %>
 <div class="cleared"></div>
 
 <h3>Зарегистрированные:</h3>
 <% @users = User.all %>
-
+<%= link_to "управление пользователями", users_path %><br>
 <% @users.each do |user| %>
   <%= user.email %> 
-        
-          <%#  user.update_attribute :admin, true  %>
  <%  if  user.admin == true %>
   - Администратор
  <% end %>
   <br/>
 <% end %>
-<%= link_to "управление пользователями", users_path %>
+
 <!-- <div id="userlist"></div> -->
  
