@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div>{{pathname}}
   	<el-collapse v-model="activeName" accordion>
-		  <el-collapse-item v-for="programm of programms" :title="programm.name"  :name = "programm.id">
-		    <div class="subj"><p>&laquo;{{programm.name}}&raquo;</p></div>{{programm.id}}
+		  <el-collapse-item v-for="programm of programms" 
+        :title="programm.name"  
+        :name = "programm.id">
+		    <div class="subj"><p>&laquo;{{programm.name}}&raquo;</p></div>
   		<div class="name"><span v-html="programm.desc"></span></div>
 		  </el-collapse-item>
 		</el-collapse>
@@ -10,11 +12,13 @@
 </template>
 <script>
 import axios from 'axios'
+let pathname = document.location.pathname;
 export default {
   data: function () {
     return {
+      pathname: pathname,
       programms: [],
-      activeName: '1' 
+      activeName:  22 
     }
   },
   watch: {

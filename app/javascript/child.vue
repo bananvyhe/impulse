@@ -1,11 +1,11 @@
 <template>
-  <div class="child">
+  <div class="child"> 
   	<div>
       <h4>Детям и подросткам</h4>
  
       <div class="hrline scale-in-hor-right"></div>
   	</div>
- 		<div v-for="(item, index) in child1" class="bganim">
+ 		<div v-for="(item, index) in data" class="bganim">
       <div class="bgstring">
         {{item.name}}        
       </div>
@@ -15,38 +15,20 @@
 
 <script>
 import axios from 'axios'
-
-
 export default {
   data: function () {
     return {
       data:'',
-      child1:'',
-    	items: [
-        { title: 'Детский психолог', url: '#'},
-        { title: 'Нейропсихологическая диагностика и коррекция', url: '#'},
-        { title: 'Группы развития для детей (от 1 года до 7 лет)', url: '#'},
-        { title: 'Развитие памяти и внимания (7-10 лет)', url: '#'},
-        { title: 'Нейрограмматика (коррекция чтения и письма) (7-10 лет)', url: '#'},
-        { title: 'Нейроматематика (7-10 лет)', url: '#'},
-        { title: 'Нейробика (11-13 лет)', url: '#'},
-        { title: 'Тренинги для детей и подростков (7-14 лет)', url: '#'},
-        { title: 'Психодиагностика', url: '#'},
-        { title: 'Профориентирование', url: '#'},
-        { title: 'Логопед-дефектолог', url: '#'}     
-      ] 
+      child1:'' 
     }
   },
   methods: {
-    child2(){
-      this.child1 = this.data.filter(function(item) {
-          return item.cat == 2
-        });
-     },
     catchchild() {
        axios.get('/programms')
       .then((data) => {
-        this.data = data.data
+        this.data = data.data.filter(function(item) {
+          return item.cat == 2
+        });
       })
       .catch(function (error) {
         console.log(error);
@@ -55,7 +37,6 @@ export default {
   },
   created() {
      this.catchchild();
-     setTimeout (this.child2, 400);
   },
   mounted() {
     var menuitems = $('.bgstring').toArray();
