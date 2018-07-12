@@ -1,5 +1,5 @@
 <template>
-  <div>{{pathname}}
+  <div>
   	<el-collapse v-model="activeName" accordion>
 		  <el-collapse-item v-for="programm of programms" 
         :title="programm.name"  
@@ -18,7 +18,7 @@ export default {
     return {
       pathname: pathname,
       programms: [],
-      activeName:  22 
+      activeName:  '' 
     }
   },
   watch: {

@@ -114,7 +114,9 @@ export default {
   display: inline-block;
   position: relative;
   @extend %bgstring;
+ 
   &:hover {
+    transition: 0.2s cubic-bezier(0,.27,.07,1);
     color: #fff;
     background-color: $str4;
   }

@@ -1,30 +1,68 @@
 <template>
   <div class="adult">
-  	<div>
+  	<div> 
   		<h4>Взрослым</h4>
       <div class="hrline scale-in-hor-left"></div>
   	</div>
- 		<div v-for="(item, index) in items" class="bganim">
-      <div class="bgstring2">
- 			  {{item.title}}
+ 		<div v-for="(item, index) in data" class="bganim">
+      <div class="bgstring2" @click="clickhandler(item.id, $event)">
+ 			  {{item.name}}
       </div>
  		</div>
+    <div v-for="item in popemploy(data)">
+      <el-dialog 
+      class="fizer"
+      :title="item.name" 
+      :visible.sync="dialogTableVisible"
+      :lock-scroll = 'false'
+      width="90%">
+        <div class="container">
+          <span v-html="item.desc"></span>  
+        </div>
+      </el-dialog>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data: function () {
     return {
- 			items: [
-        { title: 'Индивидуальная консультация психолога', url: '#'},
-        { title: 'Семейное консультирование', url: '#'},
-        { title: 'Тренинги и семинары для взрослых', url: '#'},
-        { title: 'Психодиагностика', url: '#'},
-        { title: 'Профориентирование', url: '#'},
-        { title: 'Личная психотерапия и супервизия для психологов', url: '#'} 
-      ] 
+      data:'',
+      empid: '',
+      dialogTableVisible: false,
     }
+  },
+  methods: {
+    popemploy: function(data) {
+      if (this.empid != ''){
+      var self = this;  
+      return data.filter(function (elem) {
+ 
+        return elem.id == self.empid;
+        })
+      }
+    },
+    clickhandler( event) {
+      this.dialogTableVisible = true;
+      this.empid = event;
+       
+    },
+    catchchild() {
+       axios.get('/programms')
+      .then((data) => {
+        this.data = data.data.filter(function(item) {
+          return item.cat == 1
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    }
+  },
+  created() {
+     this.catchchild();
   },
   mounted() {
     var menuitems = $('.bgstring2').toArray();
@@ -51,6 +89,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+ .fizer {
+  lost-center: 1160px;
+ }
 .hrline {
   @extend %hrline;
   margin: 0.1em 0 0.2em -0.5em;
@@ -67,10 +108,12 @@ export default {
   }
 }
 .bgstring2 {
+  cursor: pointer;
   display: inline-block;
   position: relative;
   @extend %bgstring;
   &:hover {
+    transition: 0.2s cubic-bezier(0,.27,.07,1);
     color: #fff;
     background-color: $str4;
   }
