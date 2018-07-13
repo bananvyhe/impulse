@@ -10,15 +10,15 @@
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
           <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
             <div class ="infoBlock">
-                <transition name='slide' appear>
+                <transition v-if = "item.caption1 != false" name='slide' appear>
                   <div 
                     :key='index' 
                     class="titlefirst" 
                     v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false"><h4><span v-html="item.caption1.toUpperCase()"></span></h4>
+                    @click="slideAnimRestart = false"><h3><span v-html="item.caption1"></span></h3>
                   </div> 
                 </transition>
-                <transition name='fade' :duration="4000" appear> 
+                <transition v-if = "item.caption2 != false" name='fade' :duration="4000" appear> 
  
                     <div 
                       :key='item.id' 
@@ -173,14 +173,15 @@
   }
   .titlefirst {
     margin-bottom: 0.1em;
-    @extend %headslide;
-    h4 {
+    @extend %roundbgstr;
+    h3 {
        
-      font-weight: bold;
+      
+      
       margin: 0.2em 0.1em 0.2em 0;
-      opacity: 0.75;
+       
       text-align: right;
-      color: #000;
+      color: $str3;
 /*      text-shadow: 
         -0   -1px 0   #FFFFFF,
          0   -1px 0   #FFFFFF,
@@ -204,6 +205,7 @@
   
     }
   .titlesecond {
+    padding: 0.3em 0.6em 0.3em 0.8em;
     color: $isabelline;
     @extend %roundbgstr;
 
