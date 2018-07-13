@@ -77,7 +77,7 @@ export default {
         scale: 1,
         left: "0px",
         ease: Power4.easeOut
-      },.25).staggerFromTo(m3, 1, {
+      },.15).staggerFromTo(m3, 0.5, {
         opacity: 0,
         scale: 0.2,
         left: "230px",
@@ -86,7 +86,7 @@ export default {
         scale: 1,
         left: "0px",
         ease: Power4.easeOut
-      },.5, "-=1.5");
+      },.2, "-=1");
     }
   },
   created() {

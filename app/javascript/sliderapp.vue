@@ -15,7 +15,7 @@
                     :key='index' 
                     class="titlefirst" 
                     v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false"><h2><span v-html="item.caption1"></span></h2>
+                    @click="slideAnimRestart = false"><h4><span v-html="item.caption1.toUpperCase()"></span></h4>
                   </div> 
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
@@ -173,14 +173,15 @@
   }
   .titlefirst {
     margin-bottom: 0.1em;
-    h2 {
+    @extend %headslide;
+    h4 {
        
       font-weight: bold;
-      margin: 0 0.1em 0.2em 0;
+      margin: 0.2em 0.1em 0.2em 0;
       opacity: 0.75;
       text-align: right;
       color: #000;
-      text-shadow: 
+/*      text-shadow: 
         -0   -1px 0   #FFFFFF,
          0   -1px 0   #FFFFFF,
         -0    1px 0   #FFFFFF,
@@ -196,16 +197,15 @@
         -1px -1px 0   #FFFFFF,
          1px -1px 0   #FFFFFF,
         -1px  1px 0   #FFFFFF,
-         1px  1px 0   #FFFFFF;
+         1px  1px 0   #FFFFFF;*/
       }
   }
     .bgcap2 {
   
     }
   .titlesecond {
+    color: $isabelline;
     @extend %roundbgstr;
-    
-
 
   }
   .sliderapp { overflow: hidden;
