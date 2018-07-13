@@ -179,9 +179,9 @@
       
       
       margin: 0.2em 0.1em 0.2em 0;
-       
+      font-weight: bold;
       text-align: right;
-      color: $str3;
+      color: $palespringbud;
 /*      text-shadow: 
         -0   -1px 0   #FFFFFF,
          0   -1px 0   #FFFFFF,
