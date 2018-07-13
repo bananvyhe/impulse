@@ -59,31 +59,46 @@ export default {
       .catch(function (error) {
         console.log(error);
       }); 
+    },
+    anim() {
+      var selectedWork = new TimelineMax() ;
+      var menuitems = $('.bgstring').toArray();
+      var m2 = (menuitems.length/2).toFixed();
+      var m3 = menuitems.splice(m2);
+      menuitems.reverse();
+      console.log("123");
+      selectedWork
+        .staggerFromTo(menuitems, 0.2, {
+        opacity: 0,
+        scale: 0.1,
+        left: "230px",
+      },{
+        opacity: 1,
+        scale: 1,
+        left: "0px",
+        ease: Power4.easeOut
+      },.30).staggerFromTo(m3, 0.2, {
+        opacity: 0,
+        scale: 0.2,
+        left: "230px",
+      },{
+        opacity: 1,
+        scale: 1,
+        left: "0px",
+        ease: Power4.easeOut
+      },.30);
     }
   },
   created() {
      this.catchchild();
+      
   },
-  updated() {
-    var menuitems = $('.bgstring').toArray();
-    var m2 = (menuitems.length/2).toFixed();
-    var m3 = menuitems.splice(m2);
-    menuitems.reverse();
-    console.log("123");
-    TweenMax.staggerFrom(menuitems, 0.2, {
-      opacity: 0,
-      delay: 0.35,
-      scale: 0.1,
-      left: "230px",
-      ease: Power4.easeOut
-    },.30);
-    TweenMax.staggerFrom(m3, 0.2, {
-      opacity: 0,
-      delay: 0.50,
-      scale: 0.2,
-      left: "230px",
-      ease: Power4.easeOut
-    },.30);
+  mounted() {
+    var self = this;
+    setTimeout(function(){
+      self.anim();
+       },500 );
+    
   }
 }
 </script>
@@ -101,6 +116,7 @@ export default {
   background-color: $str1;
 } 
 .child {
+  position: relative;
   overflow: hidden;
 	display: flex;
   flex-direction: column;
@@ -111,6 +127,8 @@ export default {
   }
 }
 .bgstring {
+  
+  left: 600px;
   cursor: pointer;
   display: inline-block;
   position: relative;

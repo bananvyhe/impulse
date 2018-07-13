@@ -59,30 +59,42 @@ export default {
       .catch(function (error) {
         console.log(error);
       }); 
+    },
+    anim() {
+      var selectedWork = new TimelineMax() ;
+      var menuitems = $('.bgstring2').toArray();
+      var m2a = (menuitems.length/2).toFixed();
+      var m3a = menuitems.splice(m2a);
+      menuitems.reverse();
+      selectedWork
+        .staggerFromTo(menuitems, 0.2, {
+        opacity: 0,
+        scale: 0.1,
+        right: "230px",
+      },{
+        opacity: 1,
+        scale: 1,
+        right: "0px",
+        ease: Power4.easeOut
+      },.30).staggerFromTo(m3a, 0.2, {
+        opacity: 0,
+        scale: 0.2,
+        right: "230px",
+      },{
+        opacity: 1,
+        scale: 1,
+        right: "0px",
+        ease: Power4.easeOut
+      },.30);
     }
   },
   created() {
      this.catchchild();
+     setTimeout (this.anim, 1000);
   },
-  updated() {
-    var menuitems = $('.bgstring2').toArray();
-    var m2a = (menuitems.length/2).toFixed();
-    var m3a = menuitems.splice(m2a);
-    menuitems.reverse();
-    TweenMax.staggerFrom(menuitems, 0.2, {
-      opacity: 0,
-      delay: 0.35,
-      scale: 0.1,
-      right: "230px",
-      ease: Power4.easeOut
-    },.30);
-    TweenMax.staggerFrom(m3a, 0.2, {
-      opacity: 0,
-      delay: 0.50,
-      scale: 0.2,
-      right: "230px",
-      ease: Power4.easeOut
-    },.30);
+  mounted() {
+    
+    
   }
 }
 </script>
@@ -98,6 +110,7 @@ export default {
   background-color: $str1;
 } 
 .adult {
+  position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -108,6 +121,7 @@ export default {
   }
 }
 .bgstring2 {
+  right: 600px;
   cursor: pointer;
   display: inline-block;
   position: relative;
