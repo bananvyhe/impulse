@@ -69,7 +69,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "impulse_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => 'impuls-psy.ru', :from => 'deploy@pixeltech.ru' }
+  config.action_mailer.default_url_options = { :host => 'impuls-psy.ru', :from => 'noreply@impuls-psy.ru' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
   config.action_mailer.smtp_settings = {
@@ -77,7 +77,7 @@ Rails.application.configure do
     :port => 25,
     :domain => 'yandex.ru',
     :authentication => :plain,
-    :user_name => 'deploy@pixeltech.ru',
+    :user_name => 'noreply@impuls-psy.ru',
     :password => Rails.application.credentials.secret_mail
   }
   # Ignore bad email addresses and do not raise email delivery errors.

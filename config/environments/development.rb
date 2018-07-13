@@ -42,7 +42,7 @@ Rails.application.configure do
     :port => 25,
     :domain => 'yandex.ru',
     :authentication => :plain,
-    :user_name => 'deploy@pixeltech.ru',
+    :user_name => 'noreply@impuls-psy.ru',
     :password => Rails.application.credentials.secret_mail
   }
 
