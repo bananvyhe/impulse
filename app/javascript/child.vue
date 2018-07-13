@@ -97,7 +97,7 @@ export default {
     var self = this;
     setTimeout(function(){
       self.anim();
-    },300 );
+    },500 );
     
   }
 }

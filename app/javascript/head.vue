@@ -39,32 +39,51 @@ export default {
 }
 </script>
 <style scoped>
-/*@import "stylesheets/variables";*/
+@import "stylesheets/_variables";
 .head { 
   display: flex;
 	background-position: center left;
 	height: 160px; 
+  @media (--only-xsmall-screen) {
+    adjust-font-size: fs s;
+    background-position: top;
+     background-repeat: no-repeat;
+    background-position: center 30%;
+ 
+    background-image: url(images/logo.svg);
+    -webkit-background-size: 90%;
+    background-size: 90%;
+  }
+ 
 }
-.first {
-
+.first { 
   background-image: url(images/logo.svg);
-  
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   margin: 3em 1em -1em 1em;
 	lost-column: 1/2 4 0.5em;
-  @media (--only-small-screen) {
-    lost-column: 1/3;
+  @media (--only-xsmall-screen) {
+    display: none;
   }
+  @media (--only-small-screen) {
+    lost-column: 1/3 3 0.5em;
+     background-size: 145%;
+     background-position: 4% center;
+  }
+ 
 }
-.third, .second {
+.third, .second { 
+
   lost-column: 1/4 4 1em;
   display: flex;
   align-self: center;
   line-height: 1.2;
+  @media (--only-xsmall-screen) {
+   lost-column: 1/2 2 0.5em;
+  }
   @media (--only-small-screen) {
-    lost-column: 1/3;
+    lost-column: 1/3 3 0.5em;
     margin-top: 2em;
     padding: 0.2em;
   }

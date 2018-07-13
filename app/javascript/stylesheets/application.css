@@ -151,7 +151,7 @@ label.collection_check_boxes {
   margin: 0.5em;
   position: absolute;
   right:0;
-  @extend %roundbgstr;
+  @extend %roundbgstrw;
 }
 
 .edit {
