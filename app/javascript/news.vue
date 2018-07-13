@@ -195,6 +195,9 @@ export default {
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
   }
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1 0 0;
+  }
   img {
     border-radius: 0.2em;
     margin: 0.5em 1em 0 0;
