@@ -86,43 +86,14 @@ li {
 	padding-right: 0.5em;
 	margin-bottom: 0em;
 }
-/* 
-td {
-  padding: 0.2em;
-  &:after {
-    
-  }
-}
-td:first-of-type {
-  padding-right: 1em;
-}
-.table {
-  padding-bottom: 1em;
-}
-.is-grouped {
-  height: 2.7em;
-}
 
+td {
+  padding: 0.5em;
  
-.inputShort {
-  max-width: 500px;
 }
- 
-.delMessage {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  padding-left: 1em;
-  justify-content: center;
-}
-code,
-pre { 
-   
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  tab-size: 4;
-  hyphens: none;
-  @forcewrap;
-}
-*/
+tbody tr:nth-child(even) {
+  background: $eggshell;
+ }
+thead tr {
+  background: $bone;
+} 
