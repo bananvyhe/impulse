@@ -68,7 +68,7 @@ export default {
       menuitems.reverse();
       console.log("123");
       selectedWork
-        .staggerFromTo(menuitems, 0.2, {
+        .staggerFromTo(menuitems, 0.5, {
         opacity: 0,
         scale: 0.1,
         left: "230px",
@@ -77,7 +77,7 @@ export default {
         scale: 1,
         left: "0px",
         ease: Power4.easeOut
-      },.30).staggerFromTo(m3, 0.2, {
+      },.25).staggerFromTo(m3, 1, {
         opacity: 0,
         scale: 0.2,
         left: "230px",
@@ -86,7 +86,7 @@ export default {
         scale: 1,
         left: "0px",
         ease: Power4.easeOut
-      },.30);
+      },.5, "-=1.5");
     }
   },
   created() {
@@ -97,7 +97,7 @@ export default {
     var self = this;
     setTimeout(function(){
       self.anim();
-       },500 );
+    },500 );
     
   }
 }

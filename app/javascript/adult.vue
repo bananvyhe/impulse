@@ -67,7 +67,7 @@ export default {
       var m3a = menuitems.splice(m2a);
       menuitems.reverse();
       selectedWork
-        .staggerFromTo(menuitems, 0.2, {
+        .staggerFromTo(menuitems, 0.5, {
         opacity: 0,
         scale: 0.1,
         right: "230px",
@@ -76,7 +76,7 @@ export default {
         scale: 1,
         right: "0px",
         ease: Power4.easeOut
-      },.30).staggerFromTo(m3a, 0.2, {
+      },.25).staggerFromTo(m3a, 1, {
         opacity: 0,
         scale: 0.2,
         right: "230px",
@@ -85,15 +85,17 @@ export default {
         scale: 1,
         right: "0px",
         ease: Power4.easeOut
-      },.30);
+      },.5, "-=1");
     }
   },
   created() {
      this.catchchild();
-     setTimeout (this.anim, 1000);
   },
   mounted() {
-    
+    var self = this;
+    setTimeout(function(){
+      self.anim();
+    },500 );
     
   }
 }
