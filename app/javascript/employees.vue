@@ -172,7 +172,7 @@ export default {
               ease: Circ.easeOut,
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
             }, 0)
-            .to(($(this).find('.desc')), 0.7, {
+            .to(($(this).find('.desc')), 0.3, {
               display: 'block',
               xPercent: 0,
               height: thisHeight,
@@ -184,7 +184,7 @@ export default {
               borderRadius: 0
               // className: '+=tada'
             }, 0)
-            .to(($(this).find('.bgsh')), 0.5, {
+            .to(($(this).find('.bgsh')), 0.3, {
               boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
             }, 0)
             .to(($(this).find('.profp')), 0.2, {
@@ -248,6 +248,7 @@ export default {
     lost-center: 1170px;
   }
 }
+
 .bgsh { overflow: hidden;
    
  /* border-radius: $borderRad; */
@@ -255,7 +256,7 @@ export default {
   display: flex;
   align-items: flex-end;
   width: 100%; 
-  box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
+ 
 }
 .avapreview {
   display: flex;
@@ -279,7 +280,7 @@ export default {
   }
 }
 .cardpic {
-   
+  border: 4px double $cambridgeblue;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -290,6 +291,9 @@ export default {
 }
 .bg {
   width: 100%;
+}
+.shad {
+   box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
 }
 .prof {
   border-top-left-radius: 0.4em;
