@@ -102,7 +102,7 @@ export default {
   margin-top: 5em;
   padding: 0.5em;
   @media (--only-xsmall-screen) {
-   word-spacing: 60px;
+   word-spacing: 100px;
   }
 }
 .third {
