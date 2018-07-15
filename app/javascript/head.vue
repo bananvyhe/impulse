@@ -40,6 +40,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+
 .head { 
   display: flex;
 	background-position: center left;
@@ -94,6 +95,9 @@ export default {
   text-align: right;
   margin-top: 5em;
   padding: 0.5em;
+  @media (--only-xsmall-screen) {
+   word-spacing: 60px;
+  }
 }
 .third {
   z-index: 10;

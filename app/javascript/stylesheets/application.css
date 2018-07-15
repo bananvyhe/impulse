@@ -178,6 +178,11 @@ body {
   @hyphens;
   font-family: "RobotoCon";
 }
+
+
+
+
+
 #main {
   padding-left: 1em;
   padding-right: 1em;
@@ -190,7 +195,12 @@ body {
   background: resolve('ui_02.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
+   @media (--only-xsmall-screen) {
+       
+      background-position: center -40px;
+    }
 }
+
 .deleteAction {
   color: blue;
   border-bottom: solid 1px;
