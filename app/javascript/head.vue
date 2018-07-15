@@ -75,13 +75,19 @@ export default {
  
 }
 .third, .second { 
-
+   
   lost-column: 1/4 4 1em;
   display: flex;
   align-self: center;
   line-height: 1.2;
   @media (--only-xsmall-screen) {
    lost-column: 1/2 2 0.5em;
+   h5 {
+    adjust-font-size: fs s;
+    line-height: 1;
+    margin-bottom: 0;
+   }
+   
   }
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;
