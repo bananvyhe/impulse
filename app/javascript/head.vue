@@ -1,9 +1,9 @@
 <template>
   <div class="head">
-		<transition name="fade" appear>
+		 
       <div class="first">
       </div>    
-    </transition>
+     
     <div class="second" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
         <h5>Адрес электронной почты:</h5>
