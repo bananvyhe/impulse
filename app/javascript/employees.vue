@@ -30,7 +30,9 @@
     </div> 
     <div class="group" v-show = "vis == true">
       <div  class="avapreview" v-for="item in employee"  >
-        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}"> 
+
+       <!--  <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  -->
+        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           <div class="bgsh" 
           @click="clickhandler(item.id, $event) "> 
             <div class="bg"> 
@@ -134,7 +136,7 @@ export default {
         }, {
           autoAlpha:1,
           yPercent: 0,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.2, "-=0.2")
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "+=0.35")
         .staggerFromTo('.itemTitle', 0.1, {
           y: -30,
           autoAlpha:0
@@ -185,7 +187,7 @@ export default {
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.3, {
-              boxShadow: 'inset 0px 0px 80px 40px rgba(0,0,0,0.6)',
+              boxShadow: 'inset 0px 0px 80px 30px rgba(0,0,0,0.4)',
             }, 0)
             .to(($(this).find('.profp')), 0.2, {
               opacity: 0, 
@@ -228,11 +230,14 @@ export default {
 .popup {
 
 }
-.heading { display: flex;
+.heading { 
+  display: flex;
   flex-direction: column;
   align-items: center; 
- 
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
+  @media (--only-small-screen) {
+    padding-bottom: 0.6em;
+  }
 }
 .group {
   @media (--only-xsmall-screen) {
@@ -250,7 +255,7 @@ export default {
 }
 
 .bgsh { overflow: hidden;
-   
+    box-shadow: inset 0px 0px 100px 30px rgba(0,0,0,0.0);
  /* border-radius: $borderRad; */
   cursor: pointer; 
   display: flex;
@@ -280,10 +285,13 @@ export default {
   }
 }
 .cardpic {
-  border: 4px double $cambridgeblue;
+
+  border: 1px solid  $x11gray;
   width: 100%;
   overflow: hidden;
   display: flex;
+  position: relative;
+
   /*border-radius: $borderRad; */
   background-repeat: no-repeat;
   background-position: center;
@@ -296,16 +304,16 @@ export default {
    box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
 }
 .prof {
-  border-top-left-radius: 0.4em;
-  border-top-right-radius: 0.4em;
+  border-top-left-radius: 0.6em;
+  border-top-right-radius: 0.6em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:0.3em 0.5em 0.5em 0.5em; 
+  padding:0.1em 0.5em 0.2em 0.5em; 
   background-color: #748CAB;
   /*border-top-right-radius: 0.5em;*/
   /*border-top-left-radius: 2em; */
-  height: 3em; adjust-font-size: fs t;
+  adjust-font-size: fs t;
   line-height: 1.2;
   color: $antiflashwhite;
 }
@@ -316,9 +324,13 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
-  padding: 0 0.8em 0.5em 1em;
+  padding: 0 0.8em 0.3em 1em;
+  border-bottom-left-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+
 }
-.descM { background-color: rgba(255, 255, 255, 0.8); 
+.descM { 
+  background-color: rgba(255, 255, 255, 0.8); 
   overflow: hidden;
   width: 100%;
 }
