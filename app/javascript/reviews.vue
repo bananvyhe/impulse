@@ -55,6 +55,9 @@ export default {
 	font-weight: 300;
 	padding: 1em 2em 0em 2em;
 	text-align: justify;
+  @media (--only-xsmall-screen) {
+    padding: 1em 0.5em 0em 0.5em;
+  }
 
 } 
 .name {
