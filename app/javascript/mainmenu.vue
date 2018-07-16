@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div> 
     <div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
@@ -15,7 +15,7 @@
         v-if="menuitemsHide.length > 0" 
         v-on:click="toggle2 = !toggle2, toggle = !toggle">
         <div  
-          @mouseenter="toggle = true, toggle2 = true"
+           
           v-bind:class="{hamshadow: toggle, hamshadow2: !toggle}"
           class="hamburger">
         </div>
