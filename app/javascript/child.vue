@@ -112,7 +112,7 @@ export default {
 }
 .hrline {
   @extend %hrline;
-  margin: 0.1em 0 0.2em -0.5em;
+  margin: 0.1em 0 0.3em -0.5em;
   background-color: $str1;
 } 
 .child {

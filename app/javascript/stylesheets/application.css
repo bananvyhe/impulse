@@ -221,7 +221,7 @@ body {
   background-repeat: no-repeat;
 }
 #leftsheet {
-  margin-top: 1em;
+  margin-top: 0.5em;
   lost-column: 2/7 3 1em ;
   @media (--only-xsmall-screen) {
     lost-column: 1/1;
@@ -243,7 +243,7 @@ body {
   }
 }
 #rightsheet {
-  margin-top: 1em;
+  margin-top: 0.5em;
   lost-column: 2/7 3 1em; 
   @media (--only-xsmall-screen) {
     lost-column: 1/1;

@@ -466,7 +466,9 @@
     :last-child {
       border-bottom-left-radius: 1.3em; 
     }
-    li {z-index: 1;
+    li {
+       border: 1px solid  $x11gray;
+      z-index: 1;
       display: block;
       background-color: $color-5;
       padding: 0px;
