@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{toggle}}{{toggle2}}
     <div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
