@@ -6,9 +6,9 @@
           <h4>Подробные описания занятий:</h4>
           <div class="hrline scale-in-hor-left"></div>
         </div>
-        <transition-group name="list">
-          <div v-for="(item, index) in programms"  v-bind:key="index">
-            <div @click="clickhandler(item.id, $event) ">   
+        <transition-group name="fade" >
+          <div v-for="(item, index) in programms"  v-bind:key="item.id">
+            <div class="cardpic" @click="clickhandler(item.id, $event) ">   
                <el-button type="text" @click="dialogVisible = true">{{item.name}}</el-button>      
             </div>
           </div>
@@ -59,6 +59,37 @@ export default {
 
   },
   methods: {
+    cardTween(){
+      var selectedWork = new TimelineMax() ;
+      selectedWork
+        .staggerFromTo('.cardpic', 0.2, {
+           
+          autoAlpha:0,
+          yPercent: 50,
+        }, {
+          autoAlpha:1,
+          yPercent: 0,
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "+=0.35")
+        .staggerFromTo('.itemTitle', 0.1, {
+          y: -30,
+          autoAlpha:0
+        }, {
+          y: 0,
+          autoAlpha:1,
+          ease:Back.easeOut.config(4),
+        }, 0.1, "-=0.2")
+        .staggerFromTo('.prof', 0.1, {
+          autoAlpha:0,
+          yPercent: 50,
+        }, {
+          autoAlpha:1,
+          yPercent: 0,
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
+        .staggerTo('.itemTitle', 0.1, {
+          autoAlpha:1,
+          onComplete: endAnima
+        });
+    },
     clickhandler( event) {
       this.dialogTableVisible = true;
       this.progid = event;
@@ -101,6 +132,7 @@ export default {
 @import "stylesheets/_variables";
 .hrline {
   width: 17em;
+  height: 0.1em;
 }
 .container {
   overflow: hidden;
@@ -109,7 +141,7 @@ export default {
   lost-center: $maincontent;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;

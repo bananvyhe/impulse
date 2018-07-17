@@ -32,9 +32,11 @@ CKEDITOR.editorConfig = function( config ){
 
   // The location of a script that handles file uploads.
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.protectedSource.push(/<(style)[^>]*>.*<\/style>/ig);
 
   config.allowedContent = true;
   config.extraPlugins = 'dragresize';
+ 
   //var someAssetPath = "<%%= asset_pack_path 'application.css' %>"; 
   //зададим путь
   config.contentsCss = ckestyle;

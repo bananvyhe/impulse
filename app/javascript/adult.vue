@@ -1,5 +1,5 @@
 <template>
-  <div class="adult">
+  <div class="adult  basetext">
   	<div> 
   		<h4>Взрослым</h4>
       <div class="hrline scale-in-hor-left"></div>

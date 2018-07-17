@@ -1,5 +1,5 @@
 <template>
-  <div class="child"> 
+  <div class="child  basetext"> 
   	<div>
       <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
@@ -121,6 +121,9 @@ export default {
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (--only-xsmall-screen) {
+    align-items: flex-start;
+  }
   h4 {
     color: $str4;
     margin: 0 0 0 0;
