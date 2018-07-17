@@ -152,6 +152,14 @@ export default {
           autoAlpha:1,
           yPercent: 0,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
+        .staggerFromTo('.bg', 0.1, {
+           
+         scale:1,
+        }, {
+          yPercent: 10, 
+          xPercent: 11, 
+          scale:0.9,
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
           onComplete: endAnima
@@ -159,7 +167,8 @@ export default {
 
         TweenMax.set('.desc', {
           display: 'none',
-          xPercent: -100
+          // xPercent: -100
+          opacity: 0 
         });
        
       var self = this;
@@ -174,12 +183,14 @@ export default {
               ease: Circ.easeOut,
               boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
             }, 0)
-            .to(($(this).find('.desc')), 0.3, {
+            .to(($(this).find('.desc')), 0.5, {
+
+              opacity: 1,
               display: 'block',
               xPercent: 0,
               height: thisHeight,
               ease: Circ.easeOut
-            }, 0)
+            }, 0.1)
             .to(($(this).find('.itemTitle')), 0.5, {
               borderBottom: '1px solid #444',
               marginBottom: '0px',
@@ -199,6 +210,11 @@ export default {
               scaleY: 0,
               borderRadius: 0, 
               ease: Expo.easeInOut, 
+            }, 0)
+            .to(($(this).find('.bg')), 0.5, {
+              xPercent: 0,  
+              scale: 1,
+              yPercent: 0, 
             }, 0)
             element.animation = projectHover;
           });
@@ -328,6 +344,7 @@ export default {
   border-bottom-left-radius: 0.8em;
   border-bottom-right-radius: 0.8em;
 
+
 }
 .descM { 
   background-color: rgba(255, 255, 255, 0.8); 
@@ -422,6 +439,7 @@ export default {
       @media (--only-small-screen) {
         margin-left: 0em;
       }
+
       h2 {
         background-color: #fff;
         padding: 0.2em  ;
