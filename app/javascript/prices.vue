@@ -30,6 +30,7 @@
           
           :data = "child1" style="width: 100%">
           <el-table-column  
+          width="180"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
