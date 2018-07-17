@@ -116,7 +116,10 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-   align-items: flex-start;
+  align-items: flex-start;
+  @media (--only-small-screen) {
+    align-items: flex-end;
+  }
   h4 {
     color: $str4;
     margin: 0 0 0 0;

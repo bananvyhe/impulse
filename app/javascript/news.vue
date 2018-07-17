@@ -168,6 +168,10 @@ export default {
 }
 .newsBlock {
   lost-center: 1150px;
+  @media (--only-medium-screen) {
+ width: 80%;
+  }
+
 } 
 .newsItem:nth-child(odd) {
   text-align: right; text-align: justify;
@@ -207,7 +211,7 @@ export default {
   }
 }
 .newsdesc {
-  
+  padding-top: 0.5em;
    
    text-shadow: 0 1px 1px rgba(255,255,255,0.25);
 }

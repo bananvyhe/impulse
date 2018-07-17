@@ -124,6 +124,9 @@ export default {
   @media (--only-xsmall-screen) {
     align-items: flex-start;
   }
+  @media (--only-small-screen) {
+    align-items: flex-start;
+  }
   h4 {
     color: $str4;
     margin: 0 0 0 0;
