@@ -61,11 +61,11 @@
 <style scoped>
 @import "stylesheets/_variables";
 .footer { 
-	padding: 0.2em 1.5em ;
+	padding: 0.2em 2em 0.2em 1.5em;
 	adjust-font-size: fs tiny;
 	border-top-left-radius: 0.2em; 
 	border-top-right-radius: 0.2em; 
-	height: 75px; 
+	 
 	background: radial-gradient(at top, #ebf0f3, #fff);
 	bottom: 0px;
 	margin-top: 1em;
