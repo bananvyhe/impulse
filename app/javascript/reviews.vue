@@ -1,10 +1,10 @@
 <template>
   <div>
      <transition-group name="fade">
-  	<div v-for="(review, index) in reviews" v-bind:key="index">
-  		<div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
-  		<div class="name">{{review.name}}</div>
-  	</div>
+    	<div v-for="(review, index) in reviews" v-bind:key="index">
+    		<div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
+    		<div class="name">{{review.name}}</div>
+    	</div>
   </transition-group>
   </div>
 </template>

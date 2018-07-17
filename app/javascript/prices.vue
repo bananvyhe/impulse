@@ -9,8 +9,9 @@
             :data = "adult"
              
             style="width: 100%">
-            <el-table-column sortable
+            <el-table-column  
             prop="name" 
+            width="180"
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
             <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
@@ -22,13 +23,13 @@
     </transition>
     
     <transition name="fade">
-      <div  v-if="child1.length">
+      <div v-if="child1.length">
         <!-- <h4>Для детей</h4> -->
         <h4>{{teamssect[1].name }}</h4> 
         <el-table stripe
-            
+          
           :data = "child1" style="width: 100%">
-          <el-table-column sortable
+          <el-table-column  
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -122,13 +123,15 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-.cont1 {
+.cont1 {  
   position: relative;
 }
 .tableanim{
   opacity: 0;
 }
- 
+.wrap {@nowrap; 
+  background-color: #dad;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

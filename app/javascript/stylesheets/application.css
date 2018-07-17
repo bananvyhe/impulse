@@ -77,6 +77,9 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
+.robotoc {
+
+}
 
 .simple_form {
   div.input {
@@ -179,7 +182,11 @@ body {
   font-family: "RobotoCon";
 }
 
-
+.hrline {
+  @extend %hrline;
+  margin: 0.1em 0 0.3em -0.5em;
+  background-color: $str1;
+} 
 
 
 
