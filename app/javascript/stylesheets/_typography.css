@@ -59,7 +59,7 @@ p {
 
 }
 img {
-  padding: 0em 1em 1em 1em;
+  padding: 0em 1.5em 1em 1.5em;
 /*   margin-right: 4vw;
    margin-left: 4vw;
    margin-top: 0.5em;
@@ -93,7 +93,7 @@ ul a, ol a {
 }
 li {
   display: list-item;
-	padding-left: 2em;
+	padding-left: 1.8em;
 	padding-right: 0.5em;
 	margin-bottom: 0em;
 }
