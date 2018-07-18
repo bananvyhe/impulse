@@ -44,12 +44,15 @@ p:first-of-type {
 .smalltext {
   adjust-font-size: fs small;
 }
+.tinytext {
+  adjust-font-size: fs tiny;
+}
 .basetext {
    adjust-font-size: fs b;
 }
 p { 
   display: block;
-  text-indent: 1.8em;
+   
   /*margin-top: spacing(1);*/
   margin-bottom: spacing(0.5);
 

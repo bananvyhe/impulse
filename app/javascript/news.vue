@@ -183,6 +183,10 @@ export default {
   transform: scale(0,0);
 }
 .newsItem:nth-child(even) {
+   img {
+      margin: 0.5em 0 0.5em 1em;
+      float: right;
+  }
   right: -40%;
   transform: scale(0,0);
 }
@@ -196,7 +200,7 @@ export default {
   position: relative;
   opacity: 0;
  
-  lost-column: 1/2 2 0.5em;
+  lost-column: 1/2 2 0em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
@@ -211,7 +215,8 @@ export default {
   }
 }
 .newsdesc {
-  padding-top: 0.5em;
+  padding: 0.5em ;
+
    
    text-shadow: 0 1px 1px rgba(255,255,255,0.25);
 }

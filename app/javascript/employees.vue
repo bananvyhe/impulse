@@ -13,7 +13,9 @@
           <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
+               Cgtwbfkmyj<div v-html="item.prof"></div> 
               <div v-html="item.spec"></div>  
+
             </div>
           </div>
           <span v-html="item.desc"></span>
@@ -42,10 +44,10 @@
               </div>
               
               <div class="itemTitle">
-                <h4>{{item.name}}</h4>
+                <h5>{{item.name}}</h5>
               </div>
               <div class="descM">
-                <div class="desc smalltext" v-html="item.spec"></div>
+                <div class="desc tinytext" v-html="item.spec"></div>
               </div>
             </div>
           </div> 
@@ -72,7 +74,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      croptextvalue: 45,
+      croptextvalue: 60,
       employee: '',
       vis: false,
       dialogTableVisible: false,
@@ -130,7 +132,6 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
         .staggerFromTo('.cardpic', 0.2, {
-           
           autoAlpha:0,
           yPercent: 50,
         }, {
@@ -153,23 +154,24 @@ export default {
           yPercent: 0,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
         .staggerFromTo('.bg', 0.1, {
-           
-         scale:1,
+         // scale:1,
         }, {
-          yPercent: 10, 
-          xPercent: 11, 
-          scale:0.9,
+          yPercent: 5, 
+          xPercent: 5, 
+          // scale:0.9,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
+          borderBottomRightRadius: 0,
           onComplete: endAnima
-        });
+        },0.2, "-=0.6");
 
         TweenMax.set('.desc', {
           display: 'none',
           // xPercent: -100
           opacity: 0 
         });
+       
        
       var self = this;
       function endAnima() {
@@ -192,9 +194,15 @@ export default {
               ease: Circ.easeOut
             }, 0.1)
             .to(($(this).find('.itemTitle')), 0.5, {
-              borderBottom: '1px solid #444',
               marginBottom: '0px',
-              borderRadius: 0
+              borderRadius: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              // color: '#000',
+              // className: '+=tada'
+            }, 0)
+            .to(($(this).find('.itemTitle h5')), 0.5, {
+               
+              color: '#F4F3EE',
               // className: '+=tada'
             }, 0)
             .to(($(this).find('.bgsh')), 0.3, {
@@ -214,7 +222,7 @@ export default {
             .to(($(this).find('.bg')), 0.5, {
               xPercent: 0,  
               scale: 1,
-              yPercent: 0, 
+              yPercent: -10, 
             }, 0)
             element.animation = projectHover;
           });
@@ -325,7 +333,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:0.1em 0.5em 0.2em 0.5em; 
+  padding:0.3em 0.5em 0.2em 0.5em; 
   background-color: #748CAB;
   /*border-top-right-radius: 0.5em;*/
   /*border-top-left-radius: 2em; */
@@ -335,7 +343,9 @@ export default {
 }
 .itemTitle {
  /* border-bottom-right-radius: 2em; */
-  background-color: rgba(255, 255, 255, 0.8);
+  border-left: 1px solid  $x11gray;
+  border-bottom: 1px solid  $x11gray;
+  background: rgba(255, 255, 255, 0.8);
   text-align: right;
   display: flex;
   justify-content: flex-end;
@@ -344,15 +354,26 @@ export default {
   border-bottom-left-radius: 0.8em;
   border-bottom-right-radius: 0.8em;
 
+  h5 {
+    margin-top: spacing(0.3);
+
+  }
+
 
 }
 .descM { 
   background-color: rgba(255, 255, 255, 0.8); 
   overflow: hidden;
   width: 100%;
+ 
+
 }
 .desc {
-  padding-right: 0.5em;
+ 
+     text-indent: 0;
+
+ 
+  padding: 0 1em 0.5em 0.5em;
   margin:0.5em;
   width: 100%;
 
