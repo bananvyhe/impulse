@@ -1,5 +1,5 @@
 <template>
-  <div class="news  basetext">
+  <div class="news  smalltext">
     <div> 
    	  <div class="newsHead">
   			<h4>Наши новости:</h4>
@@ -174,8 +174,9 @@ export default {
 
 } 
 .newsItem:nth-child(odd) {
-  text-align: right; text-align: justify;
+   
     img {
+      width:15em;
       margin: 0.5em 0 0.5em 1em;
       float: right;
   }
@@ -183,7 +184,7 @@ export default {
   transform: scale(0,0);
 }
 .newsItem:nth-child(even) {
-   img {
+   img { width:15em;
       margin: 0.5em 0 0.5em 1em;
       float: right;
   }
@@ -191,7 +192,7 @@ export default {
   transform: scale(0,0);
 }
 .newsItem {
-  text-align: justify;
+  text-indent: 1.5em; 
   
   background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
  /* border: 1px dotted $color-1;*/
