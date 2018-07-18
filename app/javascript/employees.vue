@@ -1,24 +1,25 @@
 <template>
   <div class="emp">
-    <div class="popup">
+    <div class="popup ">
       <el-dialog 
-      title="Анкета сотрудника" 
+      class="containerpop"
+       
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
       width="90%">
-      <div v-for="item in popemploy(employee)">
-        <div class="topSectAv">
+      <div class ="basetext" v-for="item in popemploy(employee)">
+        <div class="topSectAv bodytext">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           </div>
           <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
-               <div v-html="item.prof"></div> 
+               <div style="padding-top: 0.5em; padding-bottom: 0.5em;" v-html="item.prof"></div> 
               <div v-html="item.spec"></div>  
 
             </div>
           </div>
-          <span v-html="item.desc"></span>
+          <span  v-html="item.desc"></span>
         </div>  
 <!--         <div class="empDesc">
           <span v-html="item.desc"></span>
@@ -243,8 +244,16 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 @import "stylesheets/_variables";
+
+.bodytext {
+  padding: 0.5em;
+}
+.containerpop {
+  lost-center: $maincontent;
+}
 .hrline { 
   width: 10em; 
   @extend %hrline;
@@ -369,7 +378,7 @@ export default {
 
 }
 .desc {
- 
+ line-height: 1.2em;
      text-indent: 0;
 
  
@@ -418,7 +427,7 @@ export default {
   .avatarSect1 {
     float: left;
     position: relative;
-    z-index: 12;
+    z-index: 18;
     background-color: #fff;
     box-shadow: 0px 2px 10px 0px #5c5c5c;
     border: 0.3em solid $isabelline;
@@ -434,6 +443,9 @@ export default {
       margin: 0.5em;
       padding: 0.1em;
       background-color: rgba(255, 255, 255, 0.5);
+    }
+     @media (--only-xsmall-screen) {
+      display:none;
     }
     @media (--only-small-screen) {
       display:none;
@@ -453,12 +465,17 @@ export default {
     margin-bottom: 0.3em;
     margin-top: 1.5em;
     .fioSpec { 
-      margin-left: -3em;
+      margin-left: -1em;
       background-color: $color-blue;
       border-radius: 0.2em;
       padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
-        margin-left: 0em;
+        margin-left: -2em;
+         padding: 0.5em 1em 1em 1em;
+      }
+      @media (--only-xsmall-screen) {
+        margin-left: -2em;
+         padding: 0.5em 1em 1em 1em;
       }
 
       h2 {
@@ -477,7 +494,7 @@ export default {
     @media (--only-small-screen) {
       padding: 1em;
       h2 {
-        adjust-font-size: fs xlarge;
+        
         margin-bottom: spacing(0.1);
       }  
       /*lost-column: 1/1 1 0;  */
@@ -554,4 +571,11 @@ export default {
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
+</style>
+<style>
+   .el-dialog__body {
+    padding: 0px 30px 30px 30px;
+
+
+  }
 </style>

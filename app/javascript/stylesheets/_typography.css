@@ -50,6 +50,7 @@ p:first-of-type {
 .basetext {
    adjust-font-size: fs b;
 }
+
 p { 
   display: block;
    

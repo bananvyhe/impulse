@@ -24,14 +24,15 @@
     </div>    
   </div>
 <br>
-  <div style="padding:6em 0 0 250px;">
-    <h5>Специализация:</h5>
-    <%= f.cktext_area :spec, ckeditor: {toolbar: 'micro', height: 100  } %> 
-  </div>
   <div style="padding:1em 0 0 250px;">
     <h5>Специальность:</h5>
     <%= f.text_area :prof %> 
   </div>
+  <div style="padding:6em 0 0 250px;">
+    <h5>Деятельность:</h5>
+    <%= f.cktext_area :spec, ckeditor: {toolbar: 'micro', height: 100  } %> 
+  </div>
+  
   <div style="clear: both; padding-top: 0.1em;">
     <h5>Основная информация:</h5>
     <%= f.cktext_area :desc   %> 
