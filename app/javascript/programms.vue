@@ -1,7 +1,7 @@
 <template>
   <div>
     
-      <div>
+       
         <div> 
           <h4>Подробные описания занятий:</h4>
           <div class="hrline scale-in-hor-left"></div>
@@ -13,20 +13,21 @@
             </div>
           </div>
         </transition-group>
-       
-        <div v-for="item in popemploy(programms)">
+        
+        <div  v-for="item in popemploy(programms)">
           <el-dialog
            class="containerpop"
           :title="item.name" 
           :visible.sync="dialogTableVisible"
           :lock-scroll = 'false'
           width="90%">
-            <div class="container">
+            <div class="container basetext">
                <span v-html="item.desc"></span>  
             </div>
           </el-dialog>
         </div>
-      </div> 
+         
+       
       
     
   	<!-- <el-collapse v-model="activeName" accordion>
@@ -88,7 +89,7 @@ export default {
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
           onComplete: endAnima
-        });
+        });lcenter
     },
     clickhandler( event) {
       this.dialogTableVisible = true;
@@ -130,15 +131,29 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.mainframe {
+  padding-left: 30%;
+  padding-right: 30%;
+}
 .hrline {
   width: 17em;
   height: 0.1em;
 }
 .container {
+  padding-left: 5%;
+  padding-right: 5%;
   overflow: hidden;
+  @media (--only-small-screen) {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  @media (--only-xsmall-screen) {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
 }
 .containerpop{
-  lost-center: $maincontent;
+  lost-center: $lcenter;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;

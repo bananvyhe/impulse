@@ -59,10 +59,17 @@ p {
 
 }
 img {
+  padding: 0em 1em 1em 1em;
 /*   margin-right: 4vw;
    margin-left: 4vw;
    margin-top: 0.5em;
    margin-bottom: 0.5em;*/
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
 }
 a {
 }
