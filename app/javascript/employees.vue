@@ -13,7 +13,7 @@
           <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
-               Cgtwbfkmyj<div v-html="item.prof"></div> 
+               <div v-html="item.prof"></div> 
               <div v-html="item.spec"></div>  
 
             </div>
