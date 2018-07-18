@@ -1,11 +1,11 @@
 <template>
   <div>
-     <transition-group name="fade">
+    <transition-group name="fade">
     	<div v-for="(review, index) in reviews" v-bind:key="index">
     		<div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
     		<div class="name">{{review.name}}</div>
     	</div>
-  </transition-group>
+    </transition-group>
   </div>
 </template>
 
@@ -63,7 +63,8 @@ export default {
 .name {
 	text-align: right;
 	padding-right: 2em;
-	padding-bottom: 1em;
+	margin-top: -1em;
+  padding-bottom: 1em;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
