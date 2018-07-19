@@ -14,9 +14,8 @@
           <div class="avatarSect2">
             <div class="fioSpec effect4">
               <h2>{{item.name}}</h2>
-               <div style="padding-top: 0.5em; padding-bottom: 0.5em;" v-html="item.prof"></div> 
-              <div v-html="item.spec"></div>  
-
+              <div style="padding-left: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em;" v-html="item.prof"></div> 
+              <div style="padding-left: 0.5em;" v-html="item.spec"></div>  
             </div>
           </div>
           <span  v-html="item.desc"></span>
@@ -470,8 +469,11 @@ export default {
       border-radius: 0.2em;
       padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
-        margin-left: -2em;
-         padding: 0.5em 1em 1em 1em;
+        margin-left: -1em;
+        padding: 0.5em 1em 1em 1em;
+      }
+      @media (--only-xsmall-screen) {
+
       }
       @media (--only-xsmall-screen) {
         margin-left: -2em;
@@ -486,9 +488,10 @@ export default {
         @media (--only-small-screen) {
           margin-left: 0em;
         }
-      }
-      @media (--only-small-screen) {
- 
+        @media (--only-xsmall-screen) {
+          font-size: 1.2em;
+          padding: 0.2em 0.5em 0.2em 0.5em;
+        }
       }
     }
     @media (--only-small-screen) {
