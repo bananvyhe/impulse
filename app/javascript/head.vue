@@ -4,16 +4,16 @@
       <div class="first">
       </div>    
      
-    <div class="second" v-if="contacts && contacts.length">
+    <div class="second smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
         <h5>Адрес электронной почты:</h5>
-        {{contact.mail}}
+        <p>{{contact.mail}}</p>
       </div>
     </div>
-    <div class="third" v-if="contacts && contacts.length">
+    <div class="third smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
         <h5>Контакты:</h5>
-        {{contact.adress}}
+        <p>{{contact.adress}}</p>
       </div>
     </div>
   </div>
@@ -40,13 +40,15 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-
+p {
+  margin-bottom: spacing(0);
+}
 .head { 
   display: flex;
 	background-position: center left;
 	height: 160px; 
   @media (--only-xsmall-screen) {
-    adjust-font-size: fs s;
+     
     background-position: top;
      background-repeat: no-repeat;
     background-position: center 30%;
@@ -83,7 +85,7 @@ export default {
   @media (--only-xsmall-screen) {
    lost-column: 1/2 2 0.5em;
    h5 {
-    adjust-font-size: fs s;
+     
     line-height: 1;
     margin-bottom: 0;
    }
@@ -101,6 +103,7 @@ export default {
   text-align: right;
   margin-top: 5em;
   padding: 0.5em;
+  padding-bottom: 0em;
   @media (--only-xsmall-screen) {
    word-spacing: 100px;
   }
@@ -109,6 +112,8 @@ export default {
   z-index: 10;
   margin-top: 5em;
   padding: 0.5em;
+  padding-bottom: 0em;
+  max-width: 300px;
 }
 .fade-enter {
   opacity: 0;
