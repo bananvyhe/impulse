@@ -33,8 +33,9 @@ CKEDITOR.editorConfig = function( config ){
   // The location of a script that handles file uploads.
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
   config.protectedSource.push(/<(style)[^>]*>.*<\/style>/ig);
-
-  config.allowedContent = true;
+  // config.allowedContent = 'h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+  config.allowedContent = false;
+  config.height = '500px';
   config.extraPlugins = 'dragresize';
  // config.extraPlugins = 'pastefromword';
   // config.pasteFromWordPromptCleanup = true;

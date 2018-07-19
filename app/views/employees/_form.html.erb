@@ -9,26 +9,31 @@
     <p style= "text-indent: 0em;">
       <%= f.text_field :name  %> 
     </p>
-
-
     <% if @employee.avatar? %>
-      <div style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px">
+      <div style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px; background: #999;">
       </div>
     <% end %>
-    <div>
-      <% unless @employee.avatar? %>
-        Загрузите фото сотрудника
-        <%= f.file_field :avatar %>
-        <%= f.hidden_field :avatar_cache %> 
-      <% end %>
-    </div>    
+   
+    <% unless @employee.avatar? %>
+      <div style=" display: flex; justify-content: center; flex-direction: column; text-align: center; height:250px; width:225px; background: #999;">
+
+        <div style=" background: #fff; padding-bottom: 0.5em; ">
+          Загрузите фото сотрудника
+          <%= f.file_field :avatar %>
+          <%= f.hidden_field :avatar_cache %> 
+        </div>
+          
+      </div>
+
+    <% end %>
+     
   </div>
 <br>
   <div style="padding:1em 0 0 250px;">
     <h5>Специальность:</h5>
     <%= f.text_area :prof %> 
   </div>
-  <div style="padding:6em 0 0 250px;">
+  <div style="padding:1em 0 0 250px;">
     <h5>Деятельность:</h5>
     <%= f.cktext_area :spec, ckeditor: {toolbar: 'micro', height: 100  } %> 
   </div>
