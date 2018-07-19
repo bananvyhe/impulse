@@ -9,7 +9,7 @@
     <% if library.cover? %>
       <div style="float:left; padding-bottom: 0.5em;  "><%= image_tag(library.cover.thumb.url) %></div>
     <% end %>
-    <div style="padding-top: 0.5em; "><h3><%= library.name.capitalize %></h3></div>
+    <div style="padding-top: 0.1em;  "><h3><%= library.name.capitalize %></h3></div>
     <div><p><%= library.desc.html_safe %></p></div>
     <div><a href="<%= library.file %>">ссылка на файл</a></div>
     <div class="cleared"></div>
