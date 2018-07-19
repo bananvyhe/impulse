@@ -574,7 +574,7 @@ export default {
 </style>
 <style>
    .el-dialog__body {
-    padding: 0px 30px 30px 30px;
+    padding: 0px 30px 20px 30px;
 
 
   }
