@@ -1,7 +1,7 @@
-<p>Здравствуйте <%= @email %>!</p>
+<p><%= t('.greeting', recipient: @email) %></p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>Уведомляем вас о том, что ваша электронная почта изменяется на <%= @resource.unconfirmed_email %>.</p>
+  <p><%= t('.message', email: @resource.unconfirmed_email) %></p>
 <% else %>
-  <p>Уведомляем вас о том, что ваша электронная почта изменяется на <%= @resource.email %>.</p>
+  <p><%= t('.message', email: @resource.email) %></p>
 <% end %>
