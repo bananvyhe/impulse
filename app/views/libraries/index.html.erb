@@ -7,7 +7,7 @@
   <% @libraries.each do |library| %>
     <div style="padding-bottom: 2em;">
     <% if library.cover? %>
-      <div style="float:left; padding-bottom: 0.5em; padding-right: 1.2em;"><%= image_tag(library.cover.thumb.url) %></div>
+      <div style="float:left; padding-bottom: 0.5em;  "><%= image_tag(library.cover.thumb.url) %></div>
     <% end %>
     <div style="padding-top: 0.5em; "><h3><%= library.name.capitalize %></h3></div>
     <div><p><%= library.desc.html_safe %></p></div>
