@@ -50,7 +50,11 @@ p:first-of-type {
 .basetext {
    adjust-font-size: fs b;
 }
- 
+.form-inputs {
+   
+    font-size: 1.2em;
+   
+} 
 p { 
   display: block;
    

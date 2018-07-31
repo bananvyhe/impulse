@@ -214,6 +214,10 @@ body {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+#previewPic {
+  img {
+  padding: 0;}
+}
 .newspic {
   background-color: #ada;
   width:225px; 
@@ -223,8 +227,8 @@ body {
 }
 .librarypic {
   background-color: #ada;
-  width: 180px; 
-  height: 240px; 
+  width: 150px; 
+  height: 200px; 
   background-size: contain;
   background-repeat: no-repeat;
 }
