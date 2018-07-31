@@ -327,6 +327,7 @@
   filter: saturate(90%);
 }
 .greedy-nav {
+
   height: 2.4em;
   /*border-bottom-left-radius: 1.3em; */
   border-bottom: 1px solid #fff;
@@ -339,6 +340,7 @@
   background-color: color($color-5 tint(45%));
   border-bottom: 0.15em solid color(#C1BDB3 tint(50%)) ;
   /*margin-bottom: 5px;*/
+  ul { margin-bottom: 0.6em;}
   a {
     display: block;
     padding: 10px 30px;
