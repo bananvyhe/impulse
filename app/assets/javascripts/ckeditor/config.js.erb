@@ -37,7 +37,7 @@ CKEDITOR.editorConfig = function( config ){
   config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
   config.pasteFromWordRemoveFontStyles = true;
   // config.allowedContent = true;
-  config.allowedContent = 'strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+  // config.allowedContent = 'em li strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
   config.height = '500px';
   config.extraPlugins = 'dragresize';
  // config.extraPlugins = 'pastefromword';
@@ -50,12 +50,11 @@ CKEDITOR.editorConfig = function( config ){
   config.format_code={element:"code"};
   config.toolbar_mini = [
     ['Undo', 'Redo', 'Source' ],
-    ["Bold",  "Italic", "Underline",  "Strike", "-", ],
+    ["Bold", "Italic", "Underline",  "Strike", "-", ],
     [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'],
     ['Image'],
     ['Format','Font'],
-    ['TextColor','BGColor']
-    
+    ['TextColor','BGColor']  
   ];
   config.toolbar_micro = [
     ['Undo', 'Redo' ],
