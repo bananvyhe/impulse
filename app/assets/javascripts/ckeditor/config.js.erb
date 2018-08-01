@@ -36,8 +36,8 @@ CKEDITOR.editorConfig = function( config ){
   config.protectedSource.push( /<span[\s\S]*?\>/g ); //allows beginning <span> tag
   config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
   config.pasteFromWordRemoveFontStyles = true;
-  // config.allowedContent = true;
-  // config.allowedContent = 'em li strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+  config.allowedContent = true;
+  // config.allowedContent = 'em ul li  strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
   config.height = '500px';
   config.extraPlugins = 'dragresize';
  // config.extraPlugins = 'pastefromword';
