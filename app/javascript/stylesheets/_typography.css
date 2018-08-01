@@ -53,8 +53,14 @@ p:first-of-type {
 .form-inputs {
    
     font-size: 1.2em;
-   
 } 
+.largetext {
+  adjust-font-size: fs b;
+  font-family: "RobotoA";
+}
+.adminzone {
+  background: #e2ffd6; padding: 0.2em 0.5em 0.3em 0.6em;
+}
 p { 
   display: block;
    
