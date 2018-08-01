@@ -341,7 +341,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:0.3em 0.5em 0.2em 0.5em; 
+  padding:0.3em 1em 0.2em 0.5em; 
   background-color: #748CAB;
   /*border-top-right-radius: 0.5em;*/
   /*border-top-left-radius: 2em; */
