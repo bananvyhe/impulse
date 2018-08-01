@@ -35,13 +35,13 @@ CKEDITOR.editorConfig = function( config ){
   config.protectedSource.push(/<(style)[^>]*>.*<\/style>/ig);
   config.protectedSource.push( /<span[\s\S]*?\>/g ); //allows beginning <span> tag
   config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
-  config.pasteFromWordRemoveFontStyles = true;
+  // config.pasteFromWordRemoveFontStyles = true;
   config.allowedContent = true;
   // config.allowedContent = 'em ul li  strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
-  config.height = '500px';
+  config.height = '600px';
   config.extraPlugins = 'dragresize';
  // config.extraPlugins = 'pastefromword';
-  config.pasteFromWordPromptCleanup = true;
+  // config.pasteFromWordPromptCleanup = true;
   config.pasteFromWordRemoveStyles = true;
   //var someAssetPath = "<%%= asset_pack_path 'application.css' %>"; 
   //зададим путь
