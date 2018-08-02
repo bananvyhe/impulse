@@ -33,25 +33,32 @@ CKEDITOR.editorConfig = function( config ){
   // The location of a script that handles file uploads.
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
   config.protectedSource.push(/<(style)[^>]*>.*<\/style>/ig);
-  config.protectedSource.push( /<span[\s\S]*?\>/g ); //allows beginning <span> tag
-  config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
+  // config.protectedSource.push( /<span[\s\S]*?\>/g ); //allows beginning <span> tag
+  // config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
   // config.pasteFromWordRemoveFontStyles = true;
-  config.allowedContent = true;
-  // config.allowedContent = 'em ul li  strong h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+  //config.allowedContent = true;
+
+    config.allowedContent = ' em ol ul li strong h1 h2 h3 h4 h5 div span{color,background-color}; p{margin-left, text-align, color, background-Color};  table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+    // config.indentClasses = ["ul-grey", "ul-red", "text-red", "ul-content-red", "circle", "style-none", "decimal", "paragraph-portfolio-top", "ul-portfolio-top", "url-portfolio-top", "text-grey" ];
+
   config.height = '600px';
   config.extraPlugins = 'dragresize';
- // config.extraPlugins = 'pastefromword';
-  // config.pasteFromWordPromptCleanup = true;
-  config.pasteFromWordRemoveStyles = true;
-  //var someAssetPath = "<%%= asset_pack_path 'application.css' %>"; 
-  //зададим путь
+   config.extraPlugins = 'pastefromword';
+  // // config.pasteFromWordPromptCleanup = true;
+   //config.pasteFromWordRemoveStyles = true;
+  // //var someAssetPath = "<%%= asset_pack_path 'application.css' %>"; 
+  // //зададим путь
+  // config.pasteFromWordNumberedHeadingToList = true;
+    //config.pasteFromWordRemoveFontStyles = true;
+    //config.pasteFromWordCleanupFile = true;
+    //config.pasteFromWordPromptCleanup = true;
   config.contentsCss = ckestyle;
-  config.format_tags = 'p;h2;h3;h4;h5;h1;pre;code';
+  config.format_tags = 'p;h5;h4;h3;h2;h1;pre;code';
   config.format_code={element:"code"};
   config.toolbar_mini = [
     ['Undo', 'Redo', 'Source' ],
     ["Bold", "Italic", "Underline",  "Strike", "-", ],
-    [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'],
+    [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'],
     ['Image'],
     ['Format','Font'],
     ['TextColor','BGColor']  
