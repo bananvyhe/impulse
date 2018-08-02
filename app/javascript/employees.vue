@@ -461,9 +461,10 @@ export default {
     flex-direction: column;*/
     position: relative;
     padding: 1em;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     margin-top: 1.5em;
     .fioSpec { 
+      color: #333;
       margin-left: -1em;
       background-color: $color-blue;
       border-radius: 0.2em;

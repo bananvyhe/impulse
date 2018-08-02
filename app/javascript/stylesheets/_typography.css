@@ -25,14 +25,14 @@ h3 {
  
   line-height: 1.1em;
 }
-h4 {
+h4 {color: #444;
   adjust-font-size: fs medium;
   margin-top: spacing(0.5);
   margin-bottom: spacing(0.3);
  
   line-height: 1.1em;
 }
-h5 {
+h5 {color: #333;
   adjust-font-size: fs base;
   margin-top: spacing(0.5);
   margin-bottom: spacing(0.2);
