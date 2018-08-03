@@ -249,6 +249,11 @@ export default {
 
 .bodytext {
   padding: 0.5em;
+/*  ul, ol {
+
+    padding-left: 5.5em;
+    
+  }*/
 }
 .containerpop {
   lost-center: $maincontent;
@@ -413,7 +418,12 @@ export default {
   clear: both;
 }
 .topSectAv {
+
+ 
   overflow: hidden;
+    
+ 
+  
   @media (--only-small-screen) {
     margin-top: 0em;
   }
