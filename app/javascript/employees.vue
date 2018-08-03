@@ -48,7 +48,7 @@
                 <h5>{{item.name}}</h5>
               </div>
               <div class="descM">
-                <div class="desc tinytext" v-html="item.spec"></div>
+                <div class="desc tinytext" v-html="item.prof"></div>
               </div>
             </div>
           </div> 
@@ -75,7 +75,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      croptextvalue: 60,
+      croptextvalue: 25,
       employee: '',
       vis: false,
       dialogTableVisible: false,
