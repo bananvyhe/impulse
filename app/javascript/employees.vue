@@ -75,7 +75,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      croptextvalue: 25,
+      croptextvalue: 28,
       employee: '',
       vis: false,
       dialogTableVisible: false,
@@ -139,7 +139,7 @@ export default {
           autoAlpha:1,
           yPercent: 0,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "+=0.35")
-        .staggerFromTo('.itemTitle', 0.1, {
+        .staggerFromTo('.itemTitle', 0.3, {
           y: -30,
           autoAlpha:0
         }, {
@@ -157,13 +157,14 @@ export default {
         .staggerFromTo('.bg', 0.1, {
          // scale:1,
         }, {
-          yPercent: 5, 
-          xPercent: 5, 
+          // scale: 0.9,
+          yPercent: 80, 
+          // xPercent: 5, 
           // scale:0.9,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
-          borderBottomRightRadius: 0,
+          // borderBottomRightRadius: 0,
           onComplete: endAnima
         },0.2, "-=0.6");
 
@@ -210,8 +211,8 @@ export default {
               boxShadow: 'inset 0px 0px 80px 30px rgba(0,0,0,0.4)',
             }, 0)
             .to(($(this).find('.profp')), 0.2, {
-              opacity: 0, 
-              xPercent: 350,
+              // opacity: 0, 
+              yPercent: 100,
               ease: Power0.easeOut, 
             }, 0)
             .to(($(this).find('.prof')), 0.5, {
@@ -223,7 +224,7 @@ export default {
             .to(($(this).find('.bg')), 0.5, {
               xPercent: 0,  
               scale: 1,
-              yPercent: -10, 
+              yPercent: 25, 
             }, 0)
             element.animation = projectHover;
           });
@@ -281,6 +282,7 @@ export default {
   }
 }
 .group {
+  padding-top: 1em;
   @media (--only-xsmall-screen) {
     lost-center: 280px;
   }
@@ -295,8 +297,9 @@ export default {
   }
 }
 
-.bgsh { overflow: hidden;
-    box-shadow: inset 0px 0px 100px 30px rgba(0,0,0,0.0);
+.bgsh { 
+  /*overflow: hidden;*/
+    box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.1);
  /* border-radius: $borderRad; */
   cursor: pointer; 
   display: flex;
@@ -304,32 +307,34 @@ export default {
   width: 100%; 
  
 }
-.avapreview {
+.avapreview { 
   display: flex;
+  
   @media (--only-xsmall-screen) {
-    lost-waffle: 1/1 1 1em ;
+    lost-waffle: 1/1 1 3em ;
     height:  22em;
   }
   @media (--only-small-screen) {
-
+    padding-bottom: 1.5em;
     lost-waffle: 1/2 2 2em ;
-    height:  18em;
+    height:  19.5em;
   }
   @media (--only-medium-screen) {
-    
-    lost-waffle: 1/4 4 2em;
-    height: 14em;
+    padding-bottom: 4.5em;
+    lost-column: 1/4 4 2em;
+    height: 18.5em;
   }
   @media (--only-1600more-screen) {
-    lost-waffle: 1/5 5 2em;
-    height: 250px;
+    padding-bottom: 4.5em;
+    lost-column: 1/5 5 2em;
+    height: 330px;
   }
 }
 .cardpic {
-
-  border: 1px solid  $x11gray;
+   
+ /* border: 1px solid  $x11gray;*/
   width: 100%;
-  overflow: hidden;
+ /* overflow: hidden;*/
   display: flex;
   position: relative;
 
@@ -345,8 +350,8 @@ export default {
    box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
 }
 .prof {
-  border-top-left-radius: 0.6em;
-  border-top-right-radius: 0.6em;
+  border-top-left-radius: 0em;
+  border-top-right-radius: 0em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,25 +366,26 @@ export default {
 .itemTitle {
  /* border-bottom-right-radius: 2em; */
   border-left: 1px solid  $x11gray;
+  border-right: 1px solid  $x11gray;
   border-bottom: 1px solid  $x11gray;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 1);
   text-align: right;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1em;
-  padding: 0 0.8em 0.3em 1em;
-  border-bottom-left-radius: 0.8em;
-  border-bottom-right-radius: 0.8em;
+  padding: 0 0.8em 0.1em 1em;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
 
   h5 {
-    margin-top: spacing(0.3);
+    margin-top: spacing(0.1);
 
   }
 
 
 }
 .descM { 
-  background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 1); 
   overflow: hidden;
   width: 100%;
  
