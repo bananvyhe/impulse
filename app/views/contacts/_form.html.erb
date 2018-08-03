@@ -16,9 +16,9 @@
     <%= form.text_field :mail %>
   </div>
 
-  <div class="field">
+  <div class="field" style="padding-top: 0.4em;">
     <%= form.label :Адрес %>
-    <%= form.text_area :adress %>
+    <%= form.text_area :adress , cols: "30", rows: "5"%>
   </div>
 
   <div class="field">
@@ -26,9 +26,9 @@
     <%= form.text_field :tel %>
   </div>
 
-  <div class="field">
+  <div class="field" style="padding-top: 0.4em;">
     <%= form.label :Карта %>
-    <%= form.text_field :map %>
+    <%= form.text_area :map, cols: "30", rows: "7" %>
   </div>
 
   <div class="actions">
