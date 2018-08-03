@@ -93,10 +93,10 @@ ol {
   /*list-style-position: inside; */
 }
 ul { 
-  list-style: disc inside;
+  list-style: disc outside;
 }
 ol {
-  list-style: decimal inside;
+  list-style: decimal outside;
 }
 ul a, ol a {
   text-decoration: none;
@@ -105,7 +105,7 @@ li {
   display: list-item;
 	padding-left: 0em;
 	padding-right: 0.5em;
-	margin-bottom: 0em;
+	margin-bottom: 0.3em;
 }
 
 td {
