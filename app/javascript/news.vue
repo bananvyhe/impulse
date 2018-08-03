@@ -13,7 +13,8 @@
           <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
              
             <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span><br>
-            <img :src="item.newspic.thumb.url"> 
+
+            <img v-if="item.newspic.thumb.url" :src="item.newspic.thumb.url"> 
             
             
             <div class="newsdesc" v-html="item.desc"></div>  
