@@ -24,6 +24,7 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
+
 @import "_variables"; 
 @copy full {
   @import "_typography";
@@ -77,6 +78,7 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
+
 .robotoc {
 
 }
@@ -156,7 +158,9 @@ label.collection_check_boxes {
   right:0;
   @extend %roundbgstrw;
 }
-
+p {
+  
+}
 .edit {
   lost-utility: edit;
 }

@@ -138,6 +138,7 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+ 
 .news {
   overflow: hidden;
 }
