@@ -18,7 +18,9 @@
     <div class="maincontent">
       <div class="railsblock">
         <% if user_signed_in? %>
-         
+            <% if current_user.try(:admin?) %>
+              <a href ="">обрезать картинку</a>&nbsp;&nbsp;
+            <% end %>
             <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
             <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
             <% else %>
