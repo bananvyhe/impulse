@@ -40,7 +40,7 @@
           @click="clickhandler(item.id, $event) "> 
             <div class="bg"> 
               <div v-if="item.prof">
-                <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ' ...'}}<!-- <span v-html="item.desc"></span> --></div>
+                <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ''}}<!-- <span v-html="item.desc"></span> --></div>
                 <div v-else class="prof"> <div class="profp">{{item.prof}}</div><!-- <span v-html="item.desc"></span> --></div>
               </div>
               
