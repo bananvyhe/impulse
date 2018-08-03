@@ -132,29 +132,31 @@ export default {
     cardTween(){
       var selectedWork = new TimelineMax() ;
       selectedWork
-        .staggerFromTo('.cardpic', 0.2, {
+        .staggerFromTo('.cardpic', 0.9, {
           autoAlpha:0,
-          yPercent: 50,
+          // yPercent: 50,
+           scale: 1.1,
         }, {
+           scale: 1,
           autoAlpha:1,
-          yPercent: 0,
+          // yPercent: 0,
           ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "+=0.35")
-        .staggerFromTo('.itemTitle', 0.3, {
+        .staggerFromTo('.itemTitle', 0.5, {
           y: -30,
           autoAlpha:0
         }, {
           y: 0,
           autoAlpha:1,
-          ease:Back.easeOut.config(4),
-        }, 0.1, "-=0.2")
-        .staggerFromTo('.prof', 0.1, {
+          ease:Expo.easeOut,
+        }, 0.1, "-=0.6")
+        .staggerFromTo('.prof', 0.4, {
           autoAlpha:0,
           yPercent: 50,
         }, {
           autoAlpha:1,
           yPercent: 0,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
-        .staggerFromTo('.bg', 0.1, {
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.9")
+        .staggerFromTo('.bg', 0.5, {
          // scale:1,
         }, {
           // scale: 0.9,
@@ -355,7 +357,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:0.3em 1em 0.2em 0.5em; 
+  padding:0.3em 1em 0.3em 0.5em; 
   background-color: #748CAB;
   /*border-top-right-radius: 0.5em;*/
   /*border-top-left-radius: 2em; */
