@@ -3,14 +3,14 @@
   
 <% end %>
  
-<%= form_for @employee do |f| %> 
+<%= form_for @employee do |f| %>  
   <div style="float: left; padding-top: 1em;">
     <h5>Как зовут сотрудника:</h5>
     <p style= "text-indent: 0em;">
       <%= f.text_field :name  %> 
     </p>
     <% if @employee.avatar? %>
-      <div style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px; background: #999;">
+      <div style="background-image: url(' <%= root_url[0...-1] +  employee.avatar.tiny.url %>'); height:250px; width:225px;  ">
       </div>
     <% end %>
    

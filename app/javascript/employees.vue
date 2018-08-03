@@ -18,7 +18,8 @@
               <div style="padding-left: 0.5em;" v-html="item.spec"></div>  
             </div>
           </div>
-          <span  v-html="item.desc"></span>
+          <div class="bodyt">
+          <span  v-html="item.desc"></span></div>
         </div>  
 <!--         <div class="empDesc">
           <span v-html="item.desc"></span>
@@ -246,8 +247,11 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.bodyt {
 
-.bodytext {
+}
+.bodytext {  
+
   padding: 0.5em;
 /*  ul, ol {
 
@@ -434,6 +438,7 @@ export default {
     /*height:  20vw;*/
   }
   .avatarSect1 {
+      
     float: left;
     position: relative;
     z-index: 18;
