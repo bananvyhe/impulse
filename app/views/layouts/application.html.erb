@@ -19,7 +19,7 @@
       <div class="railsblock">
         <% if user_signed_in? %>
             <% if current_user.try(:admin?) %>
-              <a href ="">обрезать картинку</a>&nbsp;&nbsp;
+              <a href ="/resizeimages" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(800, screen.availHeight)+',width='+Math.min(800, screen.availWidth)); return false;">обрезать картинку</a>&nbsp;&nbsp;
             <% end %>
             <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
             <%= link_to "Выйти", destroy_user_session_path, method: :delete %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resizeimages
   resources :feedbacks
   resources :reviews
   get 'users/index'
