@@ -1,0 +1,39 @@
+<div>
+  <div>
+
+    <div>
+      <div>
+        <h3>Вырежьте часть при необходимости:</h3>
+      </div>
+      <div>
+        <%= image_tag @resizeimage.file_url , id: "cropbox" %>
+        <br>
+        <%= simple_form_for(@resizeimage) do |f| %>
+          <% %w[x y w h].each do |attribute| %>
+            <%= f.text_field  "crop_#{attribute}", type: :hidden %>
+          <% end %>
+
+          <div>
+            <%= f.button :submit, 'Сохранить' %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+   <!--  <div>
+      <div>
+        <h3>Предпросмотр:</h3>
+      </div>
+      <div  >
+        <div id="previewPic" style="width:90px; height:100px; overflow:hidden">
+          <%#= image_tag @employee.avatar.url , id: "prev" %>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+

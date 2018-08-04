@@ -1,5 +1,5 @@
 class ResizeimagesController < ApplicationController
-  before_action :set_resizeimage, only: [:show, :edit, :update, :destroy]
+  before_action :set_resizeimage, only: [:show, :edit, :update, :destroy,  :crop]
 
   # GET /resizeimages
   # GET /resizeimages.json
@@ -28,7 +28,11 @@ class ResizeimagesController < ApplicationController
 
     respond_to do |format|
       if @resizeimage.save
-        format.html { redirect_to @resizeimage, notice: 'Resizeimage was successfully created.' }
+         if resizeimage_params[:file].present?
+          format.html { render :crop, notice: 'Картинка добавлена в библиотеку' }
+        else
+          format.html { redirect_to action: :index, notice: 'Картинка добавлена в библиотеку.' }
+        end  
         format.json { render :show, status: :created, location: @resizeimage }
       else
         format.html { render :new }
@@ -45,7 +49,7 @@ class ResizeimagesController < ApplicationController
         format.html { redirect_to @resizeimage, notice: 'Resizeimage was successfully updated.' }
         format.json { render :show, status: :ok, location: @resizeimage }
       else
-        format.html { render :edit }
+        format.html { render :crop}
         format.json { render json: @resizeimage.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +73,6 @@ class ResizeimagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resizeimage_params
-      params.require(:resizeimage).permit(:file)
+      params.require(:resizeimage).permit(:file,   :file_cache, :remove_file, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end

@@ -2,17 +2,45 @@ class ResizerUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
+   process resize_to_limit: [900, 1000]
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/ckeditor/pictures/0000#{model.id}"
   end
-
+  # process :extract_dimensions
+  
+  # Create different versions of your uploaded files:
+  # version :thumb do
+  #   process :crop
+  #   process resize_to_fill: [118, 100]
+  # end
+  version :thumb do
+    process resize_to_fill: [118, 100]
+  end
+  version :content do
+    process :crop
+    # process resize_to_limit: [600, 600]
+  end
+   def crop
+    if model.crop_x.present?
+      # resize_to_limit(900, 1000)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        # [[w, h].join('x'),[x, y].join('+')].join('+') => "wxh+x+y"
+        img.crop([[w, h].join('x'),[x, y].join('+')].join('+'))
+      end
+    end
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
