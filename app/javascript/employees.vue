@@ -6,8 +6,8 @@
        
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-      width="90%">
-      <div class ="basetext" v-for="item in popemploy(employee)">
+      max-width="1200px"> 
+      <div class ="basetext poup" v-for="item in popemploy(employee)">
         <div class="topSectAv bodytext">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
           </div>
@@ -70,11 +70,14 @@
   </div>
 </template>
 <script>
+// let popWidth = {value: ''};
+
 import axios from 'axios'
 
 export default {
   data: function () {
     return {
+      // popWidth: popWidth,
       croptextvalue: 28,
       employee: '',
       vis: false,
@@ -250,6 +253,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.el-dialog__wrapper {
+  
+} 
 .bodyt {
 
 }
@@ -262,8 +268,11 @@ export default {
     
   }*/
 }
-.containerpop {
-  lost-center: $maincontent;
+.containerpop { 
+  /*overflow:  hidden;*/
+
+ 
+
 }
 .hrline { 
   width: 10em; 
@@ -273,6 +282,10 @@ export default {
 } 
 .popup {
 
+}
+.poup {
+   
+ 
 }
 .heading { 
   display: flex;
