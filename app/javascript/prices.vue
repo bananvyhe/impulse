@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="">
     <transition name="fade">
-      <div class="cont1" v-if="adult.length">
+      <div class="cont1 " v-if="adult.length">
         
           <h4>{{teamssect[0].name }}</h4> 
           <el-table 
@@ -11,7 +11,7 @@
             style="width: 100%">
             <el-table-column  
             prop="name" 
-            width="180"
+            width="220px"
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
             <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
