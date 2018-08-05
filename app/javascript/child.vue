@@ -90,7 +90,10 @@ export default {
     }
   },
   created() {
-     this.catchchild();
+    var self = this;
+    setTimeout(function(){
+     self.catchchild();
+      },30 );
       
   },
   mounted() {

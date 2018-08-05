@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div> {{toggle}}{{toggle2}}
     <div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
@@ -10,15 +10,23 @@
       v-bind:style="{styleObject, width: menuwidth.value + 'px'}"  
       v-bind:class="fixedClass" 
       ref="dropdown">
-      <button 
+      <button class="butabs" 
         v-bind:class="{hoverhamburger: toggle2}"  
         v-if="menuitemsHide.length > 0" 
-        v-on:click="toggle2 = !toggle2, toggle = !toggle">
+       >
         <div  
-           
-          v-bind:class="{hamshadow: toggle, hamshadow2: !toggle}"
+          
+          
           class="hamburger">
+          
         </div>
+        <div 
+          v-bind:class="{hamshadow: toggle, hamshadow2: !toggle}" 
+          v-on:click="toggle2 = !toggle2, toggle = !toggle" 
+          @mouseenter="toggle2 = true, toggle  = true"
+          @mouseleave="  toggle2 = false" 
+          style="z-index: 10; height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; "> 
+         </div>
       </button>
       <div class="blankdiv">
       </div>
@@ -316,6 +324,9 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+.butabs {
+  position: relative;
+}
 /*.activelink {
     font-weight: bold;
     a { color: $color-1 !important; }
@@ -402,6 +413,7 @@
       right: 0;
     }
   .hoverhamburger {
+  
     background: radial-gradient(circle farthest-corner at 50% 55%, $redorange 50%, color($redorange blackness(40%)) 100%);
     &:after {
       background-color: color($redorange blackness(5%) saturation(10%) ); 
@@ -415,7 +427,8 @@
     .hamshadow2 {
     filter: drop-shadow(1px 1px 1px grey);
   }
-  .hamburger {z-index: 2;
+  .hamburger {
+    z-index: 2;
     position: relative;
     width: 30px;
     height: 0.25em;
