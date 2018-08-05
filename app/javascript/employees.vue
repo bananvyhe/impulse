@@ -6,7 +6,8 @@
        
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-      max-width="1200px"> 
+       
+      width="80%"> 
       <div class ="basetext poup" v-for="item in popemploy(employee)">
         <div class="topSectAv bodytext">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
@@ -78,7 +79,7 @@ export default {
   data: function () {
     return {
       // popWidth: popWidth,
-      croptextvalue: 28,
+      croptextvalue: 25,
       employee: '',
       vis: false,
       dialogTableVisible: false,
