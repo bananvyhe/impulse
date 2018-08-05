@@ -60,13 +60,15 @@ export default {
         console.log(error);
       }); 
     },
+    prep() {
+    
+    },
     anim() {
       var selectedWork = new TimelineMax() ;
-      var menuitems = $('.bgstring').toArray();
-      var m2 = (menuitems.length/2).toFixed();
-      var m3 = menuitems.splice(m2);
+      let menuitems = $('.bgstring').toArray();
+      let m2 = (menuitems.length/2).toFixed();
+      let m3 = menuitems.splice(m2);
       menuitems.reverse();
-      console.log("123");
       selectedWork
         .staggerFromTo(menuitems, 0.5, {
         opacity: 0,
@@ -90,17 +92,16 @@ export default {
     }
   },
   created() {
-    var self = this;
-    setTimeout(function(){
-     self.catchchild();
-      },30 );
-      
+     this.catchchild();
+    
   },
   mounted() {
+ 
     var self = this;
+
     setTimeout(function(){
       self.anim();
-    },600 );
+    },700 );
     
   }
 }

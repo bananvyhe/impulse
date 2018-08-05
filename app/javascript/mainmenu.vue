@@ -23,8 +23,7 @@
         <div 
           v-bind:class="{hamshadow: toggle, hamshadow2: !toggle}" 
           v-on:click="toggle2 = !toggle2, toggle = !toggle" 
-          @mouseenter="toggle2 = true, toggle  = true"
-          @mouseleave="  toggle2 = false" 
+  
           style="z-index: 10; height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; "> 
          </div>
       </button>

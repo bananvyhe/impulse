@@ -457,7 +457,7 @@ body {
   background-color: #dad;
 }
 .scale-in-hor-right {
-  animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-hor-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes scale-in-hor-right {
   0% {
@@ -473,7 +473,7 @@ body {
 }
 
 .scale-in-hor-left {
-  animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-hor-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes scale-in-hor-left {
   0% {
