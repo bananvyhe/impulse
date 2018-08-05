@@ -1,7 +1,7 @@
 <template >
   <div class="sliderapp" 
     @mouseleave = "hoverslide = false"
-    @mouseenter = "hoverslide = true">
+    @mouseenter = "hoverslide = true"> 
     <el-carousel indicator-position="outside"
       v-bind:interval="interval" 
       @change="change" 
@@ -9,28 +9,36 @@
        }">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
           <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
-            <div class ="infoBlock">
-                <transition v-if = "item.caption1 != false" name='slide' appear>
-                  <div 
-                    :key='index' 
-                    class="titlefirst" 
-                    v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false"><h3><span v-html="item.caption1"></span></h3>
-                  </div> 
-                </transition>
-                <transition v-if = "item.caption2 != false" name='fade' :duration="4000" appear> 
- 
+            <!-- <a  :href="item.url"  > -->
+              <div class ="infoBlock">
+                  <transition v-if = "item.caption1 != false" name='slide' appear>
+                   
                     <div 
-                      :key='item.id' 
-                      class="titlesecond" 
-                      v-show="slideAnimRestart2"
-                      @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
-                    </div>                    
-               
+                      :key='index' 
+                      class="titlefirst" 
+                      v-show="slideAnimRestart"
+                      @click="slideAnimRestart = false">
+                      <h3> 
+                        <a v-if="item.ssilka" :href="item.ssilka" class="firsturl"><span v-html="item.caption1"></span></a>
+                        <div v-else><span v-html="item.caption1"></span></div>
+                      </h3>
+                    </div> 
+                   
+                  </transition>
+                  <transition v-if = "item.caption2 != false" name='fade' :duration="4000" appear> 
+   
+                      <div 
+                        :key='item.id' 
+                        class="titlesecond" 
+                        v-show="slideAnimRestart2"
+                        @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
+                      </div>                    
+                 
 
-                </transition>
-            </div>
-            <br>
+                  </transition>
+              </div>
+              <br>
+            <!-- </a> -->
            </div>
       </el-carousel-item>
     </el-carousel>
@@ -153,6 +161,12 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+.firsturl {
+   
+  color: $isabelline;
+  text-decoration: none;
+  height: 100%;
+}
 .mainFormat {border-radius: 0.6em;
   display: flex; 
   width: 100%; 
@@ -175,6 +189,10 @@
 
 }
 .titlefirst {
+
+  a {
+    height: 100%;
+  }
   margin-bottom: 0.1em;
   /*@extend %roundbgstr;*/
   h3 {

@@ -69,6 +69,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:slide, :caption1, :caption2, :slider, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:slider).permit(:slide, :caption1, :caption2, :slider, :ssilka, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
