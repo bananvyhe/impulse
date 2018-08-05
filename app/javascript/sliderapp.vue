@@ -70,7 +70,7 @@
         secondtitledelay: 0.65,
         divHeight: divHeight,
         hoverslide: false,
-        interval: 6000,
+        interval: 7000,
         slideAnimRestart: '',
         slideAnimRestart2: '',
         animfade: 'fade',

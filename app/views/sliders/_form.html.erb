@@ -13,11 +13,11 @@
     <% end %>
     <h5>Заголовок слайда:</h5>
     <div>
-       <%= f.input :caption1 , as: :text, label: false %>
+       <%= f.input :caption1 , as: :text, label: false, :input_html => { :cols => 40, :rows => 3 } %>
     </div>
     <h5>Текст слайда:</h5>
     <div>
-       <%= f.input :caption2 , as: :text, label: false  %>
+       <%= f.input :caption2 , as: :text, label: false, :input_html => { :cols => 40, :rows => 7 }  %>
     </div>
   </div>  
   <div class="form-actions">
