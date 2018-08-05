@@ -11,7 +11,7 @@
             style="width: 100%">
             <el-table-column  
             prop="name" 
-            width="220px"
+            min-width="220px"
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
             <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
@@ -30,7 +30,7 @@
           
           :data = "child1" style="width: 100%">
           <el-table-column  
-          width="180"
+          min-width="220"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
