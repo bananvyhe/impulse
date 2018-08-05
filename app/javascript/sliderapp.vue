@@ -157,11 +157,12 @@
   display: flex; 
   width: 100%; 
   height: 100%;
+  justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.infoBlock {
+.infoBlock {  
   padding-left: 7%;
   padding-right: 7%;
   display: flex;
