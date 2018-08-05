@@ -2,11 +2,11 @@
   <div class="sliderapp" 
     @mouseleave = "hoverslide = false"
     @mouseenter = "hoverslide = true">
-    <el-carousel 
+    <el-carousel indicator-position="outside"
       v-bind:interval="interval" 
       @change="change" 
       v-bind="{height: visota.value + 'px', 
-      'indicator-position': hider}">
+       }">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
           <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
             <div class ="infoBlock">
@@ -153,7 +153,7 @@
 
 <style scoped>
 @import "stylesheets/_variables";
-.mainFormat {
+.mainFormat {border-radius: 0.6em;
   display: flex; 
   width: 100%; 
   height: 100%;
@@ -215,9 +215,9 @@
 
 }
 .sliderapp { overflow: hidden;
-  border-radius: 0.6em;
+  
 }
-.sliderText {
+.sliderText {border-radius: 0.6em;
   display: flex;
 }
 
