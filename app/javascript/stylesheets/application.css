@@ -231,6 +231,11 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+.newsdesc {
+  p {  
+     margin-bottom: spacing(0.5);
+  }
+}
 .librarypic {
   background-color: #ada;
   width: 150px; 

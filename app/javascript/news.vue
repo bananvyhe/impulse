@@ -159,7 +159,9 @@ export default {
 } 
 .newsh {  
   lost-column: 1/1;
+
 } 
+
 .last{
 
 }
@@ -215,11 +217,12 @@ export default {
     float: left;
   }
 }
-.newsdesc {
-  padding: 0.5em 0em 0.5em 0em ;
 
+.newsdesc { 
+  padding: 0.5em 0em 0em 0em ;
+  
    
-   text-shadow: 0 1px 1px rgba(255,255,255,0.25);
+   text-shadow: 0 1px 2px rgba(255,255,255,0.25);
 }
 .bgi {
   background-color: #dad;
