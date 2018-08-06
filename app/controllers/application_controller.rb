@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
   before_action :set_cache_headers
-  
+  # before_action :authenticate_user!,  :only => [:new, :create]  
  
   # def send_mail
   #   WelcomeMailer.send_welcome_mail.deliver_now!
