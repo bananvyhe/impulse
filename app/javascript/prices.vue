@@ -2,8 +2,10 @@
   <div class="tinytext">
     <transition name="fade">
       <div class="cont1"  v-if="adult.length">
-        
-          <h4>{{teamssect[0].name }}</h4> 
+          <div class="pad">
+            <h4>{{teamssect[0].name }}</h4> 
+            <div class="hrline scale-in-hor-left" :style="{width: teamssect[0].name.length+ 'em'}"></div>
+          </div>
           <el-table 
 
             stripe
@@ -26,10 +28,102 @@
     <transition name="fade">
       <div v-if="child1.length">
         <!-- <h4>Для детей</h4> -->
-        <h4>{{teamssect[1].name }}</h4> 
+         
+          <h4>{{teamssect[1].name }}</h4>
+          <div class="hrline scale-in-hor-left" :style="{width: teamssect[1].name.length+ 'em'}"></div>
         <el-table stripe
           
           :data = "child1" style="width: 100%">
+          <el-table-column  
+          min-width="220"
+          prop="name" 
+          label="Наименование услуги"></el-table-column>
+          <el-table-column prop="graph" label="График занятий"></el-table-column>
+          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+        </el-table>
+         <br>
+      </div>
+    </transition>
+
+    <transition name="fade" v-if="teamssect[2]  ">
+      <div v-if="sect3.length">
+        
+        <h4>{{teamssect[2].name }}</h4> 
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[2].name.length+ 'em'}"></div>
+        <el-table stripe
+          :data = "sect3" style="width: 100%">
+          <el-table-column  
+          min-width="220"
+          prop="name" 
+          label="Наименование услуги"></el-table-column>
+          <el-table-column prop="graph" label="График занятий"></el-table-column>
+          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+        </el-table>
+         <br>
+      </div>
+    </transition>
+   <!--  <transition name="fade" v-if="teamssect[3]    ">
+      <div v-if="sect4.length">
+ 
+        <h4>{{teamssect[3]  }}</h4> 
+        <el-table stripe
+          :data = "sect4" style="width: 100%">
+          <el-table-column  
+          min-width="220"
+          prop="name" 
+          label="Наименование услуги"></el-table-column>
+          <el-table-column prop="graph" label="График занятий"></el-table-column>
+          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+        </el-table>
+         <br>
+      </div>
+    </transition> -->
+    <transition name="fade" v-if="teamssect[4]">
+      <div v-if="sect5.length">
+        <!-- <h4>Для детей</h4> -->
+        <h4>{{teamssect[4].name }}</h4> 
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[4].name.length+ 'em'}"></div>
+        <el-table stripe
+          :data = "sect5" style="width: 100%">
+          <el-table-column  
+          min-width="220"
+          prop="name" 
+          label="Наименование услуги"></el-table-column>
+          <el-table-column prop="graph" label="График занятий"></el-table-column>
+          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+        </el-table>
+         <br>
+      </div>
+    </transition>
+    <transition name="fade" v-if="teamssect[5]">
+      <div v-if="sect6.length">
+        <!-- <h4>Для детей</h4> -->
+        <h4>{{teamssect[5].name }}</h4> 
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[5].name.length+ 'em'}"></div>
+        <el-table stripe
+          :data = "sect6" style="width: 100%">
+          <el-table-column  
+          min-width="220"
+          prop="name" 
+          label="Наименование услуги"></el-table-column>
+          <el-table-column prop="graph" label="График занятий"></el-table-column>
+          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+        </el-table>
+         <br>
+      </div>
+    </transition>
+    <transition name="fade" v-if="teamssect[6]">
+      <div v-if="sect7.length">
+        <!-- <h4>Для детей</h4> -->
+        <h4>{{teamssect[6].name }}</h4> 
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[6].name.length+ 'em'}"></div>
+        <el-table stripe
+          :data = "sect7" style="width: 100%">
           <el-table-column  
           min-width="220"
           prop="name" 
@@ -48,12 +142,22 @@
 import axios from 'axios' 
 let child1 = {value:  ''};
 let adult = {value:  ''};
+let sect3 = {value:  ''};
+let sect4 = {value:  ''};
+let sect5 = {value:  ''};
+let sect6 = {value:  ''};
+let sect7 = {value:  ''};
 export default {
  
   data: function () {
     return {
     	teamssect: '',
  			teams: '',
+      sect3: sect3,
+      sect4: sect4,
+      sect5: sect5,
+      sect6: sect6,
+      sect7: sect7,
  			child1: child1,
  			adult: adult,
       postBody: '',
@@ -72,11 +176,26 @@ export default {
   	child2(){
       this.child1 = this.teams.filter(function(item) {
           return item.team_id == 3
-        });
-        this.adult = this.teams.filter(function(item) {
-          return item.team_id == 1
       });
-        
+      this.adult = this.teams.filter(function(item) {
+          return item.team_id == 1
+          
+      });
+      this.sect3 = this.teams.filter(function(item) {
+          return item.team_id == 4
+      });  
+      this.sect4 = this.teams.filter(function(item) {
+          return item.team_id == 5
+      });  
+      this.sect5 = this.teams.filter(function(item) {
+          return item.team_id == 6
+      });  
+      this.sect6 = this.teams.filter(function(item) {
+          return item.team_id == 7
+      }); 
+      this.sect7 = this.teams.filter(function(item) {
+          return item.team_id == 8
+      }); 
   	},
   	adult1() {
  
@@ -125,6 +244,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.pad { 
+   
+}
 .tablestyle {
 
 }

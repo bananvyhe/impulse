@@ -337,7 +337,6 @@
   filter: saturate(90%);
 }
 .greedy-nav {
-
   height: 2.4em;
   /*border-bottom-left-radius: 1.3em; */
   border-bottom: 1px solid #fff;
