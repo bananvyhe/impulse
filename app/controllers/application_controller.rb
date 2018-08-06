@@ -1,14 +1,8 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
   before_action :set_cache_headers
-  before_action :admin_user,  :only => [:new, :create, :edit]  
- def admin_user
-  if current_user.admin?
-   flash.now[:success] = "Admin Access Granted"
-  else
-   redirect_to root_path
-  end
- end
+  
+ 
   # def send_mail
   #   WelcomeMailer.send_welcome_mail.deliver_now!
   # end

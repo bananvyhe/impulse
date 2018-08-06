@@ -1,6 +1,13 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+    before_action :admin_user,  :only => [:new, :create, :edit]  
+ def admin_user
+  if current_user.try(:admin?)
+   flash.now[:success] = "Admin Access Granted"
+  else
+   redirect_to root_path
+  end
+ end
   # GET /contacts
   # GET /contacts.json
   def index
