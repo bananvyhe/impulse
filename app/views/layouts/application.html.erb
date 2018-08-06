@@ -28,9 +28,9 @@
         <% end %>
       </div>
       <div id="head" class="head"></div> 
-      <% if current_user.try(:admin?) %>
+      <%# if current_user.try(:admin?) %>
       <div id="mainmenu"></div>
-      <% end %>
+      <%# end %>
       <div id="main" >
         <%= yield %>
           <div id="footer"></div>

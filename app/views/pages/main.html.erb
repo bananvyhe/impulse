@@ -2,7 +2,7 @@
 
 
 
-<% if current_user.try(:admin?) %>
+<%# if current_user.try(:admin?) %>
 
 	<div id="leftsheet">
 		<div id="child"></div>
@@ -13,6 +13,8 @@
 			<a class="button is-success is-outlined" href="/sliders" style="margin: -1.4em 0 0 33%;">
 				 редактор слайдов 
 			</a>
+			<% else %>
+			<div style="margin: 0.5em 0 0 33%;"></div>
 		<% end %>
 		<div id="sliderapp"></div>
 	</div>
@@ -22,12 +24,15 @@
 	</div>
 	
 	<div class="cleared"></div>
-	<div id="news"></div>
-<% end %>
+	<% if current_user.try(:admin?) %>
+		<div style="text-align: center;"><a href="/news/">Редактировать новости</a></div>
+	<% end %>
+	<div id="news"></div> 
+<%# end %>
  
-<div class="testfont" style="margin-top: 1em;"><span>Психологический центр «Импульс»</span></div>
+<!-- <div class="testfont" style="margin-top: 1em;"><span>Психологический центр «Импульс»</span></div>
 <div class="cont">
 	<h1>Семейное консультирование</h1>
 	<p class="smalltext"> Семейное консультирование —  это совместная работа психолога и членов семьи, которая нацелена на осознание того, каковы истинные причины  их эмоциональных трудностей, поведения и жизненной ситуации, а также поиск путей решения проблемы. </p>
-</div>
-<div id="app"></div>
+</div> -->
+<!-- <div id="app"></div> -->

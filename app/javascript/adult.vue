@@ -1,6 +1,6 @@
 <template>
   <div class="adult  basetext">
-  	<div> 
+  	<div class="pad"> 
   		<h4>Взрослым</h4>
       <div class="hrline scale-in-hor-left"></div>
   	</div>
@@ -103,6 +103,12 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.pad {
+  padding-bottom: 0.3em;
+  h4 {
+    padding-bottom: 0.1em;
+  }
+}
  .fizer {
   lost-center: 1160px;
  }
@@ -112,6 +118,7 @@ export default {
   background-color: $str1;
 } 
 .adult {
+  padding-top: 0.5em;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -138,6 +145,6 @@ export default {
   }
 }
 .bganim {
-   
+     
 }
 </style>

@@ -6,7 +6,7 @@
        	<div class="hrline scale-in-hor-center "></div>
   		</div>
           <div style="textAlign: center; paddingBottom: 1em;">
-      <a href="/news/">Редактировать новости</a>
+     
     </div>
   		<div class="newsBlock Y" id="Y">
         <div class="newsh ">

@@ -1,6 +1,6 @@
 <template>
   <div class="child basetext"> 
-  	<div>
+  	<div class="pad">
       <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
   	</div>
@@ -108,6 +108,12 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.pad {
+  padding-bottom: 0.3em;
+  h4 {
+    padding-bottom: 0.1em;
+  }
+}
  .fizer {
   lost-center: 1160px;
  }
@@ -120,6 +126,7 @@ export default {
   background-color: $str1;
 } 
 .child {
+   
   position: relative;
   overflow: hidden;
 	display: flex;
@@ -151,7 +158,7 @@ export default {
   }
 }
 .bganim {
-   
+ 
 }
 
 

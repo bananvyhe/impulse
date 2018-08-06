@@ -99,6 +99,7 @@ $redorange: #C14953;
 %hrline {
   height: 2px;
   border-radius: 0.2em;
+  
 }
 %bgstring {
   background: $str3;
