@@ -1,5 +1,5 @@
 <template>
-  <div class="child  basetext"> 
+  <div class="child basetext"> 
   	<div>
       <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>

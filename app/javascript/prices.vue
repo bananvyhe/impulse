@@ -1,10 +1,11 @@
 <template>
-  <div class="">
+  <div class="tinytext">
     <transition name="fade">
-      <div class="cont1 " v-if="adult.length">
+      <div class="cont1"  v-if="adult.length">
         
           <h4>{{teamssect[0].name }}</h4> 
           <el-table 
+
             stripe
             :data = "adult"
              
@@ -124,13 +125,16 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.tablestyle {
+
+}
 .cont1 {  
   position: relative;
 }
 .tableanim{
   opacity: 0;
 }
-.wrap {@nowrap; 
+.wrap { 
   background-color: #dad;
 }
 .fade-enter-active, .fade-leave-active {

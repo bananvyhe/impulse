@@ -51,8 +51,7 @@ p:first-of-type {
    adjust-font-size: fs b;
 }
 .form-inputs {
-   
-    font-size: 1.2em;
+  font-size: 1.2em;
 } 
 .largetext {
   adjust-font-size: fs b;
