@@ -1,11 +1,13 @@
 <template>
-  <div class="tinytext">
+  <div class="tinytext"> 
     <transition name="fade"v-if="teamssect[0]  ">
       <div class="cont1"  v-if="adult.length">
+        <div class="opad">
           <div class="pad">
             <h4>{{teamssect[0].name }}</h4> 
-            <div class="hrline scale-in-hor-left" :style="{width: teamssect[0].name.length*0.8 + 'em'}"></div>
+            <div class="hrline scale-in-hor-left basetext"  ></div>
           </div>
+        </div>
           <el-table 
 
             stripe
@@ -17,7 +19,7 @@
             min-width="220px"
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
-            <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+            <el-table-column  prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
             <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
           </el-table>
           <br>
@@ -28,9 +30,11 @@
     <transition name="fade" v-if="teamssect[1]  ">
       <div v-if="child1.length">
         <!-- <h4>Для детей</h4> -->
-         
+         <div class="opad">
+          <div class="pad">
           <h4>{{teamssect[1].name}}</h4>
-          <div class="hrline scale-in-hor-left" :style="{width: teamssect[1].name.length*0.8 + 'em'}"></div>
+          <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           
           :data = "child1" style="width: 100%">
@@ -48,9 +52,11 @@
 
     <transition name="fade" v-if="teamssect[2]  ">
       <div v-if="sect3.length">
-        
+        <div class="opad">
+          <div class="pad">
         <h4>{{teamssect[2].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[2].name.length*0.8 + 'em'}"></div>
+        <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           :data = "sect3" style="width: 100%">
           <el-table-column  
@@ -66,9 +72,11 @@
     </transition>
     <transition name="fade" v-if="teamssect[3]    ">
       <div v-if="sect4.length">
- 
+        <div class="opad">
+          <div class="pad">
         <h4>{{teamssect[3].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[3].name.length*0.8 + 'em'}"></div>
+        <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           :data = "sect4" style="width: 100%">
           <el-table-column  
@@ -84,9 +92,11 @@
     </transition>
     <transition name="fade" v-if="teamssect[4]">
       <div v-if="sect5.length">
-        <!-- <h4>Для детей</h4> -->
+        <div class="opad">
+        <div class="pad">
         <h4>{{teamssect[4].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[4].name.length*0.8 + 'em'}"></div>
+        <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           :data = "sect5" style="width: 100%">
           <el-table-column  
@@ -102,9 +112,11 @@
     </transition>
     <transition name="fade" v-if="teamssect[5]">
       <div v-if="sect6.length">
-        <!-- <h4>Для детей</h4> -->
+        <div class="opad">
+        <div class="pad">
         <h4>{{teamssect[5].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[5].name.length*0.8 + 'em'}"></div>
+        <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           :data = "sect6" style="width: 100%">
           <el-table-column  
@@ -120,9 +132,11 @@
     </transition>
     <transition name="fade" v-if="teamssect[6]">
       <div v-if="sect7.length">
-        <!-- <h4>Для детей</h4> -->
+        <div class="opad">
+        <div class="pad">
         <h4>{{teamssect[6].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[6].name.length*0.8 + 'em'}"></div>
+        <div class="hrline scale-in-hor-left basetext" ></div>
+        </div></div>
         <el-table stripe
           :data = "sect7" style="width: 100%">
           <el-table-column  
@@ -245,8 +259,16 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.opad {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+}
 .pad { 
-   
+  
+}
+.hrline {
+  margin: 0.1em  0.1em 0em -0.2em;
 }
 .tablestyle {
 
