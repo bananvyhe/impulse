@@ -1,25 +1,33 @@
 
 <div style="padding-bottom: 1em;">
  <!--  <h4>Библиотека</h4>
-  <div style="width: 8em;"class="hrline scale-in-hor-left"></div> -->
+  <div sty&le="width: 8em;"class="hrline scale-in-hor-left"></div> -->
 </div>
- <div class="basetext">
-  <% @libraries.each do |library| %>
-    <div style="padding-bottom: 2em;">
-    <% if library.cover? %>
-      <div style="float:left; padding-bottom: 0.5em;"><div ><%= image_tag(library.cover.thumb.url) %></div></div>
-    <% end %>
-    <div style="padding-top: 0.1em;  "><h3><%= library.name.capitalize %></h3></div>
-    <div><p><%= library.desc.html_safe %></p></div>
-    <div><a href="<%= library.file %>">ссылка на файл</a></div>
-    <div class="cleared"></div>
-    <% if user_signed_in? %>
-      <div><%= link_to 'Редактировать', edit_library_path(library) %></div>
-      <div><%= link_to 'Удалить', library, method: :delete, data: { confirm: 'Вы уверены?' } %></div></div>
-    <% end %>
-  <% end %>
  
-<% if user_signed_in? %> 
+<% if current_user.try(:admin?) %>
   <%= link_to 'Новая публикация', new_library_path %>
 <% end %>
+ <div class="basetext">
+  <%# if @library? %>
+
+        <% @libraries.each do |library| %>
+          <div style="padding-bottom: 2em;">
+          <% if library.cover? %>
+            <div style="float:left; padding-bottom: 0.5em;"><div ><%= image_tag(library.cover.thumb.url) %></div></div>
+          <% end %>
+          <div style="padding-top: 0.1em;  "><h3><%= library.name.capitalize %></h3></div>
+          <div><p><%= library.desc.html_safe %></p></div>
+          <div><a href="<%= library.file %>">ссылка на файл</a></div>
+          <div class="cleared"></div>
+          <% if current_user.try(:admin?) %>
+            <div><%= link_to 'Редактировать', edit_library_path(library) %></div>
+            <div><%= link_to 'Удалить', library, method: :delete, data: { confirm: 'Вы уверены?' } %></div></div>
+          <% end %>
+        <% end %>
+  
+
+  <%# else %>
+       <!--  <p>Пока ничего не добавлено</p> -->
+  <%# end %>
+
 </div>

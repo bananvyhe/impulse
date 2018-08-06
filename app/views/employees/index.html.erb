@@ -1,7 +1,7 @@
 <div id="employees"></div>
 <!-- редактор -->
 
-  <% if user_signed_in? %>
+  <% if current_user.try(:admin?) %>
    <br>
     <%= link_to 'Новый сотрудник', new_employee_path %>
   <br>

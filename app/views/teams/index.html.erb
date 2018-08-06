@@ -1,7 +1,7 @@
  
 <%= content_tag :div, id: "prices"  do %>
 <% end %>
-
+<% if current_user.try(:admin?) %>
 <!--  <div id="prices"></div> -->
 <h1>Редактор категорий:</h1>
 <table>
@@ -29,3 +29,4 @@
 </table>
 <br>
 <%= link_to 'Создать категорию', new_team_path %>
+<% end %>

@@ -1,4 +1,4 @@
-
+<% if current_user.try(:admin?) %>
 <div id="reviews"></div>
 <h2>Редактор отзывов:</h2>
 <table>
@@ -26,3 +26,4 @@
 <br>
 
 <%= link_to 'Добавить отзыв', new_review_path %>
+<% end %>

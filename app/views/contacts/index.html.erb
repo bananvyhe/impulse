@@ -1,11 +1,11 @@
 <h4>Контакты</h4>
 <% @contacts.each do |contact| %>
-<div class="contacts">
+<div class="contacts" style="padding-bottom: 1em;">
   <div class="map">
     <%= contact.map.html_safe %>
   </div>
 
-  <div class="contactInfo ">
+  <div class="contactInfo " >
     <div>
       <div>
         <h3>Психологический центр &laquo;Импульc&raquo; </h3>
@@ -31,10 +31,11 @@
   </div>
   
 </div>
-
+<% if current_user.try(:admin?) %>
 <div>
   <%= link_to 'Редактировать', edit_contact_path(contact), class: "button is-info is-outlined" %>
 </div>
+<% end %>
 
 <% end %>
 <div id="feedback"></div>

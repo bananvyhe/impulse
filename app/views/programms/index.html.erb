@@ -1,6 +1,7 @@
 
-
 <div id="programms"></div>
+<% if current_user.try(:admin?) %>
+
 
 <br>
 <p>
@@ -30,7 +31,7 @@
 </table>
 <div class="fontBlock basetext">
 <br>
-
+<% end %>
 
 <!-- <h1>отношения с супругом</h1>
 
