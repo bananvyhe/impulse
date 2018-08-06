@@ -1,10 +1,10 @@
 <template>
   <div class="tinytext">
-    <transition name="fade">
+    <transition name="fade"v-if="teamssect[0]  ">
       <div class="cont1"  v-if="adult.length">
           <div class="pad">
             <h4>{{teamssect[0].name }}</h4> 
-            <div class="hrline scale-in-hor-left" :style="{width: teamssect[0].name.length+ 'em'}"></div>
+            <div class="hrline scale-in-hor-left" :style="{width: teamssect[0].name.length*0.8 + 'em'}"></div>
           </div>
           <el-table 
 
@@ -25,12 +25,12 @@
       </div>
     </transition>
     
-    <transition name="fade">
+    <transition name="fade" v-if="teamssect[1]  ">
       <div v-if="child1.length">
         <!-- <h4>Для детей</h4> -->
          
-          <h4>{{teamssect[1].name }}</h4>
-          <div class="hrline scale-in-hor-left" :style="{width: teamssect[1].name.length+ 'em'}"></div>
+          <h4>{{teamssect[1].name}}</h4>
+          <div class="hrline scale-in-hor-left" :style="{width: teamssect[1].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           
           :data = "child1" style="width: 100%">
@@ -50,7 +50,7 @@
       <div v-if="sect3.length">
         
         <h4>{{teamssect[2].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[2].name.length+ 'em'}"></div>
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[2].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           :data = "sect3" style="width: 100%">
           <el-table-column  
@@ -64,10 +64,11 @@
          <br>
       </div>
     </transition>
-   <!--  <transition name="fade" v-if="teamssect[3]    ">
+    <transition name="fade" v-if="teamssect[3]    ">
       <div v-if="sect4.length">
  
-        <h4>{{teamssect[3]  }}</h4> 
+        <h4>{{teamssect[3].name }}</h4> 
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[3].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           :data = "sect4" style="width: 100%">
           <el-table-column  
@@ -80,12 +81,12 @@
         </el-table>
          <br>
       </div>
-    </transition> -->
+    </transition>
     <transition name="fade" v-if="teamssect[4]">
       <div v-if="sect5.length">
         <!-- <h4>Для детей</h4> -->
         <h4>{{teamssect[4].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[4].name.length+ 'em'}"></div>
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[4].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           :data = "sect5" style="width: 100%">
           <el-table-column  
@@ -103,7 +104,7 @@
       <div v-if="sect6.length">
         <!-- <h4>Для детей</h4> -->
         <h4>{{teamssect[5].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[5].name.length+ 'em'}"></div>
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[5].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           :data = "sect6" style="width: 100%">
           <el-table-column  
@@ -121,7 +122,7 @@
       <div v-if="sect7.length">
         <!-- <h4>Для детей</h4> -->
         <h4>{{teamssect[6].name }}</h4> 
-        <div class="hrline scale-in-hor-left" :style="{width: teamssect[6].name.length+ 'em'}"></div>
+        <div class="hrline scale-in-hor-left" :style="{width: teamssect[6].name.length*0.8 + 'em'}"></div>
         <el-table stripe
           :data = "sect7" style="width: 100%">
           <el-table-column  
