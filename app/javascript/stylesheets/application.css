@@ -115,11 +115,12 @@ label.collection_radio_buttons {
 }
 
 .field_with_errors {
-  background-color: #ff3333;
+  background-color: #FFEBB8;
 }
 
 .simple_form {
   .error {
+
     clear: left;
     color: black;
     display: block;
@@ -135,6 +136,8 @@ label.collection_radio_buttons {
 }
 
 input {
+  padding: 0.5em;
+  height: 2em;
   &.radio {
     margin-right: 5px;
     vertical-align: -3px;
@@ -144,6 +147,8 @@ input {
     vertical-align: -3px;
   }
 }
+.password  ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+.password:focus ~ .focus-border{width: 100%; transition: 0.4s;}
 
 label.collection_check_boxes {
   float: none;
