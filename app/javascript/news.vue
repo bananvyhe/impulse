@@ -23,7 +23,7 @@
         </div>
   		</div>
     </div>
-    <div class="pag">
+    <div v-if="totalNews > perPage"class="pag">
       <el-pagination 
         background
         @current-change="handleCurrentChange"
