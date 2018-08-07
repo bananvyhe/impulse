@@ -4,7 +4,7 @@
       <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
   	</div>
- 		<div v-for="(item, index) in data" class="bganim">
+ 		<div v-if="data" v-for="(item, index) in data" class="bganim">
       <div class="bgstring" @click="clickhandler(item.id, $event) ">   
         {{item.name}}       
       </div>
@@ -95,13 +95,16 @@ export default {
      this.catchchild();
     
   },
+  watch: {
+    data: function() {
+      var self = this;
+      setTimeout(function(){
+        self.anim();
+      },700 );
+    }
+  },
   mounted() {
  
-    var self = this;
-
-    setTimeout(function(){
-      self.anim();
-    },700 );
     
   }
 }
