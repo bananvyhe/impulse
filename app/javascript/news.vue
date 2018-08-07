@@ -5,7 +5,7 @@
   			<h4>Наши новости:</h4>
        	<div class="hrline scale-in-hor-center "></div>
   		</div>
-          <div style="textAlign: center; paddingBottom: 1em;">
+          <div style="textAlign: center; paddingBottom: 1.5em;">
      
     </div>
   		<div class="newsBlock Y" id="Y">
