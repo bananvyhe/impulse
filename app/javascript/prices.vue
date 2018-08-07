@@ -9,7 +9,7 @@
           </div>
         </div>
           <el-table 
-
+            
             stripe
             :data = "adult"
              
@@ -17,9 +17,10 @@
             <el-table-column  
             prop="name" 
             min-width="220px"
+            
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
-            <el-table-column  prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+            <!-- <el-table-column v-if="teams" prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
             <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
           </el-table>
           <br>
@@ -43,7 +44,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <!-- <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -64,7 +65,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <!-- <el-table-column v-if="teams.group != false" prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -84,7 +85,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+         <!--  <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -104,7 +105,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+        <!--   <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -124,7 +125,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <<!-- el-table-column v-if="" prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -144,7 +145,7 @@
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
-          <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+          <!-- <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
@@ -162,6 +163,7 @@ let sect4 = {value:  ''};
 let sect5 = {value:  ''};
 let sect6 = {value:  ''};
 let sect7 = {value:  ''};
+
 export default {
  
   data: function () {
