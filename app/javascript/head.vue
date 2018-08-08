@@ -51,7 +51,7 @@ p {
      
     background-position: top;
      background-repeat: no-repeat;
-    background-position: center 30%;
+    background-position: center 25%;
  
     background-image: url(images/logo.svg);
     -webkit-background-size: 90%;
@@ -72,7 +72,7 @@ p {
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;
      background-size: 145%;
-     background-position: 4% center;
+     background-position: 14% center;
   }
  
 }

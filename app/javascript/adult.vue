@@ -136,6 +136,9 @@ export default {
     margin: 0 0 0 0;
   }
 }
+.container {
+  overflow: hidden;
+}
 .bgstring2 {
   right: 600px;
   cursor: pointer;
