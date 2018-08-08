@@ -113,7 +113,7 @@ a {
 }
 ul,
 ol { 
-  padding-left: 3.5em;
+  padding-left: 2em;
   padding-right: 1em;
   margin-bottom: 1em;
   margin-top: 0.6em;
@@ -125,7 +125,7 @@ ul {
   list-style: disc outside;
 }
 ol {
-  list-style: decimal outside;
+  list-style: decimal inside;
 }
 ul a, ol a {
   text-decoration: none;
