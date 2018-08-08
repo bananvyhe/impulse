@@ -16,7 +16,7 @@
             style="width: 100%">
             <el-table-column  
             prop="name" 
-            min-width="220px"
+            min-width="120px"
             
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
