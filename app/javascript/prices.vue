@@ -40,7 +40,7 @@
           
           :data = "child1" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -61,7 +61,7 @@
         <el-table stripe
           :data = "sect3" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -81,7 +81,7 @@
         <el-table stripe
           :data = "sect4" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -101,7 +101,7 @@
         <el-table stripe
           :data = "sect5" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -121,7 +121,7 @@
         <el-table stripe
           :data = "sect6" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
@@ -141,7 +141,7 @@
         <el-table stripe
           :data = "sect7" style="width: 100%">
           <el-table-column  
-          min-width="220"
+          min-width="120"
           prop="name" 
           label="Наименование услуги"></el-table-column>
           <el-table-column prop="graph" label="График занятий"></el-table-column>
