@@ -161,6 +161,7 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+
 .firsturl {
    
   color: $isabelline;
