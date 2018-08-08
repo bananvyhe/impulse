@@ -113,7 +113,11 @@
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
       window.addEventListener('scroll', _.throttle(this.scrollHandler, 300))
-      this. hamburgerTween();
+      var self = this;
+      setTimeout(function(){
+        self.hamburgerTween();
+
+      },1000 );
     },
     created(){ 
       document.addEventListener('click', this.dropdown) 
@@ -123,31 +127,35 @@
     },
     methods:{
       hamburgerTween(){
+        
         var self = this;
-        $('.hamburger').each(function(index, element){
+  
           // var thisHeight = $(element).find(".desc").outerHeight();
           var projectHover = new TimelineMax({paused:true});
           projectHover
-            .to(($(this).find('.hamburger')), 0.5, {
+            .to(('.hamburger'), 0.2, {
               // borderRadius: '1em',
-               scale:1.05,
+               scaleX:1.2,
+
               ease: Circ.easeOut,
-              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
+               
             }, 0)
-            
-            element.animation = projectHover;
-          });
-        $('.hamburger').hover(over, out);
-        function over(){ this.animation.play() };
+ 
+           
+          
+
+        $('.hamshadow2').hover(over, out);
+        function over(){ projectHover.play() };
         function out(){ 
           // console.log(self.dialogTableVisible)
-          if (self.dialogTableVisible == false) {
-            // console.log('true1');
-            this.animation.reverse() 
-          }
+          
+              console.log('true1');
+            projectHover.reverse() 
+           
         }; 
+
         $('.hamburger').click(function() {
-          this.animation.pause();
+           animation.pause();
         });
       
       }, 
@@ -271,6 +279,9 @@
     // вотчер палит изменения происходящие в скрытых меню и обновляет ширингу видимых меню для дальнейшей работы условий в скрипте по переносу пунктов
     //устанавливает апфтер-аттрибут на кнопку с отображением количества позиций в массиве скрытых пунктов меню
     watch: {
+      menuitemsHide: function(){
+
+      },
       toggle: function(){
         var start = 0;
         var end = this.menuitemsHide.length;
@@ -457,7 +468,7 @@
   .hamburger {
     z-index: 2;
     position: relative;
-    width: 28px;
+    width: 22px;
     height: 3px;
     background: #fff;
     margin: auto;
@@ -469,7 +480,7 @@
       content: '';
       position: absolute;
       left: 0;
-      width: 28px;
+      width: 22px;
       height: 3px;
       background: #fff;
     }
