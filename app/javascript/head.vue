@@ -3,19 +3,22 @@
 		 
       <div class="first">
       </div>    
-     
+    <transition name="fade" > 
     <div class="second smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
         <h5>Адрес электронной почты:</h5>
         <p>{{contact.mail}}</p>
       </div>
     </div>
+  </transition>
+  <transition name="fade" >
     <div class="third smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
         <h5>Контакты:</h5>
         <p>{{contact.adress}}</p>
       </div>
     </div>
+    </transition>
   </div>
 </template>
 <script>
