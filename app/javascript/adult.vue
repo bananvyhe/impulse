@@ -122,7 +122,7 @@ export default {
   background-color: $str1;
 } 
 .adult {
-  padding-top: 0.5em;
+  /*padding-top: 0.5em;*/
   position: relative;
   overflow: hidden;
   display: flex;
