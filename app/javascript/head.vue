@@ -72,7 +72,7 @@ p {
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;
      background-size: 145%;
-     background-position: 14% center;
+     background-position: 4% center;
   }
  
 }
