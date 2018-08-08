@@ -457,8 +457,8 @@
   .hamburger {
     z-index: 2;
     position: relative;
-    width: 30px;
-    height: 0.21em;
+    width: 28px;
+    height: 3px;
     background: #fff;
     margin: auto;
     border-radius: 0.1em;
@@ -469,16 +469,16 @@
       content: '';
       position: absolute;
       left: 0;
-      width: 30px;
-      height: 0.21em;
+      width: 28px;
+      height: 3px;
       background: #fff;
     }
     &:before {
-      top: -0.5em;
+      top: -6px;
 
     }
     &:after {
-      bottom: -0.5em;
+      bottom: -6px;
     }
   }
   .visible-links {
