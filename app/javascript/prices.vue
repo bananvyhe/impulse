@@ -261,6 +261,7 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+
 .opad {
    display: flex;
    align-items: flex-start;

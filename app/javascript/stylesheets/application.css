@@ -147,8 +147,8 @@ input {
     vertical-align: -3px;
   }
 }
-.password  ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
-.password:focus ~ .focus-border{width: 100%; transition: 0.4s;}
+/*.password  ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+.password:focus ~ .focus-border{width: 100%; transition: 0.4s;}*/
 
 label.collection_check_boxes {
   float: none;
@@ -175,7 +175,19 @@ p {
 .el-input {
   margin-bottom: 0.5em;
 }
+.el-table {
+  
 
+}
+.el-table td, .el-table th {
+ 
+.cell {
+   
+      word-break: normal;
+      text-align: left;
+  }
+}
+ 
 .maincontent {
   lost-center: 1560px;
   position:relative; 

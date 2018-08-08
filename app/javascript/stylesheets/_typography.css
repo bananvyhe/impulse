@@ -38,22 +38,7 @@ h5 {color: #333;
   margin-bottom: spacing(0.2);
  
 }
-p:first-of-type {
-  /*margin-top: spacing(0.5);*/
-} 
-.smalltext {
-  adjust-font-size: fs small;
-}
-.tinytext {
-  adjust-font-size: fs tiny;
-}
-.basetext {
-   adjust-font-size: fs b;
-}
-.form-inputs {
-  font-size: 1em;
-  line-height: 1.1em;
-} 
+
 .btn{
  display: inline-block;
  border:1px solid #81B3C9;
@@ -86,7 +71,22 @@ p:first-of-type {
   adjust-font-size: fs b;
   font-family: "RobotoA";
 }
-
+p:first-of-type {
+  /*margin-top: spacing(0.5);*/
+} 
+.smalltext {
+  adjust-font-size: fs small;
+}
+.tinytext {
+  adjust-font-size: fs tiny;
+}
+.basetext {
+   adjust-font-size: fs b;
+}
+.form-inputs {
+  font-size: 1em;
+  line-height: 1.1em;
+} 
 p { 
   display: block;
    
