@@ -135,7 +135,7 @@
           projectHover
             .to(('.hamburger'), 0.2, {
               // borderRadius: '1em',
-               scaleX:1.2,
+               scaleX:1.1,
 
               ease: Circ.easeOut,
                
@@ -148,8 +148,8 @@
         function over(){ projectHover.play() };
         function out(){ 
           // console.log(self.dialogTableVisible)
-          
-              console.log('true1');
+           
+               
             projectHover.reverse() 
            
         }; 
@@ -468,7 +468,7 @@
   .hamburger {
     z-index: 2;
     position: relative;
-    width: 22px;
+    width: 24px;
     height: 3px;
     background: #fff;
     margin: auto;
@@ -480,7 +480,7 @@
       content: '';
       position: absolute;
       left: 0;
-      width: 22px;
+      width: 24px;
       height: 3px;
       background: #fff;
     }
