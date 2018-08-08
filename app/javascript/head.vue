@@ -86,7 +86,7 @@ p {
   align-self: center;
   line-height: 1.2;
   @media (--only-xsmall-screen) {
-    
+
    lost-column: 1/2 2 0.5em;
    h5 {
      
@@ -105,7 +105,7 @@ p {
   z-index: 10;
   justify-content: flex-end;
   text-align: right;
-  margin-top: 5em;
+  margin-top: 6em;
   padding: 0.5em;
   padding-bottom: 0em;
   @media (--only-xsmall-screen) {
@@ -114,7 +114,7 @@ p {
 }
 .third {
   z-index: 10;
-  margin-top: 5em;
+  margin-top: 6em;
   padding: 0.5em;
   padding-bottom: 0em;
   max-width: 300px;

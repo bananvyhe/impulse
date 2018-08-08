@@ -127,37 +127,24 @@
     },
     methods:{
       hamburgerTween(){
-        
         var self = this;
-  
           // var thisHeight = $(element).find(".desc").outerHeight();
           var projectHover = new TimelineMax({paused:true});
           projectHover
             .to(('.hamburger'), 0.2, {
               // borderRadius: '1em',
-               scaleX:1.1,
-
+              scaleX:1.1,
               ease: Circ.easeOut,
-               
             }, 0)
- 
-           
-          
-
         $('.hamshadow2').hover(over, out);
         function over(){ projectHover.play() };
         function out(){ 
           // console.log(self.dialogTableVisible)
-           
-               
-            projectHover.reverse() 
-           
+          projectHover.reverse() 
         }; 
-
         $('.hamburger').click(function() {
            animation.pause();
         });
-      
       }, 
       scrollHandler(){
         this.scrollBottom = window.scrollY + window.innerHeight;
