@@ -113,6 +113,7 @@
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
       window.addEventListener('scroll', _.throttle(this.scrollHandler, 300))
+      this. hamburgerTween();
     },
     created(){ 
       document.addEventListener('click', this.dropdown) 
@@ -121,7 +122,35 @@
       document.removeEventListener('click', this.dropdown) 
     },
     methods:{
- 
+      hamburgerTween(){
+        var self = this;
+        $('.hamburger').each(function(index, element){
+          // var thisHeight = $(element).find(".desc").outerHeight();
+          var projectHover = new TimelineMax({paused:true});
+          projectHover
+            .to(($(this).find('.hamburger')), 0.5, {
+              // borderRadius: '1em',
+               scale:1.05,
+              ease: Circ.easeOut,
+              boxShadow: "0px 1px 35px 0px rgba(0, 0, 0, 0.4)",
+            }, 0)
+            
+            element.animation = projectHover;
+          });
+        $('.hamburger').hover(over, out);
+        function over(){ this.animation.play() };
+        function out(){ 
+          // console.log(self.dialogTableVisible)
+          if (self.dialogTableVisible == false) {
+            // console.log('true1');
+            this.animation.reverse() 
+          }
+        }; 
+        $('.hamburger').click(function() {
+          this.animation.pause();
+        });
+      
+      }, 
       scrollHandler(){
         this.scrollBottom = window.scrollY + window.innerHeight;
         this.scrollTop = window.scrollY;
@@ -429,10 +458,11 @@
     z-index: 2;
     position: relative;
     width: 30px;
-    height: 0.25em;
+    height: 0.21em;
     background: #fff;
     margin: auto;
     border-radius: 0.1em;
+
     &:before, 
     &:after {
       border-radius: 0.1em;
@@ -440,14 +470,15 @@
       position: absolute;
       left: 0;
       width: 30px;
-      height: 0.25em;
+      height: 0.21em;
       background: #fff;
     }
     &:before {
-      top: -0.6em;
+      top: -0.5em;
+
     }
     &:after {
-      bottom: -0.6em;
+      bottom: -0.5em;
     }
   }
   .visible-links {
