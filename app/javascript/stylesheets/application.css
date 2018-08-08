@@ -215,11 +215,21 @@ body {
 
 
 #main {
+ul li:before {
+    padding-right:10px;
+    font-weight: bold;
+    color: #337AB7;
+    content: "\2714";
+    transition-duration: 0.5s;
+  }
+ul li:hover:before {
+      color: #337AB7;
+      content: "\2714";
+  }
   padding-left: 1em;
   padding-right: 1em;
   position: relative;
   overflow:hidden;  
-   /* footer height bufferdffgdfg */ 
 }
 .body {adjust-font-size: fs b;
 	color: #555;
