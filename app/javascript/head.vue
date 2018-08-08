@@ -86,6 +86,7 @@ p {
   align-self: center;
   line-height: 1.2;
   @media (--only-xsmall-screen) {
+    
    lost-column: 1/2 2 0.5em;
    h5 {
      

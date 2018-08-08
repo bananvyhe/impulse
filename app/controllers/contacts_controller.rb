@@ -49,7 +49,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+       format.html { redirect_to action: :index, notice: 'Публикация добавлена.' }
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit }
