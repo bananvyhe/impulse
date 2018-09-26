@@ -22,6 +22,8 @@ import Prices from '../prices.vue'
 import Footer from '../footer.vue' 
 import Reviews from '../reviews.vue' 
 import Programms from '../programms.vue' 
+ 
+
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification } from 'element-ui'
 Vue.use(Collapse)

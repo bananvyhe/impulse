@@ -1,18 +1,22 @@
 <template>
   <div class="lostwidth">
-    <transition-group name="fade">
-    	<div v-for="(review, index) in reviews" v-bind:key="index" class="itemrev">
-    		<div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
-    		<div class="name">{{review.name}}</div>
+     
+    	<div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
+         
+          <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
+          <div class="name">{{review.name}}</div>
+        
+    		
     	</div>
-    </transition-group>
+     
   </div>
 </template>
 
 <script>
 import axios from 'axios'
- 
+
 export default {
+
   data: function () {
     return {
       reviews: [],
@@ -37,34 +41,50 @@ export default {
     }
   },
   created() {
-    this.fetchNews()
+    this.fetchNews();
+
   },
   mounted() {
+    
   },
-  updated(){
+  updated(){ 
+    $('.lostwidth').masonry({
+      itemSelector: '.itemrev',
+      columnWidth: '.itemrev',
+      percentPosition: true
+    });
   },
   beforeUpdate() {
   }
 } 
+
 </script>
 
 <style scoped>
 @import "stylesheets/_variables";
+ 
+.lostwidth{
+  /*lost-utility: clearfix;*/
+   
+  lost-masonry-wrap: no-flex;
+ 
+}
 .itemrev{
-  
-  @media (--only-1600more-screen) {
-    lost-column: 1/3 3 0.5em;
-  }
-  @media (--only-medium-screen) {
-    lost-column: 1/3 3 0.5em;
+  lost-masonry-column: 1/3;
+  text-align: justify;
+   @media (--only-medium-screen) {
+    lost-masonry-column: 1/2;
   }
   @media (--only-small-screen) {
-    lost-column: 1/2 2 0.5em;
+    lost-masonry-column: 1/1;
   }
+  @media (--only-xsmall-screen) {
+    lost-masonry-column: 1/1;
+  }
+
+ 
 }
-.lostwidth{
-  lost-center: 1200px;
-}
+
 .subj {
 	font-style: italic; 
 	font-weight: 300;
