@@ -59,7 +59,7 @@ export default {
     lost-column: 1/3 3 0.5em;
   }
   @media (--only-small-screen) {
-    lost-column: 1/2 3 0.5em;
+    lost-column: 1/2 2 0.5em;
   }
 }
 .lostwidth{
