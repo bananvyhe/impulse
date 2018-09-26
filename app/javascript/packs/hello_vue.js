@@ -22,10 +22,11 @@ import Prices from '../prices.vue'
 import Footer from '../footer.vue' 
 import Reviews from '../reviews.vue' 
 import Programms from '../programms.vue' 
- 
+import Lib from '../lib.vue' 
+
 
 // import 'element-ui/lib/theme-chalk/index.css';
-import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification } from 'element-ui'
+import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification, Row } from 'element-ui'
 Vue.use(Collapse)
  Vue.use(CollapseItem)
 Vue.use(Carousel)
@@ -39,6 +40,8 @@ Vue.use(Dialog)
  Vue.use(Col) 
  Vue.use(Form)
  Vue.use(FormItem)
+ 
+ Vue.use(Row)
  Vue.prototype.$notify = Notification;
 document.addEventListener('DOMContentLoaded', () => {
 	Vue.directive('scroll', {
@@ -55,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
+  var lib = document.getElementById("lib") 
+  if (lib != null) {
+    new Vue({
+      el: '#lib',
+      render: h => h(Lib)
+    }) 
+  }
   var mainmenu = document.getElementById("mainmenu") 
   if (mainmenu != null) {
 	  new Vue({

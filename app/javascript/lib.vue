@@ -1,14 +1,14 @@
 <template>
-  <div class="lostwidth">
-     
-    	<div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
+  <div class="lib">
+    {{libraries}}
+     <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
          
           <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
           <div class="name">{{review.name}}</div>
         
-    		
-    	</div>
-     
+        
+      </div>
+      -->
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 
   data: function () {
     return {
-      reviews: [],
+      libraries: [],
        
     }
   },
@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     fetchNews: function() {
-      axios.get('/reviews')
+      axios.get('/libraries')
       .then((response) => {
-        this.reviews = response.data
+        this.libraries = response.data
         console.log(response.data);
          
       })
@@ -90,20 +90,20 @@ export default {
 .subj {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	font-style: italic; 
-	font-weight: 300;
+  font-style: italic; 
+  font-weight: 300;
   color: color( $onyx  tint(10%));
-	padding: 1em 1em 0em 1em;
-	text-align: justify;
+  padding: 1em 1em 0em 1em;
+  text-align: justify;
   @media (--only-xsmall-screen) {
     padding: 1em 0.5em 0em 0.5em;
   }
 
 } 
 .name {
-	text-align: right;
-	padding-right: 1em;
-	margin-top: -1em;
+  text-align: right;
+  padding-right: 1em;
+  margin-top: -1em;
   
 }
 .fade-enter-active, .fade-leave-active {
