@@ -88,8 +88,11 @@ export default {
 }
 
 .subj {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 	font-style: italic; 
 	font-weight: 300;
+  color: color( $onyx  tint(10%));
 	padding: 1em 1em 0em 1em;
 	text-align: justify;
   @media (--only-xsmall-screen) {
