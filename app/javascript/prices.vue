@@ -184,6 +184,7 @@ export default {
   computed: {
 
   },
+  
   methods: {
      newsTween() {
        
@@ -237,18 +238,25 @@ export default {
 	    });  
     }
   },
+
   created() {
   	this.axiosget1();
     this.axiosget2(); 
     
     
   },
+  watch: {
+    teams: function() {
+      var self = this;
+      setTimeout(function(){
+        self.child2();
+        self.newsTween();
+        console.log("345678")
+      },10 );
+    }
+  },
   mounted() {
-    var self = this;
-    setTimeout(function(){
-      self.child2();
-      self.newsTween();
-    },500 );
+ 
       
      
   },
