@@ -77,12 +77,14 @@ export default {
   }
   @media (--only-small-screen) {
     lost-masonry-column: 1/1;
+
   }
   @media (--only-xsmall-screen) {
     lost-masonry-column: 1/1;
   }
-
- 
+  background: $floralwhite;
+  padding-bottom: 1em;
+  margin-top: 1em;
 }
 
 .subj {
@@ -97,9 +99,9 @@ export default {
 } 
 .name {
 	text-align: right;
-	padding-right: 2em;
+	padding-right: 1em;
 	margin-top: -1em;
-  padding-bottom: 1em;
+  
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
