@@ -1,5 +1,6 @@
-<% if current_user.try(:admin?) %>
+
 <div id="reviews"></div>
+<% if current_user.try(:admin?) %>
 <h2>Редактор отзывов:</h2>
 <table>
   <thead>
@@ -15,7 +16,7 @@
       <tr data-item_id="<%= review.id %>">
         <td><%= review.name %></td>
         
-       <!--  <td><%= link_to 'Show', review %></td> -->
+       <!--  <td><%#= link_to 'Show', review %></td> -->
         <td><%= link_to 'Редактировать', edit_review_path(review) %></td>
         <td><span class="deleteAction">Удалить</span></td>
       </tr>
