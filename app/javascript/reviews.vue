@@ -70,10 +70,10 @@ export default {
  
 }
 .itemrev{
-  lost-masonry-column: 1/3;
+  lost-masonry-column: 1/3 20px;
   text-align: justify;
    @media (--only-medium-screen) {
-    lost-masonry-column: 1/2;
+    lost-masonry-column: 1/2 20px;
   }
   @media (--only-small-screen) {
     lost-masonry-column: 1/1;
@@ -83,7 +83,7 @@ export default {
     lost-masonry-column: 1/1;
   }
   background: $floralwhite;
-  padding-bottom: 1em;
+  padding: 0em 0.6em 1em;
   margin-top: 1em;
 }
 
