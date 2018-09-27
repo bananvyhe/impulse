@@ -4,7 +4,7 @@ class Katbib2sController < ApplicationController
   # GET /katbib2s
   # GET /katbib2s.json
   def index
-    @katbib2s = Katbib2.all
+    @katbib2s = Katbib2.sorted
   end
 
   # GET /katbib2s/1

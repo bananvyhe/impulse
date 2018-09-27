@@ -36,7 +36,7 @@ class LibrariesController < ApplicationController
           format.json { render :index, status: :created, location: @library }  
       else
         format.html { redirect_to @library }
-        # format.json { render json: @library.errors, status: :unprocessable_entity }
+         format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,6 +73,6 @@ class LibrariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def library_params
-      params.require(:library).permit(:name, :cover, :cover_cache, :remove_cover, :desc, :file, :file_cache, :remove_file, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:library).permit(:name, :cover, :cover_cache, :remove_cover, :desc, :file, :file_cache, :remove_file, :crop_x, :crop_y, :crop_w, :crop_h, :position, :katbib2_id)
     end
 end

@@ -1,6 +1,11 @@
 <template>
   <div class="lib">
-    {{libraries}}
+     
+    <div v-for="item in original_katbib2s">
+      <h3>{{item.name}}</h3>
+      <hr />
+      
+    </div>
      <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
          
           <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
@@ -16,10 +21,11 @@
 import axios from 'axios'
 
 export default {
+  props: ["original_katbib2s"],
 
   data: function () {
     return {
-      libraries: [],
+       katbib2s: this.original_katbib2s,
        
     }
   },

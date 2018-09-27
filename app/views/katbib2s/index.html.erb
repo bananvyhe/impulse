@@ -1,27 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Katbib2s</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @katbib2s.each do |katbib2| %>
-      <tr>
-        <td><%= katbib2.position %></td>
-        <td><%= link_to 'Show', katbib2 %></td>
-        <td><%= link_to 'Edit', edit_katbib2_path(katbib2) %></td>
-        <td><%= link_to 'Destroy', katbib2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Katbib2', new_katbib2_path %>
+<%= tag.div id: :lib, 
+    data: { 
+      katbib2s: @katbib2s.to_json(include: :libraries)
+  } %>
+ 
