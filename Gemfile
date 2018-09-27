@@ -25,6 +25,7 @@ gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 gem 'simple_form'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.1'
+gem 'acts_as_list'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

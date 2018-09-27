@@ -1,0 +1,2 @@
+class Katbib < ApplicationRecord
+end
