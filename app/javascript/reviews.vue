@@ -16,11 +16,12 @@
 import axios from 'axios'
 
 export default {
-
+  props: ["original_katbibs"],
   data: function () {
     return {
+
       reviews: [],
-       
+       katbibs: this.original_katbibs, 
     }
   },
   watch: {

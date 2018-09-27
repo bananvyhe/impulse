@@ -70,6 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
        components: { Lib }
     }) 
   }
+  var reviews = document.getElementById("reviews") 
+  if (reviews != null) {
+    new Vue({
+      el: reviews,
+      // render: h => h(Reviews)
+      data: {
+        katbibs: JSON.parse(reviews.dataset.katbibs)
+       },
+       template: "<Reviews :original_katbibs='katbibs' />",
+       components: { Reviews }
+    }) 
+  }
   var mainmenu = document.getElementById("mainmenu") 
   if (mainmenu != null) {
 	  new Vue({
@@ -84,13 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       render: h => h(Programms)
     }) 
   }
-  var reviews = document.getElementById("reviews") 
-  if (reviews != null) {
-    new Vue({
-      el: '#reviews',
-      render: h => h(Reviews)
-    }) 
-  }
+  
   var footer = document.getElementById("footer") 
   if (footer != null) {
     new Vue({

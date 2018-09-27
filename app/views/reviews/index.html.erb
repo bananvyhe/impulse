@@ -1,5 +1,8 @@
   
-<div id="reviews"></div>
+<%= tag.div id: :reviews, 
+    data: { 
+      katbibs: @katbibs.to_json(include: :reviews)
+  } %>
 <% if current_user.try(:admin?) %>
 <h2>Редактор отзывов:</h2>
 <table>
