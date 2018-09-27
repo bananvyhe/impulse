@@ -5,7 +5,7 @@ class KatbibsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @katbibs = Кatbib.sorted
+    @katbibs = Katbib.sorted
   end
 
   # GET /contacts/1
@@ -70,7 +70,7 @@ class KatbibsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def katbib_params
-      params.require(:katbib).permit(:name, :position)
+      params.require(:katbib).permit(:position, :name)
     end
 
 

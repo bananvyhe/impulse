@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
        components: { Lib }
     }) 
   }
-  var reviews = document.getElementById("reviews") 
+  var reviews = document.querySelector("#reviews") 
   if (reviews != null) {
     new Vue({
       el: reviews,
