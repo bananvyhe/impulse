@@ -153,21 +153,22 @@ export default {
           autoAlpha:1,
           ease:Expo.easeOut,
         }, 0.1, "-=0.6")
-        .staggerFromTo('.prof', 0.4, {
+        .staggerFromTo('.prof', 1, {
           autoAlpha:0,
-          yPercent: 50,
+          yPercent: 0,
         }, {
           autoAlpha:1,
           yPercent: 0,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.9")
-        .staggerFromTo('.bg', 0.5, {
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=1.5")
+        .staggerFromTo('.bg', 0.4, {
+           yPercent: 100, 
          // scale:1,
         }, {
           // scale: 0.9,
-          yPercent: 80, 
+          yPercent: 90, 
           // xPercent: 5, 
           // scale:0.9,
-          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=0.4")
+          ease:CustomEase.create("custom", "0.390, 0.575, 0.565, 1.000")}, 0.1, "-=1.0")
         .staggerTo('.itemTitle', 0.1, {
           autoAlpha:1,
           // borderBottomRightRadius: 0,
@@ -329,19 +330,20 @@ export default {
   @media (--only-xsmall-screen) {
     lost-waffle: 1/1 1 3em ;
     height:  22em;
+    padding-bottom: 0.5em;
   }
   @media (--only-small-screen) {
-    padding-bottom: 1.5em;
+    padding-bottom: 2em;
     lost-waffle: 1/2 2 2em ;
     height:  19.5em;
   }
   @media (--only-medium-screen) {
-    padding-bottom: 4.5em;
+    padding-bottom: 5em;
     lost-column: 1/4 4 2em;
     height: 18.5em;
   }
   @media (--only-1600more-screen) {
-    padding-bottom: 4.5em;
+    padding-bottom: 5em;
     lost-column: 1/5 5 2em;
     height: 330px;
   }
@@ -360,12 +362,14 @@ export default {
   background-size: cover;  
 }
 .bg {
+  position: relative;
   width: 100%;
 }
 .shad {
    box-shadow: inset 0px 0px 50px 20px rgba(0,0,0,0.4);
 }
-.prof {
+.prof { position: relative;
+  z-index: 20;
   border-top-left-radius: 0em;
   border-top-right-radius: 0em;
   display: flex;
@@ -380,6 +384,8 @@ export default {
   color: $antiflashwhite;
 }
 .itemTitle {
+  position: relative;
+  z-index: 2;
  /* border-bottom-right-radius: 2em; */
   border-left: 1px solid  $x11gray;
   border-right: 1px solid  $x11gray;
