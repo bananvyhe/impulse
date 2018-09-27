@@ -1,5 +1,5 @@
 <template>
-  <div class="news  smalltext">
+  <div class="news  baseltext">
     <div> 
    	  <div class="newsHead">
   			<h4>Наши новости:</h4>
@@ -159,11 +159,8 @@ export default {
 } 
 .newsh {  
   lost-column: 1/1;
-
 } 
-
 .last{
-
 }
 .pag {
   width: 100%;
@@ -195,7 +192,7 @@ export default {
 }
 .newsItem {
 /*  text-indent: 1.5em; */
-  
+  overflow: hidden;
   background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
  /* border: 1px dotted $color-1;*/
   border-radius: 0.6em; 

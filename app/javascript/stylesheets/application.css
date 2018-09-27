@@ -264,7 +264,7 @@ body {
 }
 .newsdesc {
   p {  
-     margin-bottom: spacing(0.5);
+     margin-bottom: spacing(0);
   }
 }
 .librarypic {
