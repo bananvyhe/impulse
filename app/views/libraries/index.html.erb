@@ -1,5 +1,7 @@
 
-<div id="lib"></div>
+<% if current_user.try(:admin?) %>
+  <div id="lib"></div>
+<% end %>
 <div style="padding-bottom: 1em;">
  <!--  <h4>Библиотека</h4>
   <div sty&le="width: 8em;"class="hrline scale-in-hor-left"></div> -->

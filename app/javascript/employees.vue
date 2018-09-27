@@ -97,14 +97,23 @@ export default {
     }); 
   },
   mounted() {
-    var self = this;
-    setTimeout(function(){
-      self.vis = true;
-      // self.cropText();
-      self.cardTween();  
+    // var self = this;
+    // setTimeout(function(){
+    //   self.vis = true;
+    //   // self.cropText();
+    //   self.cardTween();  
 
-    },300 );
-
+    // },300 );
+  },
+  watch: {
+    employee: function() {
+      var self = this;
+      setTimeout(function(){
+        self.vis = true;
+        self.cardTween();
+        console.log("345678")
+      },10 );
+    }
   },
   methods: {
     // cropText() {
