@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  
   resources :resizeimages
   resources :feedbacks
-  resources :reviews
+  
   get 'users/index'
   # devise_for :admins
   resources :sliders
   resources :news
-  resources :libraries
+
   resources :teams
   resources :players
   
@@ -25,7 +26,10 @@ Rails.application.routes.draw do
     get :deadmination, on: :member
   end
   # , controllers: { registrations: 'registrations' }
-   
+  resources :katbibs 
+  resources :reviews
+  resources :katbib2s
+  resources :libraries
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
 	match "/404", :to => "errors#not_found", :via => :all
