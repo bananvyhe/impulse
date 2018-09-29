@@ -1,17 +1,15 @@
 <template>
   <div class="lib">
-     
     <div v-for="item in original_katbib2s">
       <h3>{{item.name}}</h3>
       <hr />
-      
+      <div v-for="(library, index) in item.libraries">
+        {{library.name}}
+      </div>
     </div>
-     <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
-         
+     <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >         
           <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
-          <div class="name">{{review.name}}</div>
-        
-        
+          <div class="name">{{review.name}}</div>        
       </div>
       -->
   </div>
