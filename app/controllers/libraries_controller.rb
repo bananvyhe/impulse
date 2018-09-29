@@ -1,5 +1,5 @@
 class LibrariesController < ApplicationController
-  before_action :set_library, only: [:show, :edit, :update, :destroy, :crop]
+  before_action :set_library, only: [:show, :edit, :update, :destroy, :crop, :move]
 
   # GET /libraries
   # GET /libraries.json
@@ -64,7 +64,10 @@ class LibrariesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def move
+    @library.update(library_params)
+    render action: :show
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_library

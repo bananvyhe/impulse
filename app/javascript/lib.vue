@@ -1,11 +1,13 @@
 <template>
-  <draggable class="lib">
-    <div v-for="item in original_katbib2s">
+  <draggable v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+    <div v-for="item in katbib2s">
       <h3>{{item.name}}</h3>
       <hr />
+       <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved">
       <div v-for="(library, index) in item.libraries">
         {{library.name}}
       </div>
+      </draggable>
     </div>
      <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >         
           <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+ import axios from 'axios'
 import draggable from "vuedraggable"
 export default {
   components: { draggable },
@@ -25,13 +27,46 @@ export default {
   data: function () {
     return {
        // katbib2s: this.original_katbib2s,
-       
+    katbib2s: this.original_katbib2s,   
     }
   },
   watch: {
 
   },
   methods: {
+    libraryMoved: function(event) {
+        const evt = event.added || event.moved
+        if (evt == undefined) {return}
+        const element = evt.element
+        const katbib2_index = this.katbib2s.findIndex((katbib2) => {
+          return katbib2.libraries.find((library) => {
+            return library.id === element.id
+          })
+        })
+        var data = new FormData
+        data.append("library[katbib2_id]", this.katbib2s[katbib2_index].id)
+        data.append("library[position]", evt.newIndex + 1)
+
+       
+
+        Rails.ajax({
+          url: `/libraries/${element.id}/move`,
+          type: "PATCH",
+          data: data,
+          dataType: "json"
+        })
+      },
+      katbib2Moved: function(event) {
+        var data = new FormData
+        data.append("katbib2[position]", event.newIndex + 1)
+
+        Rails.ajax({
+          url: `/katbib2s/${this.katbib2s[event.newIndex].id}/move`,
+          type: "PATCH",
+          data: data,
+          dataType: "json",
+        })
+      },
     // fetchNews: function() {
     //   axios.get('/libraries')
     //   .then((response) => {
@@ -67,7 +102,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
- 
+.dragArea {
+  min-height: 20px;
+} 
 .lostwidth{
   /*lost-utility: clearfix;*/
    
