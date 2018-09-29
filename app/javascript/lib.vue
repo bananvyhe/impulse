@@ -1,5 +1,5 @@
 <template>
-  <div class="lib">
+  <draggable class="lib">
     <div v-for="item in original_katbib2s">
       <h3>{{item.name}}</h3>
       <hr />
@@ -12,18 +12,19 @@
           <div class="name">{{review.name}}</div>        
       </div>
       -->
-  </div>
+  </draggable>
 </template>
 
 <script>
-import axios from 'axios'
-
+// import axios from 'axios'
+import draggable from "vuedraggable"
 export default {
+  components: { draggable },
   props: ["original_katbib2s"],
 
   data: function () {
     return {
-       katbib2s: this.original_katbib2s,
+       // katbib2s: this.original_katbib2s,
        
     }
   },
@@ -31,21 +32,21 @@ export default {
 
   },
   methods: {
-    fetchNews: function() {
-      axios.get('/libraries')
-      .then((response) => {
-        this.libraries = response.data
-        console.log(response.data);
+    // fetchNews: function() {
+    //   axios.get('/libraries')
+    //   .then((response) => {
+    //     this.libraries = response.data
+    //     console.log(response.data);
          
-      })
-      .catch(function (error) {
-        console.log(error);
-      }); 
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   }); 
        
-    }
+    // }
   },
   created() {
-    this.fetchNews();
+    // this.fetchNews();
 
   },
   mounted() {
