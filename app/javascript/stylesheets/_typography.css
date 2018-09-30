@@ -146,11 +146,9 @@ li {
 }
 .list6b li{
     padding:6px;
-}
- 
-td {
-  padding: 0.5em;
- 
+} 
+td { 
+  padding: 0.5em; 
 }
 tbody tr:nth-child(even) {
   background: $eggshell;

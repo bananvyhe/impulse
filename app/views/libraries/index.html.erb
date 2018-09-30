@@ -12,24 +12,33 @@
 
   <%= link_to 'Новая группа', new_katbib2_path %><br />
   <%= link_to 'Новая публикация', new_library_path %><br /><br />
+
 <% end %>
  <div class="basetext">
   <%# if @library? %>
-
+    <table>
+      <tbody>
         <% @libraries.each do |library| %>
-          <div style="padding-bottom: 2em;">
-          <% if library.cover? %>
-            <div style="float:left; padding-bottom: 0.5em;"><div ><%= image_tag(library.cover.thumb.url) %></div></div>
-          <% end %>
-          <div style="padding-top: 0.1em;  "><h3><%= library.name.capitalize %></h3></div>
-          <div><p><%= library.desc.html_safe %></p></div>
-          <div><a href="<%= library.file %>">ссылка на файл</a></div>
-          <div class="cleared"></div>
-          <% if current_user.try(:admin?) %>
-            <div><%= link_to 'Редактировать', edit_library_path(library) %></div>
-            <div><%= link_to 'Удалить', library, method: :delete, data: { confirm: 'Вы уверены?' } %></div></div>
-          <% end %>
+          <tr data-item_id="<%= library.id %>">
+             
+              <% if library.cover? %>
+                <td style="float:left; margin-top: 1em; ">
+                  <%= image_tag(library.cover.thumb.url, height: '120', )  %> 
+                </td>
+              <% end %>
+              <td style="vertical-align: middle"><h3><%= library.name.capitalize %></h3></td>
+              <td style="vertical-align: middle"><p><%= library.desc.html_safe %></p></td>
+               <td style="vertical-align: middle"><a href="<%= library.file %>">ссылка на файл</a></td> 
+                <td style="vertical-align: middle"> категория <%= library.katbib2_id%> </td> 
+              <% if current_user.try(:admin?) %>
+                <td style="vertical-align: middle"><%= link_to 'Редактировать', edit_library_path(library) %></td>
+                 <td style="vertical-align: middle"><span class="deleteAction">Удалить</span></td> 
+              <% end %>
+             
+          </tr>
         <% end %>
+      </tbody>
+    </table>
   
 
   <%# else %>
