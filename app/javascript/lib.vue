@@ -13,14 +13,24 @@
        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
       <div v-for="(library, index) in item.libraries">
         <div class="itemrev">
-          <h3>{{library.name}}</h3>
-          <div class="libimg" :style="{background: 'url('+ library.cover.url}">
+          <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
+          </div>
+          <div class="descbox">
+            <div>
+              <div><h3>{{library.name}}</h3></div>
+              <div v-html="library.desc"></div> 
+              <div class="buttonflexbox">
+                <el-button class="libviewbut" size="small">Смотреть</el-button>
+              </div>
+            </div>
+            
             
           </div>
-        <!--   {{library.cover}}  -->
-<div   v-html="library.desc"></div>  
-         
-   
+          <div>
+            
+            
+          </div>
+           
         </div>
       </div>
       </draggable>
@@ -131,12 +141,37 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-.libimg {
-  height: 100px;
-  width: 100px;
+
+.descbox {  
+  display: flex;
+  align-content: center; 
+  align-items: center;
+  h3 {
+    margin-top: 0em;
+  }
+  p {
+     margin-bottom: spacing(0);
+  }
+
+}
+.buttonflexbox {
+
+}
+
+.libviewbut {
+   
+}
+.libimg { 
+  margin: 1em;
+  height: 10em;
+  width: 8em;
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
 /*  background: #ada;*/
 }
-.itemrev{
+.itemrev{  
+  display: flex;  
   lost-masonry-column: 1/3 18px;
   text-align: justify;
    @media (--only-medium-screen) {
@@ -150,8 +185,9 @@ export default {
     lost-masonry-column: 1/1;
   }
   background: $floralwhite;
-  padding: 0em 0.6em 1em;
-  margin-top: 1em;
+  padding: 0.5 0.6em 0.5 ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
@@ -165,23 +201,7 @@ export default {
   lost-masonry-wrap: no-flex;
  
 }
-.itemrev{
-  lost-masonry-column: 1/3 18px;
-  text-align: justify;
-   @media (--only-medium-screen) {
-    lost-masonry-column: 1/2 18px;
-  }
-  @media (--only-small-screen) {
-    lost-masonry-column: 1/1;
-
-  }
-  @media (--only-xsmall-screen) {
-    lost-masonry-column: 1/1;
-  }
-  background: $floralwhite;
-  padding: 0em 0.6em 1em;
-  margin-top: 1em;
-}
+ 
 
 .subj {
   -webkit-font-smoothing: antialiased;

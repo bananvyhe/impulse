@@ -257,6 +257,11 @@ body {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.descbox {
+  p {
+     margin-bottom: spacing(0.3);
+  }
+}
 #previewPic {
   img {
   padding: 0;}
