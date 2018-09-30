@@ -65,8 +65,10 @@ class LibrariesController < ApplicationController
     end
   end
   def move
-    @library.update(library_params)
-    render action: :show
+    if (current_user.admin? || current_user.superadmin?)
+      @library.update(library_params)
+      render action: :show
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -61,10 +61,10 @@ class Katbib2sController < ApplicationController
     end
   end
   def move
-    # if (current_user.admin? || current_user.superadmin?)
+    if (current_user.admin? || current_user.superadmin?)
       @katbib2.insert_at(katbib2_params[:position].to_i)
       render action: :show
-    # end
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.

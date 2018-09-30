@@ -1,37 +1,29 @@
 <template>
-  <draggable v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
-    <div v-for="(item, index)  in katbib2s">
+  <draggable  v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+    <div class="basetext" v-for="(item, index)  in katbib2s">
       <div class="opad">
         <div>
-          <h3>{{item.name}} 
+          <h4>{{item.name}} 
               <el-button  v-on:click="destroy(index, item.id)"v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
-          </h3>
+          </h4>
           <div class="hrline scale-in-hor-left basetext" ></div>
         </div>
-        
       </div>
        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
-      <div v-for="(library, index) in item.libraries">
+      <div class="basetext" v-for="(library, index) in item.libraries">
         <div class="itemrev">
           <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
           </div>
           <div class="descbox">
             <div>
-              <div><h3>{{library.name}}</h3></div>
+              <div><h4>{{library.name}}</h4></div>
               <div v-html="library.desc"></div>  
               <div class="buttonflexbox">
                 <a :href="library.file.url">
                 <el-button class="libviewbut" size="small">Читать</el-button></a>
               </div>
             </div>
-            
-            
-          </div>
-          <div>
-            
-            
-          </div>
-           
+          </div>           
         </div>
       </div>
       </draggable>

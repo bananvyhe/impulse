@@ -12,20 +12,15 @@
       ref="dropdown">
       <button class="butabs" 
         v-bind:class="{hoverhamburger: toggle2}"  
-        v-if="menuitemsHide.length > 0" 
-       >
+        v-if="menuitemsHide.length > 0">
         <div  
-          
-          
           class="hamburger">
-          
         </div>
         <div 
           v-bind:class="{hamshadow: toggle, hamshadow2: !toggle}" 
           v-on:click="toggle2 = !toggle2, toggle = !toggle" 
-  
           style="z-index: 10; height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; "> 
-         </div>
+        </div>
       </button>
       <div class="blankdiv">
       </div>
@@ -96,7 +91,7 @@
           { title: 'специалисты', url: '/employees'},
           { title: 'стоимость', url: '/teams'},
           { title: 'отзывы', url: '/reviews'},
-          { title: 'библиотека', url: '/libraries'},
+          { title: 'библиотека', url: '/katbib2s'},
           { title: 'программы', url: '/programms'},
           { title: 'контакты', url: '/contacts'}
         ],
