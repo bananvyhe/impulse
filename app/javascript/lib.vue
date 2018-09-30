@@ -18,9 +18,10 @@
           <div class="descbox">
             <div>
               <div><h3>{{library.name}}</h3></div>
-              <div v-html="library.desc"></div> 
+              <div v-html="library.desc"></div>  
               <div class="buttonflexbox">
-                <el-button class="libviewbut" size="small">Смотреть</el-button>
+                <a :href="library.file.url">
+                <el-button class="libviewbut" size="small">Читать</el-button></a>
               </div>
             </div>
             
