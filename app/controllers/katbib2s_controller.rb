@@ -28,8 +28,8 @@ class Katbib2sController < ApplicationController
 
     respond_to do |format|
       if @katbib2.save
-        format.html { redirect_to @katbib2, notice: 'Katbib2 was successfully created.' }
-        format.json { render :show, status: :created, location: @katbib2 }
+        format.html {redirect_to libraries_url, notice: 'Категория успешно создана.', :action => 'index' }
+        format.json { render :index, status: :created  }
       else
         format.html { render :new }
         format.json { render json: @katbib2.errors, status: :unprocessable_entity }
