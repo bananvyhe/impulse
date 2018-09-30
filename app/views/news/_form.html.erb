@@ -4,7 +4,7 @@
   <% if @news.newspic? %>
     <div  style="background-image: url('<%= @news.newspic.thumb.url %>');" class="newspic"></div>
   <% end %>
-  <div><span  class="adminzone"> <span class="largetext">Картинка для привлечения внимания: &nbsp; </span>
+  <div><span  class="adminzone"> 
     <%# unless @news.newspic? %>
       <%#= f.file_field :newspic, :class => "button" %>
     <%# end %><!-- <span class="tinytext">(при необходимости)</span> </span> -->
