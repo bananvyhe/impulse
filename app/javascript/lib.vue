@@ -10,9 +10,11 @@
         </div>
         
       </div>
-       <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved">
+       <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
       <div v-for="(library, index) in item.libraries">
-        {{library.name}}
+        <div class="itemrev">
+          {{library.name}}{{library.cover}} {{library.desc}} {{library.file}} {{library.katbib2_id}}{{library.position}}
+        </div>
       </div>
       </draggable>
     </div>
@@ -122,6 +124,23 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.itemrev{
+  lost-masonry-column: 1/3 18px;
+  text-align: justify;
+   @media (--only-medium-screen) {
+    lost-masonry-column: 1/2 18px;
+  }
+  @media (--only-small-screen) {
+    lost-masonry-column: 1/1;
+
+  }
+  @media (--only-xsmall-screen) {
+    lost-masonry-column: 1/1;
+  }
+  background: $floralwhite;
+  padding: 0em 0.6em 1em;
+  margin-top: 1em;
+}
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
 }
