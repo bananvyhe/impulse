@@ -5,7 +5,7 @@ class Library < ApplicationRecord
 	attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_cover
   
-  after_initialize :set_default_kat, :if => :new_record?
+  # after_initialize :set_default_kat, :if => :new_record?
 	acts_as_list scope: :katbib2
 	belongs_to :katbib2
 	def set_default_kat

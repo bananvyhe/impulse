@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :name, label: "Название:"%>
-     
+    <%= f.input :katbib2_id, :collection => Katbib2.all   %> 
     <%= f.input :cover, label: "Обложка:" %>
     <%= f.cktext_area :desc, label: "Описание" %>
     <%= f.input :file, label: "Фаел:" %>
