@@ -225,6 +225,12 @@ body {
   background-color: $str1;
 } 
 
+.opad {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+}
+
 
 
 #main {

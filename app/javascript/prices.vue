@@ -9,25 +9,20 @@
           </div>
         </div>
           <el-table 
-            
             stripe
             :data = "adult"
-             
             style="width: 100%">
             <el-table-column  
             prop="name" 
             min-width="120px"
-            
             label="Наименование услуги"></el-table-column>
             <el-table-column prop="graph" label="График занятий"></el-table-column>
             <!-- <el-table-column v-if="teams" prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column> -->
             <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
           </el-table>
           <br>
-         
       </div>
     </transition>
-    
     <transition name="fade" v-if="teamssect[1]  ">
       <div v-if="child1.length">
         <!-- <h4>Для детей</h4> -->
@@ -37,7 +32,6 @@
           <div class="hrline scale-in-hor-left basetext" ></div>
         </div></div>
         <el-table stripe
-          
           :data = "child1" style="width: 100%">
           <el-table-column  
           min-width="120"
@@ -50,7 +44,6 @@
          <br>
       </div>
     </transition>
-
     <transition name="fade" v-if="teamssect[2]  ">
       <div v-if="sect3.length">
         <div class="opad">
@@ -269,20 +262,10 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-
-.opad {
-   display: flex;
-   align-items: flex-start;
-   flex-direction: column;
-}
-.pad { 
-  
-}
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
 }
 .tablestyle {
-
 }
 .cont1 {  
   position: relative;

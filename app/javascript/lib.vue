@@ -1,8 +1,13 @@
 <template>
   <draggable v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
     <div v-for="item in katbib2s">
-      <h3>{{item.name}}</h3>
-      <hr />
+      <div class="opad">
+        <div>
+          <h3>{{item.name}}</h3>
+          <div class="hrline scale-in-hor-left basetext" ></div>
+        </div>
+        
+      </div>
        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved">
       <div v-for="(library, index) in item.libraries">
         {{library.name}}
@@ -102,6 +107,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.hrline {
+  margin: 0.1em  0.1em 0em -0.2em;
+}
 .dragArea {
   min-height: 20px;
 } 
