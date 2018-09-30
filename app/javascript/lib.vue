@@ -13,7 +13,14 @@
        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
       <div v-for="(library, index) in item.libraries">
         <div class="itemrev">
-          {{library.name}}{{library.cover}} {{library.desc}} {{library.file}} {{library.katbib2_id}}{{library.position}}
+          <h3>{{library.name}}</h3>
+          <div class="libimg" :style="{background: 'url('+ library.cover.url}">
+            
+          </div>
+        <!--   {{library.cover}}  -->
+<div   v-html="library.desc"></div>  
+         
+   
         </div>
       </div>
       </draggable>
@@ -124,6 +131,11 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.libimg {
+  height: 100px;
+  width: 100px;
+/*  background: #ada;*/
+}
 .itemrev{
   lost-masonry-column: 1/3 18px;
   text-align: justify;
