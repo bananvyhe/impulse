@@ -1,9 +1,11 @@
 <template>
   <draggable v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
-    <div v-for="item in katbib2s">
+    <div v-for="(item, index)  in katbib2s">
       <div class="opad">
         <div>
-          <h3>{{item.name}}</h3>
+          <h3>{{item.name}} 
+              <el-button  v-on:click="destroy(index, item.id)"v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+          </h3>
           <div class="hrline scale-in-hor-left basetext" ></div>
         </div>
         
@@ -39,6 +41,19 @@ export default {
 
   },
   methods: {
+    destroy: function(index, id){
+      console.log('666')
+       this.katbib2s.splice(index, 1)
+       axios.delete('/katbib2s/'+ id)
+      .then(response => {
+         
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+       
+    },
     libraryMoved: function(event) {
         const evt = event.added || event.moved
         if (evt == undefined) {return}
