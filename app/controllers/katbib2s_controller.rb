@@ -28,7 +28,7 @@ class Katbib2sController < ApplicationController
 
     respond_to do |format|
       if @katbib2.save
-        format.html {redirect_to libraries_url, notice: 'Категория успешно создана.', :action => 'index' }
+        format.html {redirect_to :action => 'index', notice: 'Категория успешно создана.' }
         format.json { render :index, status: :created  }
       else
         format.html { render :new }

@@ -31,7 +31,7 @@ class LibrariesController < ApplicationController
         if library_params[:cover].present?
           format.html { render :crop, notice: 'Публикация добавлена.' }
         else
-          format.html { redirect_to action: :index, notice: 'Публикация добавлена.' }
+          format.html { redirect_to katbib2s_url, :action => 'index', notice: 'Публикация добавлена.' }
         end  
           format.json { render :index, status: :created, location: @library }  
       else
