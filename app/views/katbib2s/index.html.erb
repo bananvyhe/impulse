@@ -1,3 +1,9 @@
+<% if current_user.try(:admin?) %>
+<br />
+<%= link_to 'Добавить раздел библиотеки.', new_katbib2_path %><br/>
+  <%= link_to 'Добавить публикацию', new_library_path %>
+ 
+<% end %>
 <%= tag.div id: :lib, 
     data: { 
       katbib2s: @katbib2s.to_json(include: :libraries)
