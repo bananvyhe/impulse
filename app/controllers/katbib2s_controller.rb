@@ -43,7 +43,7 @@ class Katbib2sController < ApplicationController
     respond_to do |format|
       if @katbib2.update(katbib2_params)
         format.html { redirect_to @katbib2, notice: 'Katbib2 was successfully updated.' }
-        format.json { render :show, status: :ok, location: @katbib2 }
+        # format.json { render :show, status: :ok, location: @katbib2 }
       else
         format.html { render :edit }
         format.json { render json: @katbib2.errors, status: :unprocessable_entity }
