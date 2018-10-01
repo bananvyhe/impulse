@@ -31,7 +31,7 @@
             <div class="descbox">
                    <!-- <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'></iframe> -->
               <div>
-                <div><h4>{{library.name}}{{library.file.url.split(".")[1]}} </h4></div> 
+                <div><h4>{{library.name}}</h4> </div> 
                 <div v-html="library.desc"></div>  
                 <div class="buttonflexbox">
                 <!--  <a :href="library.file.url"> -->
@@ -47,6 +47,7 @@
                   <a :href="library.file.url">
                   <el-button  class="libviewbut" size="small">Скачать</el-button>
                   </a>
+                   <p style="color: #C1BDB3; padding-top: 0.8em; ">(.{{library.file.url.split(".")[1]}})</p>
                 </div>
               </div>
             </div>           
@@ -81,8 +82,7 @@ export default {
        // katbib2s: this.original_katbib2s,
     katbib2s: this.original_katbib2s, 
     framevalue: "",
-    dialogTableVisible: false,
-    fff: '/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx'
+    dialogTableVisible: false
     }
   },
   watch: {
@@ -221,7 +221,7 @@ export default {
 }
 
 .libviewbut {
-   margin: 0.3em 0.3em;
+   margin: 0.3em 0.5em;
 }
 .libimg { 
   margin: 1em;
