@@ -1,76 +1,58 @@
 <template>
-  <div><el-dialog 
+  <div  >
+    <div >
+      <el-dialog 
       class="fizer"
-       
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
       width="90%">
         <div class="frame" v-html="framevalue">2</div> 
       </el-dialog>
-  <draggable  v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
-    <div>
-      
     </div>
-    
-   
-    <div class="basetext grouplib" v-for="(item, index)  in katbib2s">
-      <div class="opad">
-        <div>
-          <h4>{{item.name}} 
-              <el-button  v-on:click="destroy(index, item.id)" v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
-          </h4>
-          <div class="hrline scale-in-hor-center  basetext" ></div>
-        </div>
-      </div>
-       <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
-      <transition-group name="list" appear>
-        <div class="basetext" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
-          <div class="itemrev">
-            <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
-            </div>
-            <div class="descbox">
-                   <!-- <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'></iframe> -->
-              <div>
-                <div><h4>{{library.name}}</h4> </div> 
-                <div v-html="library.desc"></div>  
-                <div class="buttonflexbox">
-                <!--  <a :href="library.file.url"> -->
-                  <div v-if="library.file.url.split('.')[1]=='doc'">
-                    <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
-                  </div>
-                  <div v-else>
-                    <el-button  disabled class="libviewbut" size="small">Читать</el-button>
-                  </div>
-                  
-                 
-                <!-- </a> -->
-                  <a :href="library.file.url">
-                  <el-button  class="libviewbut" size="small">Скачать</el-button>
-                  </a>
-                   <div style="color: #C1BDB3; position: relative;"><div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div></div>
-                </div>
-              </div>
-            </div>           
+      <draggable  v-model="katbib2s" class="dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+        <div class="basetext cleared" v-for="(item, index)  in katbib2s">
+          <div class="opad">
+            <div>
+              <h4>{{item.name}} 
+                <el-button  v-on:click="destroy(index, item.id)" v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+              </h4>
+            <div class="hrline scale-in-hor-center  basetext" ></div>
           </div>
         </div>
-      </transition-group> 
-      </draggable>
-    </div>
-    
-     <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >         
-          <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
-          <div class="name">{{review.name}}</div>        
+        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
+   
+          <div class="basetext grouplib" v-for="(library, index) in item.libraries" >
+            <div class="itemrev"> 
+              <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
+              <div class="descbox">
+                <div>
+                  <div><h4>{{library.name}}</h4> </div> 
+                  <div v-html="library.desc"></div>  
+                  <div class="buttonflexbox">
+                    <div v-if="library.file.url.split('.')[1]=='doc'">
+                      <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
+                    </div>
+                    <div v-else>
+                      <el-button  disabled class="libviewbut" size="small">Читать</el-button>
+                    </div>
+                    <a :href="library.file.url">
+                      <el-button  class="libviewbut" size="small">Скачать</el-button>
+                    </a>
+                    <div style="color: #C1BDB3; position: relative;">
+                      <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+            </div>
+          </div> 
+        </draggable>
       </div>
-      -->
-
-  </draggable>    
-  </div>
-
+    </draggable> 
+</div>
 </template>
-
 <script>
-
- import axios from 'axios'
+import axios from 'axios'
 import draggable from "vuedraggable"
 
 export default {
@@ -92,9 +74,6 @@ export default {
     frame: function(url1){
       this.dialogTableVisible = true;
       this.framevalue =  "<iframe src='https://view.officeapps.live.com/op/embed.aspx?src="+location.hostname+url1+"' width='100%' height='100%'   frameborder='0'></iframe>"
-      
-      console.log(url1);
-
     },
     destroy: function(index, id){
       console.log('666')
@@ -106,8 +85,7 @@ export default {
       })
       .catch(function (error) {
         console.log(error);
-      });
-       
+      });   
     },
     libraryMoved: function(event) {
         const evt = event.added || event.moved
@@ -121,9 +99,6 @@ export default {
         var data = new FormData
         data.append("library[katbib2_id]", this.katbib2s[katbib2_index].id)
         data.append("library[position]", evt.newIndex + 1)
-
-       
-
         Rails.ajax({
           url: `/libraries/${element.id}/move`,
           type: "PATCH",
@@ -134,7 +109,6 @@ export default {
       katbib2Moved: function(event) {
         var data = new FormData
         data.append("katbib2[position]", event.newIndex + 1)
-
         Rails.ajax({
           url: `/katbib2s/${this.katbib2s[event.newIndex].id}/move`,
           type: "PATCH",
@@ -163,11 +137,11 @@ export default {
     
   },
   updated(){ 
-    $('.lostwidth').masonry({
-      itemSelector: '.itemrev',
-      columnWidth: '.itemrev',
-      percentPosition: true
-    });
+    // $('.lostwidth').masonry({
+    //   itemSelector: '.itemrev',
+    //   columnWidth: '.itemrev',
+    //   percentPosition: true
+    // });
   },
   beforeUpdate() {
   }
@@ -181,12 +155,24 @@ export default {
   overflow: hidden;
   height: 70vh;
 }
-.grouplib {
+.grouplib { 
+  lost-column: 1/3 3 1em;
+  text-align: justify;
   @media (--only-medium-screen) {
+    lost-column: 1/2 2 1em;
+  }
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
+/*  lost-column: 1/1;*/
+/*  lost-utility: clearfix;*/
+ /* @media (--only-medium-screen) {
     lost-center: 1150px;
   }
-  
-  padding-bottom: 1em;
+  */
 }
 .list-item {
   text-align: center;
@@ -216,13 +202,11 @@ export default {
   p {
      margin-bottom: spacing(0);
   }
-
 }
 .buttonflexbox {
   display: flex;
   flex-direction: row;
 }
-
 .libviewbut {
    margin: 0.3em 0.5em;
 }
@@ -235,20 +219,21 @@ export default {
   background-repeat: no-repeat;
 /*  background: #ada;*/
 }
-.itemrev{  
+.itemrev{   
   display: flex;  
-  lost-masonry-column: 1/3 18px;
+  /*lost-column: 1/3;
   text-align: justify;
    @media (--only-medium-screen) {
-    lost-masonry-column: 1/2 18px;
+    lost-column: 1/2;
   }
   @media (--only-small-screen) {
-    lost-masonry-column: 1/1;
+    lost-column: 1/1;
 
   }
   @media (--only-xsmall-screen) {
-    lost-masonry-column: 1/1;
-  }
+    lost-column: 1/1;
+  }*/
+  
   background: $floralwhite;
   padding: 0.5 0.6em 0.5 ;
   margin-top: 0.5em;
@@ -257,7 +242,10 @@ export default {
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
 }
-.dragArea {
+.dragArea 
+  {@media (--only-medium-screen) {
+    lost-center: 1100px;
+  }
   min-height: 20px;
 
 } 

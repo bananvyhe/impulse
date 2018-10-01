@@ -235,13 +235,13 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
   margin: 0.1em 0 0.3em -0.5em;
   background-color: $str1;
 } 
-
+/*
 .opad {
    display: flex;
    align-items: flex-start;
    flex-direction: column;
 }
-
+*/
 
 
 #main {
