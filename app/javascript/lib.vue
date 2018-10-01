@@ -20,8 +20,8 @@
           </div>
         </div>
         <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
-   
-          <div class="basetext grouplib" v-for="(library, index) in item.libraries" >
+          <transition-group name="list" appear>
+          <div class="basetext grouplib" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
             <div class="itemrev"> 
               <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
               <div class="descbox">
@@ -45,7 +45,7 @@
                 </div>
               </div>     
             </div>
-          </div> 
+          </div> </transition-group>
         </draggable>
       </div>
     </draggable> 

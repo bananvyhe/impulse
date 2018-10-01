@@ -20,32 +20,33 @@
           </div>
         </div>
         <div  v-model="item.libraries"  >
-   
-          <div class="basetext grouplib" v-for="(library, index) in item.libraries" >
-            <div class="itemrev"> 
-              <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
-              <div class="descbox">
-                <div>
-                  <div><h4>{{library.name}}</h4> </div> 
-                  <div v-html="library.desc"></div>  
-                  <div class="buttonflexbox">
-                    <div v-if="library.file.url.split('.')[1]=='doc'">
-                      <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
-                    </div>
-                    <div v-else>
-                      <el-button  disabled class="libviewbut" size="small">Читать</el-button>
-                    </div>
-                    <a :href="library.file.url">
-                      <el-button  class="libviewbut" size="small">Скачать</el-button>
-                    </a>
-                    <div style="color: #C1BDB3; position: relative;">
-                      <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
+          <transition-group name="list" appear>
+            <div class="basetext grouplib" v-for="(library, index) in item.libraries"  v-bind:key="library.created_at">
+              <div class="itemrev"> 
+                <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
+                <div class="descbox">
+                  <div>
+                    <div><h4>{{library.name}}</h4> </div> 
+                    <div v-html="library.desc"></div>  
+                    <div class="buttonflexbox">
+                      <div v-if="library.file.url.split('.')[1]=='doc'">
+                        <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
+                      </div>
+                      <div v-else>
+                        <el-button  disabled class="libviewbut" size="small">Читать</el-button>
+                      </div>
+                      <a :href="library.file.url">
+                        <el-button  class="libviewbut" size="small">Скачать</el-button>
+                      </a>
+                      <div style="color: #C1BDB3; position: relative;">
+                        <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>     
+                </div>     
+              </div>
             </div>
-          </div> 
+          </transition-group> 
         </div>
       </div>
     </div> 
