@@ -1,7 +1,7 @@
 <template>
   <draggable  v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
    
-    <div class="basetext" v-for="(item, index)  in katbib2s">
+    <div class="basetext grouplib" v-for="(item, index)  in katbib2s">
       <div class="opad">
         <div>
           <h4>{{item.name}} 
@@ -141,7 +141,11 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.grouplib {
+  padding-bottom: 1em;
+}
 .list-item {
+  text-align: center;
   display: inline-block;
   margin-right: 10px;
 }
