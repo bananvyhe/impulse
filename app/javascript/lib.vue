@@ -182,6 +182,10 @@ export default {
   height: 70vh;
 }
 .grouplib {
+  @media (--only-medium-screen) {
+    lost-center: 1150px;
+  }
+  
   padding-bottom: 1em;
 }
 .list-item {
@@ -255,6 +259,7 @@ export default {
 }
 .dragArea {
   min-height: 20px;
+
 } 
 .lostwidth{
   /*lost-utility: clearfix;*/
