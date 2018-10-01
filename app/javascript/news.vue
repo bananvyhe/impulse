@@ -9,13 +9,13 @@
       </div>
   		<div class="newsBlock Y" id="Y">
         <div class="newsh ">
-          <transition-group name="list">
+          
             <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
               <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span><br>
               <img v-if="item.newspic.thumb.url" :src="item.newspic.thumb.url"> 
               <div class="newsdesc" v-html="item.desc"></div>  
             </div>
-          </transition-group>      
+               
         </div>
   		</div>
     </div>
@@ -211,6 +211,7 @@ export default {
 
 .newsdesc { 
   padding: 0.5em 0em 0em 0em ;
+  
   
    
    text-shadow: 0 1px 2px rgba(255,255,255,0.25);

@@ -221,7 +221,15 @@ body {
 -ms-hyphens: auto;
   font-family: "RobotoCon";
 }
+span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, span.cke_wrapper, span.cke_browser_webkit{
+    height: 100%!important;
+}
+.newscke {
+  lost-center: 700px;
+}
+.newswind {
 
+}
 .hrline {
   @extend %hrline;
   margin: 0.1em 0 0.3em -0.5em;
@@ -279,6 +287,9 @@ body {
 .newsdesc {
   p {  
      margin-bottom: spacing(0);
+  }
+  img {
+    margin: 0.5em 1.3em 0.4em 0em;
   }
 }
 .librarypic {
