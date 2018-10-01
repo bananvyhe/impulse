@@ -47,7 +47,7 @@
                   <a :href="library.file.url">
                   <el-button  class="libviewbut" size="small">Скачать</el-button>
                   </a>
-                   <p style="color: #C1BDB3; padding-top: 0.8em; ">(.{{library.file.url.split(".")[1]}})</p>
+                   <div style="color: #C1BDB3; position: relative;"><div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div></div>
                 </div>
               </div>
             </div>           
@@ -91,7 +91,7 @@ export default {
   methods: {
     frame: function(url1){
       this.dialogTableVisible = true;
-      this.framevalue =  "<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru"+url1+"' width='100%' height='100%'   frameborder='0'></iframe>"
+      this.framevalue =  "<iframe src='https://view.officeapps.live.com/op/embed.aspx?src="+location.hostname+url1+"' width='100%' height='100%'   frameborder='0'></iframe>"
       
       console.log(url1);
 
@@ -178,7 +178,6 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .frame {
-  background-color: #dad;
   overflow: hidden;
   height: 70vh;
 }
