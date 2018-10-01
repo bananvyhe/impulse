@@ -1,5 +1,17 @@
 <template>
+  <div><el-dialog 
+      class="fizer"
+       
+      :visible.sync="dialogTableVisible"
+      :lock-scroll = 'false'
+      width="90%">
+        <div class="frame" v-html="framevalue">2</div> 
+      </el-dialog>
   <draggable  v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+    <div>
+      
+    </div>
+    
    
     <div class="basetext grouplib" v-for="(item, index)  in katbib2s">
       <div class="opad">
@@ -17,14 +29,24 @@
             <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
             </div>
             <div class="descbox">
-                   <!-- <iframe name = "myframe" src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'></iframe> -->
+                   <!-- <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'></iframe> -->
               <div>
-                <div><h4>{{library.name}}</h4></div>
+                <div><h4>{{library.name}}{{library.file.url.split(".")[1]}} </h4></div> 
                 <div v-html="library.desc"></div>  
                 <div class="buttonflexbox">
                 <!--  <a :href="library.file.url"> -->
-                  <el-button class="libviewbut" size="small">Читать</el-button>
+                  <div v-if="library.file.url.split('.')[1]=='doc'">
+                    <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
+                  </div>
+                  <div v-else>
+                    <el-button  disabled class="libviewbut" size="small">Читать</el-button>
+                  </div>
+                  
+                 
                 <!-- </a> -->
+                  <a :href="library.file.url">
+                  <el-button  class="libviewbut" size="small">Скачать</el-button>
+                  </a>
                 </div>
               </div>
             </div>           
@@ -40,12 +62,16 @@
       </div>
       -->
 
-  </draggable>
+  </draggable>    
+  </div>
+
 </template>
 
 <script>
+
  import axios from 'axios'
 import draggable from "vuedraggable"
+
 export default {
   components: { draggable },
   props: ["original_katbib2s"],
@@ -53,13 +79,23 @@ export default {
   data: function () {
     return {
        // katbib2s: this.original_katbib2s,
-    katbib2s: this.original_katbib2s,   
+    katbib2s: this.original_katbib2s, 
+    framevalue: "",
+    dialogTableVisible: false,
+    fff: '/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx'
     }
   },
   watch: {
 
   },
   methods: {
+    frame: function(url1){
+      this.dialogTableVisible = true;
+      this.framevalue =  "<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru"+url1+"' width='100%' height='100%'   frameborder='0'></iframe>"
+      
+      console.log(url1);
+
+    },
     destroy: function(index, id){
       console.log('666')
        this.katbib2s.splice(index, 1)
@@ -141,6 +177,11 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.frame {
+  background-color: #dad;
+  overflow: hidden;
+  height: 70vh;
+}
 .grouplib {
   padding-bottom: 1em;
 }
@@ -175,11 +216,12 @@ export default {
 
 }
 .buttonflexbox {
-
+  display: flex;
+  flex-direction: row;
 }
 
 .libviewbut {
-   margin-top: 0.3em;
+   margin: 0.3em 0.3em;
 }
 .libimg { 
   margin: 1em;
