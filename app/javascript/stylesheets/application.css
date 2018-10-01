@@ -78,7 +78,10 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
-
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
 .robotoc {
 
 }
