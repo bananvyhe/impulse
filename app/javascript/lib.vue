@@ -17,14 +17,14 @@
             <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
             </div>
             <div class="descbox">
+                   <!-- <iframe name = "myframe" src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'></iframe> -->
               <div>
                 <div><h4>{{library.name}}</h4></div>
                 <div v-html="library.desc"></div>  
                 <div class="buttonflexbox">
-                  <a :href="library.file.url">
-               <!--      <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe> -->
-
-                  <el-button class="libviewbut" size="small">Читать</el-button></a>
+                <!--  <a :href="library.file.url"> -->
+                  <el-button class="libviewbut" size="small">Читать</el-button>
+                <!-- </a> -->
                 </div>
               </div>
             </div>           
@@ -179,7 +179,7 @@ export default {
 }
 
 .libviewbut {
-   
+   margin-top: 0.3em;
 }
 .libimg { 
   margin: 1em;
