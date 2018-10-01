@@ -9,7 +9,7 @@
         <div class="frame" v-html="framevalue">2</div> 
       </el-dialog>
     </div>
-      <div  v-model="katbib2s"   >
+      <div  v-model="katbib2s"  class="dragArea" >
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">
           <div class="opad">
             <div>
