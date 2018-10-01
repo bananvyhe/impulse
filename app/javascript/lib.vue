@@ -1,38 +1,45 @@
 <template>
   <draggable  v-model="katbib2s" class=" dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+   
     <div class="basetext" v-for="(item, index)  in katbib2s">
       <div class="opad">
         <div>
           <h4>{{item.name}} 
-              <el-button  v-on:click="destroy(index, item.id)"v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+              <el-button  v-on:click="destroy(index, item.id)" v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
           </h4>
-          <div class="hrline scale-in-hor-left basetext" ></div>
+          <div class="hrline scale-in-hor-center  basetext" ></div>
         </div>
       </div>
        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" class="cleared ">
-      <div class="basetext" v-for="(library, index) in item.libraries">
-        <div class="itemrev">
-          <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
-          </div>
-          <div class="descbox">
-            <div>
-              <div><h4>{{library.name}}</h4></div>
-              <div v-html="library.desc"></div>  
-              <div class="buttonflexbox">
-                <a :href="library.file.url">
-                <el-button class="libviewbut" size="small">Читать</el-button></a>
-              </div>
+      <transition-group name="list" appear>
+        <div class="basetext" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
+          <div class="itemrev">
+            <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}" >
             </div>
-          </div>           
+            <div class="descbox">
+              <div>
+                <div><h4>{{library.name}}</h4></div>
+                <div v-html="library.desc"></div>  
+                <div class="buttonflexbox">
+                  <a :href="library.file.url">
+               <!--      <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://impuls-psy.ru/uploads/library/file/15/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%82%D0%B5%D0%B9_%D0%B8_%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2.docx' width='1366px' height='623px' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe> -->
+
+                  <el-button class="libviewbut" size="small">Читать</el-button></a>
+                </div>
+              </div>
+            </div>           
+          </div>
         </div>
-      </div>
+      </transition-group> 
       </draggable>
     </div>
+    
      <!--  <div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >         
           <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
           <div class="name">{{review.name}}</div>        
       </div>
       -->
+
   </draggable>
 </template>
 
@@ -134,7 +141,23 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  transform: translateZ(30px);
+}
+.opad {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 1em 0 0em 0;
+}
 .descbox {  
   display: flex;
   align-content: center; 
