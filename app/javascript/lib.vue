@@ -156,7 +156,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center; 
-  padding: 1em 0 0em 0;
+  padding: 0em 0 0.5em 0;
 }
 .descbox {  
   display: flex;
