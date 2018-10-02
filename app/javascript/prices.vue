@@ -8,6 +8,8 @@
             <div class="hrline scale-in-hor-left basetext"  ></div>
           </div>
         </div>
+          
+       
           <el-table 
             stripe
             :data = "adult"
@@ -142,7 +144,12 @@
           <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
         </el-table>
          <br>
-      </div>
+      </div>.pad {
+  padding-bottom: 0.3em;
+  h4 {
+    padding-bottom: 0.1em;
+  }
+}
     </transition>
   </div>
 </template>
@@ -235,8 +242,6 @@ export default {
   created() {
   	this.axiosget1();
     this.axiosget2(); 
-    
-    
   },
   watch: {
     teams: function() {
@@ -249,9 +254,7 @@ export default {
     }
   },
   mounted() {
- 
-      
-     
+
   },
   updated(){
   },
@@ -262,6 +265,16 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.opad {
+  display: flex;
+  padding: 0em 0 0.5em 0;
+}
+.pad {
+  padding-bottom: 0.3em;
+  h4 {
+    padding-bottom: 0.1em;
+  }
+}
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
 }
