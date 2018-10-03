@@ -3,16 +3,19 @@
 <%= link_to 'Добавить раздел библиотеки.', new_katbib2_path %><br/>
 <%= link_to 'Добавить публикацию', new_library_path %><br />
 <%= link_to 'Удаление/редактирование публикаций', libraries_path, :action=>"index"  %>
+<%= current_user %>
 <%= tag.div id: :lib, 
     data: { 
-      katbib2s: @katbib2s.to_json(include: :libraries) 
+      katbib2s: @katbib2s.to_json(include: :libraries),
+      type: '1'
   } %> 
 <% end %>
 
  
 <% if current_user != :admin %>
-	<%= tag.div id: :lib2, 
-	    data: { 
-	      katbib2s: @katbib2s.to_json(include: :libraries) 
-	  } %> 
+	<%= tag.div id: :lib, 
+    data: { 
+      katbib2s: @katbib2s.to_json(include: :libraries),
+      type: '2'
+  } %> 
 <% end %>

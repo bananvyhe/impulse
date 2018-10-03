@@ -23,7 +23,7 @@ import Footer from '../footer.vue'
 import Reviews from '../reviews.vue' 
 import Programms from '../programms.vue' 
 import Lib from '../lib.vue' 
-import Lib2 from '../lib2.vue' 
+ 
 
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification, Row } from 'element-ui'
@@ -64,24 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
       el: lib,
        // render: h => h(Lib),
        data: {
-        katbib2s: JSON.parse(lib.dataset.katbib2s) 
+        katbib2s: JSON.parse(lib.dataset.katbib2s),
+        type: JSON.parse(lib.dataset.type)
        },
-       template: "<Lib :original_katbib2s='katbib2s' />",
+       template: "<Lib :original_katbib2s='katbib2s' :original_type='type'/>",
        components: { Lib }
     }) 
   }
-  var lib2 = document.querySelector("#lib2") 
-  if (lib2 != null) {
-    new Vue({
-      el: lib2,
-       // render: h => h(Lib),
-       data: {
-        katbib2s: JSON.parse(lib2.dataset.katbib2s) 
-       },
-       template: "<Lib2 :original_katbib2s='katbib2s' />",
-       components: { Lib2 }
-    }) 
-  }
+   
   var reviews = document.querySelector("#reviews") 
   if (reviews != null) {
     new Vue({
