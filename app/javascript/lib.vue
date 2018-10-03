@@ -29,7 +29,7 @@
                   <div><h4>{{library.name}}</h4> </div> 
                   <div v-html="library.desc"></div>  
                   <div class="buttonflexbox">
-                    <div v-if="library.file.url.split('.')[1]=='doc'">
+                    <div v-if="library.file.url.split('.')[1]=='doc' && readbutton == true">
                       <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
                     </div>
                     <div v-else>
@@ -64,7 +64,8 @@ export default {
        // katbib2s: this.original_katbib2s,
     katbib2s: this.original_katbib2s, 
     framevalue: "",
-    dialogTableVisible: false
+    dialogTableVisible: false,
+    readbutton: ''
     }
   },
   watch: {
@@ -134,7 +135,13 @@ export default {
 
   },
   mounted() {
-    
+     if (document.body.clientWidth > 800) {
+      this.readbutton = true 
+       
+    }else{
+      this.readbutton = false
+      
+    }
   },
   updated(){ 
     // $('.lostwidth').masonry({
