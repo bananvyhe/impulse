@@ -581,7 +581,7 @@ export default {
   position: relative;
 }
 .effect4:before{
-  $dist: -1.0em;
+  $dist: -0.7em;
 
   @media (--only-medium-screen) {
     border-top-left-radius: 0.3em;
@@ -594,7 +594,7 @@ export default {
     z-index: 3;
     left: $dist;
      background-color: $color-blue;
-    transform: skew(6deg);
+    transform: skew(5deg);
     transform-origin: top left;
  
   }
