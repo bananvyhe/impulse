@@ -1,6 +1,6 @@
 <template>
   <div  >
-    <div >
+    <div >{{type}}
       <el-dialog 
       class="fizer"
       :visible.sync="dialogTableVisible"
@@ -17,42 +17,42 @@
               <h4>{{item.name}} 
                 <el-button  v-on:click="destroy(index, item.id)" v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
               </h4>
-            <div class="hrline scale-in-hor-center  basetext" ></div>
-          </div>
-        </div>
-        <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
-          <transition-group name="list" appear>
-          <div class="basetext grouplib" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
-            <div class="itemrev"> 
-              <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
-              <div class="descbox">
-                <div>
-                  <div><h4>{{library.name}}</h4> </div> 
-                  <div v-html="library.desc"></div>  
-                  <div class="buttonflexbox">
-                    <div v-if="library.file.url.split('.')[1]=='doc' && readbutton == true">
-                      <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
-                    </div>
-                    <div v-else>
-                      <el-button  disabled class="libviewbut" size="small">Читать</el-button>
-                    </div>
-                    <a :href="library.file.url">
-                      <el-button  class="libviewbut" size="small">Скачать</el-button>
-                    </a>
-                    <div style="color: #C1BDB3; position: relative;">
-                      <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
-                    </div>
-                  </div>
-                </div>
-              </div>     
+              <div class="hrline scale-in-hor-center  basetext" ></div>
             </div>
-          </div> </transition-group>
-        </draggable>
-      </div>
-    </draggable> 
+          </div>
+          <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
+            <transition-group name="list" appear>
+              <div class="basetext grouplib" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
+                <div class="itemrev"> 
+                  <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
+                  <div class="descbox">
+                    <div>
+                      <div><h4>{{library.name}}</h4> </div> 
+                      <div v-html="library.desc"></div>  
+                      <div class="buttonflexbox">
+                        <div v-if="library.file.url.split('.')[1]=='doc' && readbutton == true">
+                          <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
+                        </div>
+                        <div v-else>
+                          <el-button  disabled class="libviewbut" size="small">Читать</el-button>
+                        </div>
+                        <a :href="library.file.url">
+                          <el-button  class="libviewbut" size="small">Скачать</el-button>
+                        </a>
+                        <div style="color: #C1BDB3; position: relative;">
+                          <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>     
+                </div>
+              </div> 
+            </transition-group>
+          </draggable>
+        </div>
+      </draggable> 
     </div>
     <div v-else>
-      </div>
       <div  v-model="katbib2s"  class="dragArea" >
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">
           <div class="opad">
@@ -94,6 +94,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 </template>
 <script>
