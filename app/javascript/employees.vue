@@ -581,35 +581,35 @@ export default {
   position: relative;
 }
 .effect4:before{
-
+  $dist: -1.0em;
 
   @media (--only-medium-screen) {
-    border-top-left-radius: 0.2em;
+    border-top-left-radius: 0.3em;
     position: absolute;
     content: '';
     top: 0px;
     height: 100%;
     width: 1.5em;
-    border-left-width: 3px;
+     
     z-index: 3;
-    left: -1.2em;
+    left: $dist;
      background-color: $color-blue;
-    transform: skew(10deg);
+    transform: skew(6deg);
     transform-origin: top left;
  
   }
   @media (--only-1600more-screen) {
-    border-top-left-radius: 0.2em;
+    border-top-left-radius: 0.3em;
     position: absolute;
     content: '';
     top: 0px;
     height: 100%;
     width: 1.5em;
-    border-left-width: 3px;
+     
     z-index: 3;
-    left: -1.2em;
+    left: $dist;
      background-color: $color-blue;
-    transform: skew(10deg);
+    transform: skew(6deg);
     transform-origin: top left;
   }
 
