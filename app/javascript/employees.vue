@@ -3,11 +3,9 @@
     <div class="popup ">
       <el-dialog 
       class="containerpop"
-       
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-       
-      width="80%"> 
+      :width= vw> 
       <div class ="basetext poup" v-for="item in popemploy(employee)">
         <div class="topSectAv bodytext">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
@@ -84,7 +82,8 @@ export default {
       vis: false,
       dialogTableVisible: false,
       dialogFormVisible: false,
-      empid: ''
+      empid: '',
+      vw: '40%'
     }
   },
   created() {
@@ -97,6 +96,11 @@ export default {
     }); 
   },
   mounted() {
+     if (document.body.clientWidth > 1200) {
+      this.vw = '1000px'
+    }else{
+      this.vw = '80%'
+    }
     // var self = this;
     // setTimeout(function(){
     //   self.vis = true;
@@ -129,8 +133,7 @@ export default {
       if (this.empid != ''){
       var self = this;  
       return employee.filter(function (elem) {
- 
-        return elem.id == self.empid;
+         return elem.id == self.empid;
         })
       }
     },
