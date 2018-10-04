@@ -462,12 +462,6 @@ export default {
   clear: both;
 }
 .topSectAv {
-
- 
-  overflow: hidden;
-    
- 
-  
   @media (--only-small-screen) {
     margin-top: 0em;
   }
@@ -518,11 +512,13 @@ export default {
     padding: 1em;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
-    .fioSpec { 
+    .fioSpec { position: relative;  
       color: #333;
-      margin-left: -1em;
+      margin-left: 0em;
       background-color: $color-blue;
-      border-radius: 0.2em;
+      border-bottom-right-radius: 0.2em;
+      border-top-right-radius: 0.2em;
+      /*border-radius: 0.2em;*/
       padding: 0.5em 1em 1em 3em;
       @media (--only-small-screen) {
         margin-left: -1em;
@@ -550,6 +546,7 @@ export default {
         }
       }
     }
+
     @media (--only-small-screen) {
       padding: 1em;
       h2 {
@@ -579,43 +576,50 @@ export default {
  
   }
 }
-/*--------*/
-/* стиль эффекта тени блока с 2х сторон */
-.effect2 {
-  position: relative;
-}
-.effect2:before    {
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 15px;
-  left: 10px;
-  width: 50%;
-  top: 80%;
-  max-width:300px;
-  background: #777;
-  -webkit-box-shadow: 0 15px 10px #777;
-  -moz-box-shadow: 0 15px 10px #777;
-  box-shadow: 0 15px 10px #777;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-}
  
-/*--------*/
-.effect4
-{
+.effect4{
   position: relative;
 }
-.effect4:after
-{
+.effect4:before{
+
+
+  @media (--only-medium-screen) {
+    border-top-left-radius: 0.2em;
+    position: absolute;
+    content: '';
+    top: 0px;
+    height: 100%;
+    width: 1.5em;
+    border-left-width: 3px;
+    z-index: 3;
+    left: -1.2em;
+     background-color: $color-blue;
+    transform: skew(10deg);
+    transform-origin: top left;
+ 
+  }
+  @media (--only-1600more-screen) {
+    border-top-left-radius: 0.2em;
+    position: absolute;
+    content: '';
+    top: 0px;
+    height: 100%;
+    width: 1.5em;
+    border-left-width: 3px;
+    z-index: 3;
+    left: -1.2em;
+     background-color: $color-blue;
+    transform: skew(10deg);
+    transform-origin: top left;
+  }
+
+}
+.effect4:after{
   z-index: -1;
   position: absolute;
   content: "";
   bottom: 15px;
-  right: 10px;
+  right: 7px;
   left: auto;
   width: 50%;
   top: 80%;
@@ -624,11 +628,11 @@ export default {
   -webkit-box-shadow: 0 15px 10px #777;
   -moz-box-shadow: 0 15px 10px #777;
   box-shadow: 0 15px 10px #777;
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 </style>
 <style>
