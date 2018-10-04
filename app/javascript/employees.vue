@@ -267,6 +267,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.emp {
+  padding-bottom: 3em;
+}
 .el-dialog__wrapper {
   
 } 

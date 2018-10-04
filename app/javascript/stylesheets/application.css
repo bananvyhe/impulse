@@ -181,6 +181,7 @@ p {
 }
  
 .el-dialog {
+  padding-bottom: 1em;
   overflow: hidden;
   ul li:before {
     padding-right:10px;
