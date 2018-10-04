@@ -1,6 +1,6 @@
 <template>
   <div  >
-    <div >{{type}}
+    <div >
       <el-dialog 
       class="fizer"
       :visible.sync="dialogTableVisible"
