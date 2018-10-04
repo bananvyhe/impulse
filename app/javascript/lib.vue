@@ -253,6 +253,9 @@ export default {
   h3 {
     margin-top: 0em;
   }
+  h4 {
+    color: #666;
+  }
   p {
      margin-bottom: spacing(0);
   }
