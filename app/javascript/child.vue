@@ -8,19 +8,22 @@
       <div class="bgstring" @click="clickhandler(item.id, $event) ">   
         {{item.name}}       
       </div>
- 		</div>
-    <div v-for="item in popemploy(data)">
       <el-dialog 
-      class="fizer"
+      class=""
       :title="item.name" 
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-      width="90%">
-        <div class="container">
-          <span v-html="item.desc"></span>  
-        </div>
-      </el-dialog>
-    </div>
+      :width = vw>
+      <div v-for="item in popemploy(data)">
+        
+          <div class="container">
+            <span v-html="item.desc"></span>  
+          </div>
+        
+      </div>
+    </el-dialog>
+ 		</div>
+
   </div>
 </template>
 
@@ -32,6 +35,7 @@ export default {
       data:'',
       empid: '',
       dialogTableVisible: false,
+      vw: '40%'
     }
   },
   methods: {
@@ -104,7 +108,11 @@ export default {
     }
   },
   mounted() {
- 
+     if (document.body.clientWidth > 1200) {
+      this.vw = '1000px'
+    }else{
+      this.vw = '80%'
+    } 
     
   }
 }
@@ -118,7 +126,7 @@ export default {
   }
 }
  .fizer {
-  lost-center: 1160px;
+   
  }
 .container {
   overflow: hidden;
