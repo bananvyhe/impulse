@@ -15,11 +15,9 @@
       :lock-scroll = 'false'
       :width = vw>
       <div v-for="item in popemploy(data)">
-        
-          <div class="container">
-            <span v-html="item.desc"></span>  
-          </div>
-        
+        <div class="container">
+          <span v-html="item.desc"></span>  
+        </div>
       </div>
     </el-dialog>
  		</div>
@@ -108,7 +106,7 @@ export default {
     }
   },
   mounted() {
-     if (document.body.clientWidth > 1200) {
+    if (document.body.clientWidth > 1200) {
       this.vw = '1000px'
     }else{
       this.vw = '80%'
