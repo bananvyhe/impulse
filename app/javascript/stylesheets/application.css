@@ -298,7 +298,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
 
   }
   img {
-    border: 1px solid $str1;
+   /* border-top: 1px solid $str4;*/
     margin: 0.3em 1em 0.4em 0em;
   }
 }

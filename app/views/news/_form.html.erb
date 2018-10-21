@@ -1,9 +1,9 @@
 <%= simple_form_for(@news) do |f| %>
   <%= f.error_notification %>
 
-  <% if @news.newspic? %>
-    <div  style="background-image: url('<%= @news.newspic.thumb.url %>');" class="newspic"></div>
-  <% end %>
+  <%# if @news.newspic? %>
+    <!-- <div  style="background-image: url('<%= @news.newspic.thumb.url %>');" class="newspic"></div> -->
+  <%# end %>
   <div><span  class="adminzone"> 
     <%# unless @news.newspic? %>
       <%#= f.file_field :newspic, :class => "button" %>
