@@ -1,7 +1,7 @@
 <template>
   <div class="child basetext"> 
   	<div class="pad">
-      <h4>Детям и подросткам</h4>{{vw}}
+      <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
   	</div>
  		<div v-if="data" v-for="(item, index) in data" class="bganim">
