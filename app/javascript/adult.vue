@@ -13,7 +13,7 @@
       class=""
       :title="item.name" 
       :visible.sync="dialogTableVisible"
-      :lock-scroll = 'false'
+      :lock-scroll = 'true'
       :width = vw>
       <div v-for="item in popemploy(data)">
         <div class="container">
