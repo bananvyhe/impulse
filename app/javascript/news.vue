@@ -168,11 +168,12 @@ export default {
   }
 } 
 .newsItem:nth-child(odd) {
-  img {
+  /*img {
+    border: 4px double black;
     width:15em;
     margin: 0.5em 0 0.5em 1em;
     float: right;
-  }
+  }*/
   left: -40%;
   transform: scale(0,0);
 }
