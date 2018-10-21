@@ -287,13 +287,19 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
   background-repeat: no-repeat;
 }
 .newsdesc {
+  padding: 0.0em 0em 0em 0em ;
+  
+  
+   
+  text-shadow: 0 1px 2px rgba(255,255,255,0.25);
   p {  
-    padding-top: 0.25em;
-     margin-bottom: spacing(0);
+    padding-top: 0.5em;
+    margin-bottom: spacing(0);
+
   }
   img {
-    border: 1px solid #D1D1D1;
-    margin: 0.5em 1.3em 0.4em 0em;
+    border: 1px solid $str1;
+    margin: 0.3em 1em 0.4em 0em;
   }
 }
 .librarypic {

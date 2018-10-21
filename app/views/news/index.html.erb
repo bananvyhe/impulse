@@ -10,9 +10,9 @@
   <tbody>
     <% @news.each do |news| %>
       <tr data-item_id="<%= news.id %>">
-        <td class="newspic" style="background-image: url('<%= news.newspic.thumb.url %>');">
-        </td>
-        <td>
+        <!-- <td class="newspic" style="background-image: url('<%= news.newspic.thumb.url %>');">
+        </td> -->
+        <td class="basetext">
           <h5><%= news.created_at %></h5>
           <%= news.desc.html_safe %>
         </td>
@@ -20,7 +20,7 @@
         <td style="vertical-align: middle;"><span class="deleteAction">Удалить</span></td>
       </tr>
       <tr>
-        <td style="height: 1em;"></td>
+       <!--  <td style="height: 1em;"></td> -->
       </tr>
     <% end %>
   </tbody>

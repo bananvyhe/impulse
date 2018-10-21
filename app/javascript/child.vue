@@ -1,7 +1,7 @@
 <template>
   <div class="child basetext"> 
   	<div class="pad">
-      <h4>Детям и подросткам</h4>
+      <h4>Детям и подросткам</h4>{{vw}}
       <div class="hrline scale-in-hor-right"></div>
   	</div>
  		<div v-if="data" v-for="(item, index) in data" class="bganim">
@@ -33,7 +33,7 @@ export default {
       data:'',
       empid: '',
       dialogTableVisible: false,
-      vw: '40%'
+      vw: '100%'
     }
   },
   methods: {
@@ -108,9 +108,11 @@ export default {
   mounted() {
     if (document.body.clientWidth > 1200) {
       this.vw = '1000px'
-    }else{
+    } else if(document.body.clientWidth < 600){
+      this.vw < '100%'
+    } else{
       this.vw = '80%'
-    } 
+    }  
     
   }
 }
@@ -135,7 +137,6 @@ export default {
   background-color: $str1;
 } 
 .child {
-   
   position: relative;
   overflow: hidden;
 	display: flex;

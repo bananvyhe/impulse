@@ -1,5 +1,5 @@
 <template>
-  <div class="news  baseltext">
+  <div class="news basetext">
     <div> 
    	  <div class="newsHead">
   			<h4>Наши новости:</h4>
@@ -211,11 +211,7 @@ export default {
 }
 
 .newsdesc { 
-  padding: 0.5em 0em 0em 0em ;
   
-  
-   
-   text-shadow: 0 1px 2px rgba(255,255,255,0.25);
 }
 .bgi {
   background-color: #dad;
