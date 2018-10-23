@@ -132,7 +132,13 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
- 
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  transform: translateZ(30px);
+} 
 .news {
   overflow: hidden;
 }

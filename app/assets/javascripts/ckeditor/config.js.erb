@@ -42,7 +42,12 @@ config.allowedContent =true;
     // config.indentClasses = ["ul-grey", "ul-red", "text-red", "ul-content-red", "circle", "style-none", "decimal", "paragraph-portfolio-top", "ul-portfolio-top", "url-portfolio-top", "text-grey" ];
 
   config.height = '80vh';
-  config.extraPlugins = 'dragresize';
+
+ config.extraPlugins = 'image2';
+ config.extraPlugins = 'widget';
+ config.extraPlugins = 'lineutils';
+ config.extraPlugins = 'widgetselection';
+   config.extraPlugins = 'dragresize';
    // config.extraPlugins = 'pastefromword';
   // // config.pasteFromWordPromptCleanup = true;
    //config.pasteFromWordRemoveStyles = true;
@@ -56,7 +61,7 @@ config.allowedContent =true;
   config.format_tags = 'p;h5;h4;h3;h2;h1;pre;code';
   config.format_code={element:"code"};
   config.toolbar_mini = [
-    ['Undo', 'Redo'  ],
+    ['Undo', 'Redo', 'Source'  ],
     ["Bold", "Italic", "Underline",  "Strike", "-", ],
     [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'],
     ['Image'],
