@@ -7,19 +7,19 @@
  		<div v-if="data" v-for="(item, index) in data" class="bganim">
       <div class="bgstring" @click="clickhandler(item.id, $event) ">   
         {{item.name}}       
-      </div>
+      </div><div v-for="item in popemploy(data)">
       <el-dialog 
       class=""
       :title="item.name" 
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'true'
       :width = vw>
-      <div v-for="item in popemploy(data)">
+      
         <div class="container mediumtext">
           <span v-html="item.desc"></span>  
         </div>
-      </div>
-    </el-dialog>
+     
+    </el-dialog> </div>
  		</div>
 
   </div>
