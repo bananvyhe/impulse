@@ -308,6 +308,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
 
 .adult, .child {
   p {
+
     /*  img {
         margin: 0.3em 1em 0.4em 0em;
       }
@@ -325,8 +326,8 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
       width: 60% !important;
     }
     @media (--only-small-screen) {
-      height: 80% !important;
-      width: 80% !important;
+      height: 70% !important;
+      width: 70% !important;
     }
     
     /* margin: 0px;*/
