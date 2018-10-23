@@ -1,5 +1,5 @@
 <template>
-  <div class="adult  basetext">
+  <div class="adult  mediumtext">
   	<div class="pad"> 
   		<h4>Взрослым</h4>
       <div class="hrline scale-in-hor-left"></div>
@@ -16,7 +16,7 @@
       :lock-scroll = 'true'
       :width = vw>
       <div v-for="item in popemploy(data)">
-        <div class="container">
+        <div class="container mediumtext">
           <span v-html="item.desc"></span>  
         </div>
       </div>

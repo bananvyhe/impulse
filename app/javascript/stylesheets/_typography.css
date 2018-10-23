@@ -83,6 +83,12 @@ p:first-of-type {
 .basetext {
    adjust-font-size: fs b;
 }
+.mediumtext {
+   adjust-font-size: fs m;
+}
+.largetext {
+   adjust-font-size: fs l;
+}
 .form-inputs {
   font-size: 1em;
   line-height: 1.1em;
