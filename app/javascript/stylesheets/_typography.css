@@ -95,13 +95,24 @@ p {
 
 }
 img {
-  margin: 1em 1em 1em 1em;
+  margin: 1.2em;
+ 
 /*   margin-right: 4vw;
    margin-left: 4vw;
    margin-top: 0.5em;
    margin-bottom: 0.5em;*/
 }
 
+ @media (--only-small-screen) {
+img {
+   height: 50%;
+   width: 50%;
+/*   margin-right: 4vw;
+   margin-left: 4vw;
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;*/
+}
+  }
 
 
 em {
