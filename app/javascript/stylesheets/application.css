@@ -48,7 +48,7 @@ End Hamster setup*/
     --font-size: 14px;
     --line-height: 1.2;
     --to-font-size: 13px;
-    --to-line-height: 1.2 ;
+    --to-line-height: 1.3 ;
     --viewport: 451px 800px;
     --unit: vw;
   }
@@ -58,9 +58,9 @@ End Hamster setup*/
 @media (--only-medium-screen) {
   @ihamster {
     --font-size: 13px;
-    --line-height: 1.2;
+    --line-height: 1.3;
     --to-font-size: 18px;
-    --to-line-height: 1.2;
+    --to-line-height: 1.4;
     --viewport: 800px 1919px;
     --unit: vw;
   }
@@ -70,7 +70,7 @@ End Hamster setup*/
 @media (--only-1600more-screen){
   @ihamster {
     --font-size: 18px;
-    --line-height: 1.2; 
+    --line-height: 1.4; 
     --to-font-size: 26px;
     --to-line-height: 1.25;
     --viewport: 1920px 3840px;
