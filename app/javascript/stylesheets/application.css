@@ -80,6 +80,7 @@ End Hamster setup*/
   @hamster end;
 }
 html {
+
   /*overflow-x: hidden;
   margin-right: calc(-1 * (100vw - 100%));*/
 }
@@ -256,11 +257,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
   position: relative;
   overflow:hidden;  
 }
- 
-.body {
-  overflow-y: scroll;
-  adjust-font-size: fs b;
-	color: #555;
+ #bg {
   background: resolve('ui_02.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
@@ -268,6 +265,13 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
        
       background-position: center -40px;
     }
+ }
+.body {
+  overflow-y: scroll;
+  adjust-font-size: fs b;
+	color: #555;
+  
+  
 }
 
 .deleteAction {

@@ -14,7 +14,7 @@
       class=""
       :title="item.name"
       :visible.sync="dialogTableVisible"
-      :lock-scroll = 'false'
+      :lock-scroll = 'true'
       :width = vw>
         <div class="container mediumtext">
           <span v-html="item.desc"></span>  

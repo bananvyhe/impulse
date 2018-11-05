@@ -15,6 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="body">
+    <div id="bg">
+      
+  
     <div class="maincontent">
      <div class="railsblock">
         <% if user_signed_in? %>
@@ -39,6 +42,7 @@
         <%= asset_pack_path 'application.css' %>
       </div>      
     </div>
+  </div>
   </body>
 
   <%= javascript_pack_tag 'anotherscripts' %>  <%= javascript_pack_tag 'hello_vue' %>
