@@ -154,7 +154,7 @@ input {
 /*.password  ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
 .password:focus ~ .focus-border{width: 100%; transition: 0.4s;}*/
 
-label.collection_check_boxes {
+label.collection_check_boxesoverflow-y: scroll; {
   float: none;
   margin: 0;
   vertical-align: -2px;
@@ -257,7 +257,9 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
   overflow:hidden;  
 }
  
-.body {adjust-font-size: fs b;
+.body {
+  overflow-y: scroll;
+  adjust-font-size: fs b;
 	color: #555;
   background: resolve('ui_02.jpg');
   background-repeat: no-repeat;
@@ -308,7 +310,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
 
 .adult, .child {
   p {
-
+ 
     /*  img {
         margin: 0.3em 1em 0.4em 0em;
       }
