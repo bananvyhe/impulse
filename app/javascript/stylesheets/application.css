@@ -154,12 +154,12 @@ input {
 /*.password  ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
 .password:focus ~ .focus-border{width: 100%; transition: 0.4s;}*/
 
-label.collection_check_boxesoverflow-y: scroll; {
+/*label.collection_check_boxesoverflow-y: scroll; {
   float: none;
   margin: 0;
   vertical-align: -2px;
   margin-left: 2px;
-}
+}*/
 .railsblock {
   z-index: 9999;
   margin: 0.5em;
