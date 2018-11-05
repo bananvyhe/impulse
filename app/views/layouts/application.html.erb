@@ -16,7 +16,8 @@
   </head>
   <body class="body">
     <div class="maincontent">
-      <div class="railsblock">
+     
+      <div id="head" class="head"></div>  <div class="railsblock">
         <% if user_signed_in? %>
             <%# if current_user.try(:admin?) %>
              <!--  <a href ="/resizeimages" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(800, screen.availHeight)+',width='+Math.min(800, screen.availWidth)); return false;">обрезать картинку</a>&nbsp;&nbsp; -->
@@ -27,7 +28,6 @@
              <%= link_to "Войти", new_user_session_path %>
         <% end %>
       </div>
-      <div id="head" class="head"></div> 
       <%# if current_user.try(:admin?) %>
       <div id="mainmenu"></div>
       <%# end %>
