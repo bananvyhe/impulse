@@ -161,7 +161,7 @@ input {
   margin-left: 2px;
 }*/
 .railsblock {
-  z-index: 9999;
+  z-index: 1599;
   margin: 0.5em;
   position: absolute;
   right:0;
