@@ -11,11 +11,12 @@
       </div>
        <div v-for="item in popemploy(data)"> 
       <el-dialog 
-      class=""
+      class="123"
       :title="item.name"
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'true'
-      :width = vw>
+      :width = vw
+      :before-close="handleClose">
         <div class="container mediumtext">
           <span v-html="item.desc"></span>  
         </div>
@@ -37,6 +38,10 @@ export default {
     }
   },
   methods: {
+    handleClose(done) {
+      done();
+      $('.123').scrollTop(0);
+    },
     popemploy: function(data) {
       if (this.empid != ''){
       var self = this;  
@@ -47,6 +52,7 @@ export default {
       }
     },
     clickhandler( event) {
+      
       this.dialogTableVisible = true;
       this.empid = event;
        
