@@ -9,7 +9,7 @@
         {{item.name}}       
       </div><div v-for="item in popemploy(data)">
       <el-dialog 
-      class=""
+      class="123"
       :title="item.name" 
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'true'
