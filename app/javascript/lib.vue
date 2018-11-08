@@ -37,10 +37,10 @@
                           <el-button  disabled class="libviewbut" size="small">Читать</el-button>
                         </div>
                         <a :href="library.file.url">
-                          <el-button  class="libviewbut" size="small">Скачать</el-button>
+                          <el-button  class="libviewbut" size="small">скачать (.{{library.file.url.split(".")[1]}})</el-button>
                         </a>
                         <div style="color: #C1BDB3; position: relative;">
-                          <div  style="position: absolute; bottom: 0.5em;">(.{{library.file.url.split(".")[1]}})</div>
+                          <div  style="position: absolute; bottom: 0.5em;"></div>
                         </div>
                       </div>
                     </div>
@@ -250,6 +250,7 @@ export default {
   display: flex;
   align-content: center; 
   align-items: center;
+  padding: 0.5em;
   h3 {
     margin-top: 0em;
   }
