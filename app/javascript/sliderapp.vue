@@ -2,7 +2,7 @@
   <div class="sliderapp" 
     @mouseleave = "hoverslide = false"
     @mouseenter = "hoverslide = true"> 
-    <el-carousel indicator-position="outside"
+    <el-carousel indicator-position="outside" class="sliderRound"
       v-bind:interval="interval" 
       @change="change" 
       v-bind="{height: visota.value + 'px', 
@@ -240,6 +240,9 @@
 }
 .sliderText {border-radius: 0.6em;
   display: flex;
+}
+.sliderRound {border-radius: 0.6em;
+ 
 }
 
 .el-carousel__item:nth-child(2n) {
