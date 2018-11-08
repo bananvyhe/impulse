@@ -14,7 +14,7 @@
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'true'
       :width = vw>
-      
+      :before-close="handleClose"
         <div class="container mediumtext">
           <span v-html="item.desc"></span>  
         </div>
@@ -37,6 +37,10 @@ export default {
     }
   },
   methods: {
+    handleClose(done) {
+      done();
+      $('.123').scrollTop(0);
+    },
     popemploy: function(data) {
       if (this.empid != ''){
       var self = this;  
