@@ -188,13 +188,13 @@ p {
   ul li:before {
     padding-right:10px;
     font-weight: bold;
-    color: $blueTitle;
-    content: "\2714";
+     
+     
     transition-duration: 0.5s;
   }
   ul li:hover:before {
-      color: $blueTitle;
-      content: "\2714";
+       
+      
   }
 }  
 .el-dialog__body {

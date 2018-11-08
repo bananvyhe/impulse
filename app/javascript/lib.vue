@@ -22,8 +22,8 @@
           </div>
           <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
             <transition-group name="list" appear>
-              <div class="basetext grouplib" v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
-                <div class="itemrev"> 
+              <div class="basetext grouplib " v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
+                <div class="itemrev "> 
                   <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
                   <div class="descbox">
                     <div>
@@ -290,11 +290,41 @@ export default {
   @media (--only-xsmall-screen) {
     lost-column: 1/1;
   }*/
-  
-  background: $floralwhite;
+ /* 
+  background: $floralwhite;*/
+/*  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;*/
+ border-radius: 0.6em;
+  background: radial-gradient(circle farthest-corner at 100px 50px, #ffffff, #F4F9FF);
   padding: 0.5 0.6em 0.5 ;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+.knockout-around {
+  position: relative; 
+}
+.knockout-around:before, .knockout-around:after {
+  content: "";
+  position: absolute;
+}
+.knockout-around:before {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background-image: -webkit-gradient(radial, right top, 10, 90% 0%, 150, from(#000), to(transparent));
+  background-image: -webkit-radial-gradient(right top, 150px 230px, #000, transparent);
+  background-image: -moz-radial-gradient(right top, farthest-corner, #000 0%, transparent 72%);
+  z-index: -2;
+}
+.knockout-around:after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #a4b9ff;
+  z-index: -1;
 }
 .hrline {
   margin: 0.1em  0.1em 0em -0.2em;
