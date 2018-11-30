@@ -246,7 +246,10 @@ export default {
   align-items: center; 
   padding: 0em 0 0.5em 0;
 }
-.descbox {  
+.descbox { 
+  div {
+
+  } 
   display: flex;
   align-content: center; 
   align-items: center;
@@ -266,7 +269,8 @@ export default {
   flex-direction: row;
 }
 .libviewbut {
-   margin: 0.3em 0.5em;
+   /*margin: 0.3em 0.5em;*/
+   margin: 0.3em 0.5em 0 0;
 }
 .libimg { 
   border: 1px solid $platinum;
