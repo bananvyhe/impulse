@@ -270,6 +270,7 @@ export default {
 }
 .libimg { 
   border: 1px solid $platinum;
+  border-radius: 0.2em;
   margin: 1em;
   height: 10em;
   width: 8em;
@@ -329,7 +330,7 @@ export default {
   z-index: -1;
 }
 .hrline {
-  margin: 0.1em  0.1em 0em -0.2em;
+  margin: 0.1em  0.6em 0em 0.1em;
 }
 .dragArea 
   {@media (--only-medium-screen) {
