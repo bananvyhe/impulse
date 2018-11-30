@@ -269,7 +269,7 @@ export default {
    margin: 0.3em 0.5em;
 }
 .libimg { 
-  border: 1px solid $x11gray;
+  border: 1px solid $platinum;
   margin: 1em;
   height: 10em;
   width: 8em;
