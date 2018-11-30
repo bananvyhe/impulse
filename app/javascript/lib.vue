@@ -211,7 +211,7 @@ export default {
 }
 .grouplib { 
   lost-column: 1/3 3 1em;
-  text-align: justify;
+  text-align: left;
   @media (--only-medium-screen) {
     lost-column: 1/2 2 1em;
   }
@@ -269,6 +269,7 @@ export default {
    margin: 0.3em 0.5em;
 }
 .libimg { 
+  border: 1px solid $x11gray;
   margin: 1em;
   height: 10em;
   width: 8em;
