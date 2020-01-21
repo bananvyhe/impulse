@@ -15,7 +15,7 @@ plugins:
     basePath: 'public',
     cachebuster: true,
   }
-  postcss-hamster: {}
+  # postcss-hamster: {}
   postcss-font-magician: {
     custom: {
       'RobotoCon': {

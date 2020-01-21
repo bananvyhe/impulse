@@ -2,10 +2,12 @@
   <div class="emp">
     <div class="popup ">
       <el-dialog 
+      fullscreen= 'true'
       class="containerpop"
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-      :width= vw> 
+       
+      > 
       <div class ="basetext poup" v-for="item in popemploy(employee)">
         <div class="topSectAv bodytext">
           <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
