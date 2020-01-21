@@ -29,6 +29,6 @@
   "devDependencies": {
     "vue-masonry-css": "^1.0.3",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "3.1.11"
   }
 }
