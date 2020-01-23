@@ -25,9 +25,15 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    katbib = Katbib.find_or_create_by(name: 'blank')
 
+    @review.katbib  = katbib
+    
+    print '------------'
+    print @review.inspect
+    print '------------'
     respond_to do |format|
-      if @review.save
+      if @review.save!
         format.html {  redirect_to action: :index, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
