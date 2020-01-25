@@ -1,14 +1,6 @@
 <template>
   <div class="lostwidth">
-     
-    	<div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index" >
-         
-          <div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div>
-          <div class="name">{{review.name}}</div>
-        
-    		
-    	</div>
-     
+   	<div class="itemrev" v-for="(review, index) in reviews" v-bind:key="index"><div class="subj"><p>&laquo;{{review.subj}}&raquo;</p></div><div class="name">{{review.name}}</div></div>
   </div>
 </template>
 
@@ -19,7 +11,6 @@ export default {
   props: ["original_katbibs"],
   data: function () {
     return {
-
       reviews: [],
        katbibs: this.original_katbibs, 
     }
@@ -32,13 +23,11 @@ export default {
       axios.get('/reviews')
       .then((response) => {
         this.reviews = response.data
-        console.log(response.data);
-         
+        // console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
-      }); 
-       
+      });    
     }
   },
   created() {
@@ -74,7 +63,7 @@ export default {
   lost-masonry-column: 1/3 18px;
   text-align: justify;
    @media (--only-medium-screen) {
-    lost-masonry-column: 1/2 18px;
+    lost-masonry-column: 1/2 1em;
   }
   @media (--only-small-screen) {
     lost-masonry-column: 1/1;
@@ -84,7 +73,7 @@ export default {
     lost-masonry-column: 1/1;
   }
   background: $floralwhite;
-  padding: 0em 0.6em 1em;
+  /*padding: 0em 0.6em 1em;*/
   margin-top: 1em;
 }
 

@@ -1,6 +1,9 @@
 <template>
 	<div class="footer" v-bind:style="{ position: triggerPos.value, width: footerWidth.value + 'px'}">
- 		 разработка сайта:&nbsp; <a href="http://pixeltech.ru">pixeltech.ru</a>
+		<div class="creator">
+ 			разработка сайта:&nbsp; <a href="http://pixeltech.ru">pixeltech.ru</a>			
+		</div>
+
 	</div>
 </template>
 <script>
@@ -60,9 +63,14 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.creator {
+	/*background-color: #dad;*/
+	position: relative;
+	margin:0.7em 1em;
+}
 .footer { 
-	padding: 0.2em 2em 0.2em 1.5em;
-	adjust-font-size: fs tiny;
+	/*padding: 0.2em 2em 0.2em 1.5em;*/
+	/*adjust-font-size: fs tiny;*/
 	border-top-left-radius: 0.2em; 
 	border-top-right-radius: 0.2em; 
 	 
