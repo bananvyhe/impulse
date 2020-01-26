@@ -1,6 +1,7 @@
 <% if current_user.try(:admin?) %>
 <br />
-<%= link_to 'Добавить раздел библиотеки.', new_katbib2_path %><br/>
+
+ <%= link_to 'Добавить раздел библиотеки.', new_katbib2_path %><br/>  
 <%= link_to 'Добавить публикацию', new_library_path %><br />
 <%= link_to 'Удаление/редактирование публикаций', libraries_path, :action=>"index"  %>
 

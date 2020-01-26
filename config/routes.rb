@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     get :deadmination, on: :member
   end
   # , controllers: { registrations: 'registrations' }
-  resources :katbibs 
+
   resources :reviews
  
   resources :katbib2s do
@@ -39,6 +39,11 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  resources :employees  do
+    member do
+      patch :move
+    end
+  end 
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
 	match "/404", :to => "errors#not_found", :via => :all

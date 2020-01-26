@@ -1,10 +1,10 @@
 class Katbib2sController < ApplicationController
-  before_action :set_katbib2, only: [:show, :edit, :update, :destroy, :move]
+  before_action :set_katbib2, only: [ :show, :edit, :update, :destroy, :move]
 
   # GET /katbib2s
   # GET /katbib2s.json
   def index
-    @katbib2s = Katbib2.sorted
+    @katbib2 = Katbib2.sorted
   end
 
   # GET /katbib2s/1
@@ -15,6 +15,8 @@ class Katbib2sController < ApplicationController
   # GET /katbib2s/new
   def new
     @katbib2 = Katbib2.new
+
+    print @katbib2.inspect
   end
 
   # GET /katbib2s/1/edit
@@ -25,7 +27,7 @@ class Katbib2sController < ApplicationController
   # POST /katbib2s.json
   def create
     @katbib2 = Katbib2.new(katbib2_params)
-
+    katbib2 = Katbib2.find_or_create_by(name: katbib2_params[:name] )
     respond_to do |format|
       if @katbib2.save
         format.html {redirect_to :action => 'index', notice: 'Категория успешно создана.' }
