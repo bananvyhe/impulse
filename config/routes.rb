@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :players
   
   # resources :players
-  resources :employees
+  # resources :employees
   get 'errors/not_found'
   get 'errors/internal_server_error'
   mount Ckeditor::Engine => '/ckeditor'

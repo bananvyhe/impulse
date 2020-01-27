@@ -1,8 +1,8 @@
 <template>
-  <div class="emp">
+  <div class="emp"> 
     <div class="popup ">
       <el-dialog 
-      fullscreen= 'true'
+
       class="containerpop"
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
@@ -33,39 +33,63 @@
       <div class="hrline scale-in-hor-center"></div>
     </div> 
     <div class="group" v-show = "vis == true">
-      <div  class="avapreview" v-for="item in employee"  >
-
-       <!--  <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  -->
-        <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-          <div class="bgsh" 
-          @click="clickhandler(item.id, $event) "> 
-            <div class="bg"> 
-              <div v-if="item.prof">
-                <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ''}}<!-- <span v-html="item.desc"></span> --></div>
-                <div v-else class="prof"> <div class="profp">{{item.prof}}</div><!-- <span v-html="item.desc"></span> --></div>
+      <draggable v-model="employees" v-if="1==1"  @end="employeeMoved"> 
+        <div  class="avapreview" v-for="item in employee"  >
+          <!--  <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  -->
+          <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+            <div class="bgsh" 
+            @click="clickhandler(item.id, $event) "> 
+              <div class="bg"> 
+                <div v-if="item.prof">
+                  <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ''}}<!-- <span v-html="item.desc"></span> --></div>
+                  <div v-else class="prof"> <div class="profp">{{item.prof}}</div><!-- <span v-html="item.desc"></span> --></div>
+                </div>
+                
+                <div class="itemTitle">
+                  <h5>{{item.name}}</h5>
+                </div>
+                <div class="descM">
+                  <div class="desc tinytext" v-html="item.prof"></div>
+                </div>
               </div>
-              
+            </div> 
+          </div>  
+            <!-- <div class="topSectAv">
+              <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+              </div>
+              <div class="avatarSect2">
+                <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
+                  <span v-html="item.spec"></span>
+                </div>
+              </div>  
+            </div>
+            <div class="empDesc"><span v-html="item.desc"></span>
+            </div>   -->
+        </div>
+      </draggable>
+      <div v-else>
+         <div  class="avapreview" v-for="item in employees"  >
+          <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
+            <div class="bgsh" 
+            @click="clickhandler(item.id, $event) "> 
+              <div class="bg"> 
+                <div v-if="item.prof">
+                  <div v-if="item.prof.length > croptextvalue" class="prof"  > {{item.prof.slice(0, croptextvalue) + ''}}<!-- <span v-html="item.desc"></span> --></div>
+                  <div v-else class="prof"> <div class="profp">{{item.prof}}</div><!-- <span v-html="item.desc"></span> -->
+                </div>
+              </div>
+                
               <div class="itemTitle">
                 <h5>{{item.name}}</h5>
               </div>
-              <div class="descM">
-                <div class="desc tinytext" v-html="item.prof"></div>
+                <div class="descM">
+                  <div class="desc tinytext" v-html="item.prof"></div>
+                </div>
               </div>
-            </div>
-          </div> 
-        </div>  
-          <!-- <div class="topSectAv">
-            <div class="avatarSect1"  v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
-            </div>
-            <div class="avatarSect2">
-              <div class="fioSpec  effect4"><h2>{{item.name}}</h2>
-                <span v-html="item.spec"></span>
-              </div>
-            </div>  
-          </div>
-          <div class="empDesc"><span v-html="item.desc"></span>
-          </div>   -->
-      </div>
+            </div> 
+          </div>  
+        </div>
+      </div>      
     </div>
     <div class="cfx"></div>
   </div>
@@ -74,10 +98,16 @@
 // let popWidth = {value: ''};
 
 import axios from 'axios'
+import draggable from "vuedraggable"
 
 export default {
+  components: { draggable },
+  props: ["original_employees", "original_type"],
   data: function () {
     return {
+      fullscreen: true,
+      type: this.original_type,
+      employees: this.original_employees, 
       // popWidth: popWidth,
       croptextvalue: 25,
       employee: '',
@@ -122,6 +152,17 @@ export default {
     }
   },
   methods: {
+    employeeMoved: function(event) {
+      var data = new FormData
+      console.log(data)
+      data.append("employee[position]", event.newIndex + 1)
+      Rails.ajax({
+        url: `/employees/${this.employees[event.newIndex].id}/move`,
+        type: "PATCH",
+        data: data,
+        dataType: "json",
+      })
+    },        
     // cropText() {
     //   var size = 10,
     //   newsContent= $('.prof'),
@@ -346,23 +387,23 @@ export default {
   
   @media (--only-xsmall-screen) {
     lost-waffle: 1/1 1 3em ;
-    height:  22em;
+    height:  21em;
     padding-bottom: 0.5em;
   }
   @media (--only-small-screen) {
     padding-bottom: 2em;
     lost-waffle: 1/2 2 2em ;
-    height:  19.5em;
+    height:  17.0em;
   }
   @media (--only-medium-screen) {
     padding-bottom: 5em;
     lost-column: 1/4 4 2em;
-    height: 18.5em;
+    height: 15.5em;
   }
   @media (--only-1600more-screen) {
     padding-bottom: 5em;
     lost-column: 1/5 5 2em;
-    height: 330px;
+    height: 15.0em;
   }
 }
 .cardpic {

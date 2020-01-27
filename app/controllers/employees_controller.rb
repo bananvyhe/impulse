@@ -21,7 +21,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
 
     respond_to do |format|
-      if @employee.save 
+      if @employee.save! 
         if employee_params[:avatar].present?
           format.html { render :crop, notice: 'Employee was successfully created.' }
         else
@@ -60,7 +60,12 @@ class EmployeesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def move
+    if (current_user.admin? || current_user.superadmin?)
+      @employee.update(employee_params)
+      render action: :show
+    end
+  end
   private
 
   def set_employee
@@ -68,7 +73,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :desc, :spec, :prof, :avatar, :avatar_cache, :remove_avatar, :crop_x, :crop_y, :crop_w, :crop_h
+    params.require(:employee).permit(:position, :name, :desc, :spec, :prof, :avatar, :avatar_cache, :remove_avatar, :crop_x, :crop_y, :crop_w, :crop_h
  )
   end
 end

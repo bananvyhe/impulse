@@ -186,13 +186,18 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#head',
     render: h => h(Head)
   })
-  var element = document.getElementById("employees")
-  if (element != null) {
-	  new Vue({
-	    el: '#employees',
-	    render: h => h(Employees)
-	  })
-	}
+  var employees = document.getElementById("employees")
+  if (employees != null) {
+    new Vue({
+      el: employees,
+      data: {
+        employees: JSON.parse(employees.dataset.employees),
+        type: JSON.parse(employees.dataset.type)
+       },
+       template: "<employees :original_employees='employees' :original_type='type'/>",
+       components: { Employees }
+    })
+  }  
 })
 
 

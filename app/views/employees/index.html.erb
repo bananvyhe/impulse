@@ -1,4 +1,19 @@
-<div id="employees"></div>
+<% if current_user.try(:admin?) %>
+  <%= tag.div id: :employees, 
+    data: { 
+      employees: @employees.to_json,
+      type: '1'
+  } %> 
+<% end %>
+
+ 
+<% if current_user != :admin %>
+  <%= tag.div id: :employees, 
+    data: { 
+      employees: @employees.to_json,
+      type: '2'
+  } %> 
+<% end %>
 <!-- редактор -->
 
   <% if current_user.try(:admin?) %>
