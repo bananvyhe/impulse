@@ -1,6 +1,6 @@
 <template>
   <div>
- 
+ {{katbib2s}}
     <div>
       <el-dialog 
       class="fizer"
@@ -17,14 +17,14 @@
 
           <div class="opad">
             <div>
-              <h4>{{item.name}} 
+              <h4>{{item.katbib2.name}} 
                 <el-button  v-on:click="destroy(index, item.id)" v-if="katbib2s.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
               </h4>
               <div class="hrline scale-in-hor-center  basetext" ></div>
             </div>
           </div>
 
-          <draggable  v-model="katbib2s" :options="{group: 'libraries'}" @change="libraryMoved" >
+          <draggable  v-model="katbib2s" :options="{group: 'katbib2s'}" @change="libraryMoved" >
             <transition-group name="list" appear>
               <div class="basetext grouplib " v-for="(item, index) in katbib2s" v-bind:key="item.created_at">
                 <div class="itemrev "> 

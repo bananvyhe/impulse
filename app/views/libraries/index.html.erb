@@ -46,7 +46,7 @@
               <td style="vertical-align: middle"><h3><%= library.name.capitalize %></h3></td>
               <td style="vertical-align: middle"><p><%= library.desc.html_safe %></p></td>
                <td style="vertical-align: middle"><a href="<%= library.file %>">ссылка на файл</a></td> 
-                <td style="vertical-align: middle"> категория <%= library.katbib2_id%> </td> 
+                <td style="vertical-align: middle"> категория <%= library.katbib2.name%> </td> 
               <% if current_user.try(:admin?) %>
                 <td style="vertical-align: middle"><%= link_to 'Редактировать', edit_library_path(library) %></td>
                  <td style="vertical-align: middle"><span class="deleteAction">Удалить</span></td> 
