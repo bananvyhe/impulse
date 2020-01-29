@@ -4,7 +4,11 @@ class LibrariesController < ApplicationController
   # GET /libraries
   # GET /libraries.json
   def index
-    @libraries = Library.all.order(created_at: :desc)
+    @libraries = Library.all.order(created_at: :desc).joins(:katbib2)
+    # render json: @libraries, :include => :katbib2 
+    # print '-----000------'
+    # print @libraries.inspect
+    # print '-----000------'
   end
 
   # GET /libraries/1

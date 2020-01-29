@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
       el: lib,
        // render: h => h(Lib),
        data: {
-        katbib2s: JSON.parse(lib.dataset.katbib2s),
+        libraries: JSON.parse(lib.dataset.libraries),
         type: JSON.parse(lib.dataset.type)
        },
-       template: "<Lib :original_katbib2s='katbib2s' :original_type='type'/>",
+       template: "<Lib :original_libraries='libraries' :original_type='type'/>",
        components: { Lib }
     }) 
   }
