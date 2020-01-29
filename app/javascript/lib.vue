@@ -1,6 +1,7 @@
 <template>
-  <div  >
-    <div >
+  <div>
+ 
+    <div>
       <el-dialog 
       class="fizer"
       :visible.sync="dialogTableVisible"
@@ -9,35 +10,38 @@
         <div class="frame" v-html="framevalue">2</div> 
       </el-dialog>
     </div>
+
     <div v-if="type == '1'">
       <draggable  v-model="katbib2s" class="dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">
+
           <div class="opad">
             <div>
               <h4>{{item.name}} 
-                <el-button  v-on:click="destroy(index, item.id)" v-if="item.libraries.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+                <el-button  v-on:click="destroy(index, item.id)" v-if="katbib2s.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
               </h4>
               <div class="hrline scale-in-hor-center  basetext" ></div>
             </div>
           </div>
-          <draggable  v-model="item.libraries" :options="{group: 'libraries'}" @change="libraryMoved" >
+
+          <draggable  v-model="katbib2s" :options="{group: 'libraries'}" @change="libraryMoved" >
             <transition-group name="list" appear>
-              <div class="basetext grouplib " v-for="(library, index) in item.libraries" v-bind:key="library.created_at">
+              <div class="basetext grouplib " v-for="(item, index) in katbib2s" v-bind:key="item.created_at">
                 <div class="itemrev "> 
-                  <div class="libimg" :style="{backgroundImage: 'url('+ library.cover.thumb.url}"></div>
+                  <div class="libimg" :style="{backgroundImage: 'url('+ item.cover.thumb.url}"></div>
                   <div class="descbox">
                     <div>
-                      <div><h4>{{library.name}}</h4> </div> 
-                      <div v-html="library.desc"></div>  
+                      <div><h4>{{item.name}}</h4> </div> 
+                      <div v-html="item.desc"></div>  
                       <div class="buttonflexbox">
-                        <div v-if="library.file.url.split('.')[1]=='doc' && readbutton == true">
-                          <el-button v-on:click="frame(library.file.url)" class="libviewbut" size="small">Читать</el-button>
+                        <div v-if="item.file.url.split('.')[1]=='doc' && readbutton == true">
+                          <el-button v-on:click="frame(item.file.url)" class="libviewbut" size="small">Читать</el-button>
                         </div>
                         <div v-else>
                           <el-button  disabled class="libviewbut" size="small">Читать</el-button>
                         </div>
-                        <a :href="library.file.url">
-                          <el-button  class="libviewbut" size="small">скачать (.{{library.file.url.split(".")[1]}})</el-button>
+                        <a :href="item.file.url">
+                          <el-button  class="libviewbut" size="small">скачать (.{{item.file.url.split(".")[1]}})</el-button>
                         </a>
                         <div style="color: #C1BDB3; position: relative;">
                           <div  style="position: absolute; bottom: 0.5em;"></div>
@@ -49,11 +53,14 @@
               </div> 
             </transition-group>
           </draggable>
+
         </div>
       </draggable> 
     </div>
+
     <div v-else>
-      <div  v-model="katbib2s"  class="dragArea" >
+<!--       <div  v-model="katbib2s"  class="dragArea" >
+
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">
           <div class="opad">
             <div>
@@ -63,6 +70,7 @@
             <div class="hrline scale-in-hor-center  basetext" ></div>
           </div>
         </div>
+
         <div  v-model="item.libraries"  >
           <transition-group name="list" appear>
             <div class="basetext grouplib" v-for="(library, index) in item.libraries"  v-bind:key="library.created_at">
@@ -93,7 +101,7 @@
           </transition-group> 
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 </template>
@@ -103,13 +111,12 @@ import draggable from "vuedraggable"
 
 export default {
   components: { draggable },
-  props: ["original_katbib2s", "original_type"],
+  props: ["original_libraries", "original_type"],
 
   data: function () {
     return {
-       // katbib2s: this.original_katbib2s,
     type: this.original_type,
-    katbib2s: this.original_katbib2s, 
+    katbib2s: this.original_libraries, 
     framevalue: "",
     dialogTableVisible: false,
     readbutton: ''
@@ -163,7 +170,7 @@ export default {
           data: data,
           dataType: "json",
         })
-      },
+      }
     // fetchNews: function() {
     //   axios.get('/libraries')
     //   .then((response) => {
