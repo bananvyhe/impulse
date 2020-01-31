@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy, :crop]
+  before_action :set_employee, only: [:show, :edit, :update, :destroy, :crop, :move]
 
   def index
     @employees = Employee.sorted

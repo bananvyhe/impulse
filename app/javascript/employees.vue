@@ -119,13 +119,7 @@ export default {
     }
   },
   created() {
-    axios.get('/employees')
-    .then((response) => {
-      this.employee = response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    }); 
+    this.getemps()
   },
   mounted() {
      if (document.body.clientWidth > 1200) {
@@ -152,16 +146,38 @@ export default {
     }
   },
   methods: {
+    getemps: function(){
+      axios.get('/employees')
+      .then((response) => {
+        this.employee = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    },
     employeeMoved: function(event) {
       var data = new FormData
       console.log(data)
       data.append("employee[position]", event.newIndex + 1)
-      Rails.ajax({
+      axios({
+        method: 'PATCH',
         url: `/employees/${this.employees[event.newIndex].id}/move`,
-        type: "PATCH",
+        // type: "PATCH",
         data: data,
-        dataType: "json",
-      })
+        // dataType: "json",
+        // success: this.getemps()
+      }).then((response) => { 
+         console.log(response);
+        this.input = ''
+        this.getemps()
+        // this.link = 'visited'
+        // this.$store.commit('gamesendplus', 100)
+        // this.gamesendplus({
+        //   amount: loa
+        // })
+      }) 
+
+ 
     },        
     // cropText() {
     //   var size = 10,
