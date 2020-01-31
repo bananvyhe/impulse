@@ -1,6 +1,5 @@
 <template>
   <div>
- {{katbib2s}}
     <div>
       <el-dialog 
       class="fizer"
@@ -12,12 +11,13 @@
     </div>
 
     <div v-if="type == '1'">
+
       <draggable  v-model="katbib2s" class="dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">
 
           <div class="opad">
             <div>
-              <h4>{{item.katbib2.name}} 
+              <h4>{{item.name}} 
                 <el-button  v-on:click="destroy(index, item.id)" v-if="katbib2s.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
               </h4>
               <div class="hrline scale-in-hor-center  basetext" ></div>
@@ -25,8 +25,9 @@
           </div>
 
           <draggable  v-model="katbib2s" :options="{group: 'katbib2s'}" @change="libraryMoved" >
+
             <transition-group name="list" appear>
-              <div class="basetext grouplib " v-for="(item, index) in katbib2s" v-bind:key="item.created_at">
+              <div class="basetext grouplib " v-for="(item, index) in item.libraries" v-bind:key="item.created_at">
                 <div class="itemrev "> 
                   <div class="libimg" :style="{backgroundImage: 'url('+ item.cover.thumb.url}"></div>
                   <div class="descbox">
@@ -52,6 +53,7 @@
                 </div>
               </div> 
             </transition-group>
+
           </draggable>
 
         </div>
@@ -111,12 +113,12 @@ import draggable from "vuedraggable"
 
 export default {
   components: { draggable },
-  props: ["original_libraries", "original_type"],
+  props: ["original_katbib2s", "original_type"],
 
   data: function () {
     return {
     type: this.original_type,
-    katbib2s: this.original_libraries, 
+    katbib2s: this.original_katbib2s, 
     framevalue: "",
     dialogTableVisible: false,
     readbutton: ''

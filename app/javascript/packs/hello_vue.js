@@ -58,16 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json' 
+  
   var lib = document.querySelector("#lib") 
   if (lib != null) {
     new Vue({
       el: lib,
        // render: h => h(Lib),
        data: {
-        libraries: JSON.parse(lib.dataset.libraries),
+        katbib2s: JSON.parse(lib.dataset.katbib2s),
         type: JSON.parse(lib.dataset.type)
        },
-       template: "<Lib :original_libraries='libraries' :original_type='type'/>",
+       template: "<Lib :original_katbib2s='katbib2s' :original_type='type'/>",
        components: { Lib }
     }) 
   }

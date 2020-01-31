@@ -7,8 +7,8 @@
 
 <%= tag.div id: :lib, 
     data: { 
-      katbib2s: @katbib2s.to_json(include: :libraries),
-      type: '1'
+      katbib2s: @katbib2.to_json(include: :libraries),
+      type: '1' 
   } %> 
 <% end %>
 
@@ -16,7 +16,7 @@
 <% if current_user != :admin %>
 	<%= tag.div id: :lib, 
     data: { 
-      katbib2s: @katbib2s.to_json(include: :libraries),
+      katbib2s: @katbib2.to_json(include: :libraries),
       type: '2'
   } %> 
 <% end %>
