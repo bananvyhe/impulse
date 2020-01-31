@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy, :crop]
 
   def index
-    @employees = Employee.all.order(created_at: :desc)
+    @employees = Employee.sorted
 
   end
 
