@@ -167,7 +167,7 @@ export default {
         // dataType: "json",
         // success: this.getemps()
       }).then((response) => { 
-      
+
         this.input = ''
         this.getemps()
         // this.link = 'visited'
@@ -414,7 +414,7 @@ export default {
   @media (--only-medium-screen) {
     padding-bottom: 5em;
     lost-column: 1/4 4 2em;
-    height: 15.5em;
+    height: 13.5em;
   }
   @media (--only-1600more-screen) {
     padding-bottom: 5em;
