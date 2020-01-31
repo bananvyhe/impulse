@@ -167,7 +167,7 @@ export default {
         // dataType: "json",
         // success: this.getemps()
       }).then((response) => { 
-         console.log(response);
+      
         this.input = ''
         this.getemps()
         // this.link = 'visited'
