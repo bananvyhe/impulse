@@ -9,7 +9,7 @@
         <div class="frame" v-html="framevalue">2</div> 
       </el-dialog>
     </div>
-
+ 
     <div v-if="type == '1'">
 
       <draggable  v-model="katbib2s" class="dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
@@ -18,13 +18,13 @@
           <div class="opad">
             <div>
               <h4>{{item.name}} 
-                <el-button  v-on:click="destroy(index, item.id)" v-if="katbib2s.length == 0" size="mini" type="danger" icon="el-icon-delete" circle></el-button>
+                <el-button  v-on:click="destroy(index, item.id)"   size="mini" type="danger" icon="el-icon-delete" circle></el-button>
               </h4>
               <div class="hrline scale-in-hor-center  basetext" ></div>
             </div>
           </div>
-
-          <draggable  v-model="katbib2s" :options="{group: 'katbib2s'}" @change="libraryMoved" >
+ 
+          <draggable v-model="item.libraries" @change="libraryMoved">
 
             <transition-group name="list" appear>
               <div class="basetext grouplib " v-for="(item, index) in item.libraries" v-bind:key="item.created_at">
@@ -145,6 +145,7 @@ export default {
       });   
     },
     libraryMoved: function(event) {
+      console.log('moved lib')
         const evt = event.added || event.moved
         if (evt == undefined) {return}
         const element = evt.element
