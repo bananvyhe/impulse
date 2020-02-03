@@ -61,6 +61,52 @@
     </div>
 
     <div v-else>
+      <div  v-model="katbib2s" class="dragArea" :options="{group: 'katbib2s'}"   @end="katbib2Moved">
+        <div class="basetext cleared" v-for="(item, index)  in katbib2s">
+
+          <div class="opad">
+            <div>
+              <h4>{{item.name}} 
+            
+              </h4>
+              <div class="hrline scale-in-hor-center  basetext" ></div>
+            </div>
+          </div>
+ 
+          <div v-model="item.libraries" @change="libraryMoved">
+
+            <transition-group name="list" appear>
+              <div class="basetext grouplib " v-for="(item, index) in item.libraries" v-bind:key="item.created_at">
+                <div class="itemrev "> 
+                  <div class="libimg" :style="{backgroundImage: 'url('+ item.cover.thumb.url}"></div>
+                  <div class="descbox">
+                    <div>
+                      <div><h4>{{item.name}}</h4> </div> 
+                      <div v-html="item.desc"></div>  
+                      <div class="buttonflexbox">
+                        <div v-if="item.file.url.split('.')[1]=='doc' && readbutton == true">
+                          <el-button v-on:click="frame(item.file.url)" class="libviewbut" size="small">Читать</el-button>
+                        </div>
+                        <div v-else>
+                          <el-button  disabled class="libviewbut" size="small">Читать</el-button>
+                        </div>
+                        <a :href="item.file.url">
+                          <el-button  class="libviewbut" size="small">скачать (.{{item.file.url.split(".")[1]}})</el-button>
+                        </a>
+                        <div style="color: #C1BDB3; position: relative;">
+                          <div  style="position: absolute; bottom: 0.5em;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>     
+                </div>
+              </div> 
+            </transition-group>
+
+          </div>
+
+        </div>
+      </div>       
 <!--       <div  v-model="katbib2s"  class="dragArea" >
 
         <div class="basetext cleared" v-for="(item, index)  in katbib2s">

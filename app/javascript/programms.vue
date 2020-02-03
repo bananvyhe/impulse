@@ -1,8 +1,35 @@
 <template>
   <div>
-    
+   <div> 
+      <h4>Для детей</h4>
+      <div class="hrline scale-in-hor-left"></div>
+    </div>
+
+    <el-collapse v-model="programms" accordion>
+      <div v-for="(item, index) in child"  v-bind:key="item.id">
+        <el-collapse-item v-bind:title="item.name" v-bind:name="item.id">
+          <div v-html="item.desc"></div>
+<!--           <div class="cardpic" @click="clickhandler(item.id, $event) ">   
+            <el-button type="text" @click="dialogVisible = true">{{item.desc}}</el-button>      
+          </div> -->
+        </el-collapse-item>
+      </div>
+    </el-collapse>
+
+    <div> 
+      <h4>Для взрослых</h4>
+      <div class="hrline scale-in-hor-left"></div>
+    </div>    
+        
+    <el-collapse v-model="programms" accordion>
+      <div v-for="(item, index) in adult"  v-bind:key="item.id" >
+        <el-collapse-item v-bind:title="item.name" v-bind:name="item.id">
+          <div v-html="item.desc"></div>
+        </el-collapse-item>
+      </div>
+    </el-collapse>          
        
-        <div> 
+<!--         <div> 
           <h4>Подробные описания занятий:</h4>
           <div class="hrline scale-in-hor-left"></div>
         </div>
@@ -26,7 +53,7 @@
             </div>
           </el-dialog>
         </div>
-         
+          -->
        
       
     
@@ -49,6 +76,8 @@ let pathname = document.location.pathname;
 export default {
   data: function () {
     return {
+      child: '',
+      adult: '',      
       pathname: pathname,
       programms: [],
       activeName:  '',
@@ -105,7 +134,7 @@ export default {
         })
       }
     },
-    fetchNews: function() {
+    fetchNews1: function() {
       axios.get('/programms')
       .then((response) => {
         this.programms = response.data
@@ -116,10 +145,24 @@ export default {
         console.log(error);
       }); 
        
-    }
+    },
+    fetchNews2: function() {
+      axios.get('/programms')
+      .then((response) => {
+        this.adult = response.data.filter(function(item) {
+          return item.cat == 1
+        });
+         
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+       
+    }    
   },
   created() {
-    this.fetchNews()
+    this.fetchNews1();
+    this.fetchNews2();
   },
   mounted() {
   },

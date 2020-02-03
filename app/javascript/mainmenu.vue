@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainmenu">
     <div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
@@ -345,6 +345,9 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+.mainmenu {
+  padding-bottom: 0.3em;
+}
 .butabs {
   position: relative;
 }
