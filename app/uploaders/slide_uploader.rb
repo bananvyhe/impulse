@@ -4,8 +4,9 @@ class SlideUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  
   include CarrierWave::MiniMagick
+  storage :file
   process resize_to_limit: [1200, 800]
 
   version :thumb do
