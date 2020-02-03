@@ -32,10 +32,13 @@
   
 </div>
 <% if current_user.try(:admin?) %>
-<div>
+<div> 
   <%= link_to 'Редактировать', edit_contact_path(contact), class: "button is-info is-outlined" %>
 </div>
 <% end %>
 
 <% end %>
+<div> 
+  <%#= link_to 'создать новый', new_contact_path(), class: "button is-info is-outlined" %>
+</div>
 <div id="feedback"></div>
