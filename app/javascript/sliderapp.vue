@@ -8,7 +8,13 @@
       v-bind="{height: visota.value + 'px', 
        }">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
-          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
+<!--         <div  v-if = "1==1" class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}"> 
+
+        </div> -->
+        <youtube class="youtube"   :player-width="sliderwidth.value" :player-height="visota.value" v-if = "1==1" video-id="KF3Y2bLlo04"></youtube>
+   
+          <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
+
             <!-- <a  :href="item.url"  > -->
               <div class ="infoBlock">
                   <transition v-if = "item.caption1 != false" name='slide' appear>
@@ -54,7 +60,9 @@
 </template>
 <script>
   import axios from 'axios'
-  let vis = {value: '30'};
+    let sliderwidth = {value: ''}
+    let vis = {value: '30'};
+
   function resize() {
     if (window.matchMedia('only screen and (max-width: 600px)').matches) {
       console.log('under 600 pixels');
@@ -69,9 +77,11 @@
   }
   window.addEventListener('load', resize );
   let divHeight = {value:  ''};
+
   export default {
     data: function () {
       return {
+        sliderwidth: sliderwidth,
         slide: '/uploads/slider/slide/10/img6.jpg',
         sliders: [],
         firsttitledelay: 0.8,
@@ -98,7 +108,10 @@
       }); 
     },
     mounted() { 
-       window.addEventListener('resize', _.throttle(resize, 100));
+      window.addEventListener('resize', _.throttle(resize, 100));
+
+      let sliwid = document.querySelector(".sliderapp");
+      sliderwidth.value = sliwid.offsetWidth;
     },
     computed: {
       //отключение индикации слайдов при маленьких разрешениях
@@ -161,7 +174,9 @@
 
 <style scoped>
 @import "stylesheets/_variables";
-
+.youtube {
+  
+}
 .firsturl {
    
   color: $isabelline;
@@ -235,7 +250,9 @@
   @extend %roundbgstr;
 
 }
-.sliderapp { overflow: hidden;
+.sliderapp { 
+  overflow: hidden;
+
   
 }
 .sliderText {border-radius: 0.6em;

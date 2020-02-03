@@ -23,8 +23,8 @@ import Footer from '../footer.vue'
 import Reviews from '../reviews.vue' 
 import Programms from '../programms.vue' 
 import Lib from '../lib.vue' 
- 
-
+import VueYouTubeEmbed from 'vue-youtube-embed' 
+Vue.use(VueYouTubeEmbed)
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification, Row } from 'element-ui'
 Vue.use(Collapse)

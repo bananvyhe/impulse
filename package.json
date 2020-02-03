@@ -24,6 +24,7 @@
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16",
+    "vue-youtube-embed": "^2.2.2",
     "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
