@@ -11,9 +11,11 @@
 <!--         <div  v-if = "1==1" class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}"> 
 
         </div> -->
-        <youtube class="youtube"   :player-width="sliderwidth.value" :player-height="visota.value" v-if = "1==1" video-id="KF3Y2bLlo04"></youtube>
+        <!-- item.slide.thumb.url.split('/').pop().search('.') == -1 -->
+          <youtube class="youtube"   :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()"></youtube>
    
-          <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
+          <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">  
+            <!-- {{item.slide.thumb.url.split('/').pop().search('.')}} -->
 
             <!-- <a  :href="item.url"  > -->
               <div class ="infoBlock">
@@ -114,6 +116,11 @@
       sliderwidth.value = sliwid.offsetWidth;
     },
     computed: {
+      cropstring: function() {
+        var from = str.search($100); 
+        var to = str.length;
+        $newstr = str.substring(from,to);
+      },
       //отключение индикации слайдов при маленьких разрешениях
       hideind: function() {
         if (this.visota.value <= 130){
@@ -175,7 +182,7 @@
 <style scoped>
 @import "stylesheets/_variables";
 .youtube {
-  
+
 }
 .firsturl {
    

@@ -10,6 +10,9 @@
       <h5>Картинка слайда:</h5>
       <%= f.file_field :slide, :class => "button" %>
       <%= f.hidden_field :slide_cache %> 
+      <h5>или ссылка на ютуб-видео</h5>
+      <h6>на youtube.com нажать кнопку "поделиться", затем "копировать"</h6>
+      <%= f.input :slidetube, as: :text, label: false %>
     <% end %>
     <h5>Заголовок слайда:</h5>
     <div>
@@ -19,9 +22,9 @@
     <div>
        <%= f.input :caption2 , as: :text, label: false, :input_html => { :cols => 40, :rows => 7 }  %>
     </div>
-      <h5>Cсылка:</h5>
+      <!-- <h5>Cсылка:</h5> -->
     <div>
-       <%= f.input :ssilka, as: :text, label: false, :input_html => { :cols => 60, :rows => 2 }  %>
+       <%#= f.input :ssilka, as: :text, label: false, :input_html => { :cols => 60, :rows => 2 }  %>
     </div>
   </div>  
   <div class="form-actions">

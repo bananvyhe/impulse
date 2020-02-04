@@ -24,15 +24,35 @@ class SlidersController < ApplicationController
   # POST /sliders
   # POST /sliders.json
   def create
-    @slider = Slider.new(slider_params)
+    # request.format = :json
+    @slider = Slider.new(slider_params) 
+    print '----------!!!-----------'
+    print slider_params 
+       print '----------!!!-----------'
+    if slider_params[:slidetube] != ""
+      ssil = slider_params[:slidetube] 
+      @slider.ssilka = slider_params[:slidetube]
+      # @slider.save
 
-    respond_to do |format|
-      if @slider.save
-        format.html { render :crop, notice: 'Создано.' }
-        format.json { render :index, status: :created, location: @slider }
-      else
-        format.html { render :new }
-        format.json { render json: @slider.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @slider.save
+          format.html { render :new }
+          format.json { render :index, status: :created, location: @slider }
+        else
+          format.html { render :new }
+          format.json { render json: @slider.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+
+      respond_to do |format|
+        if @slider.save
+          format.html { render :crop, notice: 'Создано.' }
+          format.json { render :index, status: :created, location: @slider }
+        else
+          format.html { render :new }
+          format.json { render json: @slider.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -69,6 +89,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:slide, :caption1, :caption2, :slider, :ssilka, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:slider).permit(:slidetube, :slide_cache, :slide, :caption1, :caption2, :slider, :ssilka, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
