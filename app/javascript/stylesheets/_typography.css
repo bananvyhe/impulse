@@ -32,10 +32,10 @@ h4 {color: #555;
  
   line-height: 1.1em;
 }
-h5 {color: #444;
-  adjust-font-size: fs base;
-  margin-top: spacing(0.5);
-  margin-bottom: spacing(0.2);
+h5 {
+  color: #444;
+  
+ 
  
 }
 
@@ -75,7 +75,7 @@ p:first-of-type {
   /*margin-top: spacing(0.5);*/
 } 
 .smalltext {
-  adjust-font-size: fs small;
+ 
 }
 .tinytext {
   adjust-font-size: fs tiny;
@@ -97,7 +97,7 @@ p {
   display: block;
    
   /*margin-top: spacing(1);*/
-  margin-bottom: spacing(1);
+  
 
 }
 img {

@@ -191,6 +191,7 @@ export default {
   padding-right: 30%;
 }
 .hrline {
+  margin-top: 0.2em;
   width: 17em;
   height: 0.1em;
 }
