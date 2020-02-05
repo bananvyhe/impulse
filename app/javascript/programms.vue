@@ -134,19 +134,18 @@ export default {
         })
       }
     },
-    fetchNews1: function() {
+    fetchNews2() {
       axios.get('/programms')
-      .then((response) => {
-        this.programms = response.data
-        console.log(response.data);
-         
+      .then((data) => {
+        this.child = data.data.filter(function(item) {
+          return item.cat == 2
+        });
       })
       .catch(function (error) {
         console.log(error);
       }); 
-       
     },
-    fetchNews2: function() {
+    fetchNews1: function() {
       axios.get('/programms')
       .then((response) => {
         this.adult = response.data.filter(function(item) {
@@ -158,7 +157,20 @@ export default {
         console.log(error);
       }); 
        
-    }    
+    },
+     fetchNews3: function() {
+      axios.get('/programms')
+      .then((response) => {
+        this.adult = response.data.filter(function(item) {
+          return item.cat == 3
+        });
+         
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+       
+    }   
   },
   created() {
     this.fetchNews1();
