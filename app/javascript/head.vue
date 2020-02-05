@@ -105,7 +105,7 @@ p {
   z-index: 10;
   justify-content: flex-end;
   text-align: right;
-  margin-top: 6em;
+  margin-top: 5em;
   padding: 0.5em;
   padding-bottom: 0em;
   @media (--only-xsmall-screen) {
@@ -114,7 +114,7 @@ p {
 }
 .third {
   z-index: 10;
-  margin-top: 6em;
+  margin-top: 5em;
   padding: 0.5em;
   padding-bottom: 0em;
   max-width: 300px;
