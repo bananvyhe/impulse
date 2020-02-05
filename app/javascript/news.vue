@@ -113,9 +113,9 @@ export default {
       var oddnews = $('.newsItem:odd').toArray();
       var evennews = $('.newsItem:even').toArray();
       TweenMax.staggerTo(oddnews, duration, 
-        {scale: 0.1, left: 200, opacity: 0, ease:Linear.easeInOut },.1) 
+        {scale: 0.1,delay:  0.5, left: 200, opacity: 0, ease:Linear.easeInOut },.3) 
       TweenMax.staggerTo(evennews, duration, 
-        {scale: 0.1, delay:  0.1, left: -200, opacity: 0, ease:Linear.easeInOut},.1);
+        {scale: 0.1, delay:  0.5, left: -200, opacity: 0, ease:Linear.easeInOut},.5);
     }
   },
   created() {
@@ -158,7 +158,7 @@ export default {
   background-color: $str6;
 } 
 .newsh {  
-  lost-column: 1/1;
+  
 } 
 .last{
 }
@@ -180,7 +180,7 @@ export default {
     margin: 0.5em 0 0.5em 1em;
     float: right;
   }*/
-  left: -40%;
+  /*left: -40%;*/
   transform: scale(0,0);
 }
 .newsItem:nth-child(even) {
@@ -188,7 +188,7 @@ export default {
     margin: 0.5em 0 0.5em 1em;
     float: right;
   }
-  right: -40%;
+  /*right: -40%;*/
   transform: scale(0,0);
 }
 .newsItem {
@@ -197,11 +197,11 @@ export default {
   background: radial-gradient(circle at 50% 100%, rgba(0,0,0, 0.05), rgba(0,0,0,0) 80%);
  /* border: 1px dotted $color-1;*/
   border-radius: 0.6em; 
-  padding: 0.8em;
+  /*padding: 0.8em;*/
   position: relative;
   opacity: 0;
  
-  lost-column: 1/2 2 0.5em;
+  lost-column: 1/2 2 1em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
