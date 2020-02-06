@@ -43,6 +43,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+ 
 p {
   margin-bottom: spacing(0);
 }

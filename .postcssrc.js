@@ -3,12 +3,21 @@ module.exports = {
   map: false,
   plugins: {
     'postcss-typography': {
-     
-    baseFontSize: "16px",
-    baseLineHeight: 1.3,  
-    scaleRatio: 2.5,
-    includeNormalize: true,
+	     
+	    baseFontSize: "16px",
+	    baseLineHeight: 1.2,  
+	    scaleRatio: 2.5,
+	    includeNormalize: true,
+	    headerWeight: 400,
+	    bodyWeight: 400,
+			overrideThemeStyles: ({ rhythm }, options, styles) => ({
+			  'h2,h3,h4': {
 
+			    marginBottom: 0,
+			    marginTop: 0,
+			    color: "hsla(0,0%,0%,0.7)",
+			  }
+			})
     },
  'postcss-import': {},
   'postcss-extend': {},

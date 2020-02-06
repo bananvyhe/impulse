@@ -1,40 +1,4 @@
-
-h1, h2, h3, h4, h5 {
-  color: #555;
-  font-family: "RobotoA";
-  padding-right: 0.5em;
-}
-h1 {
- 	adjust-font-size: fs xxxlarge;
-  margin-top: spacing(1);
-  margin-bottom: spacing(0.8);
-  line-height: 1.0em;
-}
-h2 {
- /* @extend %strong;*/
-  adjust-font-size: fs xxlarge;
-  margin-top: spacing(0.4);
-  margin-bottom: spacing(0.4);
  
-  line-height: 1.12em;
-}
-h3 {
-    color: #777;
- 
-}
-h4 {color: #555;
-  adjust-font-size: fs medium;
-  margin-top: spacing(0.5);
-  margin-bottom: spacing(0.3);
- 
-  line-height: 1.1em;
-}
-h5 {
-  color: #444;
-  
- 
- 
-}
 
 .btn{
  display: inline-block;
