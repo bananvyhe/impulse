@@ -14,7 +14,7 @@
       class="123"
       :title="item.name"
       :visible.sync="dialogTableVisible"
-      :lock-scroll = 'true'
+      :lock-scroll = 'false'
       :width = vw
       :before-close="handleClose">
         <div class="container mediumtext">
