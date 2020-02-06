@@ -6,7 +6,7 @@
     <transition name="fade" > 
     <div class="second smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
-        <h5>Адрес электронной почты:</h5>
+        <h3>Адрес электронной почты:</h3>
         <p>{{contact.mail}}</p>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <transition name="fade" >
     <div class="third smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
-        <h5>Контакты:</h5>
+        <h3>Контакты:</h3>
         <p>{{contact.adress}}</p>
       </div>
     </div>
@@ -93,7 +93,10 @@ p {
     line-height: 1;
     margin-bottom: 0;
    }
-   
+   h3 {
+    line-height: 1.1;
+    margin-bottom: 0;
+   }
   }
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;

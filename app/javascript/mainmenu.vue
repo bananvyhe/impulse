@@ -24,18 +24,21 @@
       </button>
       <div class="blankdiv">
       </div>
-      <ul class='visible-links'>
-        <li v-for="menuitem in menuitems">
-           <div v-if="pathname == menuitem.url" v-bind:style="activelink" >
-              <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
-              </a>  
-            </div>
-            <div v-else >
-              <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
-              </a>  
-            </div>
-        </li>
-      </ul>
+      <div class="menuall">
+        <ul class='visible-links'>
+          <li v-for="menuitem in menuitems">
+             <div v-if="pathname == menuitem.url" v-bind:style="activelink" >
+                <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
+                </a>  
+              </div>
+              <div v-else >
+                <a  :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
+                </a>  
+              </div>
+          </li>
+        </ul>        
+      </div>
+
       <div v-if="menuitemsHide.length > 0" class="blankdiv1">
       </div>
       <ul class='hidden-links' 
@@ -345,7 +348,13 @@
 
 <style scoped>
 @import "stylesheets/_variables";
+.menuall {
+      display: flex;
+      align-items: center;
+}
 .mainmenu {
+   
+  align-self: center;
   padding-bottom: 0.3em;
 }
 .butabs {
@@ -478,8 +487,10 @@
     }
   }
   .visible-links {
+    position: relative;
     z-index: 16;
-    display: inline-table;
+
+    align-items: center;
     :first-child {
       border-left: 0px;
     }
