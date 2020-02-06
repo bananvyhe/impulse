@@ -37,9 +37,11 @@ p:first-of-type {
 } 
 .smalltext {
   font-weight:100; 
- font-size: 14px;
-  
-
+  font-size: 14px;
+}
+.thintext {
+  font-weight:100; 
+  font-size: 16px;
 }
 .tinytext {
   adjust-font-size: fs tiny;

@@ -437,16 +437,17 @@ img.right {
       lost-column: 1/1;
     }
 }
-.contactInfobd {  
+.contactInfobd { 
+  padding-bottom: 1em;
+  color: #555; 
   div {
     lost-column: 1/1  ; 
   }
 }
 .infoLast { 
-  div {
-    lost-row: 1/2 2 1em;
-
-  }
+  padding-top: 30px;
+ color: #555; 
+ 
 }
 /* jquery.Jcrop.min.css v0.9.12 (build:20130126) */
 .jcrop-holder{direction:ltr;text-align:left;}
