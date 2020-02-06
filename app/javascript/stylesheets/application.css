@@ -188,11 +188,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
       background-position: center -40px;
     }
  }
-.body {
-  overflow-y: scroll;
-  adjust-font-size: fs b;
-	color: #555;  
-}
+ 
 
 .deleteAction {
   color: blue;
@@ -201,7 +197,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
 }
 .descbox {
   p {
-     margin-bottom: spacing(0.3);
+   /*  margin-bottom: spacing(0.3);*/
   }
 }
 #previewPic {
@@ -223,7 +219,7 @@ span.cke_wrapper cke_ltr,table.cke_editor, td.cke_contents, span.cke_skin_kama, 
   text-shadow: 0 1px 2px rgba(255,255,255,0.25);
   p {  
     padding-top: 0.5em;
-    margin-bottom: spacing(0);
+    /*margin-bottom: spacing(0);*/
 
   }
   img { 
