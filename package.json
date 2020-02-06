@@ -28,6 +28,7 @@
     "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
+    "postcss-load-config": "^2.1.0",
     "vue-masonry-css": "^1.0.3",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "2.11.2"
