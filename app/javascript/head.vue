@@ -6,7 +6,7 @@
     <transition name="fade" > 
     <div class="second smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
-        <h3>Адрес электронной почты:</h3>
+        <h4>Адрес электронной почты:</h4>
         <p>{{contact.mail}}</p>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <transition name="fade" >
     <div class="third smalltext" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
-        <h3>Контакты:</h3>
+        <h4>Контакты:</h4>
         <p>{{contact.adress}}</p>
       </div>
     </div>
@@ -43,7 +43,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
- 
+
 p {
   margin-bottom: spacing(0);
 }
@@ -55,11 +55,11 @@ p {
      
     background-position: top;
      background-repeat: no-repeat;
-    background-position: center 25%;
+    background-position: center -10%;
  
     background-image: url(images/logo.svg);
     -webkit-background-size: 90%;
-    background-size: 90%;
+    background-size: 85%;
   }
  
 }
@@ -113,7 +113,8 @@ p {
   padding: 0.5em;
   padding-bottom: 0em;
   @media (--only-xsmall-screen) {
-   word-spacing: 100px;
+    margin-top: 5em;
+    word-spacing: 100px;
   }
 }
 .third {
@@ -122,6 +123,9 @@ p {
   padding: 0.5em;
   padding-bottom: 0em;
   max-width: 300px;
+  @media (--only-xsmall-screen) {
+    margin-top: 6em;
+  }
 }
 .fade-enter {
   opacity: 0;

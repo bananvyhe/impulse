@@ -36,7 +36,10 @@ p:first-of-type {
   /*margin-top: spacing(0.5);*/
 } 
 .smalltext {
- 
+  font-weight:100; 
+ font-size: 14px;
+  
+
 }
 .tinytext {
   adjust-font-size: fs tiny;
