@@ -383,7 +383,7 @@
   background-color: color($color-5 tint(45%));
   border-bottom: 0.15em solid color(#C1BDB3 tint(50%)) ;
   /*margin-bottom: 5px;*/
-  ul { margin-bottom: 0.6em;}
+  ul { margin-bottom: 0.0em;}
   a {
     display: block;
     padding: 10px 30px;
