@@ -99,6 +99,11 @@ p {
     margin-bottom: 0;
    }
   }
+  @media (--only-xnotsmall-screen) {
+    h4{
+      padding-bottom: 0.2em;
+    }
+  }  
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;
     margin-top: 2em;
@@ -123,6 +128,7 @@ p {
   padding: 0.5em;
   padding-bottom: 0em;
   max-width: 300px;
+
   @media (--only-xsmall-screen) {
     margin-top: 5em;
   }
