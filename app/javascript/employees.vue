@@ -6,7 +6,7 @@
       class="containerpop"
       :visible.sync="dialogTableVisible"
       :lock-scroll = 'false'
-       
+       :width = vw
       > 
       <div class ="basetext poup" v-for="item in popemploy(employee)">
         <div class="topSectAv bodytext">
