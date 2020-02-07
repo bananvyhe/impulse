@@ -80,36 +80,7 @@ p {
   }
  
 }
-.third, .second { 
-   
-  lost-column: 1/4 4 1em;
-  display: flex;
-  align-self: center;
-  line-height: 1;
-  @media (--only-xsmall-screen) {
 
-   lost-column: 1/2 2 0.5em;
-   h5 {
-     
-    line-height: 1;
-    margin-bottom: 0;
-   }
-   h3 {
-    line-height: 1.1;
-    margin-bottom: 0;
-   }
-  }
-  @media (--only-xnotsmall-screen) {
-    h4{
-      padding-bottom: 0.2em;
-    }
-  }  
-  @media (--only-small-screen) {
-    lost-column: 1/3 3 0.5em;
-    margin-top: 2em;
-    padding: 0.2em;
-  }
-}
 .second {
   z-index: 10;
   justify-content: flex-end;
@@ -131,6 +102,36 @@ p {
 
   @media (--only-xsmall-screen) {
     margin-top: 5em;
+  }
+}
+.third, .second { 
+  
+  lost-column: 1/4 4 1em;
+  display: flex;
+  align-self: center;
+  line-height: 1;
+  @media (--only-xsmall-screen) {
+
+   lost-column: 1/2 2 0.5em;
+   h5 {
+     
+    line-height: 1;
+    margin-bottom: 0;
+   }
+   h3 {
+    line-height: 1.1;
+    margin-bottom: 0;
+   }
+  }
+  @media (--only-xnotsmall-screen) {
+    margin-top: 6em; 
+    h4{
+      padding-bottom: 0.2em;
+    }
+  }  
+  @media (--only-small-screen) {
+    lost-column: 1/3 3 0.5em;
+    padding: 0.2em;
   }
 }
 .fade-enter {
