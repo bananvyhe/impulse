@@ -13,8 +13,8 @@ module.exports = {
 			overrideThemeStyles: ({ rhythm }, options, styles) => ({
 			  'h2,h3,h4': {
 			  	LineHeight: 1,  
-			    marginBottom: 0,
-			    marginTop: rhythm(1),
+			    marginBottom: rhythm(0.2),
+			    marginTop: rhythm(0.5),
 			    color: "hsla(0,0%,0%,0.7)",
 			  }
 			})

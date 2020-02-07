@@ -126,12 +126,15 @@ p {
 .el-table td, .el-table th {
  
 .cell {
-   
+      line-height: 1.1;
+      font-weight: 300;
       word-break: normal;
       text-align: left;
   }
 }
- 
+.el-table__header {
+  margin-bottom: 0;
+}
 .maincontent {
   lost-center: 1560px;
   position:relative; 
