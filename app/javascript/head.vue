@@ -85,7 +85,7 @@ p {
   lost-column: 1/4 4 1em;
   display: flex;
   align-self: center;
-  line-height: 1.2;
+  line-height: 1;
   @media (--only-xsmall-screen) {
 
    lost-column: 1/2 2 0.5em;
@@ -124,7 +124,7 @@ p {
   padding-bottom: 0em;
   max-width: 300px;
   @media (--only-xsmall-screen) {
-    margin-top: 6em;
+    margin-top: 5em;
   }
 }
 .fade-enter {

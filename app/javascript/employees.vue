@@ -586,11 +586,10 @@ export default {
         margin-left: -1em;
         padding: 0.5em 1em 1em 1em;
       }
-      @media (--only-xsmall-screen) {
-
-      }
+   
       @media (--only-xsmall-screen) {
         margin-left: -2em;
+        margin-right: -2em;
          padding: 0.5em 1em 1em 1em;
       }
 

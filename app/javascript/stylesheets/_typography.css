@@ -38,6 +38,7 @@ p:first-of-type {
 .smalltext {
   font-weight:100; 
   font-size: 14px;
+  line-height: 1.1;
 }
 .thintext {
   font-weight:100; 
