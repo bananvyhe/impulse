@@ -414,12 +414,12 @@ export default {
   @media (--only-medium-screen) {
     padding-bottom: 5em;
     lost-column: 1/4 4 2em;
-    height: 16.5em;
+    height: 17.5em;
   }
   @media (--only-1600more-screen) {
     padding-bottom: 5em;
     lost-column: 1/5 5 2em;
-    height: 17.0em;
+    height: 18.0em;
   }
 }
 .cardpic {
