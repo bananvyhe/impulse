@@ -5,7 +5,7 @@
       <div class="hrline scale-in-hor-left"></div>
     </div>
 
-    <el-collapse v-model="programms" accordion class="accord basetext">
+    <el-collapse v-model="programms"   class="accord basetext">
       <div v-for="(item, index) in child"  v-bind:key="item.id">
         <el-collapse-item v-bind:title="item.name" v-bind:name="item.id">
           <div v-html="item.desc"></div>
