@@ -101,7 +101,7 @@ p {
   max-width: 300px;
 
   @media (--only-xsmall-screen) {
-    margin-top: 5em;
+    margin-top: 5.8em;
   }
 }
 .third, .second { 
@@ -111,7 +111,9 @@ p {
   align-self: center;
   line-height: 1;
   @media (--only-xsmall-screen) {
-
+    h4 {
+      margin-bottom: 0;
+    }
    lost-column: 1/2 2 0.5em;
    h5 {
      
@@ -125,6 +127,8 @@ p {
   }
   @media (--only-xnotsmall-screen) {
     margin-top: 6em; 
+
+
 /*    h4{
       padding-bottom: 0.2em;
     }*/
