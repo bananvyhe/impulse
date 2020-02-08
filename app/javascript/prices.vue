@@ -267,7 +267,7 @@ export default {
 @import "stylesheets/_variables";
 .opad {
   display: flex;
-  padding: 0em 0 0.5em 0;
+  padding: 0em 0 0.0em 0;
 }
 .pad {
   padding-bottom: 0.3em;
