@@ -124,6 +124,8 @@ export default {
   mounted() {
      if (document.body.clientWidth > 1200) {
       this.vw = '1000px'
+    }else if(document.body.clientWidth < 500){
+      this.vw = '96%'
     }else{
       this.vw = '80%'
     }
