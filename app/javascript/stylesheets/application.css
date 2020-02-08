@@ -135,7 +135,8 @@ p {
   margin-bottom: 0.5em;
 }
  
-.el-dialog {padding-bottom: 1.2em;
+.el-dialog {
+  padding-bottom: 1.2em;
   /*padding-bottom: 1em;*/
   overflow: hidden;
   ul li:before {
@@ -169,6 +170,8 @@ p {
   margin-bottom: 0;
 }
 .el-collapse-item__header {
+
+  white-space: nowrap !important;
     display: flex;
   align-items: center;
   background-color: $honeydew !important;
