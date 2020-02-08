@@ -95,8 +95,17 @@ strong {
   font-weight: bold;
 }
 a {
+  color:  color( $str6  shade(60%));
   text-decoration: none;
 }
+a:hover {
+    /*background: #786b59;*/
+    color: color( $str6  shade(30%));
+   } 
+a:visited {
+ 
+    color: $deeptaupe;
+   }    
 ul,
 ol { 
   padding-left: 1em;
