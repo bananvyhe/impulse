@@ -95,6 +95,7 @@ strong {
   font-weight: bold;
 }
 a {
+  text-decoration: none;
 }
 ul,
 ol { 
