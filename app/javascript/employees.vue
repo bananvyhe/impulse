@@ -33,7 +33,7 @@
       <div class="hrline scale-in-hor-center"></div>
     </div> 
     <div class="group" v-show = "vis == true">
-      <draggable v-model="employees" v-if="1==1"  @end="employeeMoved"> 
+      <draggable v-model="employees" v-if="type == '1'"  @end="employeeMoved"> 
         <div  class="avapreview" v-for="item in employee"  >
           <!--  <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">  -->
           <div class="cardpic" v-bind:style="{backgroundImage: 'url('+ item.avatar.thumb.url}">
