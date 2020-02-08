@@ -1,11 +1,11 @@
 <template>
   <div>
-   <div> 
+    <div> 
       <h4>Для детей</h4>
       <div class="hrline scale-in-hor-left"></div>
     </div>
 
-    <el-collapse v-model="programms" accordion>
+    <el-collapse v-model="programms" accordion class="accord basetext">
       <div v-for="(item, index) in child"  v-bind:key="item.id">
         <el-collapse-item v-bind:title="item.name" v-bind:name="item.id">
           <div v-html="item.desc"></div>
@@ -186,6 +186,9 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.accord {
+
+}
 .mainframe {
   padding-left: 30%;
   padding-right: 30%;

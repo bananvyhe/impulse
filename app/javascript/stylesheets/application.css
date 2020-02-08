@@ -165,8 +165,20 @@ p {
   }
 }
 .el-table__header {
-    
+
   margin-bottom: 0;
+}
+.el-collapse-item__header {
+    display: flex;
+  align-items: center;
+  background-color: $honeydew !important;
+  padding: 0.2em;
+  margin: 0.2em 0;
+  height: 38px !important;
+  font-size: 15px !important;
+}
+.el-collapse-item__content {
+  font-size: 14px !important;
 }
 .maincontent {
   lost-center: 1560px;
