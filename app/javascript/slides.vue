@@ -2,7 +2,7 @@
   <div >
     <!-- {{slide}}     -->
     <draggable  @end="employeeMoved"  v-model="slide">
-      <div v-for="item in slide">
+      <div v-for="item in slide" class="slideitem">
         <div class="slide" v-if="item.ssilka == null" v-bind:style="{backgroundImage: 'url('+ item.slide.url}">
    
         </div>
@@ -13,9 +13,15 @@
               
             </youtube>
           </div>
-<div class="smalltext">{{item.ssilka }}</div>
+          <div class="smalltext">{{item.ssilka }}</div>
         </div>
+        <div class="butplace">
+          <el-button   type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(item.id)" class="but"> 
+          </el-button> 
+        </div>
+
       </div>
+
     </draggable>
 
   </div>
@@ -36,6 +42,20 @@ export default {
  
   },
   methods: {
+    deleting(id){
+      console.log(id)
+      axios.delete('/sliders/'+id,{
+        headers: {
+          // 'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+           this.getemps()   
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    },
     employeeMoved: function(event) {
       var data = new FormData
       console.log(data)
@@ -87,13 +107,23 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.butplace {
+}
+
+.but {
+  margin: 5.5em 0.5em 0;
+}
+.slideitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .youtcard {
   background-color: #ada;
     height: 120px;
   width: 180px;
 }
 .youtdrag {
- 
   height: 80px;
   width: 100px;
 }
