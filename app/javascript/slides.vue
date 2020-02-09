@@ -6,8 +6,14 @@
         <div class="slide" v-if="item.ssilka == null" v-bind:style="{backgroundImage: 'url('+ item.slide.url}">
    
         </div>
-        <div v-else>
-          <youtube :player-width="180" :player-height="120" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()"></youtube>
+        <div v-else class="youtcard">
+          <div  class="youtdrag" >
+
+            <youtube :player-width="100" :player-height="80" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()">
+              
+            </youtube>
+          </div>
+<div class="smalltext">{{item.ssilka }}</div>
         </div>
       </div>
     </draggable>
@@ -81,6 +87,16 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.youtcard {
+  background-color: #ada;
+    height: 120px;
+  width: 180px;
+}
+.youtdrag {
+ 
+  height: 80px;
+  width: 100px;
+}
  .slide {
   margin: 1em 0;
   height: 120px;
