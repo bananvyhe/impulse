@@ -24,6 +24,7 @@ import Reviews from '../reviews.vue'
 import Programms from '../programms.vue' 
 import Lib from '../lib.vue' 
 import VueYouTubeEmbed from 'vue-youtube-embed' 
+import Slides from '../slides.vue' 
 Vue.use(VueYouTubeEmbed)
 // import 'element-ui/lib/theme-chalk/index.css';
 import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination, Dialog, Collapse, CollapseItem, Notification, Row } from 'element-ui'
@@ -72,7 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
        components: { Lib }
     }) 
   }
-   
+  var slides = document.querySelector("#slides") 
+  if (slides != null) {
+    new Vue({
+      el: slides,
+       // render: h => h(Lib),
+ 
+       template: "<Slides/>",
+       components: { Slides }
+    }) 
+  }   
   var reviews = document.querySelector("#reviews") 
   if (reviews != null) {
     new Vue({

@@ -2,18 +2,11 @@
 <%= simple_form_for(@slider) do |f| %>
   <%= f.error_notification %>
   <% if @slider.slide? %>
-    <div  style="background-image: url('<%= @slider.slide.thumb.url %>');" class="slidepic"></div>
+      <div  style="background-image: url('<%= @slider.slide.thumb.url %>');" class="slidepic"></div>
   <% end %>
 
   <div>
-    <% unless @slider.slide? %>
-      <h5>Картинка слайда:</h5>
-      <%= f.file_field :slide, :class => "button" %>
-      <%= f.hidden_field :slide_cache %> 
-      <h5>или ссылка на ютуб-видео</h5>
-      <h6>на youtube.com нажать кнопку "поделиться", затем "копировать"</h6>
-      <%= f.input :slidetube, as: :text, label: false %>
-    <% end %>
+
     <h5>Заголовок слайда:</h5>
     <div>
        <%= f.input :caption1 , as: :text, label: false, :input_html => { :cols => 40, :rows => 3 } %>
@@ -27,6 +20,14 @@
        <%#= f.input :ssilka, as: :text, label: false, :input_html => { :cols => 60, :rows => 2 }  %>
     </div>
   </div>  
+      <% unless @slider.slide? %>
+      <h5>Картинка слайда:</h5>
+      <%= f.file_field :slide, :class => "button" %>
+      <%= f.hidden_field :slide_cache %> 
+      <h5>Cсылка на youtube-видео</h5>
+     <!--  <h6>на youtube.com нажать кнопку "поделиться", затем "копировать"</h6> -->
+      <%= f.input :slidetube, as: :text, label: false %>
+    <% end %>
   <div class="form-actions">
     <%= f.submit "Сохранить",  :class => "button" %>
   </div>
