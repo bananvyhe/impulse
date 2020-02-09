@@ -1,7 +1,7 @@
 <template>
   <div >
     <!-- {{slide}}     -->
-    <draggable v-model="slides" @end="employeeMoved">
+    <draggable  @end="employeeMoved"  v-model="slide">
       <div v-for="item in slide">
         <div class="slide" v-if="item.ssilka == null" v-bind:style="{backgroundImage: 'url('+ item.slide.url}">
    
