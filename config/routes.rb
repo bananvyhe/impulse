@@ -44,6 +44,11 @@ Rails.application.routes.draw do
       patch :move
     end
   end 
+  resources :sliders  do
+    member do
+      patch :move
+    end
+  end 
 	root 'pages#main'
 	get 'admin' => 'pages#admin'
 	match "/404", :to => "errors#not_found", :via => :all

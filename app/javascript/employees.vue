@@ -30,6 +30,7 @@
     </div>
     <div class="heading">
       <h4>Сотрудники</h4>
+      <!-- {{employees}} -->
       <div class="hrline scale-in-hor-center"></div>
     </div> 
     <div class="group" v-show = "vis == true">

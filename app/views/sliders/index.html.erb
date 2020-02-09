@@ -1,7 +1,9 @@
- <div id="slides"></div>
- <%= link_to 'Новый слайд', new_slider_path %> 
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Новый слайд', new_slider_path %> 
+  <div id="slides"></div>
+<% end %>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Слайд</th>
@@ -13,19 +15,18 @@
   </thead>
 
   <tbody>
-    <% @sliders.each do |slider| %>
-      <tr data-item_id="<%= slider.id %>">
-        <td class="slidepic" style="background-image: url('<%= slider.slide.thumb.url %>');"></td>
-        <td><%= strip_tags(slider.caption1.html_safe) %></td>
-        <td><%= strip_tags(slider.caption2.html_safe) %></td>
-        <td><%= strip_tags(slider.ssilka) %></td>
-        <td><%= link_to 'Редактировать', edit_slider_path(slider) %></td>
+    <%# @sliders.each do |slider| %>
+      <tr data-item_id="<%#= slider.id %>">
+        <td class="slidepic" style="background-image: url('<%#= slider.slide.thumb.url %>');"></td>
+        <td><%#= strip_tags(slider.caption1.html_safe) %></td>
+        <td><%#= strip_tags(slider.caption2.html_safe) %></td>
+        <td><%#= strip_tags(slider.ssilka) %></td>
+        <td><%#= link_to 'Редактировать', edit_slider_path(slider) %></td>
         <td><span class="deleteAction">Удалить</span></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
-</table>
-
-<br>
+</table> -->
+ 
 
 

@@ -1,10 +1,10 @@
 class SlidersController < ApplicationController
-  before_action :set_slider, only: [:show, :edit, :update, :destroy, :crop]
+  before_action :set_slider, only: [:show, :edit, :update, :destroy, :crop, :move]
 
   # GET /sliders
   # GET /sliders.json
   def index
-    @sliders = Slider.all
+    @sliders = Slider.sorted
   end
 
   # GET /sliders/1
@@ -80,7 +80,12 @@ class SlidersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def move
+    if (current_user.admin? || current_user.superadmin?)
+      @slider.update(slider_params)
+      render action: :show
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_slider
@@ -89,6 +94,6 @@ class SlidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slider_params
-      params.require(:slider).permit(:slidetube, :slide_cache, :slide, :caption1, :caption2, :slider, :ssilka, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:slider).permit(:position, :slidetube, :slide_cache, :slide, :caption1, :caption2, :slider, :ssilka, :slider_cache, :remove_slider, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
