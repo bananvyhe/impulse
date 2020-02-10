@@ -12,9 +12,9 @@ module.exports = {
 	    bodyWeight: 400,
 			overrideThemeStyles: ({ rhythm }, options, styles) => ({
 				'p': {
-					
+
 			    marginBottom: rhythm(0.2),
-			    marginTop: rhythm(0.4),
+			    marginTop: rhythm(0.0),
 				},
 				'h5': {
 					LineHeight: 1,  

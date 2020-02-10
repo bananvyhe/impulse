@@ -101,7 +101,7 @@ p {
   max-width: 300px;
 
   @media (--only-xsmall-screen) {
-    margin-top: 5.8em;
+    margin-top: 4.8em;
   }
 }
 .third, .second { 
@@ -110,6 +110,12 @@ p {
   display: flex;
   align-self: center;
   line-height: 1;
+    @media (--only-small-screen) {
+       margin-top: 5em;
+    h4 {
+      margin-bottom: 0;
+    }      
+    }
   @media (--only-xsmall-screen) {
     h4 {
       margin-bottom: 0;
@@ -125,14 +131,12 @@ p {
     margin-bottom: 0;
    }
   }
-  @media (--only-xnotsmall-screen) {
-    margin-top: 6em; 
+/*  @media (--only-xnotsmall-screen) {
+    margin-top: 5em; 
 
 
-/*    h4{
-      padding-bottom: 0.2em;
-    }*/
-  }  
+ 
+  }  */
   @media (--only-small-screen) {
     lost-column: 1/3 3 0.5em;
     padding: 0.2em;
