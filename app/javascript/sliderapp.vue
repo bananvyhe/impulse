@@ -14,7 +14,7 @@
 
         </div> -->
         <!-- item.slide.thumb.url.split('/').pop().search('.') == -1 -->
-          <youtube  class="youtube"  @pause="pause" @stop="stop" @playing="playing" :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()"></youtube>
+          <youtube  class="youtube"     @playing="playing" @pause="pause" :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()" :player-vars="{ autoplay: 1 }"></youtube>
    
           <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">  
             <!-- {{item.slide.thumb.url.split('/').pop().search('.')}} -->
@@ -159,11 +159,11 @@
         console.log('stop')
         // The player is playing a video.
       },
-      stop () {
+      stop (event) {
         this.autoplay = true
         console.log('play')
       },
-      pause () {
+      pause (event) {
         this.autoplay = true
         console.log('play')
       },

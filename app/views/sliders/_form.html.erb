@@ -24,9 +24,13 @@
       <h5>Картинка слайда:</h5>
       <%= f.file_field :slide, :class => "button" %>
       <%= f.hidden_field :slide_cache %> 
-      <h5>Cсылка на youtube-видео</h5>
+      <div style="background-color: #ada; padding: 0.5em 1em; margin: 0.5em 0;">
+      <h5>Cсылка по кнопке "поделиться" на Youtube</h5>
      <!--  <h6>на youtube.com нажать кнопку "поделиться", затем "копировать"</h6> -->
-      <%= f.input :slidetube, as: :text, label: false %>
+      <%= f.input :slidetube, as: :text, label: false, placeholder: 'https://youtu.be/low4h-Dm04c',  :input_html => { :cols => 40, :rows => 2 }%>   
+       
+      </div>
+
     <% end %>
   <div class="form-actions">
     <%= f.submit "Сохранить",  :class => "button" %>
