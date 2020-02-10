@@ -81,7 +81,7 @@ $redorange: #C14953;
 @custom-media --only-xnotsmall-screen (width >= 450px);
 @custom-media --only-small-screen (width >= 451px) and (width <= 799px);
 @custom-media --only-medium-screen (width >= 800px) and (width <= 1559px);
-
+@custom-media --only-1200more-screen (width >= 1160px);
 @custom-media --only-1600more-screen (width >= 1560px);
 @custom-media --only-big-screen (width >= 1920px);
 

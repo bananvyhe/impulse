@@ -201,8 +201,11 @@ export default {
   position: relative;
   opacity: 0;
  padding-top: 0.5em;
-  lost-column: 1/2 2 0.2em;
+  lost-column: 1/1 1 0.2em;
   margin-bottom: 1em; 
+    @media (--only-1200more-screen) {
+    lost-column: 1/2 0 0;
+  }
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
   }
