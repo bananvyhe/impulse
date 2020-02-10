@@ -14,7 +14,7 @@
 
         </div> -->
         <!-- item.slide.thumb.url.split('/').pop().search('.') == -1 -->
-          <youtube  class="youtube"     @playing="playing" @pause="pause" :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()" ></youtube>
+          <youtube  class="youtube" @playing="playing" @pause="pause" :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()" ></youtube>
    
           <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">  
             <!-- {{item.slide.thumb.url.split('/').pop().search('.')}} -->
@@ -206,24 +206,28 @@
   text-decoration: none;
   height: 100%;
 }
-.mainFormat {border-radius: 0.6em;
+.mainFormat {
+  border-radius: 0.6em;
   display: flex; 
   width: 100%; 
   height: 100%;
   justify-content: center;
+  align-items: flex-end;
 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .infoBlock {  
-  padding-top: 25%;
+  /*background-color: #dad;*/
+  /*padding-top: 25%;*/
+  /*padding-bottom: 10%;*/
   padding-left: 7%;
   padding-right: 7%;
   display: flex;
   flex-direction: column;
-   
-  align-self: center;
+   align-items: flex-end;
+ padding-bottom: 1em;
 
 
 }
