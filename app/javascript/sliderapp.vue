@@ -1,9 +1,11 @@
 <template >
   <div class="sliderapp" 
+   
     @mouseleave = "hoverslide = false"
     @mouseenter = "hoverslide = true"> 
-    <el-carousel indicator-position="outside" class="sliderRound"
+    <el-carousel  indicator-position="outside" class="sliderRound"
       v-bind:interval="interval" 
+      :autoplay='autoplay'
       @change="change" 
       v-bind="{height: visota.value + 'px', 
        }">
@@ -12,7 +14,7 @@
 
         </div> -->
         <!-- item.slide.thumb.url.split('/').pop().search('.') == -1 -->
-          <youtube class="youtube"   :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()"></youtube>
+          <youtube  class="youtube"  @pause="pause" @stop="stop" @playing="playing" :player-width="sliderwidth.value" :player-height="visota.value" v-if = "item.ssilka != null" :video-id="item.ssilka.split('/').pop()"></youtube>
    
           <div v-else class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">  
             <!-- {{item.slide.thumb.url.split('/').pop().search('.')}} -->
@@ -83,6 +85,7 @@
   export default {
     data: function () {
       return {
+        autoplay: true,
         sliderwidth: sliderwidth,
         slide: '/uploads/slider/slide/10/img6.jpg',
         sliders: [],
@@ -151,6 +154,19 @@
     },
     //реакция, после смены слайда
     methods: {
+      playing (event) {
+        this.autoplay = false
+        console.log('stop')
+        // The player is playing a video.
+      },
+      stop () {
+        this.autoplay = true
+        console.log('play')
+      },
+      pause () {
+        this.autoplay = true
+        console.log('play')
+      },
       change: function(){
         var vm = this;
          //запуск таймаута анимации фейд-ин
