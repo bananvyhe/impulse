@@ -11,6 +11,11 @@ module.exports = {
 	    headerWeight: 400,
 	    bodyWeight: 400,
 			overrideThemeStyles: ({ rhythm }, options, styles) => ({
+				'p': {
+					
+			    marginBottom: rhythm(0.2),
+			    marginTop: rhythm(0.4),
+				},
 				'h5': {
 					LineHeight: 1,  
 			    marginBottom: rhythm(0.2),

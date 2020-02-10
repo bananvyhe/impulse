@@ -200,8 +200,8 @@ export default {
   /*padding: 0.8em;*/
   position: relative;
   opacity: 0;
- 
-  lost-column: 1/2 2 1em;
+ padding-top: 0.5em;
+  lost-column: 1/2 2 0.2em;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
     lost-column: 1/1 0 0;
@@ -217,7 +217,7 @@ export default {
 }
 
 .newsdesc { 
-  
+padding: 0 1em;
 }
 .bgi {
   background-color: #dad;

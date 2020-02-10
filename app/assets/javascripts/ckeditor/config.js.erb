@@ -37,12 +37,14 @@ CKEDITOR.editorConfig = function( config ){
   // config.protectedSource.push( /<\/span[\s\S]*?\>/g ); //allows ending </span> tag
   // config.pasteFromWordRemoveFontStyles = true;
   //config.allowedContent = true;
-config.allowedContent =true;
+config.allowedContent =false;
+  // config.allowedContent = 'h1 h2 h3 div p table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
+
     // config.allowedContent = ' em ol ul li strong h1 h2 h3 h4 h5 div span{background-color}; p{margin-left, text-align};  table tr td th[!dir,id,name]; a[!href,id,name]; img(left,right)[!src,alt,width,height];';
     // config.indentClasses = ["ul-grey", "ul-red", "text-red", "ul-content-red", "circle", "style-none", "decimal", "paragraph-portfolio-top", "ul-portfolio-top", "url-portfolio-top", "text-grey" ];
 
   config.height = '80vh';
-
+config.pasteFromWordRemoveStyles = true;
  config.extraPlugins = 'image2';
  config.extraPlugins = 'widget';
  config.extraPlugins = 'lineutils';
